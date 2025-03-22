@@ -1,9 +1,13 @@
-﻿using INV.App.Suppliers;
+﻿using BlazorBootstrap;
+using INV.App.Suppliers;
 using INV.Domain.Entities.Products;
 using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Suppliers;
+using INV.Implementation.Service.Products;
 using INV.Implementation.Service.Purchses;
+using INVUIs.Shared;
 using Microsoft.AspNetCore.Components;
+using Radzen.Blazor;
 
 namespace INVUIs.Suppliers
 {
@@ -11,15 +15,13 @@ namespace INVUIs.Suppliers
     {
         [Inject] private ISupplierService supplierService { get; set; }
         [Parameter] public List<SupplierInfo> Suppliers { get; set; } = new();
-        private SupplierDeleteConformation supplierDeleteConformation;
-        public List<SupplierInfo> supplierFilter { get; set; } = new();
-
-        public SupplierInfo supplierDelete;
-        private SupplierDeleteConformation deleteConfirmation;
-        private string _searchName = "";
         [Inject] private NavigationManager navigationManager { get; set; }
-
-        private string selectedLink(Guid id) => $"suppliers/{id}";
+        public List<SupplierInfo> supplierFilter { get; set; } = new();
+        private RadzenDataGrid<SupplierInfo> grid;
+        public SupplierInfo supplierDelete;
+        private ConformationForm conformationForm;
+        private string _searchName = "";
+        private Guid supplierId;
 
         private void NavigateToSupplierDetails(Guid supplierId)
         {
@@ -81,9 +83,27 @@ namespace INVUIs.Suppliers
 
         private async Task DeleteSupplier(SupplierInfo Suppliers)
         {
-            supplierDeleteConformation.supplierInfo = Suppliers;
-            supplierDeleteConformation.show();
+            supplierId = Suppliers.ID;
+            conformationForm.show();
             StateHasChanged();
+        }
+
+        private async Task ConfirmDeleteSupplier()
+        {
+            /* await supplierService.RemoveSupplierById(supplierId);
+
+             StateHasChanged();
+ */
+            supplierFilter = Suppliers;
+            var supplierToRemove = supplierFilter.Find(p => p.ID == supplierId);
+
+            if (supplierId != null)
+            {
+                supplierFilter.Remove(supplierToRemove);
+                var result = await supplierService.RemoveSupplierById(supplierToRemove.ID);
+                await grid.Reload();
+                StateHasChanged();
+            }
         }
     }
 }

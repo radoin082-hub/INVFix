@@ -17,7 +17,7 @@ else
 {
 
     <div class="Container-list">
-        <RadzenDataGrid Data="@supplierFilter" AllowSorting="true" AllowFiltering="true"
+        <RadzenDataGrid @ref="grid" Data="@supplierFilter" AllowSorting="true" AllowFiltering="true"
                         Style="width: 100%;" RowSelect="@((SupplierInfo supplier) => NavigateToSupplierDetails(supplier.ID))">
             <Columns>
                                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title="Supplier" Width="10%"/>
@@ -43,4 +43,4 @@ else
 }
 
 <SupplierForm @ref=supplierForm Update="false" />
-<SupplierDeleteConformation @ref=supplierDeleteConformation />
+<ConformationForm @ref=conformationForm Titel="Delete Supplier" Message="Are you sure you want to delete this Supplier?" OnConfirm="ConfirmDeleteSupplier" />

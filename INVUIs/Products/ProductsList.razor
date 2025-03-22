@@ -1,11 +1,12 @@
-﻿@using INV.App.Products;
+﻿@page "/products"
+@using INV.App.Products
 @using INV.Domain.Entities.Products
 @inject NavigationManager Navigation
 @rendermode InteractiveServer
 
-        <button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
-            <i class="bi bi-cart-plus"></i> Add Product
-        </button>
+<button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
+    <i class="bi bi-cart-plus"></i> Add Product
+</button>
 
 @if (Products is null)
 {
@@ -28,17 +29,15 @@ else
                         <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger"
                                       Click="(e => DeleteProduct(product.Id))"
                                       @onclick:stopPropagation="true">
-                        </RadzenButton> </Template>
+                        </RadzenButton>
+                    </Template>
                 </RadzenDataGridColumn>
             </Columns>
         </RadzenDataGrid>
-
-
     </div>
 }
 
+<ProductEditForm @ref="productEditForm" selectedProductModel="newProduct" />
 
-<ProductEditForm @ref="productEditForm" selectedProductModel="newProduct" /> 
-
-<ProductForm @ref="productForm" OnProductCreated="async (product) => { Products.Add(product); await grid.Reload(); StateHasChanged(); }" productEdit="productEdit"/>
-                            
+<ProductForm @ref="productForm" OnProductCreated="async (product) => { Products.Add(product); await grid.Reload(); StateHasChanged(); }" productEdit="productEdit" />
+<ConformationForm @ref="conformationForm" Titel="Delete Product" Message="Are you sure you want to delete this product?" OnConfirm="ConfirmDeleteProduct" />

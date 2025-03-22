@@ -1,50 +1,40 @@
-﻿@using INV.App.Purchases
-@using INV.Domain.Entities.Purchases
 @if (display)
 {
-	<Modal Titel="Delete">
-		<Pills>
-			<div class="title-secondary">
-				<h4>Are you sure you want to delete this item?</h4>
-			</div>
-			<div class="footer-form mt-4">
-				<button type="button" class="btn-custom btn-cancel" @onclick="hide">NO</button>
-				<button type="button" class="btn-custom btn-submit" @onclick="() => submit(product)">YES</button>
-			</div>
-		</Pills>
-	</Modal>
+    <Modal Titel="@Titel">
+        <Pills>
+            <div class="title-secondary">
+                <h4>@Message</h4>
+            </div>
+            <div class="footer-form mt-4">
+                <button type="button" class="btn-custom btn-cancel" @onclick="hide">NO</button>
+                <button type="button" class="btn-custom btn-submit" @onclick="submit">YES</button>
+            </div>
+        </Pills>
+    </Modal>
 }
 
 @code {
-	[Parameter] public PurchaseProductInfo product { get; set; }
-	[Parameter] public EventCallback OnConfirm { get; set; }
+    [Parameter] public string Titel { get; set; }
+    [Parameter] public string Message { get; set; }
+    [Parameter] public EventCallback OnConfirm { get; set; }
 
-	[Inject] public IPurchaseOrderService purchaseOrderService { get; set; }
+    public bool display = false;
 
-	private PurchaseProduct purchaseProductInfo;
-	public bool display = false;
+    public void show()
+    {
+        display = true;
+        StateHasChanged();
+    }
 
-	public void show()
-	{
-		display = true;
-		StateHasChanged();
-	}
+    public void hide()
+    {
+        display = false;
+        StateHasChanged();
+    }
 
-	public void hide()
-	{
-		display = false;
-		StateHasChanged();
-	}
-
-	private async Task submit(PurchaseProductInfo product)
-	{
-		purchaseProductInfo = new PurchaseProduct
-			{
-				ProductId = product.ProductId,
-				PurchaseOrderId = product.PurchaseId,
-			};
-		await purchaseOrderService.RemovePurchaseProduct(product.ProductId, product.PurchaseId);
-		await OnConfirm.InvokeAsync(null);
-		hide();
-	}
+    public async Task submit()
+    {
+        await OnConfirm.InvokeAsync();
+        hide();
+    }
 }

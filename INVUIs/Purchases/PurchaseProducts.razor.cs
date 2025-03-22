@@ -7,6 +7,7 @@ using INVUIs.Components.Status;
 using INVUIs.Products;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases.PurchaseModels;
+using INVUIs.Shared;
 using Microsoft.AspNetCore.Components;
 using Radzen.Blazor;
 
@@ -20,7 +21,7 @@ public partial class PurchaseProducts : ComponentBase
     [Parameter] public EventCallback<PurchaseProductModel> OnEditProduct { get; set; }
     [Parameter] public List<PurchaseProductModel> ProductList { get; set; }
     [Inject] private IPurchaseOrderService purchaseOrderService { get; set; }
-
+    private ConformationForm conformationForm;
     private List<int> TVAOptions = new() { 9, 19 };
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
     public RadzenDataGrid<PurchaseProductModel> grid;
@@ -31,8 +32,7 @@ public partial class PurchaseProducts : ComponentBase
     public ProductModel productModel { get; set; }
 
     private bool showEditPopup = false;
-    private bool showPopup = false;
-    private bool Display = false;
+    private Guid ProductId;
 
     private bool StatusButton(PurchaseOrder purchaseOrder)
     {
@@ -53,19 +53,25 @@ public partial class PurchaseProducts : ComponentBase
 
     private async Task DeleteProduct(PurchaseProductModel product)
     {
-        products.Remove(product);
-
-        OnProductAddProduct.InvokeAsync(products);
-        await purchaseOrderService.RemovePurchaseProduct(product.Id, product.PurchaseOrderId);
+        ProductId = product.Id;
+        conformationForm.show();
+        StateHasChanged();
     }
 
-    private void Clear() => productModel = new ProductModel();
-
-    private void closePopup()
+    private async Task DeleteProductConformation()
     {
-        showPopup = false;
+        var product = products.FirstOrDefault(p => p.Id == ProductId);
+        if (product != null)
+        {
+            products.Remove(product);
+            if (product.PurchaseOrderId != Guid.Empty)
+            {
+                await purchaseOrderService.RemovePurchaseProduct(product.Id, product.PurchaseOrderId);
+            }
+        }
+
+        await grid.Reload();
         StateHasChanged();
-        Clear();
     }
 
     private async Task AddProductToGrid(PurchaseProductModel product)
@@ -94,12 +100,6 @@ public partial class PurchaseProducts : ComponentBase
         }
 
         products.Add(product);
-        StateHasChanged();
-    }
-
-    private void CloseEditPopup()
-    {
-        showEditPopup = false;
         StateHasChanged();
     }
 

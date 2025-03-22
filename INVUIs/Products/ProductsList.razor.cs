@@ -5,6 +5,7 @@ using INVUIs.Products.ProductsModel;
 using Radzen;
 using Radzen.Blazor;
 using INVUIs.Purchases.PurchaseModels;
+using INVUIs.Shared;
 
 namespace INVUIs.Products
 {
@@ -15,50 +16,33 @@ namespace INVUIs.Products
         [Inject] private IProductService ProductService { get; set; }
         [Parameter] public List<ProductInfo> Products { get; set; }
         public ProductForm productForm;
+        public ConformationForm conformationForm;
         public ProductDetail productEdit;
         public ProductEditForm productEditForm;
         private RadzenDataGrid<ProductInfo> grid;
+        private Guid productIdToDelete;
 
         public async Task navigatepage(Guid id) => Navigation.NavigateTo($"/products/{id}");
 
-        private bool CommandSelected = false;
-
         private PurchaseProductModel newProduct = new PurchaseProductModel();
-        private bool showForm = false;
-
-        private void EditProduct(ProductDetail product)
-        {
-            productEdit = new ProductDetail
-            {
-                Designation = product.Designation,
-                TVA = product.TVA,
-                UnitMeasure = product.UnitMeasure,
-                WareHouse = product.WareHouse,
-            };
-
-            productForm.ShowModal();
-        }
 
         private async Task DeleteProduct(Guid productId)
         {
-            var productToRemove = Products.Find(p => p.Id == productId);
-
-            Products.Remove(productToRemove);
-            var result = await ProductService.RemoveProduct(productId);
-            await grid.Reload();
-
-            StateHasChanged();
+            productIdToDelete = productId;
+            conformationForm.show();
         }
 
-        private bool isLoading = false;
-
-        private async Task ShowLoading()
+        private async Task ConfirmDeleteProduct()
         {
-            isLoading = true;
+            var productToRemove = Products.Find(p => p.Id == productIdToDelete);
 
-            await Task.Yield();
-
-            isLoading = false;
+            if (productToRemove != null)
+            {
+                Products.Remove(productToRemove);
+                var result = await ProductService.RemoveProduct(productIdToDelete);
+                await grid.Reload();
+                StateHasChanged();
+            }
         }
     }
 }
