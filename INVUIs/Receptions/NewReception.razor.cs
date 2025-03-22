@@ -27,6 +27,7 @@ namespace INVUIs.Receptions
                     CancelEditing();
                     restVisibility = false;
                 }
+
                 products = ReceiptInfo.ReceiptProducts.Select(p => new ReceiptProductModel()
                 {
                     ProductId = p.ProductId,
@@ -67,33 +68,34 @@ namespace INVUIs.Receptions
             if (send)
             {
                 Receipt receiptToSave = new()
-                 {
-                     Id = ReceiptInfo.Id,
-                     Date = (DateOnly)ReceiptInfo.Date,
-                     DeliveryDate = (DateOnly)ReceiptInfo.DeliveryDate,
-                     DeliveryNumber = ReceiptInfo.DeliveryNumber,
-                     PurchaseId = ReceiptInfo.PurchaseId,
-                     Products = ReceiptInfo.ReceiptProducts.Select(p => new ReceiptProduct()
-                     {
-                         ReceptionId = p.ReceptionId,
-                         ProductId = p.ProductId,
-                         Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId).Received,
-                         WareHouseId = p.DefaultWareHouseId
-                     }).ToList(),
-                     Status = ReceiptStatus.editing
-                 };
+                {
+                    Id = ReceiptInfo.Id,
+                    Date = (DateOnly)ReceiptInfo.Date,
+                    DeliveryDate = (DateOnly)ReceiptInfo.DeliveryDate,
+                    DeliveryNumber = ReceiptInfo.DeliveryNumber,
+                    PurchaseId = ReceiptInfo.PurchaseId,
+                    Products = ReceiptInfo.ReceiptProducts.Select(p => new ReceiptProduct()
+                    {
+                        ReceptionId = p.ReceptionId,
+                        ProductId = p.ProductId,
+                        Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId).Received,
+                        WareHouseId = p.DefaultWareHouseId
+                    }).ToList(),
+                    Status = ReceiptStatus.editing
+                };
 
                 var result = await receptionService.GetReceiptById(ReceiptInfo.Id);
-                
-                                if (result.IsSuccess)
-                                {
-                                    await receptionService.UpdateReceipt(receiptToSave);
-                                }
-                                else
-                                {
-                                    await receptionService.CreateReceipt(receiptToSave);
-                                }
-                                CancelEditing();
+
+                if (result.IsSuccess)
+                {
+                    await receptionService.UpdateReceipt(receiptToSave);
+                }
+                else
+                {
+                    await receptionService.CreateReceipt(receiptToSave);
+                }
+
+                CancelEditing();
             }
         }
 
@@ -108,6 +110,7 @@ namespace INVUIs.Receptions
             {
                 return false;
             }
+
             return true;
         }
     }

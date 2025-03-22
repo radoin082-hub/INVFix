@@ -69,7 +69,9 @@ namespace INV.Infrastructure.Storage.Purchases
                 TotalVA=@aTotalTVA, TotalTC=@aTotalTTC, CompletionDelay=@aCompletionDelay , VisaDate =@aVisaDate , VisaNumber =@aVisaNumber ,Observation =@aObservation ,Status=@aStatus
             WHERE Id=@aId";
 
-        private const string deletePurchaseProductCommand = "DELETE FROM [purchase].[PRODUCTS] WHERE PurchaseId=@aPurchaseId AND ProductId=@aProductId";
+        private const string deletePurchaseProductCommand =
+            "DELETE FROM [purchase].[PRODUCTS] WHERE PurchaseId=@aPurchaseId AND ProductId=@aProductId";
+
         private const string selectPurchaseStatusQuery = "SELECT Status FROM [purchase].[ORDERS] WHERE Id=@aId";
 
         private const string UpdatePurchaseProductQuery = @"UPDATE [INV].[purchase].[PRODUCTS]
@@ -97,7 +99,9 @@ namespace INV.Infrastructure.Storage.Purchases
                 TotalTTC = (decimal)reader["TotalTC"],
                 CompletionDelay = (int)reader["CompletionDelay"],
                 VisaNumber = reader.IsDBNull(reader.GetOrdinal("VisaNumber")) ? null : reader["VisaNumber"].ToString(),
-                VisaDate = reader.IsDBNull(reader.GetOrdinal("VisaDate")) ? null : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
+                VisaDate = reader.IsDBNull(reader.GetOrdinal("VisaDate"))
+                    ? null
+                    : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
                 Status = (PurchaseStatus)reader["Status"]
             };
         }
@@ -116,6 +120,20 @@ namespace INV.Infrastructure.Storage.Purchases
                 BudgeType = (BudgeType)reader["BudgetType"],
                 ServiceType = (ServiceType)reader["ServiceType"],
                 TotalTTC = (decimal)reader["TotalTC"]
+            };
+            return r;
+        }
+
+        private static PurchaseOrderInfo getPurchaseForcreationData(SqlDataReader reader)
+        {
+            var r = new PurchaseOrderInfo
+            {
+                Id = (Guid)reader["Id"],
+                SupplierId = (Guid)reader["SupplierId"],
+                Number = (string)reader["Number"],
+                Status = (PurchaseStatus)reader["Status"],
+                SupplierName = (string)reader["CompanyName"],
+                Date = DateOnly.FromDateTime((DateTime)reader["Date"])
             };
             return r;
         }
@@ -151,7 +169,7 @@ namespace INV.Infrastructure.Storage.Purchases
             await sqlConnection.OpenAsync();
 
             cmd.Parameters.AddWithValue("@aId", purchaseOrder.Id);
-            cmd.Parameters.AddWithValue("@aNumber", "1");//purchaseOrder.Number);
+            cmd.Parameters.AddWithValue("@aNumber", "1"); //purchaseOrder.Number);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
             cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
@@ -279,7 +297,7 @@ namespace INV.Infrastructure.Storage.Purchases
 
             while (await reader.ReadAsync())
             {
-                purchaseOrdersInfo.Add(getPurchaseOrdersInfoData(reader));
+                purchaseOrdersInfo.Add(getPurchaseForcreationData(reader));
             }
 
             return (purchaseOrdersInfo);

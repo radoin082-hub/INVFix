@@ -2,13 +2,12 @@
 @using INVUIs.Receptions.Models
 
 <EditForm Model="ReceiptInfo" OnInvalidSubmit="Create" FormName="hello">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
     @if (ReceiptInfo != null)
     {
-
         <RadzenCard class="mb-3">
-           
+
             <RadzenRow>
                 <RadzenColumn Size="6">
 
@@ -25,65 +24,57 @@
                 </RadzenColumn>
                 <RadzenColumn Size="6">
                     <span class="detail-label">Delivery Number</span>
-                    <InputText @bind-Value="@ReceiptInfo.DeliveryNumber" class="date-input" disabled="@statusInput" />
+                    <InputText @bind-Value="@ReceiptInfo.DeliveryNumber" class="date-input" disabled="@statusInput"/>
 
-                    <span class="detail-label">Delivery Number</span>
-                    <InputText @bind-Value="@ReceiptInfo.DeliveryNumber" class="date-input" disabled="@statusInput" />
+                    <span class="detail-label">Delivery Date</span>
+                    <InputDate @bind-Value="@ReceiptInfo.DeliveryDate" class="date-input" disabled="@statusInput"/>
 
                     <span class="detail-label">Documents</span>
-                    <InputFile class="file-upload" disabled="@statusInput" />
+                    <InputFile class="file-upload" disabled="@statusInput"/>
 
                 </RadzenColumn>
-              
-           
 
-                </RadzenRow>
+
+            </RadzenRow>
 
             <RadzenRow>
                 <RadzenColumn Size="12">
 
 
                     <div class="footer-form mb-2 mt-2" style="display: flex; flex-direction: row-reverse; justify-content: flex-start;">
-                        @if (ReceiptInfo.Status == ReceiptStatus.validated) { }
+                        @if (ReceiptInfo.Status == ReceiptStatus.validated)
+                        {
+                        }
                         else if (ReceiptInfo.Status == ReceiptStatus.editing)
                         {
                             @if (statusInput)
                             {
-
                                 <button type="submit" class="btn-custom btn-submit" @onclick="Validate">validate</button>
                                 <button type="button" class="btn-custom btn-cancel" @onclick="StartEditing">Modifier</button>
-
-
                             }
                             else
                             {
                                 <button type="button" class="btn-custom btn-submit" @onclick="SaveChanges">Register </button>
                                 <button type="button" class="btn-custom btn-cancel" @onclick="CancelEditing">Cancel</button>
-
                             }
                         }
-
 
 
                     </div>
 
                 </RadzenColumn>
-       
-
 
 
             </RadzenRow>
-
 
 
         </RadzenCard>
     }
 
 
-
-   @*  @if (ReceiptInfo.ReceiptProducts != null)
+    @*  @if (ReceiptInfo.ReceiptProducts != null)
     { *@
-        @* <div class="footer-form mb-2 mt-2"  style="display: flex; flex-direction: row-reverse;">
+    @* <div class="footer-form mb-2 mt-2"  style="display: flex; flex-direction: row-reverse;">
             @if (ReceiptInfo.Status == ReceiptStatus.validated) { }
             else if (ReceiptInfo.Status == ReceiptStatus.editing)
             {
@@ -108,29 +99,26 @@
         </div>*@
 
 
-        <div class="Container-list">
-            <RadzenDataGrid Data="@products" AllowSorting="true" AllowFiltering="true" Style="width: 100%;">
-                <Columns>
-                    <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="Designation" />
-                    <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Quantity" />
-                    <RadzenDataGridColumn Title="Rest" Visible="@restVisibility">
-                        <Template Context="product">
-                            @(product.Received)
-                        </Template>
-                    </RadzenDataGridColumn>
-                    <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Received">
-                        <Template Context="product">
+    <div class="Container-list">
+        <RadzenDataGrid Data="@products" AllowSorting="true" AllowFiltering="true" Style="width: 100%;">
+            <Columns>
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="Designation"/>
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Quantity"/>
+                <RadzenDataGridColumn Title="Rest" Visible="@restVisibility">
+                    <Template Context="product">
+                        @(product.Received)
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Received">
+                    <Template Context="product">
 
-                            <InputNumber @bind-Value="product.Received" disabled="@statusInput" />
-                        </Template>
-                    </RadzenDataGridColumn>
+                        <InputNumber @bind-Value="product.Received" disabled="@statusInput"/>
+                    </Template>
+                </RadzenDataGridColumn>
 
-                </Columns>
-            </RadzenDataGrid>
-        </div>
-
-       
-    }
+            </Columns>
+        </RadzenDataGrid>
+    </div>
 </EditForm>
 <style>
 
