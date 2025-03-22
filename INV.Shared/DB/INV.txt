@@ -1,0 +1,1001 @@
+﻿USE [INV]
+GO
+/****** Object:  Schema [product]    Script Date: 22/03/2025 20:20:38 ******/
+CREATE SCHEMA [product]
+GO
+/****** Object:  Schema [purchase]    Script Date: 22/03/2025 20:20:38 ******/
+CREATE SCHEMA [purchase]
+GO
+/****** Object:  Schema [reception]    Script Date: 22/03/2025 20:20:38 ******/
+CREATE SCHEMA [reception]
+GO
+/****** Object:  UserDefinedTableType [dbo].[ProductsList]    Script Date: 22/03/2025 20:20:38 ******/
+CREATE TYPE [dbo].[ProductsList] AS TABLE(
+	[ProductId] [uniqueidentifier] NULL,
+	[Quantity] [int] NULL
+)
+GO
+/****** Object:  Table [purchase].[ORDERS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [purchase].[ORDERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Number] [varchar](20) NOT NULL,
+	[SupplierId] [uniqueidentifier] NOT NULL,
+	[Date] [date] NOT NULL,
+	[BudgetArticle] [nvarchar](50) NOT NULL,
+	[BudgetType] [int] NOT NULL,
+	[ServiceType] [int] NOT NULL,
+	[TotalHT] [decimal](10, 2) NULL,
+	[TotalVA] [decimal](10, 2) NULL,
+	[TotalTC] [decimal](10, 2) NULL,
+	[CompletionDelay] [int] NOT NULL,
+	[VisaNumber] [varchar](50) NULL,
+	[VisaDate] [date] NULL,
+	[Status] [int] NOT NULL,
+	[Observation] [varchar](max) NULL,
+ CONSTRAINT [PK_PurchaseOrder_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SUPPLIERS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SUPPLIERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[CompanyName] [varchar](50) NOT NULL,
+	[ManagerName] [varchar](50) NULL,
+	[Address] [varchar](50) NULL,
+	[Phone] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+	[RC] [varchar](50) NULL,
+	[NIS] [varchar](15) NULL,
+	[ART] [varchar](11) NULL,
+	[NIF] [varchar](20) NULL,
+	[RIB] [varchar](20) NULL,
+	[BankAgency] [varchar](50) NULL,
+	[Status] [int] NOT NULL,
+ CONSTRAINT [PK_Supplire_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedFunction [purchase].[GetList]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Name
+-- Create date: 
+-- Description:	
+-- =============================================
+CREATE FUNCTION [purchase].[GetList] 
+(	)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT
+       p.[Id],p.[Number],p.[Date],p.[BudgetArticle],p.BudgetType,p.ServiceType,
+	   p.[SupplierId],s.CompanyName As CompanyName,p.TotalTC,p.[Status]
+		FROM
+        [purchase].[ORDERS] p left Join SUPPLIERS s ON p.SupplierId=s.Id
+)
+GO
+/****** Object:  Table [reception].[HEADERS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [reception].[HEADERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[PurchaseId] [uniqueidentifier] NOT NULL,
+	[Date] [date] NULL,
+	[DeliveryNumber] [varchar](50) NULL,
+	[DeliveryDate] [date] NULL,
+	[Status] [int] NOT NULL,
+	[Number] [varchar](50) NULL,
+ CONSTRAINT [PK_HEADERS] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedFunction [reception].[GetList]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE FUNCTION [reception].[GetList] 
+(	
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT R.Id, R.Date, R.PurchaseId, R.Number, O.Date AS PurchaseDate, O.Number AS PurchaseNumber, ISNULL(R.DeliveryNumber, '') AS DeliveryNumber, R.DeliveryDate, O.SupplierId, S.CompanyName AS SupplierName, R.Status, 
+                  O.BudgetArticle
+FROM     reception.HEADERS AS R INNER JOIN
+                  purchase.ORDERS AS O ON R.PurchaseId = O.Id INNER JOIN
+                  dbo.SUPPLIERS AS S ON O.SupplierId = S.Id
+)
+GO
+/****** Object:  UserDefinedFunction [purchase].[GetListBySupplier]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION [purchase].[GetListBySupplier]
+(	
+	@aSupplierId uniqueidentifier
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT
+       p.[Id],p.[Number],p.[Date],p.[BudgetArticle],p.BudgetType,p.ServiceType,
+	   p.[SupplierId],s.CompanyName As CompanyName,p.TotalTC,p.[Status]
+		FROM
+        [purchase].[ORDERS] p left Join SUPPLIERS s ON p.SupplierId=s.Id where p.SupplierId = @aSupplierId)
+
+GO
+/****** Object:  Table [dbo].[Article]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Article](
+	[CodeArticle] [int] NOT NULL,
+	[CodeChapter] [int] NOT NULL,
+	[Name] [nchar](3000) NULL,
+ CONSTRAINT [PK_Article] PRIMARY KEY CLUSTERED 
+(
+	[CodeArticle] ASC,
+	[CodeChapter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Chapter]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Chapter](
+	[CodeChapter] [int] NOT NULL,
+	[Name] [nchar](3000) NOT NULL,
+ CONSTRAINT [PK_Chapter] PRIMARY KEY CLUSTERED 
+(
+	[CodeChapter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FILES]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FILES](
+	[FileId] [uniqueidentifier] NOT NULL,
+	[data] [varbinary](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PRODUCTS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PRODUCTS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Designation] [varchar](50) NOT NULL,
+	[UnitMeasure] [varchar](50) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[TVA] [int] NOT NULL,
+	[DefaultWareHouseId] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[WareHouse]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[WareHouse](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Name] [nchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [purchase].[PRODUCTS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [purchase].[PRODUCTS](
+	[PurchaseId] [uniqueidentifier] NOT NULL,
+	[ProductId] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[UnitPrice] [decimal](18, 2) NOT NULL,
+	[Received] [int] NOT NULL,
+ CONSTRAINT [PK_PRODUCTS] PRIMARY KEY CLUSTERED 
+(
+	[PurchaseId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [reception].[PRODUCTS]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [reception].[PRODUCTS](
+	[ReceptionId] [uniqueidentifier] NOT NULL,
+	[ProductId] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[WareHouseId] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_PRODUCTS_1] PRIMARY KEY CLUSTERED 
+(
+	[ReceptionId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (1, 16, N'البسة عمال الخدمة                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (1, 21, N'اقتناء عتاد الاعلام الالي                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (1, 22, N'اقتناء عتاد و اثاث البيداغوجيا                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (2, 21, N'ادوات و مستهلكات الاعلام الالي و البرامج المعلوماتية                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (2, 22, N'اقتناء عتاد و اثاث البيداغوجياو اثاث البيداغوجيا                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               تجديد                                                    ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (7, 15, N'النشر و الاشهار                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ')
+GO
+INSERT [dbo].[Article] ([CodeArticle], [CodeChapter], [Name]) VALUES (9, 15, N'مصاريف بنكية                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ')
+GO
+INSERT [dbo].[Chapter] ([CodeChapter], [Name]) VALUES (15, N'تكاليف ملحقلة                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ')
+GO
+INSERT [dbo].[Chapter] ([CodeChapter], [Name]) VALUES (16, N'البسة العمال                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ')
+GO
+INSERT [dbo].[Chapter] ([CodeChapter], [Name]) VALUES (21, N'عتاد و لوازم الاعلام الالي                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ')
+GO
+INSERT [dbo].[Chapter] ([CodeChapter], [Name]) VALUES (22, N'عتاد و اثاث البيداغوجيا                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', N'cpu', N'U', 0, 9, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'a50627aa-285f-4808-949c-27d0033c89de', N'Imprimante multifonction', N'U', 0, 19, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'188ddfaf-5254-4d80-9277-3bdc7a15c8ef', N'qwq', N'U', 0, 19, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'96657052-c056-4e9a-9dad-44d2f9a23c9f', N'cdxvdxvxc', N'U', 0, 19, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'508a052e-0202-45f0-bf20-626e3f66958e', N'asd', N'KG', 0, 9, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'a907b842-1441-4a4f-8a0d-bca2de0f708f', N'gg', N'U', 0, 19, N'bf33eb94-40da-452f-bb30-9525e052cb46')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'975934ab-313b-414e-9d8f-c14a6debb6df', N'ss', N'KG', 1, 19, N'cc7bda8c-7c4d-4e74-a99a-0b95c77305db')
+GO
+INSERT [dbo].[PRODUCTS] ([Id], [Designation], [UnitMeasure], [Quantity], [TVA], [DefaultWareHouseId]) VALUES (N'21b65c01-b423-416a-b818-d8d672169055', N'122', N'U', 0, 9, N'1a982b92-162e-47e9-8531-7fe5a6fae8d4')
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', N'tests2', N'test', N'tests', N'test', N'test@gmail.com', N'test', N'741852944359743', N'15974205296', N'74185296315415612345', N'74185292975974312318', N'test', 1)
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'5d76e6ec-a3e8-4c42-8b9b-462848caf108', N'eurl ids1', N'sriti ali', N'BISKRA', N'0558628237', N'amrisamer55@gmail.com', N'00a12345678912', N'123456789123457', N'12345678912', N'123456789123456', N'00100365000123444556', N'cdsvbnvcbdsnvcdnv', 1)
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'6aaa9a51-bbe1-416b-99ec-5c08b6514c38', N'nesrine tebbi', N'SARL TEBBI', N'100 lgts biskra', N'12345677', N'aaa@bb.cc', N'1233444', N'543234543245654', N'12345678901', N'123432123432123', N'54323454324565400000', N'bna biskra', 1)
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'913fff27-b576-4c65-bf42-768430c70896', N'2', N'2', N'2', N'2', N'2', N'2', N'2', N'2', N'2', N'2', N'2', 1)
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'1194a2b8-86c5-4c0d-91e9-825715b2c354', N'ims', N'tabbi ilhem', N'ouled djellal', N'0675684155', N'aalkourn@gmail.com', N'76543266678', N'123456789123456', N'76543266678', N'765432666789898', N'76543266678098768765', N'badr', 1)
+GO
+INSERT [dbo].[SUPPLIERS] ([Id], [CompanyName], [ManagerName], [Address], [Phone], [Email], [RC], [NIS], [ART], [NIF], [RIB], [BankAgency], [Status]) VALUES (N'274f15d5-e618-4f99-93ca-bbee5c3ed957', N'tec dev', N'raki dali', N'alia', N'0675684155', N'aalkourn@gmail.com', N'00a12395678912', N'0', N'73652891467', N'645372819362435', N'00100365000143444556', N'cdsvbnvcbdsnvcdnv', 1)
+GO
+INSERT [dbo].[WareHouse] ([Id], [Name]) VALUES (N'bf33eb94-40da-452f-bb30-9525e052cb46', N'magazin université centrale                       ')
+GO
+INSERT [dbo].[WareHouse] ([Id], [Name]) VALUES (N'cf234288-b792-4fda-bdfc-4d9af018ca41', N'stock campus chetma                               ')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'ec89fc57-c362-4523-9edd-050d3ac5d5ac', N'1', N'913fff27-b576-4c65-bf42-768430c70896', CAST(N'2025-03-21' AS Date), N'البسة عمال الخدمة                                 ', 2, 1, CAST(1.00 AS Decimal(10, 2)), CAST(0.09 AS Decimal(10, 2)), CAST(1.09 AS Decimal(10, 2)), 11, N'666', CAST(N'2025-03-21' AS Date), 1, N'')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'ade114cc-cef2-4969-97d3-113d95c7e302', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-18' AS Date), N'البسة عمال الخدمة                                 ', 1, 1, CAST(3.00 AS Decimal(10, 2)), CAST(0.37 AS Decimal(10, 2)), CAST(3.37 AS Decimal(10, 2)), 10, NULL, NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'81db9db8-2d6d-4775-9373-125e3214ef05', N'43', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2025-02-19' AS Date), N'jbkjb', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 99, N'123', CAST(N'2025-03-15' AS Date), 1, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'822c44e4-ee27-4bac-95d6-25d5b31f3df1', N'40', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2024-12-12' AS Date), N'rfer', 0, 0, CAST(2222.00 AS Decimal(10, 2)), CAST(222.00 AS Decimal(10, 2)), CAST(2222.00 AS Decimal(10, 2)), 2, N'ed', NULL, 1, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'246c3383-9d39-4b8d-ab78-2aead8dcfc7f', N'1', N'913fff27-b576-4c65-bf42-768430c70896', CAST(N'2025-03-13' AS Date), N'البسة عمال الخدمة                                 ', 1, 1, CAST(3000.00 AS Decimal(10, 2)), CAST(570.00 AS Decimal(10, 2)), CAST(3570.00 AS Decimal(10, 2)), 12098, NULL, NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'6477c341-b34e-4341-a12a-357d6cb56c68', N'1', N'6aaa9a51-bbe1-416b-99ec-5c08b6514c38', CAST(N'2025-03-17' AS Date), N'البسة عمال الخدمة                                 ', 1, 2, CAST(375000.00 AS Decimal(10, 2)), CAST(41250.00 AS Decimal(10, 2)), CAST(416250.00 AS Decimal(10, 2)), 20, NULL, NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'9f638eeb-1b1c-480f-bcff-430cab743d58', N'45', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2025-02-20' AS Date), N'type2', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 3, N'123', CAST(N'2025-03-14' AS Date), 1, N'')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'1', N'5d76e6ec-a3e8-4c42-8b9b-462848caf108', CAST(N'2025-03-20' AS Date), N'البسة عمال الخدمة                                 ', 2, 2, CAST(78.00 AS Decimal(10, 2)), CAST(12.72 AS Decimal(10, 2)), CAST(90.72 AS Decimal(10, 2)), 10, N'2002', CAST(N'2025-03-04' AS Date), 1, N'')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'914057f0-91e5-4914-a593-5da342872cef', N'41', N'274f15d5-e618-4f99-93ca-bbee5c3ed957', CAST(N'2025-02-19' AS Date), N'bjkbjkjkb', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 8, N'test', NULL, 1, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'7625a16e-a6da-4cf1-a47e-72806d87b575', N'44', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2025-02-19' AS Date), N'article 2', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 2, N'gg', NULL, 1, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'b3b22b53-6fcb-4329-a30c-75e2486ab90a', N'1', N'5d76e6ec-a3e8-4c42-8b9b-462848caf108', CAST(N'2025-03-13' AS Date), N'البسة عمال الخدمة                                 ', 2, 1, CAST(60000.00 AS Decimal(10, 2)), CAST(11400.00 AS Decimal(10, 2)), CAST(71400.00 AS Decimal(10, 2)), 20, N'kjnj', CAST(N'2025-03-26' AS Date), -1, N'oioh')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'1e3f3aa2-03fe-4b59-90bb-7e48964ea970', N'46', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2025-02-20' AS Date), N'dfg', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 4, N'11', CAST(N'2025-03-14' AS Date), 1, N'')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'7ad03146-ab51-4e90-960e-9bbe8039fe1a', N'42', N'274f15d5-e618-4f99-93ca-bbee5c3ed957', CAST(N'2025-02-19' AS Date), N'bjkbjkbjk', 0, 0, CAST(33.00 AS Decimal(10, 2)), CAST(11.00 AS Decimal(10, 2)), CAST(22.00 AS Decimal(10, 2)), 78, N'FF', CAST(N'2025-03-10' AS Date), 1, N'')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'4fd01f32-20ba-4992-b735-9e9169b296ef', N'34', N'1194a2b8-86c5-4c0d-91e9-825715b2c354', CAST(N'2025-02-09' AS Date), N'data from article', 0, 0, CAST(256000.00 AS Decimal(10, 2)), CAST(48040.00 AS Decimal(10, 2)), CAST(304040.00 AS Decimal(10, 2)), 10, N'????', NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'7c4b6d6c-6105-4992-ab89-b7b0cb73df7a', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-20' AS Date), N'النشر و الاشهار                                   ', 2, 2, CAST(1.00 AS Decimal(10, 2)), CAST(0.09 AS Decimal(10, 2)), CAST(1.09 AS Decimal(10, 2)), 10, NULL, NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'a24bceb4-85c1-4d7b-934b-da0db97df812', N'33', N'5d76e6ec-a3e8-4c42-8b9b-462848caf108', CAST(N'2025-02-09' AS Date), N'data from article', 0, 0, CAST(52500.00 AS Decimal(10, 2)), CAST(7455.00 AS Decimal(10, 2)), CAST(59955.00 AS Decimal(10, 2)), 8, N'jh', NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'b54a16f8-a0ed-44ad-b55f-e8f177334d90', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-21' AS Date), N'البسة عمال الخدمة                                 ', 1, 1, CAST(1.00 AS Decimal(10, 2)), CAST(0.19 AS Decimal(10, 2)), CAST(1.19 AS Decimal(10, 2)), 10, NULL, NULL, 0, NULL)
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'0f23d19d-e189-4113-b640-eb36c54cd8eb', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-13' AS Date), N'النشر و الاشهار                                   ', 2, 2, CAST(7500.00 AS Decimal(10, 2)), CAST(675.00 AS Decimal(10, 2)), CAST(8175.00 AS Decimal(10, 2)), 999, N'656', CAST(N'2025-03-19' AS Date), -1, N'6756')
+GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'f8b1186a-7bcd-46cf-bca3-edc5072976a6', N'1', N'5d76e6ec-a3e8-4c42-8b9b-462848caf108', CAST(N'2025-03-12' AS Date), N'????? ? ???????                                   ', 2, 1, CAST(1.00 AS Decimal(10, 2)), CAST(0.09 AS Decimal(10, 2)), CAST(1.09 AS Decimal(10, 2)), 11, N'123', CAST(N'2025-03-30' AS Date), -1, N'asdasd')
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'ec89fc57-c362-4523-9edd-050d3ac5d5ac', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, CAST(1.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'ade114cc-cef2-4969-97d3-113d95c7e302', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 5, CAST(2.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'ade114cc-cef2-4969-97d3-113d95c7e302', N'a50627aa-285f-4808-949c-27d0033c89de', 1, CAST(3.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'ade114cc-cef2-4969-97d3-113d95c7e302', N'188ddfaf-5254-4d80-9277-3bdc7a15c8ef', 1, CAST(4.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'81db9db8-2d6d-4775-9373-125e3214ef05', N'508a052e-0202-45f0-bf20-626e3f66958e', 20, CAST(100.00 AS Decimal(18, 2)), 20)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'6477c341-b34e-4341-a12a-357d6cb56c68', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 12, CAST(30000.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'6477c341-b34e-4341-a12a-357d6cb56c68', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 0, CAST(0.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'6477c341-b34e-4341-a12a-357d6cb56c68', N'a907b842-1441-4a4f-8a0d-bca2de0f708f', 0, CAST(0.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 3, CAST(2.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'a50627aa-285f-4808-949c-27d0033c89de', 3, CAST(7.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'188ddfaf-5254-4d80-9277-3bdc7a15c8ef', 3, CAST(4.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 2, CAST(3.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'508a052e-0202-45f0-bf20-626e3f66958e', 3, CAST(5.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'60ad9d55-7b40-4fb1-86cc-443b88218880', N'a907b842-1441-4a4f-8a0d-bca2de0f708f', 3, CAST(6.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'b3b22b53-6fcb-4329-a30c-75e2486ab90a', N'a50627aa-285f-4808-949c-27d0033c89de', 3, CAST(20000.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'b54a16f8-a0ed-44ad-b55f-e8f177334d90', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, CAST(1.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'b54a16f8-a0ed-44ad-b55f-e8f177334d90', N'a50627aa-285f-4808-949c-27d0033c89de', 1, CAST(1.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'0f23d19d-e189-4113-b640-eb36c54cd8eb', N'508a052e-0202-45f0-bf20-626e3f66958e', 3, CAST(2500.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'f8b1186a-7bcd-46cf-bca3-edc5072976a6', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, CAST(1.00 AS Decimal(18, 2)), 0)
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'e9f16714-e9a5-4f35-9aac-03f3554e3ad2', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'asdasd', CAST(N'2025-04-01' AS Date), 0, N'1')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'a3133dbb-e498-45aa-8f30-134549cc3ba4', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'22333Z.TTTTT', CAST(N'2025-03-12' AS Date), 1, NULL)
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'4fc87e25-ecee-404b-8573-1bde3fa1a98b', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'159', CAST(N'2025-03-07' AS Date), 0, N'2')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'22f24a6e-4ce0-4242-88ca-1f3a383a0d71', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-02-20' AS Date), 0, N'3')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'4c596225-1712-4f44-a902-358eac55058c', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-15' AS Date), 1, N'1')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'a4799a62-f501-4008-9817-35f1cb84c65b', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'BL0322-2025', CAST(N'2025-03-06' AS Date), 0, N'2')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'7184a1c6-215b-4f7e-a0bc-4da5c923fcc8', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-29' AS Date), 1, N'3')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'26dc4fe2-f98e-4ec9-a728-58bed5e33f97', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-03-13' AS Date), 0, N'5')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'cc9e7b6a-272d-43ce-a6e0-5bfb21250e03', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-27' AS Date), 1, N'4')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'20b7be23-8ed2-41b4-92d1-5f84f43157cf', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'test', CAST(N'2025-03-20' AS Date), 0, N'7')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'1ec3c296-424f-4947-afb1-6a0cd01d151f', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'159', CAST(N'2025-03-20' AS Date), 0, N'6')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'cb2e1d23-b5e7-4dc0-b76e-6b3e2380d3c3', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'iuiuiu', CAST(N'2025-03-16' AS Date), 1, NULL)
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'a1a7cfe6-7d85-4e06-9a4b-7b05745931a5', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-15' AS Date), 0, N'8')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'3189756c-3531-4bc5-bd97-7f05df16a255', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'csgo', CAST(N'2025-03-05' AS Date), 0, N'9')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'2a15b9e5-c104-4dc2-bcf7-86dbf2122332', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-13' AS Date), 1, N'11')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'c4e74539-37d3-45c9-ab91-98bba00e31b2', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'456', CAST(N'2025-03-16' AS Date), 0, N'12')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'61de6866-e379-4643-a2cf-a6990f050a64', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'159', CAST(N'2025-03-19' AS Date), 0, N'13')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'd5b51281-2ead-462e-85be-b1f53e6eaf9b', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-03-29' AS Date), 0, N'14')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'8824a4ee-fb7e-4825-b7ca-ba5288692a99', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'test', CAST(N'2025-03-26' AS Date), 0, N'15')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'5c756282-a909-4ecd-8bda-bc0137af902d', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'test', CAST(N'2025-03-19' AS Date), 0, N'16')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'978fedf3-65bc-4d91-8ba7-bd9b13301970', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-03-21' AS Date), 0, N'17')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'34cdef3c-3fb8-4089-88b0-c263851ce40c', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-03-30' AS Date), 0, N'18')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'1434f9fc-b155-45db-bec0-c5dd9268a5c8', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N'csgo', CAST(N'2025-03-05' AS Date), 0, N'19')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'ec550798-5aba-4454-9403-d563e6635119', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-13' AS Date), N'123', CAST(N'2025-03-29' AS Date), 1, N'20')
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'0f780655-ae90-4765-9266-eb6705d076ea', N'81db9db8-2d6d-4775-9373-125e3214ef05', CAST(N'2025-03-09' AS Date), N's', CAST(N'2025-03-11' AS Date), 0, N'21')
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'e9f16714-e9a5-4f35-9aac-03f3554e3ad2', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'a3133dbb-e498-45aa-8f30-134549cc3ba4', N'508a052e-0202-45f0-bf20-626e3f66958e', 8, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'4fc87e25-ecee-404b-8573-1bde3fa1a98b', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'4fc87e25-ecee-404b-8573-1bde3fa1a98b', N'3f28db89-1169-4522-9672-2a2d1d1e10e5', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'4fc87e25-ecee-404b-8573-1bde3fa1a98b', N'9d8dee2c-b2bc-421f-8fb9-6ed4164af39c', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'22f24a6e-4ce0-4242-88ca-1f3a383a0d71', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'4c596225-1712-4f44-a902-358eac55058c', N'508a052e-0202-45f0-bf20-626e3f66958e', 10, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'a4799a62-f501-4008-9817-35f1cb84c65b', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 7, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'a4799a62-f501-4008-9817-35f1cb84c65b', N'3f28db89-1169-4522-9672-2a2d1d1e10e5', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'a4799a62-f501-4008-9817-35f1cb84c65b', N'9d8dee2c-b2bc-421f-8fb9-6ed4164af39c', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'7184a1c6-215b-4f7e-a0bc-4da5c923fcc8', N'508a052e-0202-45f0-bf20-626e3f66958e', 5, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'cc9e7b6a-272d-43ce-a6e0-5bfb21250e03', N'508a052e-0202-45f0-bf20-626e3f66958e', 0, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'20b7be23-8ed2-41b4-92d1-5f84f43157cf', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'1ec3c296-424f-4947-afb1-6a0cd01d151f', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'cb2e1d23-b5e7-4dc0-b76e-6b3e2380d3c3', N'508a052e-0202-45f0-bf20-626e3f66958e', 7, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'a1a7cfe6-7d85-4e06-9a4b-7b05745931a5', N'508a052e-0202-45f0-bf20-626e3f66958e', 4, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'2a15b9e5-c104-4dc2-bcf7-86dbf2122332', N'508a052e-0202-45f0-bf20-626e3f66958e', 4, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'61de6866-e379-4643-a2cf-a6990f050a64', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'd5b51281-2ead-462e-85be-b1f53e6eaf9b', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'd5b51281-2ead-462e-85be-b1f53e6eaf9b', N'3f28db89-1169-4522-9672-2a2d1d1e10e5', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'd5b51281-2ead-462e-85be-b1f53e6eaf9b', N'9d8dee2c-b2bc-421f-8fb9-6ed4164af39c', 0, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'8824a4ee-fb7e-4825-b7ca-ba5288692a99', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'978fedf3-65bc-4d91-8ba7-bd9b13301970', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'34cdef3c-3fb8-4089-88b0-c263851ce40c', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 2, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'ec550798-5aba-4454-9403-d563e6635119', N'508a052e-0202-45f0-bf20-626e3f66958e', 0, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'0f780655-ae90-4765-9266-eb6705d076ea', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 0, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'0f780655-ae90-4765-9266-eb6705d076ea', N'3f28db89-1169-4522-9672-2a2d1d1e10e5', 0, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'0f780655-ae90-4765-9266-eb6705d076ea', N'9d8dee2c-b2bc-421f-8fb9-6ed4164af39c', 0, NULL)
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__Supplier__321537CC81309D23]    Script Date: 22/03/2025 20:20:38 ******/
+ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__321537CC81309D23] UNIQUE NONCLUSTERED 
+(
+	[RC] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__Supplier__C7DEC3C3CE648E29]    Script Date: 22/03/2025 20:20:38 ******/
+ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__C7DEC3C3CE648E29] UNIQUE NONCLUSTERED 
+(
+	[NIS] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__Supplier__CAFF41358E35A2C9]    Script Date: 22/03/2025 20:20:38 ******/
+ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__CAFF41358E35A2C9] UNIQUE NONCLUSTERED 
+(
+	[RIB] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [DF_Supplier_Status]  DEFAULT ((1)) FOR [Status]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalHT]  DEFAULT ((0)) FOR [TotalHT]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalVA]  DEFAULT ((0)) FOR [TotalVA]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalTTC]  DEFAULT ((0)) FOR [TotalTC]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_Status]  DEFAULT ((0)) FOR [Status]
+GO
+ALTER TABLE [purchase].[PRODUCTS] ADD  CONSTRAINT [DF_PRODUCTS_Received]  DEFAULT ((0)) FOR [Received]
+GO
+ALTER TABLE [reception].[HEADERS] ADD  CONSTRAINT [DF_HEADERS_Status]  DEFAULT ((0)) FOR [Status]
+GO
+ALTER TABLE [purchase].[ORDERS]  WITH CHECK ADD  CONSTRAINT [FK_PurchaseOrder_Supplire] FOREIGN KEY([SupplierId])
+REFERENCES [dbo].[SUPPLIERS] ([Id])
+GO
+ALTER TABLE [purchase].[ORDERS] CHECK CONSTRAINT [FK_PurchaseOrder_Supplire]
+GO
+ALTER TABLE [purchase].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_OrderDetail_OrderDetail] FOREIGN KEY([PurchaseId])
+REFERENCES [purchase].[ORDERS] ([Id])
+GO
+ALTER TABLE [purchase].[PRODUCTS] CHECK CONSTRAINT [FK_OrderDetail_OrderDetail]
+GO
+ALTER TABLE [purchase].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_PRODUCTS] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[PRODUCTS] ([Id])
+GO
+ALTER TABLE [purchase].[PRODUCTS] CHECK CONSTRAINT [FK_PRODUCTS_PRODUCTS]
+GO
+ALTER TABLE [reception].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_HEADERS] FOREIGN KEY([ReceptionId])
+REFERENCES [reception].[HEADERS] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [reception].[PRODUCTS] CHECK CONSTRAINT [FK_PRODUCTS_HEADERS]
+GO
+/****** Object:  StoredProcedure [dbo].[GetProductById]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetProductById]
+    @ProductId uniqueidentifier
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Première requête : Récupération des détails du produit
+    SELECT
+        p.Id,
+        p.Designation,
+        p.UnitMeasure,
+        p.Quantity,
+        p.TVA,
+        p.DefaultWareHouseID,
+        w.Name AS WareHouse
+    FROM [INV].[dbo].[PRODUCTS] AS p
+    full outer JOIN WareHouse AS w ON w.Id = p.DefaultWareHouseId
+    WHERE p.Id = @ProductId;
+
+    -- Deuxième requête : Vérification des réceptions existantes
+    SELECT * 
+    FROM reception.HEADERS AS rh
+    WHERE EXISTS (
+        SELECT 1 
+        FROM reception.PRODUCTS AS r 
+        WHERE r.ProductId = @ProductId
+    ) 
+    AND rh.Status = 1;
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetReceptionDetails]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetReceptionDetails]
+    @ReceptionId uniqueidentifier
+AS
+BEGIN
+
+ -- Récupérer l'en-tête de la réception
+    SELECT 
+        h.Id,
+        h.PurchaseId,
+        h.Date,
+        h.DeliveryNumber,
+        h.DeliveryDate,
+        h.Status
+    FROM [INV].[reception].[HEADERS] h
+    WHERE h.Id = @ReceptionId;
+
+    -- Récupérer les produits de la réception
+    SELECT 
+        p.ReceptionId,
+        p.ProductId,
+        p.Quantity
+    FROM [INV].[reception].[PRODUCTS] p
+    WHERE p.ReceptionId = @ReceptionId;
+
+   
+
+    -- Récupérer la commande d'achat liée à la réception
+    SELECT 
+        o.Id,
+        o.Number,
+		s.CompanyName AS SupplierName,
+        o.SupplierId,
+        o.Date,
+        o.BudgetArticle,
+        o.BudgetType,
+        o.ServiceType,
+        o.TotalHT,
+        o.TotalVA,
+        o.TotalTC,
+        o.CompletionDelay,
+        o.VisaNumber,
+        o.VisaDate,
+        o.Status
+    FROM [INV].[purchase].[ORDERS] o
+	INNER JOIN dbo.SUPPLIERS AS s ON o.SupplierId = s.Id
+
+    WHERE o.Id = (SELECT PurchaseId FROM [INV].[reception].[HEADERS] WHERE Id = @ReceptionId);
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetSupplierDetails]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[GetSupplierDetails]
+	@aSupplierId uniqueidentifier
+as begin
+	if not exists (select * from SUPPLIERS where Id = @aSupplierId)
+		return 1
+
+	select * from SUPPLIERS where Id = @aSupplierId
+	select * from purchase.ORDERS where SupplierId = @aSupplierId
+	return 0
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SelectPurchaseOrderByNumber]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SelectPurchaseOrderByNumber]
+    @PurchaseOrderNumber INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        po.Number AS PurchaseOrderNumber,
+        po.Date AS OrderDate,
+        po.State AS OrderState,
+        po.TypeBudget,
+        po.TypeService,
+		po.Chapter,
+		po.Article,
+		po.CompletionDelay,
+        po.THT,
+        po.TVA,
+        po.TTC,
+        po.CompletionDelay
+    FROM [INV].[dbo].[PurchaseOrder] po
+    WHERE po.Number = @PurchaseOrderNumber;
+
+    SELECT 
+        s.SupplierName,
+        s.CompanyName,
+        s.AccountName,
+        s.Address,
+        s.Phone,
+        s.Email,
+        s.RC,
+		s.ART,
+        s.NIS,
+        s.NIF,
+        s.RIB,
+        s.BankAgency
+    FROM [INV].[dbo].[Supplier] s
+    JOIN [INV].[dbo].[PurchaseOrder] po ON po.IDSupplier = s.ID
+    WHERE po.Number = @PurchaseOrderNumber;
+
+    SELECT 
+        od.Quantity,
+        od.UnitPrice,
+        od.TVA AS OrderDetailTVA,
+        p.Designation,
+        p.UnitMeasure,
+        p.DefaultTVARate
+    FROM [INV].[dbo].[OrderDetail] od
+    JOIN [INV].[dbo].[Product] p ON od.IDProducts = p.ID
+    JOIN [INV].[dbo].[PurchaseOrder] po ON od.IDPurchaseOrder = po.ID
+    WHERE po.Number = @PurchaseOrderNumber;
+END;
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[SelectPurchasesForReceiptCreation]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SelectPurchasesForReceiptCreation]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT  
+        p.Id,
+        p.SupplierId,
+        p.Number,
+        p.Status,
+        s.CompanyName AS SupplierName,
+        CONVERT(date, p.Date) AS Date
+    FROM purchase.ORDERS AS p
+    INNER JOIN dbo.SUPPLIERS AS s ON p.SupplierId = s.Id
+    WHERE p.Status = 1
+    AND (
+        SELECT SUM(pp.Quantity - pp.Received) 
+        FROM purchase.PRODUCTS AS pp 
+        WHERE pp.PurchaseId = p.Id
+    ) > 0;
+END
+GO
+/****** Object:  StoredProcedure [product].[GetDetailById]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [product].[GetDetailById]
+    @ProductId uniqueidentifier
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Première requête : Récupération des détails du produit
+    SELECT
+        p.Id,
+        p.Designation,
+        p.UnitMeasure,
+        p.Quantity,
+        p.UnitPrice,
+        p.TVA,
+        p.DefaultWareHouseID,
+        w.Name AS WareHouse
+    FROM [INV].[dbo].[PRODUCTS] AS p
+    full outer JOIN WareHouse AS w ON w.Id = p.DefaultWareHouseId
+    WHERE p.Id = @ProductId;
+
+	
+    -- Deuxième requête : Vérification des réceptions existantes
+    SELECT * 
+    FROM reception.HEADERS AS rh
+    WHERE EXISTS (
+        SELECT 1 
+        FROM reception.PRODUCTS AS r 
+        WHERE r.ProductId = @ProductId
+    ) 
+    AND rh.Status = 1;
+	
+END;
+GO
+/****** Object:  StoredProcedure [product].[GetInfoById]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE [product].[GetInfoById]
+    @ProductId uniqueidentifier
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Première requête : Récupération des détails du produit
+    SELECT
+        p.Id,
+        p.Designation,
+        p.UnitMeasure,
+        p.Quantity,
+        p.UnitPrice,
+        p.TVA,
+        p.DefaultWareHouseID,
+        w.Name AS WareHouse
+    FROM [INV].[dbo].[PRODUCTS] AS p
+    full outer JOIN WareHouse AS w ON w.Id = p.DefaultWareHouseId
+    WHERE p.Id = @ProductId;
+
+END;
+GO
+/****** Object:  StoredProcedure [reception].[CreateFromPurchase]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [reception].[CreateFromPurchase]
+    @aPurchaseId uniqueIdentifier
+as begin
+    if not exists (select * from purchase.ORDERS where Id = @aPurchaseId)
+        return 1001  -- not found
+
+    declare @toDeliver int
+    declare @receptionId uniqueidentifier
+    select @toDeliver = sum(Quantity - Received) from purchase.PRODUCTS where PurchaseId = @aPurchaseId
+    if @toDeliver = 0
+        return 1002 -- all received
+        if not exists(select * from purchase.PRODUCTS where PurchaseId=@aPurchaseId) 
+        return 1003;
+
+    set @receptionId  = newid()
+
+    declare @purchaseNumber varchar(20),
+    @supplierId uniqueidentifier,
+    @supplierName varchar(200)
+
+    select @purchaseNumber = Number, @supplierId = SupplierId from purchase.ORDERS where Id = @aPurchaseId
+
+    select @supplierName = CompanyName from SUPPLIERS where Id = @supplierId
+
+    select @receptionId as Id,null as Number, @aPurchaseId as PurchaseId, @purchaseNumber as purchaseNumber, 
+        @supplierId as SupplierId, @supplierName as SupplierName, getdate() as Date, 
+        null as DeliveryNumber, null as DeliveryDate, 0 as Status
+
+
+
+
+
+                SELECT 
+        @receptionId as ReceptionId,
+        pp.ProductId,
+        pp.Quantity,
+        p.Designation,
+        pp.Quantity-pp.Received as Received,
+        p.DefaultWareHouseId as WareHouseId,
+        pp.Quantity-pp.Received as Rest
+
+
+    FROM [INV].purchase.[PRODUCTS] pp
+    Inner Join [INV].[dbo].[PRODUCTS] as p on p.Id=pp.ProductId
+         where pp.PurchaseId = @aPurchaseId 
+                and pp.Quantity > pp.Received
+
+end
+GO
+/****** Object:  StoredProcedure [reception].[GetById]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [reception].[GetById]
+    @aReceptionId uniqueidentifier
+AS
+BEGIN
+    declare 
+        @purchaseId uniqueIdentifier,
+        @purchaseNum varchar(50),
+        @supplierId uniqueidentifier,
+        @supplierName varchar(200)
+
+    if not exists (select * from reception.HEADERS where Id = @aReceptionId)
+        return 1001
+
+    select @purchaseId = purchaseId from reception.HEADERS where Id = @aReceptionId
+
+    select @purchaseNum = Number
+    from purchase.ORDERS where Id = @purchaseId
+
+    select @supplierId = SupplierId
+    from purchase.ORDERS where Id = @purchaseId
+
+    select @supplierName = CompanyName
+    from SUPPLIERS where Id = @supplierId
+
+    SELECT 
+        h.Id,
+        h.Number,
+        h.PurchaseId,
+        h.Date,
+        @purchaseNum as PurchaseNumber,
+        @supplierId as supplierId,
+        @supplierName as supplierName,
+        h.DeliveryNumber,
+        h.DeliveryDate,
+        h.Status
+    FROM [INV].[reception].[HEADERS] h
+    WHERE h.Id = @aReceptionId;
+
+    -- Récupérer les produits de la réception
+    SELECT 
+        rp.ReceptionId,
+        rp.ProductId,
+        pp.Quantity,
+        p.Designation,
+        rp.Quantity as Received,
+        p.DefaultWareHouseId as WareHouseId,
+        pp.Quantity-pp.Received as Rest
+
+    FROM [INV].[reception].[PRODUCTS] rp
+    Inner Join [INV].[dbo].[PRODUCTS] as p on p.Id=rp.ProductId
+    Inner Join [INV].purchase.[PRODUCTS] as pp on pp.ProductId=rp.ProductId
+
+    WHERE rp.ReceptionId = @aReceptionId;
+
+
+
+
+END;
+GO
+/****** Object:  StoredProcedure [reception].[SelectPurchasesForReceiptCreation]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [reception].[SelectPurchasesForReceiptCreation]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT  
+        p.Id,
+        p.SupplierId,
+        p.Number,
+        p.Status,
+        s.CompanyName AS CompanyName,
+        CONVERT(date, p.Date) AS Date
+    FROM purchase.ORDERS AS p
+    INNER JOIN dbo.SUPPLIERS AS s ON p.SupplierId = s.Id
+    WHERE p.Status = 1
+    AND (
+        SELECT SUM(pp.Quantity - pp.Received) 
+        FROM purchase.PRODUCTS AS pp 
+        WHERE pp.PurchaseId = p.Id
+    ) > 0;
+END
+GO
+/****** Object:  StoredProcedure [reception].[Validate]    Script Date: 22/03/2025 20:20:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [reception].[Validate]
+    @aReceiptId UNIQUEIDENTIFIER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    if    (select Status from reception.HEADERS where Id = @aReceiptId) = 1
+        return 2001
+
+    if not exists (
+        select *
+        from reception.PRODUCTS as RP 
+        inner join purchase.PRODUCTS as PP 
+            ON RP.ProductId = PP.ProductId
+        where RP.Quantity <= (PP.Quantity-PP.Received)
+        )
+        return 2002
+
+    BEGIN TRAN;
+
+        UPDATE reception.HEADERS
+        SET Status = 1
+        WHERE Id = @aReceiptId;
+
+        DELETE FROM reception.PRODUCTS
+        WHERE ReceptionId = @aReceiptId AND Quantity = 0;
+
+        update purchase.PRODUCTS
+            Set Received = Received + RP.Quantity
+            from reception.PRODUCTS as RP 
+            where RP.ReceptionId = @aReceiptId 
+            and RP.ProductId = purchase.PRODUCTS.ProductId
+
+    COMMIT TRAN;
+END
+GO
