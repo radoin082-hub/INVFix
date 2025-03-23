@@ -1,4 +1,5 @@
-﻿using INV.App.Products;
+﻿using System.Runtime.InteropServices.JavaScript;
+using INV.App.Products;
 using INV.Domain.Entities.Products;
 using INV.Domain.Shared;
 using INV.Infrastructure.Storage.Products;
@@ -32,6 +33,9 @@ namespace INV.Implementation.Service.Products
         {
             try
             {
+                bool purchaseCount = await productStorage.SelectPurchaseCountByProductId(id);
+                if (purchaseCount)
+                    return Error.Failure("ErrorDelete","The product has purchases.");
                 await productStorage.DeleteProduct(id);
                 return Result.Success();
             }

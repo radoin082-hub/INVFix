@@ -33,7 +33,10 @@ namespace INV.Infrastructure.Storage.Products
 
         private const string selectProductCountByIdQuery = @"
             SELECT count(*) FROM Products WHERE Designation = @aDesignation";
+        
 
+       private const string selectPurchaseCountByProductIdQuery = 
+           "SELECT COUNT(*) FROM [purchase].[PRODUCTS] WHERE ProductId = @aProductId";   
         private static ProductInfo getProductData(SqlDataReader reader)
         {
             return new ProductInfo
@@ -144,7 +147,8 @@ namespace INV.Infrastructure.Storage.Products
                 Quantity = Convert.ToInt32(productRow["Quantity"]),
                 TVA = Convert.ToInt32(productRow["TVA"]),
                 DefaultWareHouseId = (Guid)productRow["DefaultWareHouseID"],
-                WareHouse = productRow["WareHouse"].ToString()
+                WareHouse = productRow["WareHouse"].ToString(),
+                
             };
 
             // Mapping des réceptions
@@ -160,13 +164,23 @@ namespace INV.Infrastructure.Storage.Products
                     Date = row.IsNull("Date") ? default : DateOnly.FromDateTime((DateTime)row["Date"]),
                     DeliveryNumber = row.IsNull("DeliveryNumber") ? string.Empty : row["DeliveryNumber"].ToString(),
                     DeliveryDate = row.IsNull("DeliveryDate") ? default : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
-                    Status = (ReceiptStatus)row["Status"]
+                    Status = (ReceiptStatus)row["Status"],
+                    supplierName = (string)row["SupplierName"]
                 };
                 product.ReceiptInfos.Add(receipt);
             }
             /*   }*/
 
             return product;
+        }
+        public async ValueTask<bool> SelectPurchaseCountByProductId(Guid productId)
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            var cmd = new SqlCommand(selectPurchaseCountByProductIdQuery, sqlConnection);
+            cmd.Parameters.AddWithValue("@aProductId", productId);
+            await sqlConnection.OpenAsync();
+            int count = (int)(await cmd.ExecuteScalarAsync() ?? 0);
+            return count > 0;
         }
     }
 }

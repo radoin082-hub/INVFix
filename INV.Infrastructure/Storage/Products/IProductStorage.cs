@@ -17,5 +17,6 @@ namespace INV.Infrastructure.Storage.Products
 
        // ValueTask<ProductInfo> GetProductById(Guid productId, bool getReceipts = true);
         ValueTask<ProductDetail> GetProductById(Guid productId);
+        ValueTask<bool> SelectPurchaseCountByProductId(Guid productId);
     }
 }
