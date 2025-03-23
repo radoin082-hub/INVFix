@@ -1,21 +1,21 @@
 ﻿USE [INV]
 GO
-/****** Object:  Schema [product]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Schema [product]    Script Date: 3/23/2025 2:45:20 AM ******/
 CREATE SCHEMA [product]
 GO
-/****** Object:  Schema [purchase]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Schema [purchase]    Script Date: 3/23/2025 2:45:20 AM ******/
 CREATE SCHEMA [purchase]
 GO
-/****** Object:  Schema [reception]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Schema [reception]    Script Date: 3/23/2025 2:45:20 AM ******/
 CREATE SCHEMA [reception]
 GO
-/****** Object:  UserDefinedTableType [dbo].[ProductsList]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  UserDefinedTableType [dbo].[ProductsList]    Script Date: 3/23/2025 2:45:20 AM ******/
 CREATE TYPE [dbo].[ProductsList] AS TABLE(
 	[ProductId] [uniqueidentifier] NULL,
 	[Quantity] [int] NULL
 )
 GO
-/****** Object:  Table [purchase].[ORDERS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [purchase].[ORDERS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -42,7 +42,7 @@ CREATE TABLE [purchase].[ORDERS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SUPPLIERS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[SUPPLIERS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -67,7 +67,7 @@ CREATE TABLE [dbo].[SUPPLIERS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [purchase].[GetList]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  UserDefinedFunction [purchase].[GetList]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ SELECT
         [purchase].[ORDERS] p left Join SUPPLIERS s ON p.SupplierId=s.Id
 )
 GO
-/****** Object:  Table [reception].[HEADERS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [reception].[HEADERS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -109,7 +109,7 @@ CREATE TABLE [reception].[HEADERS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  UserDefinedFunction [reception].[GetList]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  UserDefinedFunction [reception].[GetList]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +133,7 @@ FROM     reception.HEADERS AS R INNER JOIN
                   dbo.SUPPLIERS AS S ON O.SupplierId = S.Id
 )
 GO
-/****** Object:  UserDefinedFunction [purchase].[GetListBySupplier]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  UserDefinedFunction [purchase].[GetListBySupplier]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ SELECT
         [purchase].[ORDERS] p left Join SUPPLIERS s ON p.SupplierId=s.Id where p.SupplierId = @aSupplierId)
 
 GO
-/****** Object:  Table [dbo].[Article]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[Article]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -170,7 +170,7 @@ CREATE TABLE [dbo].[Article](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Chapter]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[Chapter]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,7 +184,7 @@ CREATE TABLE [dbo].[Chapter](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FILES]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[FILES]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -194,7 +194,7 @@ CREATE TABLE [dbo].[FILES](
 	[data] [varbinary](max) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PRODUCTS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[PRODUCTS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -212,7 +212,7 @@ CREATE TABLE [dbo].[PRODUCTS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[WareHouse]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [dbo].[WareHouse]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -222,7 +222,7 @@ CREATE TABLE [dbo].[WareHouse](
 	[Name] [nchar](50) NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [purchase].[PRODUCTS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [purchase].[PRODUCTS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -240,7 +240,7 @@ CREATE TABLE [purchase].[PRODUCTS](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [reception].[PRODUCTS]    Script Date: 3/23/2025 2:27:36 AM ******/
+/****** Object:  Table [reception].[PRODUCTS]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -311,21 +311,33 @@ INSERT [dbo].[WareHouse] ([Id], [Name]) VALUES (N'bf33eb94-40da-452f-bb30-9525e0
 GO
 INSERT [dbo].[WareHouse] ([Id], [Name]) VALUES (N'cf234288-b792-4fda-bdfc-4d9af018ca41', N'stock campus chetma                               ')
 GO
+INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'3a4efd7b-ec81-4595-9acb-1a96f7804e80', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-23' AS Date), N'البسة عمال الخدمة                                 ', 1, 2, CAST(7.00 AS Decimal(10, 2)), CAST(1.23 AS Decimal(10, 2)), CAST(8.23 AS Decimal(10, 2)), 22, N'32', CAST(N'2025-03-05' AS Date), 1, N'')
+GO
 INSERT [purchase].[ORDERS] ([Id], [Number], [SupplierId], [Date], [BudgetArticle], [BudgetType], [ServiceType], [TotalHT], [TotalVA], [TotalTC], [CompletionDelay], [VisaNumber], [VisaDate], [Status], [Observation]) VALUES (N'3670982d-1ed1-4545-9038-771a75ae1fbf', N'1', N'5c369ab9-07a6-45b7-9328-2143a1ce4f9a', CAST(N'2025-03-23' AS Date), N'البسة عمال الخدمة                                 ', 2, 1, CAST(8.00 AS Decimal(10, 2)), CAST(1.12 AS Decimal(10, 2)), CAST(9.12 AS Decimal(10, 2)), 11, N'123', CAST(N'2025-03-17' AS Date), 1, N'')
 GO
-INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3670982d-1ed1-4545-9038-771a75ae1fbf', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 4, CAST(1.00 AS Decimal(18, 2)), 4)
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3a4efd7b-ec81-4595-9acb-1a96f7804e80', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, CAST(1.00 AS Decimal(18, 2)), 1)
 GO
-INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3670982d-1ed1-4545-9038-771a75ae1fbf', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 2, CAST(2.00 AS Decimal(18, 2)), 2)
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3a4efd7b-ec81-4595-9acb-1a96f7804e80', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 3, CAST(2.00 AS Decimal(18, 2)), 3)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3670982d-1ed1-4545-9038-771a75ae1fbf', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 4, CAST(1.00 AS Decimal(18, 2)), 5)
+GO
+INSERT [purchase].[PRODUCTS] ([PurchaseId], [ProductId], [Quantity], [UnitPrice], [Received]) VALUES (N'3670982d-1ed1-4545-9038-771a75ae1fbf', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 2, CAST(2.00 AS Decimal(18, 2)), 5)
 GO
 INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'ed204ee1-afc3-4d0e-bccf-729de7369329', N'3670982d-1ed1-4545-9038-771a75ae1fbf', CAST(N'2025-03-23' AS Date), N'122', CAST(N'2025-03-12' AS Date), 1, NULL)
+GO
+INSERT [reception].[HEADERS] ([Id], [PurchaseId], [Date], [DeliveryNumber], [DeliveryDate], [Status], [Number]) VALUES (N'9e7e9081-1957-4b29-8b27-e55619c564c0', N'3a4efd7b-ec81-4595-9acb-1a96f7804e80', CAST(N'2025-03-23' AS Date), N'633', CAST(N'2025-03-05' AS Date), 1, NULL)
 GO
 INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'ed204ee1-afc3-4d0e-bccf-729de7369329', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 4, NULL)
 GO
 INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'ed204ee1-afc3-4d0e-bccf-729de7369329', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 2, NULL)
 GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'9e7e9081-1957-4b29-8b27-e55619c564c0', N'c9044b6a-d79b-4a94-8fd3-001a8bd405d4', 1, NULL)
+GO
+INSERT [reception].[PRODUCTS] ([ReceptionId], [ProductId], [Quantity], [WareHouseId]) VALUES (N'9e7e9081-1957-4b29-8b27-e55619c564c0', N'96657052-c056-4e9a-9dad-44d2f9a23c9f', 3, NULL)
+GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Supplier__321537CC81309D23]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  Index [UQ__Supplier__321537CC81309D23]    Script Date: 3/23/2025 2:45:20 AM ******/
 ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__321537CC81309D23] UNIQUE NONCLUSTERED 
 (
 	[RC] ASC
@@ -333,7 +345,7 @@ ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__321537CC81309D23] U
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Supplier__C7DEC3C3CE648E29]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  Index [UQ__Supplier__C7DEC3C3CE648E29]    Script Date: 3/23/2025 2:45:20 AM ******/
 ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__C7DEC3C3CE648E29] UNIQUE NONCLUSTERED 
 (
 	[NIS] ASC
@@ -341,7 +353,7 @@ ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__C7DEC3C3CE648E29] U
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Supplier__CAFF41358E35A2C9]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  Index [UQ__Supplier__CAFF41358E35A2C9]    Script Date: 3/23/2025 2:45:20 AM ******/
 ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [UQ__Supplier__CAFF41358E35A2C9] UNIQUE NONCLUSTERED 
 (
 	[RIB] ASC
@@ -383,7 +395,7 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [reception].[PRODUCTS] CHECK CONSTRAINT [FK_PRODUCTS_HEADERS]
 GO
-/****** Object:  StoredProcedure [dbo].[GetProductById]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [dbo].[GetProductById]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -425,7 +437,7 @@ BEGIN
     AND rh.Status = 1;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetReceptionDetails]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [dbo].[GetReceptionDetails]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -479,7 +491,7 @@ BEGIN
     WHERE o.Id = (SELECT PurchaseId FROM [INV].[reception].[HEADERS] WHERE Id = @ReceptionId);
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetSupplierDetails]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [dbo].[GetSupplierDetails]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -495,7 +507,7 @@ as begin
 	return 0
 end
 GO
-/****** Object:  StoredProcedure [dbo].[SelectPurchaseOrderByNumber]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [dbo].[SelectPurchaseOrderByNumber]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -554,7 +566,7 @@ END;
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[SelectPurchasesForReceiptCreation]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [dbo].[SelectPurchasesForReceiptCreation]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -582,7 +594,7 @@ BEGIN
     ) > 0;
 END
 GO
-/****** Object:  StoredProcedure [reception].[CreateFromPurchase]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [reception].[CreateFromPurchase]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -636,7 +648,7 @@ as begin
 
 end
 GO
-/****** Object:  StoredProcedure [reception].[GetById]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [reception].[GetById]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -691,7 +703,9 @@ BEGIN
 
     FROM [INV].[reception].[PRODUCTS] rp
     Inner Join [INV].[dbo].[PRODUCTS] as p on p.Id=rp.ProductId
-    Inner Join [INV].purchase.[PRODUCTS] as pp on pp.ProductId=rp.ProductId
+    Inner Join [INV].[reception].[HEADERS] as rh on rh.Id=@aReceptionId
+
+    Inner Join [INV].purchase.[PRODUCTS] as pp on pp.ProductId=rp.ProductId and rh.PurchaseId=pp.PurchaseId
 
     WHERE rp.ReceptionId = @aReceptionId;
 
@@ -700,7 +714,7 @@ BEGIN
 
 END;
 GO
-/****** Object:  StoredProcedure [reception].[SelectPurchasesForReceiptCreation]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [reception].[SelectPurchasesForReceiptCreation]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -729,7 +743,7 @@ BEGIN
     ) > 0;
 END
 GO
-/****** Object:  StoredProcedure [reception].[Validate]    Script Date: 3/23/2025 2:27:37 AM ******/
+/****** Object:  StoredProcedure [reception].[Validate]    Script Date: 3/23/2025 2:45:20 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
