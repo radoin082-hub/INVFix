@@ -3,6 +3,7 @@ using INV.App.Budgets;
 using INV.Domain.Entities.Budget;
 using INVUIs.Purchases.PurchaseModels;
 using INVUIs.Shared;
+using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
@@ -61,14 +62,15 @@ public partial class PurchaseHeader : ComponentBase
         await OnCreate.InvokeAsync();
     }
 
-    protected override void OnInitialized()
+    /*protected override void OnInitialized()
     {
-        myAlert = new MyAlert(jsRuntime);
+        
         base.OnInitialized();
-    }
+    }*/
 
     protected override async Task OnInitializedAsync()
     {
+        myAlert = new MyAlert(jsRuntime);
         var result = await budgetService.GetAllChapitres();
         if (result.IsSuccess)
         {
@@ -129,7 +131,7 @@ public partial class PurchaseHeader : ComponentBase
                 if (errors.Any())
                 {
                     var errorMessage = string.Join("<br>", errors);
-                    await myAlert.ShowErrorAlert("Error validation ", errorMessage);
+                    await myAlert.ShowErrorAlert("Error validation ", errorMessage,MyAlertType.warning);
                 }
 
                 return;

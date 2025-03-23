@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
+﻿using Microsoft.JSInterop;
 
-namespace INVUIs.Shared;
+namespace INVUIs.Shared.MyAlert;
 
 public class MyAlert(IJSRuntime jsRuntime)
 {
-    public async Task ShowErrorAlert(string title, string message)
+    public async Task ShowErrorAlert(string title, string message, MyAlertType myAlertType)
     {
         await jsRuntime.InvokeVoidAsync("Swal.fire", new
         {
             title,
             html = message,
-            icon = "error",
+            icon = myAlertType.ToString(),
             confirmButtonText = "OK"
         });
     }
