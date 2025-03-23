@@ -6,4 +6,5 @@ public enum MyAlertType
     success,
     warning,
     question,
+    info
 }
