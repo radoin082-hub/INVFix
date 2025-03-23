@@ -144,7 +144,8 @@ namespace INV.Infrastructure.Storage.Products
                 Quantity = Convert.ToInt32(productRow["Quantity"]),
                 TVA = Convert.ToInt32(productRow["TVA"]),
                 DefaultWareHouseId = (Guid)productRow["DefaultWareHouseID"],
-                WareHouse = productRow["WareHouse"].ToString()
+                WareHouse = productRow["WareHouse"].ToString(),
+                
             };
 
             // Mapping des réceptions
@@ -160,7 +161,8 @@ namespace INV.Infrastructure.Storage.Products
                     Date = row.IsNull("Date") ? default : DateOnly.FromDateTime((DateTime)row["Date"]),
                     DeliveryNumber = row.IsNull("DeliveryNumber") ? string.Empty : row["DeliveryNumber"].ToString(),
                     DeliveryDate = row.IsNull("DeliveryDate") ? default : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
-                    Status = (ReceiptStatus)row["Status"]
+                    Status = (ReceiptStatus)row["Status"],
+                    supplierName = (string)row["SupplierName"]
                 };
                 product.ReceiptInfos.Add(receipt);
             }
