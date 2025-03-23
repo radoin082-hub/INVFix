@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using INV.App.Budgets;
 using INV.Domain.Entities.Budget;
+using INV.Domain.Entities.Purchases;
 using INVUIs.Purchases.PurchaseModels;
 using INVUIs.Shared;
 using Microsoft.AspNetCore.Components;
@@ -26,6 +27,8 @@ public partial class PurchaseHeader : ComponentBase
     private Article article = new();
     private int selectedChapterCode;
     private EditForm form;
+    private bool displayVisa = false;
+    private bool displayReject = false;
 
     public int SelectedArticleCode
     {

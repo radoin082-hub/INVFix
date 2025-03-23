@@ -7,6 +7,7 @@ namespace INV.Domain.Entities.Purchases
         public Guid Id { set; get; }
         public string Number { set; get; }
         public Guid SupplierId { set; get; }
+        public string SupplierName { set; get; }
         public DateOnly Date { set; get; }
         public string BudgeArticle { set; get; }
         public BudgeType BudgeType { set; get; }

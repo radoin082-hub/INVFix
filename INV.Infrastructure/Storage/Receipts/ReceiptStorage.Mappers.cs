@@ -31,7 +31,6 @@ namespace INV.Infrastructure.Storage.Receipts
             {
                 Id = reader.GetGuid(reader.GetOrdinal("Id")),
                 Number = reader.IsDBNull(reader.GetOrdinal("Number")) ? null : reader.GetString(reader.GetOrdinal("Number")),
-
                 PurchaseId = reader.GetGuid(reader.GetOrdinal("PurchaseId")),
                 purchaseNumber = reader.GetString(reader.GetOrdinal("PurchaseNumber")),
                 PurchaseDate = DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("PurchaseDate"))),

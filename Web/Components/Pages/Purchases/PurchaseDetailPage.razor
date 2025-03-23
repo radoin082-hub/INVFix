@@ -5,7 +5,12 @@
 <PageTitle>Purchase Order</PageTitle>
 <PageHeader Title="Purchase Details" SubTitle="Review and manage purchase order details" />
 <div class="mb-3">
-    <PurchaseCard purchaseInfo="purchaseOrder" />
+@*     <PurchaseCard purchaseInfo="purchaseOrder" /> *@
+
+
+    <CascadingValue Value="purchaseModel">
+        <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" />
+    </CascadingValue>
 </div>
 
 <Tabs>

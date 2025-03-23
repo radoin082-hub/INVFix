@@ -28,9 +28,11 @@ namespace INV.Infrastructure.Storage.Purchases
             "SELECT * FROM purchase.GetListBySupplier(@aSupplierId)";
 
         private const string selectPurchaseProductsQuery = @" SELECT * FROM [purchase].[PRODUCTS]";
-
-        private const string selectPurchceOrderByIdQuery = @" SELECT * FROM [INV].[purchase].[ORDERS] WHERE Id=@aId";
-
+        private const string selectPurchceOrderByIdQuery = @"
+    SELECT O.*, S.CompanyName AS SupplierName 
+    FROM [INV].[purchase].[ORDERS] O 
+    JOIN [INV].[dbo].[SUPPLIERS] S ON O.SupplierId = S.Id 
+    WHERE O.Id = @aId;";
         private const string insertOrderDetailCommand = @"
             INSERT INTO [purchase].[PRODUCTS] (PurchaseId, ProductId, Quantity, UnitPrice)
             VALUES (@aPurchaseId, @aProductId, @aQuantity, @aUnitPrice)";
@@ -90,6 +92,7 @@ namespace INV.Infrastructure.Storage.Purchases
                 Id = (Guid)reader["Id"],
                 Number = (string)reader["Number"],
                 SupplierId = (Guid)reader["SupplierId"],
+                SupplierName = (string)reader["SupplierName"],
                 Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
                 BudgeArticle = (string)reader["BudgetArticle"],
                 BudgeType = (BudgeType)reader["BudgetType"],
@@ -203,6 +206,8 @@ namespace INV.Infrastructure.Storage.Purchases
             return purchaseOrders;
         }
 
+     
+
         public async Task<PurchaseOrder?> SelectPurchaseOrdersByID(Guid id)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
@@ -215,7 +220,6 @@ namespace INV.Infrastructure.Storage.Purchases
 
             return await reader.ReadAsync() ? getPurchaseOrdersData(reader) : null;
         }
-
         public async ValueTask InsertProductPurchase(PurchaseProduct purchaseProduct)
         {
             using var sqlConnection = new SqlConnection(_connectionString);

@@ -6,6 +6,7 @@ using INV.Domain.Entities.Receipts;
 using INV.Domain.Shared;
 using INV.Implementation.Service.Purchses;
 using INVUIs.Products.ProductsModel;
+using INVUIs.Purchases;
 using INVUIs.Purchases.PurchaseModels;
 using Microsoft.AspNetCore.Components;
 
@@ -23,8 +24,27 @@ namespace INV.Web.Components.Pages.Purchases
 
         public List<ReceiptInfo> receptionsListByPurchase;
 
+        private PurchaseHeader purchaseHeaderRef;
+        public PurchaseModel purchaseModel { set; get; } = new();
+
         protected override async Task OnInitializedAsync()
         {
+            var resultToPurchase2 = await purchaseOrderService.GetPurchaseOrdersById(Id);
+            if (resultToPurchase2.IsSuccess)
+            {
+                var purchaseOrder = resultToPurchase2.Value;
+                purchaseModel = new PurchaseModel
+                {
+                    DeliveryTime = purchaseOrder.CompletionDelay.ToString(),
+                    description_article = purchaseOrder.BudgeArticle,
+                    selectedCategory = ((int)purchaseOrder.BudgeType).ToString(),
+                    selectedService = ((int)purchaseOrder.ServiceType).ToString(),
+                    selectedArticle = purchaseOrder.BudgeArticle,
+                    selectedChapter = purchaseOrder.BudgeType.ToString(),
+                };
+            }
+
+            /*===================*/
             var resultToPurchase = await purchaseOrderService.GetPurchaseOrdersById(Id);
             if (resultToPurchase.IsSuccess)
             {
