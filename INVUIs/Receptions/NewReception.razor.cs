@@ -17,6 +17,7 @@ namespace INVUIs.Receptions
         [Inject] public IPurchaseOrderService PurchaseOrderService { get; set; }
         [Inject] public IReceiptService receptionService { get; set; }
         [Inject] private IJSRuntime jsRuntime { set; get; }
+        [Inject] private NavigationManager NavigationManager { get; set; }
         private MyAlert? myAlert;
         private List<ReceiptProductModel> products { get; set; }
         private bool statusInput = false;
@@ -39,6 +40,7 @@ namespace INVUIs.Receptions
                     UnitPrice = p.UnitPrice,
                     Quantity = p.Quantity,
                     Designation = p.Designation,
+                    NEwReceived = p.Received,
                     Received = p.Received
                 }).ToList();
             }
@@ -52,16 +54,16 @@ namespace INVUIs.Receptions
         {
         }
 
-        
 
         private Task Validate()
         {
             statusInput = true;
-          
+
             receptionService.ValidateReceipt(ReceiptInfo.Id);
             ReceiptInfo.Status = ReceiptStatus.validated;
             restVisibility = false;
             StateHasChanged();
+            NavigationManager.NavigateTo("/receptions");
             return Task.CompletedTask;
         }
 
@@ -75,11 +77,19 @@ namespace INVUIs.Receptions
             bool send = checkInputs();
             if (send)
             {
+                if (products.FindAll(s => s.NEwReceived == 0).Count > 0)
+                {
+                    await myAlert!.ShowErrorAlert("Error",
+                        "The received quantity cannot be zero.", MyAlertType.error);
+                    return;
+                }
+
                 foreach (var product in products)
                 {
                     var receiptProduct =
                         ReceiptInfo.ReceiptProducts.FirstOrDefault(p => p.ProductId == product.ProductId);
-                    if (receiptProduct == null || product.Received <= receiptProduct.Received) continue;
+                    if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received ||
+                        product.NEwReceived == 0) continue;
                     await myAlert!.ShowErrorAlert("Error",
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
@@ -96,7 +106,7 @@ namespace INVUIs.Receptions
                     {
                         ReceptionId = p.ReceptionId,
                         ProductId = p.ProductId,
-                        Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.Received,
+                        Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.NEwReceived,
                         WareHouseId = p.DefaultWareHouseId
                     }).ToList(),
                     Status = ReceiptStatus.editing
@@ -113,6 +123,7 @@ namespace INVUIs.Receptions
                     await receptionService.CreateReceipt(receiptToSave);
                 }
 
+                
                 cancelEditing();
             }
         }

@@ -14,6 +14,8 @@ public class MyAlert(IJSRuntime jsRuntime)
             html = message,
             icon = myAlertType.ToString(),
             confirmButtonText = "OK"
+            
         });
     }
+    
 }

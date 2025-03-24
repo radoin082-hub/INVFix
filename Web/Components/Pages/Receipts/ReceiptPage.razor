@@ -4,33 +4,3 @@
 @using INV.Domain.Shared
 <PageHeader Title="Reception Details" SubTitle="Review and manage purchase order details" />
 <NewReception ReceiptInfo="receiptInfo"/>
-
-@code {
-
-    [Inject] public IReceiptService receiptService { set; get; }
-
-    [Parameter] public Guid Id { get; set; } = Guid.Empty;
-    [Parameter] public Guid purchaseId { get; set; } = Guid.Empty;
-    public ReceiptDetail receiptInfo { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        if (Id != Guid.Empty)
-        {
-            var receipt = await receiptService.GetReceiptInfoById(Id);
-            if (receipt.IsSuccess)
-            {
-                receiptInfo = receipt.Value;
-            }
-        }
-        else
-        {
-            var receipt = await receiptService.CreateReceiptFromPurchase(purchaseId);
-            if (receipt.IsSuccess)
-            {
-                receiptInfo = receipt.Value;
-            }
-        }
-    }
-
-}
