@@ -1,3 +1,4 @@
+using INV.App.Budgets;
 using INV.App.Purchases;
 using INV.App.Suppliers;
 using INV.Domain.Entities.Budget;
@@ -13,12 +14,30 @@ namespace INV.Web.Components.Pages.Purchases
     {
         [Inject] public IPurchaseOrderService purchaseOrderService { get; set; }
         [Inject] public NavigationManager navigationManager { set; get; }
+        [Inject] private IBudgetService budgetService { get; set; }
         private readonly List<PurchaseProductModel> productModel = new();
         private bool showAlert = false;
         public PurchaseModel purchaseModel { set; get; } = new();
         private SupplierInfo selectedSupplier = new();
         private PurchaseHeader purchaseHeaderRef;
+        private List<Chapter> chapters;
+        private List<Article> articles;
         private string errorMessage { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            /*var result1 = await budgetService.GetAllArticles();
+            if (result1.IsSuccess)
+            {
+                articles = result1.Value;
+            }*/
+
+            var result2 = await budgetService.GetAllChapitres();
+            if (result2.IsSuccess)
+            {
+                chapters = result2.Value;
+            }
+        }
 
         private async Task create()
         {
@@ -41,8 +60,9 @@ namespace INV.Web.Components.Pages.Purchases
             {
                 Id = Guid.NewGuid(),
                 SupplierId = selectedSupplier.ID,
-                BudgeArticle = purchaseModel.description_article,
-                BudgeType = (BudgeType)int.Parse(purchaseModel.selectedCategory),
+                BudgetArticle = purchaseModel.selectedArticleId,
+                BudgetChapter = purchaseModel.selectedChapterId,
+                BudgetType = (BudgeType)int.Parse(purchaseModel.selectedCategory),
                 ServiceType = (ServiceType)int.Parse(purchaseModel.selectedService),
                 CompletionDelay = int.Parse(purchaseModel.DeliveryTime),
                 Date = DateOnly.FromDateTime(DateTime.Now.Date),

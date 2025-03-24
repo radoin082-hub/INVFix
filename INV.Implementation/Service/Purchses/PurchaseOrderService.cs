@@ -63,19 +63,6 @@ namespace INV.Implementation.Service.Purchses
             }
         }
 
-        public async ValueTask<Result> ValicatePurchaseOrder(PurchaseOrder purchaseOrder)
-        {
-            try
-            {
-                await purchaseOrderStorage.ValidatePurchase(purchaseOrder);
-                return Result.Success();
-            }
-            catch (Exception e)
-            {
-                return Error.Exception(e);
-            }
-        }
-
         public async ValueTask<Result> CreatePurchaseOrder(PurchaseOrder purchaseOrder, List<PurchaseProduct> products)
         {
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
@@ -199,6 +186,11 @@ namespace INV.Implementation.Service.Purchses
             {
                 return Error.Exception(e);
             }
+        }
+
+        public async ValueTask DecisionCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif)
+        {
+            await purchaseOrderStorage.DecinsonCF(purchaseId, status, date, visaNumber, motif);
         }
     }
 }

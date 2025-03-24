@@ -6,6 +6,7 @@ namespace INV.App.Purchases
     public interface IPurchaseOrderService
     {
         ValueTask<Result> CreateProductPurchase(PurchaseProduct purchaseProduct);
+
         ValueTask<Result<List<PurchaseOrder>>> GetPurchaseOrdersByDate(DateOnly dateOnly);
 
         ValueTask<Result<List<PurchaseOrderInfo>>> GetPurchaseOrderInfo();
@@ -13,8 +14,6 @@ namespace INV.App.Purchases
         ValueTask<Result<List<PurchaseOrderInfo>>> GetPurchaseOrdersByIdSupplier(Guid idSupplier);
 
         ValueTask<Result<PurchaseOrder>> GetPurchaseOrdersById(Guid id);
-
-        ValueTask<Result> ValicatePurchaseOrder(PurchaseOrder purchaseOrder);
 
         ValueTask<Result> CreatePurchaseOrder(PurchaseOrder purchaseOrder, List<PurchaseProduct> products);
 
@@ -32,6 +31,6 @@ namespace INV.App.Purchases
 
         ValueTask<Result<PurchaseStatus>> GetPurchaseStatus(Guid id);
 
-    
+        ValueTask DecisionCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumer, string motif);
     }
 }

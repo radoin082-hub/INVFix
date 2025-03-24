@@ -7,10 +7,10 @@ namespace INV.Domain.Entities.Purchases
         public Guid Id { set; get; }
         public string Number { set; get; }
         public Guid SupplierId { set; get; }
-        public string SupplierName { set; get; }
         public DateOnly Date { set; get; }
-        public string BudgeArticle { set; get; }
-        public BudgeType BudgeType { set; get; }
+        public int BudgetChapter { set; get; }
+        public int BudgetArticle { set; get; }
+        public BudgeType BudgetType { set; get; }
         public ServiceType ServiceType { set; get; }
         public decimal TotalHT { get; set; }
         public decimal TotalTVA { get; set; }

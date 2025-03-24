@@ -20,8 +20,6 @@ namespace INV.Infrastructure.Storage.Purchases
 
         Task<PurchaseOrder> SelectPurchaseOrdersByID(Guid id);
 
-        Task<int> ValidatePurchase(PurchaseOrder purchaseOrder);
-
         ValueTask<List<PurchaseOrderInfo>> SelectPurchasesForReceiptCreation();
 
         ValueTask<List<PurchaseProductInfo>> SelectProductsByPurchaseId(Guid purchaseId); //DR
@@ -38,5 +36,7 @@ namespace INV.Infrastructure.Storage.Purchases
         ValueTask<PurchaseStatus> selectPurchaseStatus(Guid id);
 
         ValueTask InsertProductPurchase(PurchaseProduct purchaseProduct);
+
+        ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif);
     }
 }

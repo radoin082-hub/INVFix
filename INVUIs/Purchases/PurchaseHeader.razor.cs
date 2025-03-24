@@ -13,7 +13,9 @@ namespace INVUIs.Purchases;
 
 public partial class PurchaseHeader : ComponentBase
 {
-    [CascadingParameter] public PurchaseModel purchaseModel { get; set; } = new();
+    [CascadingParameter] public List<Chapter?> Chapters { get; set; }
+    [CascadingParameter] public List<Article?> Articles { get; set; }
+    [Parameter] public PurchaseModel Purchase { get; set; } = new();
     [Parameter] public EventCallback OnCreate { get; set; }
     [Parameter] public EventCallback<PurchaseModel> OnPurchaseOrder { get; set; }
     [Inject] private IBudgetService budgetService { get; set; }
@@ -22,10 +24,6 @@ public partial class PurchaseHeader : ComponentBase
 
     private int _selectedChapterCode;
     private int _selelctedArticleCode;
-    private List<Article> articles = new();
-    private List<Chapter> chapters = new();
-    private Chapter chapter = new();
-    private Article article = new();
     private int selectedChapterCode;
     private EditForm form;
     private bool displayVisa = false;
@@ -33,13 +31,13 @@ public partial class PurchaseHeader : ComponentBase
 
     public int SelectedArticleCode
     {
-        get => _selelctedArticleCode;
+        get => Purchase.selectedArticleId;
         set
         {
             if (_selelctedArticleCode != value)
             {
                 _selelctedArticleCode = value;
-                purchaseModel.selectedArticle = value.ToString();
+                Purchase.selectedArticle = value.ToString();
                 LoadArticleTitle();
             }
         }
@@ -47,13 +45,13 @@ public partial class PurchaseHeader : ComponentBase
 
     public int SelectedChapterCode
     {
-        get => _selectedChapterCode;
+        get => Purchase.selectedChapterId;
         set
         {
             if (_selectedChapterCode != value)
             {
                 _selectedChapterCode = value;
-                purchaseModel.selectedChapter = value.ToString();
+                Purchase.selectedChapter = value.ToString();
                 LoadChapterTitle();
                 LoadArticlesBycodeChapter();
             }
@@ -67,40 +65,31 @@ public partial class PurchaseHeader : ComponentBase
 
     /*protected override void OnInitialized()
     {
-        
         base.OnInitialized();
     }*/
 
     protected override async Task OnInitializedAsync()
     {
         myAlert = new MyAlert(jsRuntime);
-        var result = await budgetService.GetAllChapitres();
-        if (result.IsSuccess)
-        {
-            chapters = result.Value;
-        }
+        /* var result = await budgetService.GetAllChapitres();
+         if (result.IsSuccess)
+         {
+             chapters = result.Value;
+         }*/
     }
 
     private async void LoadChapterTitle()
     {
         var result = await budgetService.GetChapterByCode(SelectedChapterCode);
 
-        if (result.IsSuccess)
-        {
-            chapter = result.Value;
-        }
-
-        purchaseModel.title_chapter = chapter.Name;
+        Purchase.title_chapter = result.Value.Name;
         StateHasChanged();
     }
 
     private async void LoadArticlesBycodeChapter()
     {
         var result = await budgetService.GetArticlesByCodeChapter(SelectedChapterCode);
-        if (result.IsSuccess)
-        {
-            articles = result.Value;
-        }
+        Articles = result.Value;
 
         StateHasChanged();
     }
@@ -108,18 +97,14 @@ public partial class PurchaseHeader : ComponentBase
     private async void LoadArticleTitle()
     {
         var result = await budgetService.GetArticlesByCodeArticle(SelectedArticleCode);
-        if (result.IsSuccess)
-        {
-            article = result.Value;
-        }
 
-        purchaseModel.description_article = article.Name;
+        Purchase.description_article = result.Value.Name;
         StateHasChanged();
     }
 
     public async Task Save()
     {
-        await OnPurchaseOrder.InvokeAsync(purchaseModel);
+        await OnPurchaseOrder.InvokeAsync(Purchase);
     }
 
     public async Task SubmitForm()
@@ -134,7 +119,7 @@ public partial class PurchaseHeader : ComponentBase
                 if (errors.Any())
                 {
                     var errorMessage = string.Join("<br>", errors);
-                    await myAlert.ShowErrorAlert("Error validation ", errorMessage,MyAlertType.warning);
+                    await myAlert.ShowErrorAlert("Error validation ", errorMessage, MyAlertType.warning);
                 }
 
                 return;

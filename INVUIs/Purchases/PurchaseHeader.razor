@@ -1,13 +1,14 @@
 @using INVUIs.Shared.Models
 @rendermode InteractiveServer
-<EditForm Model="purchaseModel" OnValidSubmit="Save" FormName="purchaseForm" Enhance @ref="form">
+<EditForm Model="Purchase" OnValidSubmit="Save" FormName="purchaseForm" Enhance @ref="form">
     <DataAnnotationsValidator/>
 
-    <CascadingValue Value="purchaseModel">
+    <CascadingValue Value="Chapters">
+        <CascadingValue Value="Articles">
         <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 32px; padding-inline: 32px">
             <div>
                 <CommandInput Label="Select a Budget:">
-                    <InputSelect @bind-Value="purchaseModel.selectedCategory">
+                        <InputSelect @bind-Value="Purchase.selectedCategory">
                         <option value="" selected disabled>--Select--</option>
                         <option value="1">Operating Expenses</option>
                         <option value="2">Equipment Expenses</option>
@@ -15,15 +16,18 @@
                     </InputSelect>
                 </CommandInput>
                 <CommandInput Label="Choose a Chapter:">
-                    <InputSelect id="chapter" style="width: 6rem" @bind-Value="SelectedChapterCode"
+                        <InputSelect id="chapter" style="width: 6rem" @bind-Value="SelectedChapterCode"
                                  class="form-control valid">
                         <option value="" selected>--Select--</option>
-                        @foreach (var chapter in chapters)
+                         @if (Chapters != null)
                         {
-                            <option value="@chapter.CodeChapter">@chapter.CodeChapter</option>
+                                @foreach (var chapter in Chapters)
+                                {
+                                    <option value="@chapter.CodeChapter">@chapter.CodeChapter</option>
+                                }
                         }
                     </InputSelect>
-                    <InputText id="title" @bind-Value="purchaseModel.title_chapter" class="form-control valid"
+                        <InputText id="title" @bind-Value="Purchase.title_chapter" class="form-control valid"
                                readonly/>
                 </CommandInput>
 
@@ -31,16 +35,20 @@
                     <div class="commend-input">
                         <div class="label-input-group">
                             <label for="article" style="width: 10rem">Choose an Article:</label>
-                            <InputSelect id="article" style="width: 6rem" @bind-Value="SelectedArticleCode"
+                                <InputSelect id="article" style="width: 6rem" @bind-Value="SelectedArticleCode"
                                          class="form-control valid">
                                 <option value="" selected>--Select--</option>
-                                @foreach (var article in articles)
-                                {
-                                    <option value="@article.CodeArticle">@article.CodeArticle</option>
-                                }
+                                    @if (Articles != null)
+                                    {
+                                        @foreach (var article in Articles)
+                                        {
+                                            <option value="@article.CodeArticle">@article.CodeArticle</option>
+                                        }
+                                    }
+                                
                             </InputSelect>
 
-                            <InputText id="description" @bind-Value="purchaseModel.description_article"
+                                <InputText id="description" @bind-Value="Purchase.description_article"
                                        class="form-control valid" placeholder="Enter Description" readonly/>
                         </div>
                     </div>
@@ -48,7 +56,7 @@
             </div>
             <div>
                 <CommandInput Label="Select a Service:">
-                    <InputSelect @bind-Value="purchaseModel.selectedService">
+                        <InputSelect @bind-Value="Purchase.selectedService">
                         <option value="" selected>--Select--</option>
                         <option value="1">Works</option>
                         <option value="2">Equipment</option>
@@ -59,7 +67,7 @@
                 <div class="commend-input">
                     <div class="label-input-group">
                         <label for="productNumber" class="form-label" style="width: 7.5rem">Delivery Time :</label>
-                        <InputText @bind-Value="purchaseModel.DeliveryTime" style="width: 6rem"/>
+                            <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" />
                         <label class="form-label">days</label>
                     </div>
                 </div>
@@ -71,6 +79,7 @@
         </div>
 
 
+    </CascadingValue>
     </CascadingValue>
 </EditForm>
 

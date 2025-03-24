@@ -6,24 +6,25 @@ namespace INVUIs.Purchases;
 
 public partial class PurchaseCard
 {
-    [Parameter] public PurchaseOrder purchaseInfo { set; get; }
+    [Parameter] public PurchaseOrderInfo purchaseInfo { set; get; }
     [Inject] public IPurchaseOrderService purchaseOrderService { get; set; }
     private bool displayVisa = false;
     private bool displayReject = false;
 
-    public void visa(PurchaseOrder purchaseInfo)
+    private void visa(PurchaseOrderInfo purchaseInfo)
     {
         displayVisa = false;
         purchaseInfo.Status = PurchaseStatus.Vised;
-        purchaseOrderService.UpdatePurchaseOrder(purchaseInfo);
+
+        purchaseOrderService.DecisionCF(purchaseInfo.Id, purchaseInfo.Status, purchaseInfo.VisaDate, purchaseInfo.VisaNumber, null);
         StateHasChanged();
     }
 
-    public void reject(PurchaseOrder purchaseInfo)
+    private void reject(PurchaseOrderInfo purchaseInfo)
     {
         displayReject = false;
         purchaseInfo.Status = PurchaseStatus.Reject;
-        purchaseOrderService.UpdatePurchaseOrder(purchaseInfo);
+        purchaseOrderService.DecisionCF(purchaseInfo.Id, purchaseInfo.Status, purchaseInfo.VisaDate, purchaseInfo.VisaNumber, purchaseInfo.Observation);
         StateHasChanged();
     }
 

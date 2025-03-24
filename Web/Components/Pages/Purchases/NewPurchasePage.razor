@@ -12,8 +12,10 @@
     </Alert>
 }
 
-<CascadingValue Value="purchaseModel">
-    <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="create"/>
+<CascadingValue Value="chapters">
+    <CascadingValue Value="articles">
+         <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="create" Purchase="purchaseModel" /> 
+    </CascadingValue>
 </CascadingValue>
 
 <RadzenTabs RenderMode="TabRenderMode.Client">

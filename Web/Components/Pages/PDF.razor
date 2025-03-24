@@ -23,8 +23,8 @@
                 <label class="purchase-order-header">Order #@order.Number</label>
                 <label class="purchase-order-date">@order.Status</label>
                 <img src="/Images/pdf.png" alt="PDF" class="mx-auto"/>
-                <a target="_blank" class="purchase-order-link">@order.BudgeArticle</a>
-              @*   <button @onclick="() => DownloadFile(order.Number)" class="purchase-order-button">Download</button> *@
+				@*   <a target="_blank" class="purchase-order-link">@order.BudgeArticle</a>
+               <button @onclick="() => DownloadFile(order.Number)" class="purchase-order-button">Download</button> *@
             </div>
             
         }

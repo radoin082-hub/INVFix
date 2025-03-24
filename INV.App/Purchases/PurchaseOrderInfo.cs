@@ -17,6 +17,12 @@ namespace INV.App.Purchases
 
         public decimal TotalTTC { get; set; }
 
+        public int CompletionDelay { get; set; }
+
+        public DateOnly? VisaDate { get; set; }
+        public string VisaNumber { get; set; }
+        public string Observation { get; set; }
+
         public PurchaseStatus Status { get; set; }
     }
 }

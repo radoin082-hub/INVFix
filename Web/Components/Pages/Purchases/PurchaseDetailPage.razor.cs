@@ -35,12 +35,12 @@ namespace INV.Web.Components.Pages.Purchases
                 var purchaseOrder = resultToPurchase2.Value;
                 purchaseModel = new PurchaseModel
                 {
-                    DeliveryTime = purchaseOrder.CompletionDelay.ToString(),
-                    description_article = purchaseOrder.BudgeArticle,
-                    selectedCategory = ((int)purchaseOrder.BudgeType).ToString(),
-                    selectedService = ((int)purchaseOrder.ServiceType).ToString(),
-                    selectedArticle = purchaseOrder.BudgeArticle,
-                    selectedChapter = purchaseOrder.BudgeType.ToString(),
+                    DeliveryTime = purchaseOrder.CompletionDelay.ToString(),//100
+                    title_chapter = "1",//no in query
+                                        //     selectedCategory = purchaseOrder.BudgeType.ToString(),//operation
+
+                    selectedChapter = "2",
+                    //  selectedArticle = purchaseOrder.BudgeArticle.ToString(),//nachar,
                 };
             }
 

@@ -28,11 +28,13 @@ namespace INV.Infrastructure.Storage.Purchases
             "SELECT * FROM purchase.GetListBySupplier(@aSupplierId)";
 
         private const string selectPurchaseProductsQuery = @" SELECT * FROM [purchase].[PRODUCTS]";
+
         private const string selectPurchceOrderByIdQuery = @"
-    SELECT O.*, S.CompanyName AS SupplierName 
-    FROM [INV].[purchase].[ORDERS] O 
-    JOIN [INV].[dbo].[SUPPLIERS] S ON O.SupplierId = S.Id 
+    SELECT O.*, S.CompanyName AS SupplierName
+    FROM [INV].[purchase].[ORDERS] O
+    JOIN [INV].[dbo].[SUPPLIERS] S ON O.SupplierId = S.Id
     WHERE O.Id = @aId;";
+
         private const string insertOrderDetailCommand = @"
             INSERT INTO [purchase].[PRODUCTS] (PurchaseId, ProductId, Quantity, UnitPrice)
             VALUES (@aPurchaseId, @aProductId, @aQuantity, @aUnitPrice)";
@@ -43,8 +45,8 @@ namespace INV.Infrastructure.Storage.Purchases
             VALUES (@aId, @aNumber, @aSupplierId, @aDate, @aBudgetArticle, @aBudgetType,
                     @aServiceType, @aTotalHT, @aTotalTVA, @aTotalTTC, @aCompletionDelay)";
 
-        private const string validatePurchaseCommand =
-            @" UPDATE purchase.ORDERS SET VisaNumber=@aVisaNumber , VisaDate=@aVisaDate ,Status=@aStatus Where Id=@aId";
+        private const string DecisionCFPurchaseCommand =
+            @" UPDATE purchase.ORDERS SET VisaNumber=@aVisaNumber , VisaDate=@aVisaDate ,Status=@aStatus , Observation=aMotif Where Id=@aId";
 
         private const string SelectPurchasesForReceiptCreationCommand = "reception.SelectPurchasesForReceiptCreation";
 
@@ -92,10 +94,10 @@ namespace INV.Infrastructure.Storage.Purchases
                 Id = (Guid)reader["Id"],
                 Number = (string)reader["Number"],
                 SupplierId = (Guid)reader["SupplierId"],
-                SupplierName = (string)reader["SupplierName"],
+
                 Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
-                BudgeArticle = (string)reader["BudgetArticle"],
-                BudgeType = (BudgeType)reader["BudgetType"],
+                // BudgeArticle = (string)reader["BudgetArticle"],
+                //BudgeType = (BudgeType)reader["BudgetType"],
                 ServiceType = (ServiceType)reader["ServiceType"],
                 TotalHT = (decimal)reader["TotalHT"],
                 TotalTVA = (decimal)reader["TotalVA"],
@@ -175,8 +177,8 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aNumber", "1"); //purchaseOrder.Number);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
-            cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
-            cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
+            // cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
+            // cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
             cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType);
             cmd.Parameters.AddWithValue("@aTotalHT", purchaseOrder.TotalHT);
             cmd.Parameters.AddWithValue("@aTotalTVA", purchaseOrder.TotalTVA);
@@ -206,8 +208,6 @@ namespace INV.Infrastructure.Storage.Purchases
             return purchaseOrders;
         }
 
-     
-
         public async Task<PurchaseOrder?> SelectPurchaseOrdersByID(Guid id)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
@@ -220,6 +220,7 @@ namespace INV.Infrastructure.Storage.Purchases
 
             return await reader.ReadAsync() ? getPurchaseOrdersData(reader) : null;
         }
+
         public async ValueTask InsertProductPurchase(PurchaseProduct purchaseProduct)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
@@ -269,19 +270,6 @@ namespace INV.Infrastructure.Storage.Purchases
             }
 
             return purchaseOrders;
-        }
-
-        public async Task<int> ValidatePurchase(PurchaseOrder purchaseOrder)
-        {
-            using var sqlConnection = new SqlConnection(_connectionString);
-            var cmd = new SqlCommand(validatePurchaseCommand, sqlConnection);
-            await sqlConnection.OpenAsync();
-
-            cmd.Parameters.AddWithValue("@aId", purchaseOrder.Id);
-            cmd.Parameters.AddWithValue("@aVisaNumber", purchaseOrder.VisaNumber);
-            cmd.Parameters.AddWithValue("@aVisaDate", purchaseOrder.VisaDate);
-            cmd.Parameters.AddWithValue("@aStatus", PurchaseStatus.Vised.ToString());
-            return await cmd.ExecuteNonQueryAsync();
         }
 
         public async ValueTask<List<PurchaseOrderInfo>> SelectPurchasesForReceiptCreation()
@@ -380,8 +368,8 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aNumber", purchaseOrder.Number);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
-            cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
-            cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
+            //  cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
+            //  cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
             cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType);
             cmd.Parameters.AddWithValue("@aTotalHT", purchaseOrder.TotalHT);
             cmd.Parameters.AddWithValue("@aTotalTVA", purchaseOrder.TotalTVA);
@@ -409,6 +397,20 @@ namespace INV.Infrastructure.Storage.Purchases
         public Task<int> InsertPurchaseProduct(PurchaseProduct orderDetail)
         {
             throw new NotImplementedException();
+        }
+
+        public async ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif)
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            var cmd = new SqlCommand(DecisionCFPurchaseCommand, sqlConnection);
+            await sqlConnection.OpenAsync();
+
+            cmd.Parameters.AddWithValue("@aId", purchaseId);
+            cmd.Parameters.AddWithValue("@aVisaNumber", visaNumber);
+            cmd.Parameters.AddWithValue("@aVisaDate", date);
+            cmd.Parameters.AddWithValue("@aStatus", status);
+            cmd.Parameters.AddWithValue("@aMotif", motif);
+            await cmd.ExecuteNonQueryAsync();
         }
     }
 }
