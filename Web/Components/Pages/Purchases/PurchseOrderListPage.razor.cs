@@ -17,7 +17,7 @@ namespace INV.Web.Components.Pages.Purchases
             {
                 purchaseOrderInfos = result.Value;
             }
-            purchaseOrderInfos = purchaseOrderInfos.OrderBy(s => s.Number).ToList();
+            purchaseOrderInfos = purchaseOrderInfos.OrderBy(s => s.Date).ToList();
         }
         private void NavigateToPurchaseOrder() => navigationManager.NavigateTo($"{PageRoutes.CreatePurchase}");
     }

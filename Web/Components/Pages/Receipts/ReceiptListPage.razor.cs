@@ -1,13 +1,8 @@
 ﻿using INV.App.Purchases;
 using INV.App.Receipts;
-using INV.Domain.Entities.Receipts;
-using INV.Domain.Shared;
 using INVUIs.Purchases;
-using INVUIs.Receptions;
-using INVUIs.Receptions.Models;
-using INVUIs.WareHouses;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Forms;
+
 
 namespace INV.Web.Components.Pages.Receipts;
 

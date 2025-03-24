@@ -55,7 +55,7 @@
                             else
                             {
                                 <button type="button" class="btn-custom btn-submit" @onclick="SaveChanges">Register </button>
-                                <button type="button" class="btn-custom btn-cancel" @onclick="CancelEditing">Cancel</button>
+                                <button type="button" class="btn-custom btn-cancel" @onclick="cancelEditing">Cancel</button>
                             }
                         }
 
@@ -111,15 +111,14 @@
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Received">
                     <Template Context="product">
-
                         <InputNumber @bind-Value="product.Received" disabled="@statusInput"/>
                     </Template>
                 </RadzenDataGridColumn>
-
             </Columns>
         </RadzenDataGrid>
     </div>
 </EditForm>
+
 <style>
 
 
