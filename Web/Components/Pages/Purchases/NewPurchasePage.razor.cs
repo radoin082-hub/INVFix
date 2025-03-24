@@ -60,8 +60,8 @@ namespace INV.Web.Components.Pages.Purchases
             {
                 Id = Guid.NewGuid(),
                 SupplierId = selectedSupplier.ID,
-                BudgetArticle = purchaseModel.selectedArticleId,
-                BudgetChapter = purchaseModel.selectedChapterId,
+                BudgetArticle = purchaseModel.ArticleCode,
+                BudgetChapter = purchaseModel.ChapterCode,
                 BudgetType = (BudgeType)int.Parse(purchaseModel.selectedCategory),
                 ServiceType = (ServiceType)int.Parse(purchaseModel.selectedService),
                 CompletionDelay = int.Parse(purchaseModel.DeliveryTime),

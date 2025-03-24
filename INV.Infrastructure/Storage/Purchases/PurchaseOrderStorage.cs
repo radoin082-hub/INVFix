@@ -40,9 +40,9 @@ namespace INV.Infrastructure.Storage.Purchases
             VALUES (@aPurchaseId, @aProductId, @aQuantity, @aUnitPrice)";
 
         private const string insertPurchaseOrderCommand = @"
-            INSERT INTO [purchase].[ORDERS] (Id, Number, SupplierId, Date, BudgetArticle, BudgetType,
-                                       ServiceType, TotalHT, TotalVA, TotalTC, CompletionDelay)
-            VALUES (@aId, @aNumber, @aSupplierId, @aDate, @aBudgetArticle, @aBudgetType,
+            INSERT INTO [purchase].[ORDERS] (Id, Number, SupplierId, Date, BudgetChapter, BudgetArticle, 
+                    BudgetType,ServiceType, TotalHT, TotalVA, TotalTC, CompletionDelay)
+            VALUES (@aId, @aNumber, @aSupplierId, @aDate,@aBudgetChapter, @aBudgetArticle, @aBudgetType,
                     @aServiceType, @aTotalHT, @aTotalTVA, @aTotalTTC, @aCompletionDelay)";
 
         private const string DecisionCFPurchaseCommand =
@@ -177,8 +177,9 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aNumber", "1"); //purchaseOrder.Number);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
-            // cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
-            // cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
+            cmd.Parameters.AddWithValue("@aBudgetChapter", purchaseOrder.BudgetChapter);
+            cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgetArticle);
+            cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgetType);
             cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType);
             cmd.Parameters.AddWithValue("@aTotalHT", purchaseOrder.TotalHT);
             cmd.Parameters.AddWithValue("@aTotalTVA", purchaseOrder.TotalTVA);
@@ -399,7 +400,8 @@ namespace INV.Infrastructure.Storage.Purchases
             throw new NotImplementedException();
         }
 
-        public async ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif)
+        public async ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber,
+            string motif)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
             var cmd = new SqlCommand(DecisionCFPurchaseCommand, sqlConnection);

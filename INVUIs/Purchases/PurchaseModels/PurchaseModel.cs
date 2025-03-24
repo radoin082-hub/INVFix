@@ -8,7 +8,9 @@ namespace INVUIs.Purchases.PurchaseModels
         [Required(ErrorMessage = "Please select an article.")]
         public string selectedArticle { get; set; }
 
-        public int selectedArticleId { get; set; }
+        public int ArticleCode { get; set; }
+        
+        public int ChapterCode { get; set; }
 
         public string description_article { get; set; }
 
@@ -17,7 +19,6 @@ namespace INVUIs.Purchases.PurchaseModels
         [Required(ErrorMessage = "Please select a chapter.")]
         public string selectedChapter { get; set; }
 
-        public int selectedChapterId { get; set; }
 
         [Required(ErrorMessage = "Please select a budget category.")]
         public string selectedCategory { get; set; }

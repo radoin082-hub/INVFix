@@ -31,7 +31,7 @@ public partial class PurchaseHeader : ComponentBase
 
     public int SelectedArticleCode
     {
-        get => Purchase.selectedArticleId;
+        get => _selelctedArticleCode;
         set
         {
             if (_selelctedArticleCode != value)
@@ -45,7 +45,7 @@ public partial class PurchaseHeader : ComponentBase
 
     public int SelectedChapterCode
     {
-        get => Purchase.selectedChapterId;
+        get => _selectedChapterCode;
         set
         {
             if (_selectedChapterCode != value)
@@ -62,27 +62,18 @@ public partial class PurchaseHeader : ComponentBase
     {
         await OnCreate.InvokeAsync();
     }
-
-    /*protected override void OnInitialized()
-    {
-        base.OnInitialized();
-    }*/
+    
 
     protected override async Task OnInitializedAsync()
     {
         myAlert = new MyAlert(jsRuntime);
-        /* var result = await budgetService.GetAllChapitres();
-         if (result.IsSuccess)
-         {
-             chapters = result.Value;
-         }*/
     }
 
     private async void LoadChapterTitle()
     {
         var result = await budgetService.GetChapterByCode(SelectedChapterCode);
-
         Purchase.title_chapter = result.Value.Name;
+        Purchase.ChapterCode = result.Value.CodeChapter;
         StateHasChanged();
     }
 
@@ -99,6 +90,7 @@ public partial class PurchaseHeader : ComponentBase
         var result = await budgetService.GetArticlesByCodeArticle(SelectedArticleCode);
 
         Purchase.description_article = result.Value.Name;
+        Purchase.ArticleCode = result.Value.CodeArticle;
         StateHasChanged();
     }
 
