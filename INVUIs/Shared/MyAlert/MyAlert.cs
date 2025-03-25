@@ -6,7 +6,7 @@ namespace INVUIs.Shared.MyAlert;
 
 public class MyAlert(IJSRuntime jsRuntime)
 {
-    public async Task ShowErrorAlert(string? title, string? message, MyAlertType myAlertType)
+    public async Task ShowAlert(string? title, string? message, MyAlertType myAlertType)
     {
         await jsRuntime.InvokeVoidAsync("Swal.fire", new
         {
@@ -14,8 +14,21 @@ public class MyAlert(IJSRuntime jsRuntime)
             html = message,
             icon = myAlertType.ToString(),
             confirmButtonText = "OK"
-            
         });
     }
-    
+
+    public async Task ShowToast(string? title, string? message, MyAlertType myAlertType)
+    {
+        await jsRuntime.InvokeVoidAsync("Swal.fire", new
+        {
+            title,
+            html = message,
+            toast = true,
+            position = "top-end",
+            showConfirmButton = false,
+            timer = 3000,
+            timerProgressBar = true,
+            icon = myAlertType.ToString(),
+        });
+    }
 }

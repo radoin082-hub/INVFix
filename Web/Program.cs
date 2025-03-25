@@ -19,6 +19,7 @@ using INV.Infrastructure.Storage.SupplierStorages;
 using INV.Infrastructure.Storage.WareHousesStorages;
 using INV.Web.Components;
 using INV.Web.Services.Suppliers;
+using Microsoft.AspNetCore.Components.Routing;
 using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -41,6 +42,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<PreloadService>();
+builder.Services.AddScoped<NavigationLock>();
 
 builder.Services.AddLocalization();
 var app = builder.Build();

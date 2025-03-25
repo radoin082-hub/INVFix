@@ -7,6 +7,7 @@ using INVUIs.Receptions.Models;
 using INVUIs.Shared.Models;
 using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.JSInterop;
 
 namespace INVUIs.Receptions
@@ -17,11 +18,13 @@ namespace INVUIs.Receptions
         [Inject] public IPurchaseOrderService PurchaseOrderService { get; set; }
         [Inject] public IReceiptService receptionService { get; set; }
         [Inject] private IJSRuntime jsRuntime { set; get; }
-        [Inject] private NavigationManager NavigationManager { get; set; }
+        [Inject] private NavigationManager navigationManager { get; set; }
+        [Inject] private NavigationLock navigationLock { get; set; }
         private MyAlert? myAlert;
         private List<ReceiptProductModel> products { get; set; }
         private bool statusInput = false;
         private bool restVisibility = true;
+        private bool isValidated = false;
 
         protected override async Task OnInitializedAsync()
         {
@@ -55,16 +58,15 @@ namespace INVUIs.Receptions
         }
 
 
-        private Task Validate()
+        private async Task Validate()
         {
             statusInput = true;
-
-            receptionService.ValidateReceipt(ReceiptInfo.Id);
+            isValidated = true;
+            var result = await receptionService.ValidateReceipt(ReceiptInfo.Id);
             ReceiptInfo.Status = ReceiptStatus.validated;
             restVisibility = false;
             StateHasChanged();
-            NavigationManager.NavigateTo("/receptions");
-            return Task.CompletedTask;
+            navigationManager.NavigateTo("/receptions");
         }
 
         private void StartEditing()
@@ -79,7 +81,7 @@ namespace INVUIs.Receptions
             {
                 if (products.FindAll(s => s.NEwReceived == 0).Count > 0)
                 {
-                    await myAlert!.ShowErrorAlert("Error",
+                    await myAlert!.ShowAlert("Error",
                         "The received quantity cannot be zero.", MyAlertType.error);
                     return;
                 }
@@ -90,7 +92,7 @@ namespace INVUIs.Receptions
                         ReceiptInfo.ReceiptProducts.FirstOrDefault(p => p.ProductId == product.ProductId);
                     if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received ||
                         product.NEwReceived == 0) continue;
-                    await myAlert!.ShowErrorAlert("Error",
+                    await myAlert!.ShowAlert("Error",
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
                 }
@@ -123,7 +125,7 @@ namespace INVUIs.Receptions
                     await receptionService.CreateReceipt(receiptToSave);
                 }
 
-                
+
                 cancelEditing();
             }
         }
@@ -138,6 +140,15 @@ namespace INVUIs.Receptions
             }
 
             return true;
+        }
+
+        private async Task beforeNavigation(LocationChangingContext context)
+        {
+            if (!isValidated)
+            {
+                context.PreventNavigation();
+                await myAlert.ShowToast("Error", "You must validate the reception before leaving.", MyAlertType.error);
+            }
         }
     }
 }

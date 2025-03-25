@@ -50,13 +50,13 @@ namespace INVUIs.Products
             if (result.IsSuccess)
             {
                 Products.Remove(productToRemove);
-                await myAlert.ShowErrorAlert("Delete Succusfuly", "The product has been deleted.",MyAlertType.success);
+                await myAlert.ShowAlert("Delete Succusfuly", "The product has been deleted.",MyAlertType.success);
                 await grid.Reload();
             }
             else
             {
                 errorMessage = result.Error.Description;
-                await myAlert.ShowErrorAlert("Error Delete", errorMessage,MyAlertType.error);
+                await myAlert.ShowAlert("Error Delete", errorMessage,MyAlertType.error);
             }
             StateHasChanged();
         }
