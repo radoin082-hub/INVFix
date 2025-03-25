@@ -110,5 +110,18 @@ namespace INV.Infrastructure.Storage.Receipts
                 Status = (ReceiptStatus)reader.GetInt32(reader.GetOrdinal("ReceptionStatus"))
             };
         }
+        private ReceiptProductInfo GetReceiptProductInfoFromDataRow(DataRow row)
+        {
+            return new ReceiptProductInfo
+            {
+                ReceptionId = row.IsNull("ReceptionId") ? Guid.Empty : row.Field<Guid>("ReceptionId"),
+                ProductId = row.IsNull("ProductId") ? Guid.Empty : row.Field<Guid>("ProductId"),
+                Quantity = row.IsNull("Quantity") ? 0 : row.Field<int>("Quantity"),
+                Designation = row.IsNull("Designation") ? string.Empty : row.Field<string>("Designation"),
+                //UnitPrice = row.IsNull("UnitPrice") ? 0m : row.Field<decimal?>("UnitPrice") ?? 0m,
+                Received = row.IsNull("Received") ? 0 : row.Field<int>("Received"),
+                DefaultWareHouseId = row.IsNull("WareHouseId") ? Guid.Empty : row.Field<Guid>("WareHouseId")
+            };
+        }
     }
 }

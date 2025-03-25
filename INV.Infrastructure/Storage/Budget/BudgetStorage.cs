@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace INV.Infrastructure.Storage.Budget;
 
-public class BudgetStorage : IBudgetStorage
+public partial class BudgetStorage : IBudgetStorage
 {
     private const string insertArticleQuery =
         "INSERT INTO ARTICLE (CodeArticle,Name,CodeChapter) VALUES (@CodeArticle,@Name,@CodeChapter)";
@@ -105,22 +105,5 @@ public class BudgetStorage : IBudgetStorage
         return null;
     }
 
-    private static Article ArticleDataReader(SqlDataReader reader)
-    {
-        return new Article
-        {
-            CodeArticle = (int)reader["CodeArticle"],
-            Name = reader["Name"].ToString(),
-            CodeChapter = (int)reader["CodeChapter"]
-        };
-    }
 
-    public static Chapter ChapterDataReader(SqlDataReader reader)
-    {
-        return new Chapter
-        {
-            CodeChapter = (int)reader["CodeChapter"],
-            Name = (string)reader["Name"]
-        };
-    }
 }

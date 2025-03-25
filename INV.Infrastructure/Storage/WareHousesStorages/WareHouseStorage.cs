@@ -5,11 +5,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace INV.Infrastructure.Storage.WareHousesStorages;
 
-public class WareHouseStrorage : IWareHouseStorage
+public partial class WareHouseStorage : IWareHouseStorage
 {
     private readonly string _connectionString;
 
-    public WareHouseStrorage(IConfiguration configuration)
+    public WareHouseStorage(IConfiguration configuration)
     {
         _connectionString = configuration.GetConnectionString("INV");
     }
@@ -17,14 +17,7 @@ public class WareHouseStrorage : IWareHouseStorage
     private const string selectAllQuery = "SELECT * FROM WareHouse";
     private const string insertQuery = "INSERT INTO WareHouse (Id, Name) VALUES (@Id, @Name)";
 
-    private static WareHouse getWareHouseData(SqlDataReader reader)
-    {
-        return new WareHouse
-        {
-            Id = reader.GetGuid(reader.GetOrdinal("Id")),
-            Name = reader.GetString(reader.GetOrdinal("Name")),
-        };
-    }
+  
 
     public async ValueTask<List<WareHouse>> SelectAllReceipts()
     {
