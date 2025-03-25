@@ -32,7 +32,7 @@ public interface IReceiptStorage
 
     ValueTask<ReceiptDetail> GetReceiptInfoById(Guid receiptId, bool includeProducts = false);
 
-    ValueTask ValidateReceipt(Guid receiptId);
+    ValueTask<string> ValidateReceipt(Guid receiptId);
 
     ValueTask<List<ReceiptInfo>> SelectReceiptsBySupplierId(Guid supplierId);
 

@@ -147,7 +147,7 @@ namespace INVUIs.Receptions
             if (!isValidated)
             {
                 context.PreventNavigation();
-                await myAlert.ShowToast("Error", "You must validate the reception before leaving.", MyAlertType.error);
+                await myAlert.ShowToast(null, "You must validate the reception before leaving.", MyAlertType.error);
             }
         }
     }

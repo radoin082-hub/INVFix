@@ -32,7 +32,7 @@ namespace INV.Implementation.Service.Receipts
             {
                 try
                 {
-                    await receiptStorage.ValidateReceipt(receiptId);
+                    string result=await receiptStorage.ValidateReceipt(receiptId);
                     scope.Complete();
                     return Result.Success();
                 }

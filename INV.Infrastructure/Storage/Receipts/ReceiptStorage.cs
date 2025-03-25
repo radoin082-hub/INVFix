@@ -333,10 +333,9 @@ WHERE O.SupplierId = @aSupplierId;";
             return receiptInfo;
         }
 
-        public async ValueTask ValidateReceipt(Guid receiptId)
+        public async ValueTask<string> ValidateReceipt(Guid receiptId)
         {
-            try
-            {
+            
                 using var connection = new SqlConnection(_connectionString);
                 await connection.OpenAsync();
 
@@ -360,19 +359,11 @@ WHERE O.SupplierId = @aSupplierId;";
                 switch (result)
                 {
                     case 2001:
-                        throw new InvalidOperationException("Cannot validate: receipt deja validee");
+                        return "Cannot validate: receipt deja validee";
                     case 2002:
-                        throw new InvalidOperationException("Cannot validate: rest a livrer <received");
+                        return "Cannot validate: rest a livrer <received";
                 }
-            }
-            catch (SqlException ex)
-            {
-                throw new Exception($"Database error occurred while validating receipt: {ex.Message}", ex);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error validating receipt: {ex.Message}", ex);
-            }
+          return "Success";
         }
 
         public async ValueTask<List<ReceiptInfo>> SelectReceiptsBySupplierId(Guid supplierId)
