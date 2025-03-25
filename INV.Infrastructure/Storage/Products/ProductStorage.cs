@@ -18,8 +18,8 @@ namespace INV.Infrastructure.Storage.Products
         }
 
         private const string insertProductCommand = @"
-            INSERT INTO [dbo].[PRODUCTS] ( Id, Designation,UnitMeasure,Quantity, UnitPrice, TVA,DefaultWareHouseId)
-            VALUES (@aId, @aDesignation,@aUnitMeasure, @aQuantity, @aUnitPrice, @aTVA, @aDefaultWareHouseId)";
+            INSERT INTO [dbo].[PRODUCTS] ( Id, Designation,UnitMeasure,Quantity, TVA,DefaultWareHouseId)
+            VALUES (@aId, @aDesignation,@aUnitMeasure, @aQuantity, @aTVA, @aDefaultWareHouseId)";
 
         private const string updateProductCommand = @"
             UPDATE [dbo].[PRODUCTS] SET Designation = @aDesignation, UnitMeasure = @aUnitMeasure,Quantity = @aQuantity,
