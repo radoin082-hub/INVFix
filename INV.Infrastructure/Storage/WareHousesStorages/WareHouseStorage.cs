@@ -3,7 +3,7 @@ using INV.Domain.Entities.WareHouses;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
-namespace INV.Infrastructure.Storage.WareHousesStorages;
+namespace INV.Infrastructure.Storage.WareHousesStorages{
 
 public partial class WareHouseStorage : IWareHouseStorage
 {
@@ -43,4 +43,5 @@ public partial class WareHouseStorage : IWareHouseStorage
         await sqlConnection.OpenAsync();
         return await cmd.ExecuteNonQueryAsync();
     }
+}
 }

@@ -32,7 +32,7 @@ builder.Services.AddScoped<IPurchaseOrderService, PurchaseOrderService>();
 builder.Services.AddScoped<IAppSupplierService, AppSupplierService>();
 builder.Services.AddScoped<IReceiptService, ReceiptService>();
 builder.Services.AddScoped<IReceiptStorage, ReceiptStorage>();
-builder.Services.AddScoped<IWareHouseStorage, WareHouseStrorage>();
+builder.Services.AddScoped<IWareHouseStorage, WareHouseStorage>();
 builder.Services.AddScoped<IWareHouseService, WareHouseService>();
 builder.Services.AddScoped<IBudgetStorage, BudgetStorage>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
