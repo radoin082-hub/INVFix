@@ -1,15 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using INV.Domain.Entities.Budget;
 using INVUIs.Products.ProductsModel;
 
 namespace INVUIs.Purchases.PurchaseModels
 {
     public class PurchaseModel
     {
+        public Guid SupplierId { get; set; }
+
         [Required(ErrorMessage = "Please select an article.")]
         public string selectedArticle { get; set; }
 
         public int ArticleCode { get; set; }
-        
+
         public int ChapterCode { get; set; }
 
         public string description_article { get; set; }
@@ -19,12 +22,11 @@ namespace INVUIs.Purchases.PurchaseModels
         [Required(ErrorMessage = "Please select a chapter.")]
         public string selectedChapter { get; set; }
 
-
         [Required(ErrorMessage = "Please select a budget category.")]
-        public string selectedCategory { get; set; }
+        public BudgeType selectedCategory { get; set; }
 
         [Required(ErrorMessage = "Please select a service.")]
-        public string selectedService { get; set; }
+        public ServiceType selectedService { get; set; }
 
         [Required(ErrorMessage = "Delivery time is required.")]
         [RegularExpression(@"^\d{1,9}$", ErrorMessage = "Invalid delivery time format.")]

@@ -1,2 +1,110 @@
-@inject Microsoft.Extensions.Localization.IStringLocalizer<Home> L
 @page "/"
+
+<PageHeader Title="Dashboard" SubTitle="Overview of your inventory management system" />
+
+<div class="dashboard-part1">
+    <DashboardCardInfo Title="Total Products" IconSrc="bi bi-box-seam me-3" Count="350" />
+    <DashboardCardInfo Title="Suppliers" IconSrc="bi bi-person" Count="30" />
+    <DashboardCardInfo Title="Purchase Orders" IconSrc="bi bi-cart-check me-3" Count="30" />
+    <DashboardCardInfo Title="Receptions" IconSrc="bi bi-clipboard-check me-3" Count="10" />
+</div>
+
+
+<div class="dashboard-part2">
+    <div class="graph-1">
+        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="Radzen.AlignItems.Center">
+            <RadzenCard Variant="Radzen.Variant.Outlined" Style="width: 100%;">
+                <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="0.5rem" Wrap="Radzen.FlexWrap.Wrap">
+                    <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
+                    <RadzenLabel Text="Show Data Labels" Component="dataLabels" />
+                </RadzenStack>
+            </RadzenCard>
+
+            <RadzenStack Style="width: 100%; max-width: 600px;">
+                <RadzenChart SeriesClick=@OnSeriesClick>
+                    <RadzenPieSeries Data="@revenue" Title="Revenue" CategoryProperty="Quarter" ValueProperty="Revenue">
+                        <RadzenSeriesDataLabels Visible="@showDataLabels" />
+                    </RadzenPieSeries>
+                </RadzenChart>
+            </RadzenStack>
+        </RadzenStack>
+    </div>
+
+    <div class="graph-2">
+        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="Radzen.AlignItems.Center">
+            <RadzenCard Variant="Radzen.Variant.Outlined" Style="width: 100%;">
+                <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="0.5rem" Wrap="Radzen.FlexWrap.Wrap">
+                    <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
+                    <RadzenLabel Text="Show Data Labels" Component="dataLabels" />
+                </RadzenStack>
+            </RadzenCard>
+
+            <RadzenStack Style="width: 100%; max-width: 600px;">
+                <RadzenChart SeriesClick=@OnSeriesClick>
+                    <RadzenPieSeries Data="@revenue2" Title="Reception" CategoryProperty="Quarter2" ValueProperty="Revenue2">
+                        <RadzenSeriesDataLabels Visible="@showDataLabels" />
+                    </RadzenPieSeries>
+                </RadzenChart>
+            </RadzenStack>
+        </RadzenStack>
+    </div>
+    
+</div>
+
+
+
+
+
+@code {
+    @using Radzen
+    @using BlazorBootstrap
+
+    bool showDataLabels = false;
+
+    void OnSeriesClick(SeriesClickEventArgs args)
+    {
+       
+    }
+
+    class DataItem
+    {
+        public string Quarter { get; set; }
+        public double Revenue { get; set; }
+
+        public string Quarter2 { get; set; }
+        public double Revenue2 { get; set; }
+    }
+
+    DataItem[] revenue = new DataItem[] {
+        new DataItem
+        {
+            Quarter = "Rejected",
+            Revenue = 30000
+        },
+        new DataItem
+        {
+            Quarter = "Editing",
+            Revenue = 40000
+        },
+        new DataItem
+        {
+            Quarter = "Validated",
+            Revenue = 50000
+        },
+       
+    };
+
+    DataItem[] revenue2 = new DataItem[] {
+        new DataItem
+        {
+            Quarter2 = "Validated",
+            Revenue2= 1000
+        },
+        new DataItem
+        {
+            Quarter2 = "Editing",
+            Revenue2 = 1200
+        },
+       
+    };
+}

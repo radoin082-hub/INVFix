@@ -29,70 +29,40 @@ public partial class PurchaseHeader : ComponentBase
     private bool displayVisa = false;
     private bool displayReject = false;
 
-    public int SelectedArticleCode
-    {
-        get => _selelctedArticleCode;
-        set
-        {
-            if (_selelctedArticleCode != value)
-            {
-                _selelctedArticleCode = value;
-                Purchase.selectedArticle = value.ToString();
-                LoadArticleTitle();
-            }
-        }
-    }
-
-    public int SelectedChapterCode
-    {
-        get => _selectedChapterCode;
-        set
-        {
-            if (_selectedChapterCode != value)
-            {
-                _selectedChapterCode = value;
-                Purchase.selectedChapter = value.ToString();
-                LoadChapterTitle();
-                LoadArticlesBycodeChapter();
-            }
-        }
-    }
-
     private async Task create()
     {
         await OnCreate.InvokeAsync();
     }
-    
 
     protected override async Task OnInitializedAsync()
     {
         myAlert = new MyAlert(jsRuntime);
     }
 
-    private async void LoadChapterTitle()
-    {
-        var result = await budgetService.GetChapterByCode(SelectedChapterCode);
-        Purchase.title_chapter = result.Value.Name;
-        Purchase.ChapterCode = result.Value.CodeChapter;
-        StateHasChanged();
-    }
+    /*    private async void LoadChapterTitle()
+        {
+            var result = await budgetService.GetChapterByCode(SelectedChapterCode);
+            Purchase.title_chapter = result.Value.Name;
+            Purchase.ChapterCode = result.Value.CodeChapter;
+            StateHasChanged();
+        }*/
 
-    private async void LoadArticlesBycodeChapter()
+    private async Task LoadArticlesBycodeChapter()
     {
-        var result = await budgetService.GetArticlesByCodeChapter(SelectedChapterCode);
+        var result = await budgetService.GetArticlesByCodeChapter(Purchase.ChapterCode);
         Articles = result.Value;
 
         StateHasChanged();
     }
 
-    private async void LoadArticleTitle()
-    {
-        var result = await budgetService.GetArticlesByCodeArticle(SelectedArticleCode);
+    /*  private async void LoadArticleTitle()
+      {
+          var result = await budgetService.GetArticlesByCodeArticle(SelectedArticleCode);
 
-        Purchase.description_article = result.Value.Name;
-        Purchase.ArticleCode = result.Value.CodeArticle;
-        StateHasChanged();
-    }
+          Purchase.description_article = result.Value.Name;
+          Purchase.ArticleCode = result.Value.CodeArticle;
+          StateHasChanged();
+      }*/
 
     public async Task Save()
     {

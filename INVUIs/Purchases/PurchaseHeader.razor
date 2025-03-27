@@ -1,3 +1,4 @@
+@using INV.Domain.Entities.Budget
 @using INVUIs.Shared.Models
 @rendermode InteractiveServer
 <EditForm Model="Purchase" OnValidSubmit="Save" FormName="purchaseForm" Enhance @ref="form">
@@ -5,51 +6,75 @@
 
     <CascadingValue Value="Chapters">
         <CascadingValue Value="Articles">
-        <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 32px; padding-inline: 32px">
-            <div>
-                <CommandInput Label="Select a Budget:">
+            <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 32px; padding-inline: 32px">
+                <div>
+                    <CommandInput Label="Select a Budget:">
                         <InputSelect @bind-Value="Purchase.selectedCategory">
-                        <option value="" selected disabled>--Select--</option>
-                        <option value="1">Operating Expenses</option>
-                        <option value="2">Equipment Expenses</option>
-                        <option value="3">Other Expenses</option>
+
+                             @foreach (BudgeType category in Enum.GetValues(typeof(BudgeType)))
+                            {
+                                if(Purchase.selectedCategory == category)
+                                {
+                                    <option value="@category" selected="selected">@category.ToString()</option>
+                                }else{
+                                    <option value="@category">@category.ToString() </option>
+                                }
+                        
+                            } 
+
                     </InputSelect>
+                        
                 </CommandInput>
                 <CommandInput Label="Choose a Chapter:">
-                        <InputSelect id="chapter" style="width: 6rem" @bind-Value="SelectedChapterCode"
+                        <InputSelect id="chapter"  Value="Purchase.ChapterCode"
+                          ValueExpression="@(() => Purchase.ChapterCode)" ValueChanged="@(async (int code)=>
+             {Purchase.ChapterCode =code;
+                await LoadArticlesBycodeChapter();
+             })"
+                                     class="form-control valid">
                                  class="form-control valid">
                         <option value="" selected>--Select--</option>
                          @if (Chapters != null)
                         {
                                 @foreach (var chapter in Chapters)
                                 {
-                                    <option value="@chapter.CodeChapter">@chapter.CodeChapter</option>
+                                    if(Purchase.ChapterCode == chapter.CodeChapter )
+                                    {
+                                        <option value="@chapter.CodeChapter" selected="selected">@chapter.CodeChapter - @chapter.Name</option>
+                                    }else{
+                                        <option value="@chapter.CodeChapter">@chapter.CodeChapter - @chapter.Name</option>
+                                    }
+                               
                                 }
                         }
                     </InputSelect>
-                        <InputText id="title" @bind-Value="Purchase.title_chapter" class="form-control valid"
-                               readonly/>
+                     
+                 
                 </CommandInput>
 
                 <div class="input2">
                     <div class="commend-input">
                         <div class="label-input-group">
                             <label for="article" style="width: 10rem">Choose an Article:</label>
-                                <InputSelect id="article" style="width: 6rem" @bind-Value="SelectedArticleCode"
+                                <InputSelect id="article" @bind-Value="Purchase.ArticleCode"
                                          class="form-control valid">
                                 <option value="" selected>--Select--</option>
                                     @if (Articles != null)
                                     {
                                         @foreach (var article in Articles)
                                         {
-                                            <option value="@article.CodeArticle">@article.CodeArticle</option>
+										if (Purchase.ArticleCode == article.CodeArticle)
+										{
+											<option value="@article.CodeArticle" selected="selected">@article.CodeArticle - @article.Name</option>
+                                        }else{
+                                                <option value="@article.CodeArticle">@article.CodeArticle - @article.Name</option>
+                                        }
+                                           
                                         }
                                     }
                                 
                             </InputSelect>
 
-                                <InputText id="description" @bind-Value="Purchase.description_article"
-                                       class="form-control valid" placeholder="Enter Description" readonly/>
                         </div>
                     </div>
                 </div>
@@ -57,10 +82,20 @@
             <div>
                 <CommandInput Label="Select a Service:">
                         <InputSelect @bind-Value="Purchase.selectedService">
-                        <option value="" selected>--Select--</option>
-                        <option value="1">Works</option>
-                        <option value="2">Equipment</option>
-                        <option value="3">Services</option>
+
+                            @foreach (ServiceType service in Enum.GetValues(typeof(ServiceType)))
+                            {
+                                if (Purchase.selectedService == service)
+                                {
+                                    <option value="@service" selected="selected">@service.ToString()</option>
+                                }
+                                else
+                                {
+                                    <option value="@service">@service.ToString() </option>
+                                }
+
+                            }
+                       
                     </InputSelect>
 
                 </CommandInput>
@@ -70,12 +105,30 @@
                             <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" />
                         <label class="form-label">days</label>
                     </div>
+
+                      
                 </div>
                 <div style="display: flex; justify-content: flex-end; width: 100%">
                     <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Create"
                                   Icon="add_circle" ButtonStyle="ButtonStyle.Primary"/>
                 </div>
+                    <div style="display: flex; justify-content: flex-end; width: 100%">
+                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Reject"
+                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
+
+
+                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Visi"
+                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
+
+                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="modify"
+                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
+
+
+
+                    </div>
             </div>
+
+               
         </div>
 
 

@@ -1,0 +1,72 @@
+﻿@code {
+    [Parameter]
+    public string Title { get; set; }
+
+    [Parameter]
+    public string IconSrc { get; set; }
+
+    [Parameter]
+    public int Count { get; set; }
+
+    [Parameter]
+    public string Percentage { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+}
+
+<div class="dashboard-card">
+    <h3>@Title <i class="@IconSrc"></i></h3>
+    <div class="count">@Count</div>
+    <div class="percentage">@Percentage</div>
+    <div class="text">@Text</div>
+</div>
+
+<style>
+
+    .dashboard-card {
+        background: white;
+        padding: 10px;
+        margin-left:20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        width: 220px;
+    }
+
+        .dashboard-card h3 {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+            .dashboard-card h3 i {
+                font-size: 23px;
+                width: 16px;
+                margin-left: 6px;
+            }
+
+        .dashboard-card .count {
+            font-size: calc(20px + 1vw); 
+            font-weight: bold;
+            margin: 8px 0;
+            color: #222;
+            
+        }
+
+
+        .dashboard-card .percentage {
+            font-size: 14px;
+            color: green;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .dashboard-card .text {
+            font-size: 13px;
+            color: #777;
+        }
+</style>

@@ -9,6 +9,7 @@ public partial class SupplierSelector
     [Parameter] public string Title { set; get; }
     [Parameter] public EventCallback<SupplierInfo> OnSelected { set; get; }
     [Parameter] public List<SupplierInfo> Supplier { set; get; }
+    [Parameter] public Guid SupplierId { get; set; }
     [Inject] public ISupplierService supplierService { set; get; }
 
     private IEnumerable<SupplierInfo> displayedItems = new List<SupplierInfo>();
@@ -19,6 +20,10 @@ public partial class SupplierSelector
     protected override async Task OnInitializedAsync()
     {
         await loadSuppliers();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
     }
 
     private async Task loadSuppliers()

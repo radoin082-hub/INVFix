@@ -1,130 +1,13 @@
-﻿.dashboard {
+﻿.dashboard-part1 {
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.card {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    flex: 1 1 45%;
-    min-width: 200px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .card h3 {
-        font-size: 1.4em;
-        color: #333;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 600;
-    }
-
-.stat-value {
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.latest-entries {
-    list-style: none;
-    padding: 0;
-    color: #666;
-    font-size: 1em;
-}
-
-    .latest-entries li {
-        margin-bottom: 5px;
-    }
-
-.button-group {
+.dashboard-part2 {
     display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-    margin-top: 20px;
+    justify-content: space-between;
 }
 
-.btn {
-    padding: 12px 24px;
-    font-size: 1em;
-    border-radius: 5px;
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-    .btn::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(255, 255, 255, 0.2);
-        transition: height 0.4s ease, width 0.4s ease;
-    }
-
-    .btn:hover::after {
-        height: 300%;
-        width: 300%;
-    }
-
-.btn-primary {
-    background-color: #007bff;
-}
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
-
-.btn-secondary {
-    background-color: #6c757d;
-}
-
-    .btn-secondary:hover {
-        background-color: #5a6268;
-    }
-
-.page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 50px;
-    text-align: center;
-}
-
-.header-container {
-    position: relative;
-}
-
-.background-shape {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-}
-
-.content p {
-    max-width: 600px;
-    margin-top: 10px;
+.graph-1 , .graph-2{
+    width:50%;
 }

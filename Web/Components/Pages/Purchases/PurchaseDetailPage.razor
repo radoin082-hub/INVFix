@@ -8,8 +8,10 @@
 @*     <PurchaseCard purchaseInfo="purchaseOrder" /> *@
 
 
-    <CascadingValue Value="purchaseModel">
-        <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" />
+    <CascadingValue Value="chapters">
+        <CascadingValue Value="articles">
+        <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" Purchase="purchaseModel" />
+    </CascadingValue>
     </CascadingValue>
 </div>
 

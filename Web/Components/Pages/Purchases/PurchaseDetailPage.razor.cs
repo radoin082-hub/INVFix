@@ -1,5 +1,7 @@
-﻿using INV.App.Purchases;
+﻿using INV.App.Budgets;
+using INV.App.Purchases;
 using INV.App.Receipts;
+using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Products;
 using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Receipts;
@@ -18,6 +20,8 @@ namespace INV.Web.Components.Pages.Purchases
         [Inject] public IPurchaseOrderService purchaseOrderService { set; get; }
         [Inject] public IReceiptService receiptService { set; get; }
 
+        [Inject] public IBudgetService budgetService { get; set; }
+
         public PurchaseOrder purchaseOrder = new PurchaseOrder();
 
         public List<PurchaseProductModel> products = new List<PurchaseProductModel>();
@@ -27,20 +31,36 @@ namespace INV.Web.Components.Pages.Purchases
         private PurchaseHeader purchaseHeaderRef;
         public PurchaseModel purchaseModel { set; get; } = new();
 
+        public List<Article> articles;
+        public List<Chapter> chapters;
+
         protected override async Task OnInitializedAsync()
         {
+            var articelList = await budgetService.GetAllArticles();
+            if (articelList.IsSuccess)
+            {
+                articles = articelList.Value;
+            }
+
+            var cahpterList = await budgetService.GetAllChapitres();
+            if (cahpterList.IsSuccess)
+            {
+                chapters = cahpterList.Value;
+            }
+
             var resultToPurchase2 = await purchaseOrderService.GetPurchaseOrdersById(Id);
             if (resultToPurchase2.IsSuccess)
             {
                 var purchaseOrder = resultToPurchase2.Value;
                 purchaseModel = new PurchaseModel
                 {
-                    DeliveryTime = purchaseOrder.CompletionDelay.ToString(),//100
-                    title_chapter = "1",//no in query
-                                        //     selectedCategory = purchaseOrder.BudgeType.ToString(),//operation
-
-                    selectedChapter = "2",
-                    //  selectedArticle = purchaseOrder.BudgeArticle.ToString(),//nachar,
+                    ArticleCode = purchaseOrder.BudgetArticle,
+                    ChapterCode = purchaseOrder.BudgetChapter,
+                    selectedCategory = purchaseOrder.BudgetType,
+                    selectedService = purchaseOrder.ServiceType,
+                    DeliveryTime = purchaseOrder.CompletionDelay.ToString(),
+                    SupplierId = purchaseOrder.SupplierId
+                    
                 };
             }
 

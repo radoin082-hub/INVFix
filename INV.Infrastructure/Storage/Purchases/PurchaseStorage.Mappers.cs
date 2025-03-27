@@ -14,10 +14,10 @@ public partial class PurchaseOrderStorage
                 Id = (Guid)reader["Id"],
                 Number = (string)reader["Number"],
                 SupplierId = (Guid)reader["SupplierId"],
-
                 Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
-                // BudgeArticle = (string)reader["BudgetArticle"],
-                //BudgeType = (BudgeType)reader["BudgetType"],
+                BudgetArticle = (int)reader["BudgetArticle"],
+                BudgetChapter = (int)reader["BudgetChapter"],
+                BudgetType = (BudgeType)reader["BudgetType"],
                 ServiceType = (ServiceType)reader["ServiceType"],
                 TotalHT = (decimal)reader["TotalHT"],
                 TotalTVA = (decimal)reader["TotalVA"],
