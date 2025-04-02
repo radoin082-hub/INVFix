@@ -1,0 +1,16 @@
+<div class="popup">
+    <div class="popup-content">
+        <div class="titels-page">
+            <div class="titel-primary">
+                <h2>@Titel</h2>
+            </div>
+            @Pills
+        </div>
+    </div>
+</div>
+
+@code{
+    [Parameter] public string Titel { get; set; }
+    [Parameter] public RenderFragment Pills { get; set; } 
+
+}

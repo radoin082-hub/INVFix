@@ -25,8 +25,10 @@ public partial class PurchaseOrderStorage
                 CompletionDelay = (int)reader["CompletionDelay"],
                 VisaNumber = reader.IsDBNull(reader.GetOrdinal("VisaNumber")) ? null : reader["VisaNumber"].ToString(),
                 VisaDate = reader.IsDBNull(reader.GetOrdinal("VisaDate"))
-                    ? null
-                    : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
+    ? null
+    : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
+                Observation = reader.IsDBNull(reader.GetOrdinal("Observation")) ? null : (string)reader["Observation"],
+
                 Status = (PurchaseStatus)reader["Status"]
             };
         }
@@ -37,11 +39,11 @@ public partial class PurchaseOrderStorage
             {
                 Id = (Guid)reader["Id"],
                 SupplierId = (Guid)reader["SupplierId"],
-                Number = (string)reader["Number"],
+                Number = reader["Number"] != DBNull.Value ? (string)reader["Number"] : null,
                 Status = (PurchaseStatus)reader["Status"],
-                SupplierName = (string)reader["CompanyName"],
+                SupplierName = reader["CompanyName"] != DBNull.Value ? (string)reader["CompanyName"] : null,
                 Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
-                BudgeArticle = (string)reader["BudgetArticle"],
+                BudgeArticle = reader["BudgetArticle"] != DBNull.Value ? (string)reader["BudgetArticle"] : null,
                 BudgeType = (BudgeType)reader["BudgetType"],
                 ServiceType = (ServiceType)reader["ServiceType"],
                 TotalTTC = (decimal)reader["TotalTC"]

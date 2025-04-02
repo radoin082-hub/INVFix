@@ -5,7 +5,7 @@
 <CascadingValue Value="products">
 
     <RadzenDataGrid @ref="grid" TItem="PurchaseProductModel" Data="@products" AllowVirtualization="true" Style="height:370px"
-                    GridLines="DataGridGridLines.Horizontal">
+    GridLines="DataGridGridLines.Horizontal">
         <Columns>
             <RadzenDataGridColumn Property="Number" Title="N°" Width="7%">
                 <Template Context="product">
@@ -16,7 +16,9 @@
             <RadzenDataGridColumn Property="Designation" Title="Designation" Width="34%" Visible="@(StatusButton(PurchaseInfo))">
                 <FooterTemplate>
                     <div style="width: 100%; display: flex; justify-content: flex-start; align-items: center;">
-                        <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Icon="add_circle" Text="Add Product" Click="() => productSelector.ShowModal()"/>
+                      
+                        <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Visible="!canEdit" Icon="add_circle" Text="Add Product" Click="() => productSelector.ShowModal()"/>
+                    
                     </div>
                 </FooterTemplate>
             </RadzenDataGridColumn>
@@ -38,11 +40,14 @@
                     </div>
                 </FooterTemplate>
             </RadzenDataGridColumn>
-             
+
             <RadzenDataGridColumn Title="" Width="15%" Visible="@(StatusButton(PurchaseInfo))">
                 <Template Context="product">
-                    <RadzenButton ButtonStyle="ButtonStyle.Success" Click="() => EditProduct(product)" Icon="offline_pin"></RadzenButton>
-                    <RadzenButton ButtonStyle="ButtonStyle.Danger" Click="() => DeleteProduct(product)" Icon="highlight_off"></RadzenButton>
+          
+                        <RadzenButton ButtonStyle="ButtonStyle.Success" Click="() => EditProduct(product)" Icon="offline_pin" Visible="!canEdit"></RadzenButton>
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Click="() => DeleteProduct(product)" Icon="highlight_off" Visible="!canEdit"></RadzenButton>
+
+                    
                 </Template>
             </RadzenDataGridColumn>
         </Columns>
@@ -50,45 +55,13 @@
     </RadzenDataGrid>
 
 </CascadingValue>
-<ProductSelector @ref="productSelector" OnProductSelected="AddProductToGrid"/>
+
+
+    <ProductSelector @ref="productSelector" OnProductSelected="AddProductToGrid" />
+
+
+
 
 <ConformationForm  @ref="conformationForm" Titel="Delete Product" Message="Are you sure you want to delete this Product?" OnConfirm="DeleteProductConformation" />
-
-
-@if (showEditPopup)
-{
-    @* <div class="popup">
-        <div class="popup-content">
-            <RadzenTemplateForm TItem="ProductModel" Data="@selectedProductModel" Submit="@SaveEditedProduct">
-                <RadzenStack Gap="1rem">
-                    <RadzenRow Style="display: flex; align-items: center;">
-                        <RadzenColumn Size="12" Style="text-align: left;">
-                            <RadzenLabel Text="@selectedProductModel.Designation"
-                                         Style="font-size: 25px; font-weight: bold; color: #257180FF; display: block;"/>
-                        </RadzenColumn>
-                    </RadzenRow>
-                    <RadzenRow>
-                        <RadzenColumn Size="4">
-                            <RadzenLabel Text="Quantity" Style="font-size: 14px;"/>
-                            <RadzenNumeric TValue="int" @bind-Value="selectedProductModel.Quantity" Min="1" Style="width: 100%; font-size: 14px;"/>
-                        </RadzenColumn>
-                        <RadzenColumn Size="6">
-                            <RadzenLabel Text="Unit Price" Style="font-size: 14px;"/>
-                            <RadzenNumeric TValue="decimal" @bind-Value="selectedProductModel.UnitPrice" Min="1" Style="width: 100%; font-size: 14px;"/>
-                        </RadzenColumn>
-                    </RadzenRow>
-                    <RadzenRow Style="display: flex; justify-content: flex-end;">
-                        <RadzenColumn Size="8" Style="text-align: right;">
-                            <RadzenButton Text="Save" ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;"/>
-                            <RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Danger" ButtonType="ButtonType.Button" Click="@CloseEditPopup" Style="font-size: 14px;"/>
-                        </RadzenColumn>
-                    </RadzenRow>
-                </RadzenStack>
-            </RadzenTemplateForm>
-        </div>
-    </div> *@
-
-    
-}
 
 <ProductEditForm @ref="productEditForm" selectedProductModel="selectedProductModel" productEdit="loadtab"/>

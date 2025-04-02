@@ -16,10 +16,10 @@ namespace INV.Domain.Entities.Purchases
         public decimal TotalTVA { get; set; }
         public decimal TotalTTC { get; set; }
         public int CompletionDelay { set; get; }
-        public string? VisaNumber { set; get; } = "";
+        public string? VisaNumber { set; get; }
         public DateOnly? VisaDate { set; get; }
 
-        public string Observation { get; set; } = "";
+        public string Observation { get; set; }
         public PurchaseStatus Status { set; get; } = PurchaseStatus.Editing;
 
         public List<PurchaseProduct> Products { get; set; } = new();

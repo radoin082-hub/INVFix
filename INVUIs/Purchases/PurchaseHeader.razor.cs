@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using INV.App.Budgets;
+using INV.App.Purchases;
 using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Purchases;
 using INVUIs.Purchases.PurchaseModels;
@@ -13,13 +14,18 @@ namespace INVUIs.Purchases;
 
 public partial class PurchaseHeader : ComponentBase
 {
+    [CascadingParameter] public bool canEdit { get; set; }
     [CascadingParameter] public List<Chapter?> Chapters { get; set; }
     [CascadingParameter] public List<Article?> Articles { get; set; }
+    [Parameter] public RenderFragment Pills { get; set; }
+
     [Parameter] public PurchaseModel Purchase { get; set; } = new();
     [Parameter] public EventCallback OnCreate { get; set; }
+    [Parameter] public EventCallback OnEdit { get; set; }
     [Parameter] public EventCallback<PurchaseModel> OnPurchaseOrder { get; set; }
     [Inject] private IBudgetService budgetService { get; set; }
     [Inject] private IJSRuntime jsRuntime { set; get; }
+    [Inject] private IPurchaseOrderService purchaseOrderService { get; set; }
     private MyAlert myAlert { set; get; }
 
     private int _selectedChapterCode;
@@ -28,15 +34,22 @@ public partial class PurchaseHeader : ComponentBase
     private EditForm form;
     private bool displayVisa = false;
     private bool displayReject = false;
+    public bool statusinput = true;
 
     private async Task create()
     {
         await OnCreate.InvokeAsync();
     }
 
-    protected override async Task OnInitializedAsync()
+    private async Task Edit()
+    {
+        await OnEdit.InvokeAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
     {
         myAlert = new MyAlert(jsRuntime);
+        LoadArticlesBycodeChapter();
     }
 
     /*    private async void LoadChapterTitle()
@@ -53,6 +66,16 @@ public partial class PurchaseHeader : ComponentBase
         Articles = result.Value;
 
         StateHasChanged();
+    }
+
+    private void visibilityReject()
+    {
+        displayReject = !displayReject;
+    }
+
+    private void visibilityVisa()
+    {
+        displayVisa = !displayVisa;
     }
 
     /*  private async void LoadArticleTitle()

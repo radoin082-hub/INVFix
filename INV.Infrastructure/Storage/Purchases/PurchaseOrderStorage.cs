@@ -40,13 +40,13 @@ namespace INV.Infrastructure.Storage.Purchases
             VALUES (@aPurchaseId, @aProductId, @aQuantity, @aUnitPrice)";
 
         private const string insertPurchaseOrderCommand = @"
-            INSERT INTO [purchase].[ORDERS] (Id, Number, SupplierId, Date, BudgetChapter, BudgetArticle, 
+            INSERT INTO [purchase].[ORDERS] (Id, Number, SupplierId, Date, BudgetChapter, BudgetArticle,
                     BudgetType,ServiceType, TotalHT, TotalVA, TotalTC, CompletionDelay)
             VALUES (@aId, @aNumber, @aSupplierId, @aDate,@aBudgetChapter, @aBudgetArticle, @aBudgetType,
                     @aServiceType, @aTotalHT, @aTotalTVA, @aTotalTTC, @aCompletionDelay)";
 
         private const string DecisionCFPurchaseCommand =
-            @" UPDATE purchase.ORDERS SET VisaNumber=@aVisaNumber , VisaDate=@aVisaDate ,Status=@aStatus , Observation=aMotif Where Id=@aId";
+            @" UPDATE purchase.ORDERS SET VisaNumber=@aVisaNumber , VisaDate=@aVisaDate ,Status=@aStatus , Observation=@aMotif Where Id=@aId";
 
         private const string SelectPurchasesForReceiptCreationCommand = "reception.SelectPurchasesForReceiptCreation";
 
@@ -70,7 +70,7 @@ namespace INV.Infrastructure.Storage.Purchases
             UPDATE [purchase].[ORDERS]
             SET Number=@aNumber, SupplierId=@aSupplierId, Date=@aDate, BudgetArticle=@aBudgetArticle,
                 BudgetType=@aBudgetType, ServiceType=@aServiceType, TotalHT=@aTotalHT,
-                TotalVA=@aTotalTVA, TotalTC=@aTotalTTC, CompletionDelay=@aCompletionDelay , VisaDate =@aVisaDate , VisaNumber =@aVisaNumber ,Observation =@aObservation ,Status=@aStatus
+                TotalVA=@aTotalTVA, TotalTC=@aTotalTTC, CompletionDelay=@aCompletionDelay,BudgetChapter=@aBudgetChapter
             WHERE Id=@aId";
 
         private const string deletePurchaseProductCommand =
@@ -86,8 +86,6 @@ namespace INV.Infrastructure.Storage.Purchases
         private const string insertProductPurchaseCommand = @"
             INSERT INTO [purchase].[PRODUCTS] ( PurchaseId, ProductId,Quantity,UnitPrice)
             VALUES (@aPurchaseId, @aProductId,@aQuantity, @aUnitPrice)";
-
-     
 
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
@@ -301,20 +299,17 @@ namespace INV.Infrastructure.Storage.Purchases
             using var sqlConnection = new SqlConnection(_connectionString);
             var cmd = new SqlCommand(updatePurchaseOrderCommand, sqlConnection);
             cmd.Parameters.AddWithValue("@aId", purchaseOrder.Id);
-            cmd.Parameters.AddWithValue("@aNumber", purchaseOrder.Number);
+            cmd.Parameters.AddWithValue("@aNumber", 1);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
-            //  cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgeArticle);
-            //  cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgeType);
-            cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType);
-            cmd.Parameters.AddWithValue("@aTotalHT", purchaseOrder.TotalHT);
-            cmd.Parameters.AddWithValue("@aTotalTVA", purchaseOrder.TotalTVA);
-            cmd.Parameters.AddWithValue("@aTotalTTC", purchaseOrder.TotalTTC);
-            cmd.Parameters.AddWithValue("@aVisaDate", purchaseOrder.VisaDate);
-            cmd.Parameters.AddWithValue("@aVisaNumber", purchaseOrder.VisaNumber);
+            cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgetArticle);
+            cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgetType);
+            cmd.Parameters.AddWithValue("@aBudgetChapter", purchaseOrder.BudgetChapter);
+            cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType); 
+            cmd.Parameters.AddWithValue("@aTotalHT", 1);
+            cmd.Parameters.AddWithValue("@aTotalTVA", 1);
+            cmd.Parameters.AddWithValue("@aTotalTTC", 1);
             cmd.Parameters.AddWithValue("@aCompletionDelay", purchaseOrder.CompletionDelay);
-            cmd.Parameters.AddWithValue("@aObservation", purchaseOrder.Observation);
-            cmd.Parameters.AddWithValue("@aStatus", purchaseOrder.Status);
 
             await sqlConnection.OpenAsync();
             return await cmd.ExecuteNonQueryAsync();
@@ -346,7 +341,7 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aVisaNumber", visaNumber);
             cmd.Parameters.AddWithValue("@aVisaDate", date);
             cmd.Parameters.AddWithValue("@aStatus", status);
-            cmd.Parameters.AddWithValue("@aMotif", motif);
+            cmd.Parameters.AddWithValue("@aMotif", (object)motif ?? DBNull.Value);
             await cmd.ExecuteNonQueryAsync();
         }
     }

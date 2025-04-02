@@ -1,4 +1,5 @@
 @using INV.Domain.Entities.Budget
+@using INV.Domain.Entities.Purchases
 @using INVUIs.Shared.Models
 @rendermode InteractiveServer
 <EditForm Model="Purchase" OnValidSubmit="Save" FormName="purchaseForm" Enhance @ref="form">
@@ -9,9 +10,9 @@
             <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 32px; padding-inline: 32px">
                 <div>
                     <CommandInput Label="Select a Budget:">
-                        <InputSelect @bind-Value="Purchase.selectedCategory">
+                        <InputSelect @bind-Value="Purchase.selectedCategory" disabled="@canEdit">
 
-                             @foreach (BudgeType category in Enum.GetValues(typeof(BudgeType)))
+                            @foreach (BudgeType category in Enum.GetValues(typeof(BudgeType)))
                             {
                                 if(Purchase.selectedCategory == category)
                                 {
@@ -19,23 +20,23 @@
                                 }else{
                                     <option value="@category">@category.ToString() </option>
                                 }
-                        
+
                             } 
 
-                    </InputSelect>
-                        
-                </CommandInput>
-                <CommandInput Label="Choose a Chapter:">
-                        <InputSelect id="chapter"  Value="Purchase.ChapterCode"
-                          ValueExpression="@(() => Purchase.ChapterCode)" ValueChanged="@(async (int code)=>
+                        </InputSelect>
+
+                    </CommandInput>
+                    <CommandInput Label="Choose a Chapter:">
+                        <InputSelect id="chapter" Value="Purchase.ChapterCode" disabled="@canEdit"
+                        ValueExpression="@(() => Purchase.ChapterCode)" ValueChanged="@(async (int code)=>
              {Purchase.ChapterCode =code;
                 await LoadArticlesBycodeChapter();
              })"
-                                     class="form-control valid">
-                                 class="form-control valid">
-                        <option value="" selected>--Select--</option>
-                         @if (Chapters != null)
-                        {
+                        class="form-control valid">
+                            class="form-control valid">
+                            <option value="" selected>--Select--</option>
+                            @if (Chapters != null)
+                            {
                                 @foreach (var chapter in Chapters)
                                 {
                                     if(Purchase.ChapterCode == chapter.CodeChapter )
@@ -44,44 +45,44 @@
                                     }else{
                                         <option value="@chapter.CodeChapter">@chapter.CodeChapter - @chapter.Name</option>
                                     }
-                               
-                                }
-                        }
-                    </InputSelect>
-                     
-                 
-                </CommandInput>
 
-                <div class="input2">
-                    <div class="commend-input">
-                        <div class="label-input-group">
-                            <label for="article" style="width: 10rem">Choose an Article:</label>
-                                <InputSelect id="article" @bind-Value="Purchase.ArticleCode"
-                                         class="form-control valid">
-                                <option value="" selected>--Select--</option>
+                                }
+                            }
+                        </InputSelect>
+
+
+                    </CommandInput>
+
+                    <div class="input2">
+                        <div class="commend-input">
+                            <div class="label-input-group">
+                                <label for="article" style="width: 10rem">Choose an Article:</label>
+                                <InputSelect id="article" @bind-Value="Purchase.ArticleCode" disabled="@canEdit">
+                                    class="form-control valid">
+                                    <option value="" selected>--Select--</option>
                                     @if (Articles != null)
                                     {
                                         @foreach (var article in Articles)
                                         {
-										if (Purchase.ArticleCode == article.CodeArticle)
-										{
-											<option value="@article.CodeArticle" selected="selected">@article.CodeArticle - @article.Name</option>
-                                        }else{
+                                            if (Purchase.ArticleCode == article.CodeArticle)
+                                            {
+                                                <option value="@article.CodeArticle" selected="selected">@article.CodeArticle - @article.Name</option>
+                                            }else{
                                                 <option value="@article.CodeArticle">@article.CodeArticle - @article.Name</option>
-                                        }
-                                           
+                                            }
+
                                         }
                                     }
-                                
-                            </InputSelect>
 
+                                </InputSelect>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <CommandInput Label="Select a Service:">
-                        <InputSelect @bind-Value="Purchase.selectedService">
+                <div>
+                    <CommandInput Label="Select a Service:">
+                        <InputSelect @bind-Value="Purchase.selectedService" disabled="@canEdit">
 
                             @foreach (ServiceType service in Enum.GetValues(typeof(ServiceType)))
                             {
@@ -95,46 +96,78 @@
                                 }
 
                             }
-                       
-                    </InputSelect>
 
-                </CommandInput>
-                <div class="commend-input">
-                    <div class="label-input-group">
-                        <label for="productNumber" class="form-label" style="width: 7.5rem">Delivery Time :</label>
-                            <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" />
-                        <label class="form-label">days</label>
-                    </div>
+                        </InputSelect>
 
-                      
-                </div>
-                <div style="display: flex; justify-content: flex-end; width: 100%">
-                    <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Create"
-                                  Icon="add_circle" ButtonStyle="ButtonStyle.Primary"/>
-                </div>
-                    <div style="display: flex; justify-content: flex-end; width: 100%">
-                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Reject"
-                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
-
-
-                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Visi"
-                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
-
-                        <RadzenButton Size="ButtonSize.Medium" Click="create" Text="modify"
-                                      Icon="add_circle" ButtonStyle="ButtonStyle.Primary" />
-
+                    </CommandInput>
+                    <div class="commend-input">
+                        <div class="label-input-group">
+                            <label for="productNumber" class="form-label" style="width: 7.5rem">Delivery Time :</label>
+                            <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" disabled="@canEdit" />
+                            <label class="form-label">days</label>
+                        </div>
 
 
                     </div>
+
+
+
+                    @if (Purchase.SupplierId == Guid.Empty)
+                    {
+                        <div style="display: flex; justify-content: flex-end; width: 100%">
+                            <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Create"
+                            Icon="add_circle" ButtonStyle="ButtonStyle.Success" />
+                        </div>
+
+                    }
+
+
+                    @Pills
+
+                </div>
+
+              
             </div>
 
-               
-        </div>
+            <div class="commend-input footer-card" style="padding-left: 32px;">
 
 
-    </CascadingValue>
+                    @if (Purchase.Status == PurchaseStatus.Reject || Purchase.Status == PurchaseStatus.Vised)
+                    {
+                    <div class="label-input-group" style="align-items: normal !important;">
+                            <label for="productNumber" class="form-label" style="width: 5rem">VisaNumber :</label>
+
+                        <label style="width: 6rem">@Purchase.VisaNumber</label>
+
+                        </div>
+
+                    <div class="label-input-group" style="align-items: normal !important;">
+                        <label for="productNumber" class="form-label" style="width: 5rem">VisaDate  :</label>
+
+                        <label style="width: 7rem">@Purchase.VisaDate</label>
+                        </div>
+                    
+                    }
+                    @if (Purchase.Status == PurchaseStatus.Reject)
+                    {
+                    <div class="label-input-group" style="align-items: normal !important;">
+                            <label for="productNumber" class="form-label" style="width: 5rem">Observation :</label>
+                        <label style="width: 6rem">@Purchase.Observation</label>
+
+                        </div>
+                    }
+
+                </div>
+      
+
+
+          
+        </CascadingValue>
     </CascadingValue>
 </EditForm>
+
+
+
 
 <style>
     .label-input-group {

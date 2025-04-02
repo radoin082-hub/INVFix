@@ -2,8 +2,8 @@
 @using INVUIs.Purchases.PurchaseModels
 @if (visibility)
 {
-    <div class="popup">
-        <div class="popup-content">
+    <MyModal>
+        <Pills>
             <RadzenTemplateForm TItem="PurchaseProductModel" Data="@selectedProductModel" Submit="@onSelectClicked">
                 <RadzenStack Gap="1rem">
                     @if (!isProductSelected && (SelectedProductId == null || SelectedProductId == Guid.Empty))
@@ -75,8 +75,8 @@
                     </RadzenRow>
                 </RadzenStack>
             </RadzenTemplateForm>
-        </div>
-    </div>
+        </Pills>
+    </MyModal>
 }
 
 <ProductForm @ref="productForm" OnProductCreated="onProductCreated" />

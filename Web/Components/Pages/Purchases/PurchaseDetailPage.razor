@@ -5,30 +5,102 @@
 <PageTitle>Purchase Order</PageTitle>
 <PageHeader Title="Purchase Details" SubTitle="Review and manage purchase order details" />
 <div class="mb-3">
-@*     <PurchaseCard purchaseInfo="purchaseOrder" /> *@
-
 
     <CascadingValue Value="chapters">
         <CascadingValue Value="articles">
-        <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" Purchase="purchaseModel" />
+            <CascadingValue Value="canEdit">
+                <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" OnEdit="modeEditing" Purchase="purchaseModel" >
+                    <Pills>
+                        <div class="d-flex justify-content-end">
+                            @if (purchaseModel.Status == PurchaseStatus.Editing)
+                            {
+                                <RadzenButton Click="visibilityReject" Text="Reject"
+                                Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
+
+
+                                <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text="Visi"
+                                Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
+                                <RadzenButton Click="Edit" Text="modify" Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
+                            }
+
+                        </div>
+                       
+            </Pills>
+</PurchaseHeader>
+            </CascadingValue>
     </CascadingValue>
     </CascadingValue>
+   
 </div>
 
 <Tabs>
-    <Tab Title="Products" Active="true">
+    <Tab Title="Supplier" Active="true">
         <Content>
+            <CascadingValue Value="selectedSupplier">
+                <CascadingValue Value="canEdit">
+                <PurchaseSupplier OnSupplierSelected="@(supplier => selectedSupplier = supplier)" supplier="selectedSupplier" />
+            </CascadingValue>
+            </CascadingValue>
+        </Content> 
+    </Tab>
+    <Tab Title="Products">
+        <Content>
+            <CascadingValue Value="canEdit">
             <PurchaseProducts ProductList="products" PurchaseInfo="purchaseOrder" />
+            </CascadingValue>
         </Content>
     </Tab>
     @if (purchaseOrder.Status == PurchaseStatus.Vised && receptionsListByPurchase.Count > 0)
     {
         <Tab Title="Receipts">
         <Content>
-            @* <ReceptionListByPurchase Receptions="receptionsListByPurchase" /> *@
-
 				<ReceptionList Receptions="receptionsListByPurchase" ShowSupplier="false" ShowPurchase="true" />
         </Content>
     </Tab>
 	}
 </Tabs>
+
+@if(displayReject)
+{
+    <MyModal Titel="Reject">
+
+        <Pills>
+            <div class="conformation-content">
+                <label>Number</label>
+                <input type="text" class="form-control" @bind="purchaseModel.VisaNumber" />
+                <label>Date</label>
+                <input type="date" class="form-control" @bind="purchaseModel.VisaDate" />
+                <label>Observation</label>
+                <input type="text" class="form-control" @bind="purchaseModel.Observation" />
+
+                <div class="footer-form mt-3">
+                    <button @onclick="visibilityReject" class="btn-custom btn-cancel">cancel</button>
+                    <button @onclick="updatePurchaseToReject" class="btn-custom btn-submit">Submit</button>
+
+                </div>
+            </div>
+          
+
+        </Pills>
+    </MyModal>
+}
+
+@if (displayVisa)
+{
+    <MyModal Titel="Visa">
+
+        <Pills>
+            <div class="conformation-content">
+                <label>Number</label>
+                <input type="text" class="form-control" @bind="purchaseModel.VisaNumber" />
+                <label>Date</label>
+                <input type="date" class="form-control" @bind="purchaseModel.VisaDate" />
+                <div class="footer-form mt-3">
+                    <button @onclick="visibilityVisa" class="btn-custom btn-cancel">cancel</button>
+                    <button @onclick="updatePurchaseToVisa" class="btn-custom btn-submit">Submit</button>
+
+                </div>
+            </div>
+        </Pills>
+    </MyModal>
+}

@@ -2,7 +2,7 @@
 @inject IJSRuntime JSRuntime
 
 <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.Start" Gap="0.5rem" class="supplier-selector">
-    <RadzenLabel Text="Select Supplier" Component="DropDownDataGridChangeEvent" Style="width: 100px" />
+    <RadzenLabel Text="Select Supplier" Component="DropDownDataGridChangeEvent" Style="width: max-content" />
 
     <RadzenDropDownDataGrid TValue="SupplierInfo"
                             @bind-Value="selectedSupplier"

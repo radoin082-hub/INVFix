@@ -1,8 +1,8 @@
 @if (displayModal)
 {
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <EditForm Model="newSupplier" OnValidSubmit="OnCreate" FormName="AddSupplier">
+    <MyModal>
+        <Pills>
+            <EditForm Model="newSupplier" OnValidSubmit="OnCreate" FormName="AddSupplier" style=" width:600px">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div class="commend-content">
@@ -91,6 +91,6 @@
                     </div>
                 </div>
             </EditForm>
-        </div>
-    </div>
+        </Pills>
+    </MyModal>
 }

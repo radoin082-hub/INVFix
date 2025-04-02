@@ -2,10 +2,10 @@
 @using INVUIs.Shared.Models
 @if (visibility)
 {
-    <div class="popup">
-
-        <div class="popup-content">
-            <RadzenTemplateForm TItem="ProductModel" Data="@productModel" Submit="@SubmitProduct">
+    <MyModal Titel="Add Product">
+        
+  <Pills>
+            <RadzenTemplateForm TItem="ProductModel" Data="@productModel" Submit="@SubmitProduct" style="width: 320px;">
                 <RadzenStack Gap="0.5rem">
                     
                     <RadzenRow Style="margin-bottom: 0.1rem;">
@@ -44,16 +44,17 @@
 
                     <RadzenRow Style="display: flex; justify-content: flex-end;">
                         <RadzenColumn Size="12" Style="text-align: right;">
-                            <RadzenButton Text="Save" ButtonType="ButtonType.Submit" ButtonStyle="@ButtonStyle.Success" Style="margin-left: 1rem;" tyle="margin-left: 1rem; font-size: 14px;" />
-                            <RadzenButton Text="Cancel" ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button" Click="@Hide" Style="font-size: 14px;" />
-                        </RadzenColumn>
+                            <div class="footer-form">
+                                <RadzenButton Text="Cancel" ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button" Click="@Hide" Style="font-size: 14px;" />
+                                <RadzenButton Text="Save" ButtonType="ButtonType.Submit" ButtonStyle="@ButtonStyle.Success" Style="font-size: 14px;" />
+
+                            </div>
+                                  </RadzenColumn>
                     </RadzenRow>
                 </RadzenStack>
             </RadzenTemplateForm>
-
-        </div>
-    </div>
-
+        </Pills>
+    </MyModal>
 
 
 }

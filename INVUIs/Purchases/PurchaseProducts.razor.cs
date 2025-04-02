@@ -15,6 +15,7 @@ namespace INVUIs.Purchases;
 
 public partial class PurchaseProducts : ComponentBase
 {
+    [CascadingParameter] public bool canEdit { get; set; }
     [CascadingParameter] public List<PurchaseProductModel> products { set; get; } = new();
     [Parameter] public EventCallback<List<PurchaseProductModel>> OnProductAddProduct { get; set; }
     [Parameter] public PurchaseOrder PurchaseInfo { get; set; }

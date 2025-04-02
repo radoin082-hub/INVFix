@@ -6,7 +6,7 @@
 @using INVUIs.Purchases.PurchaseModels
 @if(display)
 {
-	<Modal Titel="Edit Product">
+	<MyModal Titel="Edit Product">
 		<Pills>
 
 			<RadzenTemplateForm TItem="PurchaseProductModel" Data="@selectedProductModel" Submit="@SaveEditedProduct">
@@ -22,20 +22,23 @@
 							<RadzenLabel Text="Quantity" Style="font-size: 14px;" />
 							<RadzenNumeric TValue="int" @bind-Value="selectedProductModel.Quantity" Min="1" Style="width: 100%; font-size: 14px;" />
 						</RadzenColumn>
-						<RadzenColumn Size="6">
+						<RadzenColumn Size="8">
 							<RadzenLabel Text="Unit Price" Style="font-size: 14px;" />
 							<RadzenNumeric TValue="decimal" @bind-Value="selectedProductModel.UnitPrice" Min="1" Style="width: 100%; font-size: 14px;" />
 						</RadzenColumn>
 					</RadzenRow>
 					<RadzenRow Style="display: flex; justify-content: flex-end;">
-						<RadzenColumn Size="8" Style="text-align: right;">
-							<RadzenButton Text="Save" ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;" />
-							<RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Danger" ButtonType="ButtonType.Button" Click="@CloseEditPopup" Style="font-size: 14px;" />
-						</RadzenColumn>
+						<RadzenColumn Size="12" Style="text-align: right;">
+							<div class="footer-form mt-3">
+								<RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Danger" ButtonType="ButtonType.Button" Click="@CloseEditPopup" Style="font-size: 14px;" />
+								<RadzenButton Text="Save" ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;" />
+
+							</div>
+								</RadzenColumn>
 					</RadzenRow>
 				</RadzenStack>
 			</RadzenTemplateForm>
 
 		</Pills>
-	</Modal>
+	</MyModal>
 }
