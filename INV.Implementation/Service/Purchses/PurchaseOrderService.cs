@@ -192,5 +192,15 @@ namespace INV.Implementation.Service.Purchses
         {
             await purchaseOrderStorage.DecinsonCF(purchaseId, status, date, visaNumber, motif);
         }
+
+        public async ValueTask<int> GetPurchaseCount()
+        {
+            return await purchaseOrderStorage.SelectPurchaseCount();
+        }
+
+        public async ValueTask<List<int>> GetPurchaseCountsByStatus()
+        {
+            return await purchaseOrderStorage.SelectPurchaseCountsByStatus();
+        }
     }
 }

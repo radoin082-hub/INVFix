@@ -7,7 +7,6 @@ namespace INV.Implementation.Service.Suppliers
 {
     public class SupplierService(ISupplierStorage supplierStorage) : ISupplierService
     {
-       
         public async ValueTask<Result> AddSupplier(Supplier supplier)
         {
             try
@@ -61,7 +60,6 @@ namespace INV.Implementation.Service.Suppliers
             }
         }
 
-
         public async ValueTask<Result> SetSupplier(Supplier supplier)
         {
             try
@@ -97,14 +95,18 @@ namespace INV.Implementation.Service.Suppliers
         {
             try
             {
-                 await supplierStorage.DeleteSupplierById(id);
-                 return Result.Success();
+                await supplierStorage.DeleteSupplierById(id);
+                return Result.Success();
             }
             catch (Exception e)
             {
                 return Error.Exception(e);
             }
-          
+        }
+
+        public async ValueTask<int> GetSupplierCountAsync()
+        {
+            return await supplierStorage.SelectSupplierCount();
         }
     }
 }

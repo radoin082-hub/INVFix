@@ -39,4 +39,8 @@ public interface IReceiptStorage
     ValueTask<List<ReceiptInfo>> SelectReceiptsByPurchaseIdWhenStatus1(Guid purchaseId);
 
     ValueTask<bool> ReceiptExistById(Guid id);
+
+    ValueTask<int> SelectSupplierCount();
+
+    ValueTask<List<int>> SelectReceptionCountsByStatus();
 }

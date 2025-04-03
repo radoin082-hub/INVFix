@@ -32,5 +32,9 @@ namespace INV.App.Purchases
         ValueTask<Result<PurchaseStatus>> GetPurchaseStatus(Guid id);
 
         ValueTask DecisionCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumer, string motif);
+
+        ValueTask<int> GetPurchaseCount();
+
+        ValueTask<List<int>> GetPurchaseCountsByStatus();
     }
 }

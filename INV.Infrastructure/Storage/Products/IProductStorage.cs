@@ -15,8 +15,11 @@ namespace INV.Infrastructure.Storage.Products
 
         Task<bool> ProductExistsByaDesignation(string designation);
 
-       // ValueTask<ProductInfo> GetProductById(Guid productId, bool getReceipts = true);
+        // ValueTask<ProductInfo> GetProductById(Guid productId, bool getReceipts = true);
         ValueTask<ProductDetail> GetProductById(Guid productId);
+
         ValueTask<bool> SelectPurchaseCountByProductId(Guid productId);
+
+        ValueTask<int> SelectProductCount();
     }
 }

@@ -66,6 +66,10 @@ FROM [INV].[reception].[HEADERS] H
 JOIN [INV].[purchase].[ORDERS] O ON H.PurchaseId = O.Id
 WHERE O.SupplierId = @aSupplierId;";
 
+        private const string countofReceptions = @"SELECT COUNT(*)  FROM [reception].[HEADERS];";
+
+        private const string countofStatusReception = @"SELECT COUNT(*) FROM [reception].[HEADERS] GROUP BY [Status]";
+
         public async ValueTask<ReceiptDetail> CreateReceiptFromPurchase(Guid purchaseId)
         {
             using var connection = new SqlConnection(_connectionString);
@@ -310,8 +314,6 @@ WHERE O.SupplierId = @aSupplierId;";
             return receiptInfo;
         }
 
-  
-
         private ReceiptInfo getReceiptFromDataSet(DataSet ds, bool includeProducts)
         {
             ReceiptInfo receiptInfo = null;
@@ -335,35 +337,35 @@ WHERE O.SupplierId = @aSupplierId;";
 
         public async ValueTask<string> ValidateReceipt(Guid receiptId)
         {
-            
-                using var connection = new SqlConnection(_connectionString);
-                await connection.OpenAsync();
+            using var connection = new SqlConnection(_connectionString);
+            await connection.OpenAsync();
 
-                using var cmd = new SqlCommand("[reception].[Validate]", connection);
-                cmd.CommandType = CommandType.StoredProcedure;
+            using var cmd = new SqlCommand("[reception].[Validate]", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@aReceiptId", receiptId);
+            cmd.Parameters.AddWithValue("@aReceiptId", receiptId);
 
-                var returnValue = new SqlParameter
-                {
-                    ParameterName = "@RETURN_VALUE",
-                    SqlDbType = SqlDbType.Int,
-                    Direction = ParameterDirection.ReturnValue
-                };
-                cmd.Parameters.Add(returnValue);
+            var returnValue = new SqlParameter
+            {
+                ParameterName = "@RETURN_VALUE",
+                SqlDbType = SqlDbType.Int,
+                Direction = ParameterDirection.ReturnValue
+            };
+            cmd.Parameters.Add(returnValue);
 
-                await cmd.ExecuteNonQueryAsync();
+            await cmd.ExecuteNonQueryAsync();
 
-                int result = (int)returnValue.Value;
+            int result = (int)returnValue.Value;
 
-                switch (result)
-                {
-                    case 2001:
-                        return "Cannot validate: receipt deja validee";
-                    case 2002:
-                        return "Cannot validate: rest a livrer <received";
-                }
-          return "Success";
+            switch (result)
+            {
+                case 2001:
+                    return "Cannot validate: receipt deja validee";
+
+                case 2002:
+                    return "Cannot validate: rest a livrer <received";
+            }
+            return "Success";
         }
 
         public async ValueTask<List<ReceiptInfo>> SelectReceiptsBySupplierId(Guid supplierId)
@@ -394,6 +396,35 @@ WHERE O.SupplierId = @aSupplierId;";
             var result = await cmd.ExecuteScalarAsync();
 
             return Convert.ToInt32(result) > 0;
+        }
+
+        public async ValueTask<int> SelectSupplierCount()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofReceptions, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            var count = await cmd.ExecuteScalarAsync();
+
+            return count != null ? Convert.ToInt32(count) : 0;
+        }
+
+        public async ValueTask<List<int>> SelectReceptionCountsByStatus()
+        {
+            var result = new List<int>();
+
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofStatusReception, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            using var reader = await cmd.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
+            {
+                result.Add(reader.GetInt32(0));
+            }
+
+            return result;
         }
     }
 }

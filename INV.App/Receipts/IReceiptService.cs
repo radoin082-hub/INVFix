@@ -34,5 +34,9 @@ namespace INV.App.Receipts
         ValueTask<Result<List<ReceiptInfo>>> GetReceiptsByPurchaseIdWhenStatus(Guid purchaseId);
 
         ValueTask<Result<bool>> ReceiptExistById(Guid id);
+
+        ValueTask<int> GetReceptionCount();
+
+        ValueTask<List<int>> GetReceptionStatusCount();
     }
 }

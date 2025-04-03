@@ -12,7 +12,9 @@ namespace INV.App.Products
         ValueTask<Result> RemoveProduct(Guid id);
 
         ValueTask<Result<List<ProductInfo>>> GetProducts();
-        
+
         ValueTask<Result<ProductDetail>> GetProductById(Guid id);
+
+        ValueTask<int> GetProductCountAsync();
     }
 }

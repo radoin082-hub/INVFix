@@ -32,7 +32,7 @@ namespace INV.Implementation.Service.Receipts
             {
                 try
                 {
-                    string result=await receiptStorage.ValidateReceipt(receiptId);
+                    string result = await receiptStorage.ValidateReceipt(receiptId);
                     scope.Complete();
                     return Result.Success();
                 }
@@ -229,6 +229,16 @@ namespace INV.Implementation.Service.Receipts
             {
                 return Error.Exception(ex);
             }
+        }
+
+        public async ValueTask<int> GetReceptionCount()
+        {
+            return await receiptStorage.SelectSupplierCount();
+        }
+
+        public async ValueTask<List<int>> GetReceptionStatusCount()
+        {
+            return await receiptStorage.SelectReceptionCountsByStatus();
         }
 
         private async Task<List<Error>> ValidateReceiptCreate(Guid purchaseId)

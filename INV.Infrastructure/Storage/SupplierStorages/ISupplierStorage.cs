@@ -12,6 +12,8 @@ namespace INV.Infrastructure.Storage.SupplierStorages
         Task<bool> SupplierExistsByNIS(string nis);
         Task<bool> SupplierExistsByRIB(string rib);
         ValueTask<int> DeleteSupplierById(Guid id);
+
+        ValueTask<int> SelectSupplierCount();
     }
 }
 

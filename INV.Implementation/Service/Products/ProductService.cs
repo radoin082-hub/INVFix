@@ -3,6 +3,7 @@ using INV.App.Products;
 using INV.Domain.Entities.Products;
 using INV.Domain.Shared;
 using INV.Infrastructure.Storage.Products;
+using INV.Infrastructure.Storage.SupplierStorages;
 
 namespace INV.Implementation.Service.Products
 {
@@ -14,7 +15,6 @@ namespace INV.Implementation.Service.Products
         {
             this.productStorage = productStorage;
         }
-
 
         public async ValueTask<Result> SetProducts(Product product)
         {
@@ -35,7 +35,7 @@ namespace INV.Implementation.Service.Products
             {
                 bool purchaseCount = await productStorage.SelectPurchaseCountByProductId(id);
                 if (purchaseCount)
-                    return Error.Failure("ErrorDelete","The product has purchases.");
+                    return Error.Failure("ErrorDelete", "The product has purchases.");
                 await productStorage.DeleteProduct(id);
                 return Result.Success();
             }
@@ -57,7 +57,6 @@ namespace INV.Implementation.Service.Products
                 return Error.Exception(e);
             }
         }
-
 
         public async ValueTask<Result<ProductDetail>> GetProductById(Guid id)
         {
@@ -101,6 +100,11 @@ namespace INV.Implementation.Service.Products
                 errors.Add(ProductError.DesignationExsist);
 
             return errors;
+        }
+
+        public async ValueTask<int> GetProductCountAsync()
+        {
+            return await productStorage.SelectProductCount();
         }
     }
 }

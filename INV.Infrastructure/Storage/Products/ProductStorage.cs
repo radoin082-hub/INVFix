@@ -33,11 +33,11 @@ namespace INV.Infrastructure.Storage.Products
 
         private const string selectProductCountByIdQuery = @"
             SELECT count(*) FROM Products WHERE Designation = @aDesignation";
-        
 
-       private const string selectPurchaseCountByProductIdQuery = 
-           "SELECT COUNT(*) FROM [purchase].[PRODUCTS] WHERE ProductId = @aProductId";   
-  
+        private const string selectPurchaseCountByProductIdQuery =
+            "SELECT COUNT(*) FROM [purchase].[PRODUCTS] WHERE ProductId = @aProductId";
+
+        private const string countofProducts = @"SELECT COUNT(*)  FROM [dbo].[PRODUCTS];";
 
         public async Task<int> InsertProduct(Product product)
         {
@@ -125,6 +125,7 @@ namespace INV.Infrastructure.Storage.Products
 
             return MapToProductDetail(dataSet); // Utilisation du mapper
         }
+
         public async ValueTask<bool> SelectPurchaseCountByProductId(Guid productId)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
@@ -133,6 +134,17 @@ namespace INV.Infrastructure.Storage.Products
             await sqlConnection.OpenAsync();
             int count = (int)(await cmd.ExecuteScalarAsync() ?? 0);
             return count > 0;
+        }
+
+        public async ValueTask<int> SelectProductCount()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofProducts, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            var count = await cmd.ExecuteScalarAsync();
+
+            return count != null ? Convert.ToInt32(count) : 0;
         }
     }
 }

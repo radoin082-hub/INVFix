@@ -8,12 +8,13 @@ namespace INV.App.Suppliers
         ValueTask<Result> AddSupplier(Supplier supplier);
 
         ValueTask<Result<List<SupplierInfo>>> GetAllSupplier();
-        
 
         ValueTask<Result<ISupplier>> GetSupplierById(Guid id);
 
         ValueTask<Result> SetSupplier(Supplier supplier);
 
         ValueTask<Result> RemoveSupplierById(Guid id);
+
+        ValueTask<int> GetSupplierCountAsync();
     }
 }

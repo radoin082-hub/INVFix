@@ -87,6 +87,10 @@ namespace INV.Infrastructure.Storage.Purchases
             INSERT INTO [purchase].[PRODUCTS] ( PurchaseId, ProductId,Quantity,UnitPrice)
             VALUES (@aPurchaseId, @aProductId,@aQuantity, @aUnitPrice)";
 
+        private const string countofPurchases = @"SELECT COUNT(*)  FROM [purchase].[ORDERS];";
+
+        private const string countofStatusPurchases = @"SELECT COUNT(*) FROM [purchase].[ORDERS] GROUP BY [Status];";
+
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
             await using var sqlConnection = new SqlConnection(_connectionString);
@@ -305,7 +309,7 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aBudgetArticle", purchaseOrder.BudgetArticle);
             cmd.Parameters.AddWithValue("@aBudgetType", purchaseOrder.BudgetType);
             cmd.Parameters.AddWithValue("@aBudgetChapter", purchaseOrder.BudgetChapter);
-            cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType); 
+            cmd.Parameters.AddWithValue("@aServiceType", purchaseOrder.ServiceType);
             cmd.Parameters.AddWithValue("@aTotalHT", 1);
             cmd.Parameters.AddWithValue("@aTotalTVA", 1);
             cmd.Parameters.AddWithValue("@aTotalTTC", 1);
@@ -343,6 +347,35 @@ namespace INV.Infrastructure.Storage.Purchases
             cmd.Parameters.AddWithValue("@aStatus", status);
             cmd.Parameters.AddWithValue("@aMotif", (object)motif ?? DBNull.Value);
             await cmd.ExecuteNonQueryAsync();
+        }
+
+        public async ValueTask<int> SelectPurchaseCount()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofPurchases, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            var count = await cmd.ExecuteScalarAsync();
+
+            return count != null ? Convert.ToInt32(count) : 0;
+        }
+
+        public async ValueTask<List<int>> SelectPurchaseCountsByStatus()
+        {
+            var result = new List<int>();
+
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofStatusPurchases, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            using var reader = await cmd.ExecuteReaderAsync();
+
+            while (await reader.ReadAsync())
+            {
+                result.Add(reader.GetInt32(0));
+            }
+
+            return result;
         }
     }
 }

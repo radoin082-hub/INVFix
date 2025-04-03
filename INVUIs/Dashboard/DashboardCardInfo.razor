@@ -8,65 +8,74 @@
     [Parameter]
     public int Count { get; set; }
 
-    [Parameter]
-    public string Percentage { get; set; }
 
-    [Parameter]
-    public string Text { get; set; }
+
+  
 }
 
+
+
 <div class="dashboard-card">
-    <h3>@Title <i class="@IconSrc"></i></h3>
-    <div class="count">@Count</div>
-    <div class="percentage">@Percentage</div>
-    <div class="text">@Text</div>
+    <h3>@Title</h3>
+    <div class="dashboard-card-content">
+        <div class="count">@Count</div>
+        <div class="icon-container">
+            <i class="@IconSrc"></i>
+    </div>
+    </div>
 </div>
 
 <style>
 
     .dashboard-card {
         background: white;
-        padding: 10px;
-        margin-left:20px;
-        border-radius: 12px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         text-align: left;
         width: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border: 1px solid #E5E7EB;
     }
 
         .dashboard-card h3 {
             margin: 0;
             font-size: 14px;
             color: #333;
-            display: flex;
-            align-items: center;
             font-weight: bold;
         }
 
-            .dashboard-card h3 i {
-                font-size: 23px;
-                width: 16px;
-                margin-left: 6px;
+        .dashboard-card .icon-container {
+            background: #F3F4F6;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+        }
+
+            .dashboard-card .icon-container i {
+                font-size: 22px;
+                color: #4A5568;
             }
 
         .dashboard-card .count {
-            font-size: calc(20px + 1vw); 
+            font-size: 24px;
             font-weight: bold;
-            margin: 8px 0;
+            margin-top: 8px;
             color: #222;
-            
         }
 
+    .dashboard-card-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-        .dashboard-card .percentage {
-            font-size: 14px;
-            color: green;
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        .dashboard-card .text {
-            font-size: 13px;
-            color: #777;
-        }
 </style>

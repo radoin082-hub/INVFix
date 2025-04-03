@@ -46,7 +46,7 @@ IF NOT EXISTS (SELECT 1 FROM [INV].[purchase].[ORDERS] WHERE SupplierId = @aId)
     DELETE FROM [INV].[dbo].[SUPPLIERS] WHERE Id = @aId;
 ";
 
-   
+        private const string countofSuppliers = @"SELECT COUNT(*)  FROM [dbo].[SUPPLIERS];";
 
         public async Task<int> InsertSupplier(Supplier supplier)
         {
@@ -99,6 +99,18 @@ IF NOT EXISTS (SELECT 1 FROM [INV].[purchase].[ORDERS] WHERE SupplierId = @aId)
 
             return await reader.ReadAsync() ? getSupplierData(reader) : null;
         }
+
+        public async ValueTask<int> SelectSupplierCount()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(countofSuppliers, sqlConnection);
+
+            await sqlConnection.OpenAsync();
+            var count = await cmd.ExecuteScalarAsync();
+
+            return count != null ? Convert.ToInt32(count) : 0;
+        }
+
 
         public async Task<int> UpdateSupplier(Supplier supplier)
         {
