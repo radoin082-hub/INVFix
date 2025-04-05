@@ -9,54 +9,60 @@
     <DashboardCardInfo Title="Receptions" IconSrc="bi bi-clipboard-check me-3" Count="@receptionCount" />
 </div>
 
-
 <div class="dashboard-part2">
     <div class="graph-1">
-        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="Radzen.AlignItems.Center">
-            <RadzenCard Variant="Radzen.Variant.Outlined" Style="width: 100%;">
-                <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.End" Gap="0.5rem" Wrap="Radzen.FlexWrap.Wrap">
-                    <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text="Purchase Status" Component="dataLabels" />
-                </RadzenStack>
-            </RadzenCard>
+        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12">
+            <RadzenCard Variant="Radzen.Variant.Outlined">
 
-            <RadzenStack Style="width: 90%; max-width: 600px;">
-                <RadzenChart SeriesClick=@OnSeriesClick>
-                    <RadzenPieSeries Data="@revenue" Title="Revenue" CategoryProperty="Quarter" ValueProperty="Revenue" Fills="@(new string[] { "#f44336", "#2196f3", "#4caf50" })">
-                        <RadzenSeriesDataLabels Visible="@showDataLabels" />
-                    </RadzenPieSeries>
-                </RadzenChart>
-            </RadzenStack>
+
+                <RadzenRow>
+                    <RadzenColumn Size="12">
+                        <h4>Purchase Status</h4>
+                        <h6 style="text-align:center; color:gray">  Year: @currentYear  </h6>
+                        <RadzenChart>
+                            <RadzenColumnSeries Data="@revenue"
+                            CategoryProperty="Quarter"
+                            ValueProperty="Revenue"
+                                                Fills="@(new string[] { "#EF4444", "#3B82F6", "#4ade80" })">
+                            </RadzenColumnSeries>
+                            <RadzenValueAxis Formatter="@FormatAsUSD" Min="0">
+                                <RadzenGridLines Visible="true" />
+                                <RadzenLegend Visible="false" />
+                            </RadzenValueAxis>
+                        </RadzenChart>
+                    </RadzenColumn>
+                </RadzenRow>
+            </RadzenCard>
         </RadzenStack>
     </div>
 
     <div class="graph-2">
-        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="Radzen.AlignItems.Center">
-            <RadzenCard Variant="Radzen.Variant.Outlined" Style="width: 100%;">
-                <RadzenStack Orientation="Radzen.Orientation.Horizontal" AlignItems="Radzen.AlignItems.Center" Gap="0.5rem" Wrap="Radzen.FlexWrap.Wrap" >
-                    <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text="Reception Status" Component="dataLabels" />
-                </RadzenStack>
-            </RadzenCard>
+        <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12">
+            <RadzenCard Variant="Variant.Outlined">
 
-            <RadzenStack Style="width: 100%; max-width: 600px;">
-                <RadzenChart SeriesClick=@OnSeriesClick>
-                    <RadzenPieSeries Data="@revenue2" Title="Reception" CategoryProperty="Quarter2" ValueProperty="Revenue2" Fills="@(new string[] { "#4caf50", "#2196f3" })">
-                        <RadzenSeriesDataLabels Visible="@showDataLabels2" />
-                    </RadzenPieSeries>
-                </RadzenChart>
-            </RadzenStack>
+
+                <RadzenRow>
+                    <RadzenColumn Size="12">
+                        <h4>Reception Status</h4>
+                        <h6 style="text-align:center; color:gray">  Year: @currentYear  </h6>
+                        <RadzenChart >
+                            <RadzenColumnSeries Data="@revenue2"
+                            CategoryProperty="Quarter2"
+                            ValueProperty="Revenue2"
+                                                Fills="@(new string[] { "#4ade80", "#3B82F6" })">
+                            </RadzenColumnSeries>
+
+                            <RadzenValueAxis Formatter="@FormatAsUSD" Min="0">
+                                <RadzenGridLines Visible="true" />      
+                                <RadzenLegend Visible="false"/>
+                            </RadzenValueAxis>
+                        </RadzenChart>
+                    </RadzenColumn>
+                </RadzenRow>
+            </RadzenCard>
         </RadzenStack>
     </div>
-
 </div>
-
-
-
-
-
-
-
 
 @code {
     @using INV.App.Receipts
@@ -65,6 +71,7 @@
     @using INV.App.Suppliers
     @using Radzen
     @using BlazorBootstrap
+    @using System.Globalization
 
     [Inject] ISupplierService supplierService { get; set; }
     [Inject] IProductService productService { get; set; }
@@ -82,9 +89,16 @@
 
     private DataItem[] revenue;
     private DataItem[] revenue2;
+    private DateOnly currentDate;
+    private int currentYear;
+
+
 
     protected override async Task OnInitializedAsync()
     {
+        currentDate = DateOnly.FromDateTime(DateTime.Now);
+        currentYear = currentDate.Year;
+
         supplierCount = await supplierService.GetSupplierCountAsync();
         productCount = await productService.GetProductCountAsync();
         purchaseCount = await purchaseOrderService.GetPurchaseCount();
@@ -92,43 +106,25 @@
         listReceptionStatus = await receiptService.GetReceptionStatusCount();
         listPurchaseStatus = await purchaseOrderService.GetPurchaseCountsByStatus();
 
-
         revenue = new DataItem[] {
-            new DataItem
-            {
-                Quarter = "Rejected",
-                Revenue = listPurchaseStatus[0]
-            },
-            new DataItem
-            {
-                Quarter = "Editing",
-                Revenue = listPurchaseStatus[1]
-            },
-            new DataItem
-            {
-                Quarter = "Validated",
-                Revenue = listPurchaseStatus[2]
-            },
+            new DataItem { Quarter = "Rejected", Revenue = listPurchaseStatus[0] },
+            new DataItem { Quarter = "Editing", Revenue = listPurchaseStatus[1] },
+            new DataItem { Quarter = "Validated", Revenue = listPurchaseStatus[2] }
     };
 
         revenue2 = new DataItem[] {
-            new DataItem
-            {
-                Quarter2 = "Validated",
-                Revenue2= listReceptionStatus[0]
-            },
-            new DataItem
-            {
-                Quarter2 = "Editing",
-                Revenue2 = listReceptionStatus[1]
-            },
+            new DataItem { Quarter2 = "Validated", Revenue2 = listReceptionStatus[0] },
+            new DataItem { Quarter2 = "Editing", Revenue2 = listReceptionStatus[1] }
     };
     }
 
     void OnSeriesClick(SeriesClickEventArgs args)
     {
     }
- 
+    string FormatAsUSD(object value)
+    {
+        return ((double)value).ToString();
+    }
 
     class DataItem
     {

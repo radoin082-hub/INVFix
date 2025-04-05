@@ -68,7 +68,10 @@ WHERE O.SupplierId = @aSupplierId;";
 
         private const string countofReceptions = @"SELECT COUNT(*)  FROM [reception].[HEADERS];";
 
-        private const string countofStatusReception = @"SELECT COUNT(*) FROM [reception].[HEADERS] GROUP BY [Status]";
+        private const string countofStatusReception = @"SELECT COUNT(h.Status) AS Count
+            FROM (SELECT 0 AS Status UNION ALL SELECT 1) AS s
+            LEFT JOIN [reception].[HEADERS] AS h  ON h.Status = s.Status AND YEAR(h.Date) = YEAR(GETDATE()) 
+            GROUP BY s.Status";
 
         public async ValueTask<ReceiptDetail> CreateReceiptFromPurchase(Guid purchaseId)
         {

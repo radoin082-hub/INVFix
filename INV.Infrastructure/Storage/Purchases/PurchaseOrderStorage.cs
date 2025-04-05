@@ -89,7 +89,10 @@ namespace INV.Infrastructure.Storage.Purchases
 
         private const string countofPurchases = @"SELECT COUNT(*)  FROM [purchase].[ORDERS];";
 
-        private const string countofStatusPurchases = @"SELECT COUNT(*) FROM [purchase].[ORDERS] GROUP BY [Status];";
+        private const string countofStatusPurchases = @"SELECT COUNT(o.Status) AS Count
+            FROM ( SELECT 0 AS Status UNION ALL SELECT -1UNION ALL SELECT 1) AS s
+            LEFT JOIN [purchase].[ORDERS] AS o ON o.Status = s.Status AND YEAR(o.Date) = YEAR(GETDATE()) 
+            GROUP BY s.Status;";
 
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
