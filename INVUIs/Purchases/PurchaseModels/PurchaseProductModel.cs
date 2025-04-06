@@ -8,13 +8,7 @@ namespace INVUIs.Purchases.PurchaseModels
 {
     public class PurchaseProductModel
     {
-        /*  ID = product.ID,
-              IDPurchaseOrder = product.IDPurchaseOrder,
-              Designation = product.Designation,
-              UnitMeasure = product.UnitMeasure,
-              Quantity = product.Quantity,
-              UnitPrice = product.UnitPrice,
-              TVA = product.TVA*/
+      
 
         public Guid Id { get; set; }
 
@@ -22,9 +16,9 @@ namespace INVUIs.Purchases.PurchaseModels
 
         public Guid WareHouseId { get; set; }
 
-        public string Designation { get; set; }
+        public string? Designation { get; set; }
 
-        public string UnitMeasure { get; set; }
+        public string? UnitMeasure { get; set; }
 
         public int Quantity { get; set; }
         public int TVA { get; set; }
@@ -32,5 +26,12 @@ namespace INVUIs.Purchases.PurchaseModels
         public decimal UnitPrice { get; set; }
 
         public decimal TotalPrice { get; set; }
+        /*  ID = product.ID,
+            IDPurchaseOrder = product.IDPurchaseOrder,
+            Designation = product.Designation,
+            UnitMeasure = product.UnitMeasure,
+            Quantity = product.Quantity,
+            UnitPrice = product.UnitPrice,
+            TVA = product.TVA*/
     }
 }

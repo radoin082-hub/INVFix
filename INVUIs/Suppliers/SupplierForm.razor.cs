@@ -1,8 +1,10 @@
 ﻿using INV.App.Suppliers;
 using INV.Domain.Entities.Suppliers;
 using INV.Domain.Shared;
+using INVUIs.Shared.MyAlert;
 using INVUIs.Suppliers.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace INVUIs.Suppliers
 {
@@ -13,13 +15,21 @@ namespace INVUIs.Suppliers
 
         [Parameter] public bool Update { get; set; } = false;
         [Parameter] public string CreateButtonLabel { get; set; } = "Register";
-        [Parameter] public SupplierModel SupplierToEdit { get; set; } 
+        [Parameter] public SupplierModel SupplierToEdit { get; set; }
         [Inject] public ISupplierService SupplierService { get; set; }
         [Inject] public NavigationManager navigationManager { get; set; }
+        [Inject] private IJSRuntime jsRuntime { set; get; }
         private SupplierModel newSupplier = new SupplierModel();
         private bool displayModal = false;
+        private MyAlert? myAlert;
         private Result result;
         private string success = string.Empty;
+        private string succesMessage;
+
+        protected override async Task OnInitializedAsync()
+        {
+            myAlert = new MyAlert(jsRuntime);
+        }
 
         private void close()
         {
@@ -49,7 +59,7 @@ namespace INVUIs.Suppliers
         {
             var sup = new Supplier()
             {
-                Id = Update ? SupplierToEdit.ID : Guid.NewGuid(), 
+                Id = Update ? SupplierToEdit.ID : Guid.NewGuid(),
                 ManagerName = newSupplier.NameSupplier,
                 CompanyName = newSupplier.NameCompany,
                 Email = newSupplier.Email,
@@ -66,11 +76,15 @@ namespace INVUIs.Suppliers
 
             if (Update)
             {
-                var result= await SupplierService.SetSupplier(sup);
+                var result = await SupplierService.SetSupplier(sup);
+                close();
+                await myAlert.ShowToast(succesMessage, "The Supplier has been Edited.", MyAlertType.success);
             }
             else
             {
                 result = await SupplierService.AddSupplier(sup);
+                close();
+                await myAlert.ShowToast(succesMessage, "The Supplier has been created.", MyAlertType.success);
             }
 
             success = "The supplier has been " + (Update ? "updated" : "added") + " successfully";

@@ -28,14 +28,21 @@ namespace INVUIs.Products
         private MyAlert? myAlert;
         private Guid productIdToDelete;
         private string errorMessage;
+        private string succesMessage;
 
         protected override async Task OnInitializedAsync()
         {
             myAlert = new MyAlert(jsRuntime);
         }
 
-        public async Task navigatepage(Guid id) => Navigation.NavigateTo($"/products/{id}");
+        private async Task OnProductCreated(ProductInfo product)
+        {
+            Products.Add(product);
+            await grid.Reload();
+            StateHasChanged();
+        }
 
+        public async Task navigatepage(Guid id) => Navigation.NavigateTo($"/products/{id}");
 
         private async Task DeleteProduct(Guid productId)
         {
@@ -50,13 +57,13 @@ namespace INVUIs.Products
             if (result.IsSuccess)
             {
                 Products.Remove(productToRemove);
-                await myAlert.ShowAlert("Delete Succusfuly", "The product has been deleted.",MyAlertType.success);
+                await myAlert.ShowAlert("Delete Succusfuly", "The product has been deleted.", MyAlertType.success);
                 await grid.Reload();
             }
             else
             {
                 errorMessage = result.Error.Description;
-                await myAlert.ShowAlert("Error Delete", errorMessage,MyAlertType.error);
+                await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
             }
             StateHasChanged();
         }

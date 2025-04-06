@@ -5,8 +5,10 @@ using INV.Shared;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases.PurchaseModels;
 using INVUIs.Shared.Models;
+using INVUIs.Shared.MyAlert;
 using INVUIs.WareHouses.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace INVUIs.Products;
 
@@ -18,12 +20,13 @@ public partial class ProductForm : ComponentBase
     [Parameter] public RenderFragment Pills { get; set; }
     [Inject] private IProductService productService { set; get; }
     [Inject] private NavigationManager navigationManager { set; get; }
+    [Inject] private IJSRuntime jsRuntime { set; get; }
 
     public ProductForm productForm;
 
     public FormState formState;
     public ProductModel productModel = new ProductModel();
-
+    private MyAlert? myAlert;
     private Result result;
     private string message = string.Empty;
     private List<int> TVAOptions = new() { 9, 19 };
@@ -37,6 +40,11 @@ public partial class ProductForm : ComponentBase
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
     private bool visibility = false;
     private string succesMessage => formState == FormState.Create ? "Product created" : "Product updated";
+
+    protected override async Task OnInitializedAsync()
+    {
+        myAlert = new MyAlert(jsRuntime);
+    }
 
     public async Task SubmitProduct()
     {
@@ -59,6 +67,8 @@ public partial class ProductForm : ComponentBase
                 DefaultWareHouseId = productModel.WareHouseId
             };
             result = await productService.CreateProduct(productadd);
+            Hide();
+            await myAlert.ShowToast(succesMessage, "The product has been created.", MyAlertType.success);
         }
         else
         {
@@ -72,6 +82,9 @@ public partial class ProductForm : ComponentBase
             };
 
             result = await productService.SetProducts(productupdate);
+
+            Hide();
+            await myAlert.ShowToast(succesMessage, "The product has been Edited.", MyAlertType.success);
         }
 
         if (result.IsSuccess)

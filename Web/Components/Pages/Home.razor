@@ -3,8 +3,8 @@
 @inject IStringLocalizer<Resources> Localizer
 
 <PageTitle>@Localizer["Dashboard"] </PageTitle>
-@Thread.CurrentThread.CurrentCulture;
-<!--@Thread.CurrentThread.CurrentUICulture; -->
+<!--@Thread.CurrentThread.CurrentCulture;
+@Thread.CurrentThread.CurrentUICulture; -->
 
 <PageHeader Title=@Localizer["Dashboard.Title"] SubTitle=@Localizer["Dashboard.SubTitle"] />
 
@@ -112,8 +112,8 @@
         listPurchaseStatus = await purchaseOrderService.GetPurchaseCountsByStatus();
 
         revenue = new DataItem[] {
-            new DataItem { Quarter =  @Localizer["Rejected"], Revenue = listPurchaseStatus[0] },
-            new DataItem { Quarter = @Localizer["Editing"], Revenue = listPurchaseStatus[1] },
+            new DataItem { Quarter =  @Localizer["Rejected"], Revenue = listPurchaseStatus[1] },
+            new DataItem { Quarter = @Localizer["Editing"], Revenue = listPurchaseStatus[0] },
             new DataItem { Quarter = @Localizer["Validated"], Revenue = listPurchaseStatus[2] }
     };
 

@@ -43,5 +43,5 @@ else
 
 <ProductEditForm @ref="productEditForm" selectedProductModel="newProduct" />
 
-<ProductForm @ref="productForm" OnProductCreated="async (product) => { Products.Add(product); await grid.Reload(); StateHasChanged(); }" productEdit="productEdit" />
+<ProductForm @ref="productForm" OnProductCreated="OnProductCreated" productEdit="productEdit" />
 <ConformationForm @ref="conformationForm" Titel=@Localizer["DeleteProductTitle"] Message=@Localizer["DeleteProductMessage"] OnConfirm="ConfirmDeleteProduct" />

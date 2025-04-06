@@ -99,8 +99,11 @@ namespace INVUIs.Suppliers
 
             if (supplierId != null)
             {
-                supplierFilter.Remove(supplierToRemove);
                 var result = await supplierService.RemoveSupplierById(supplierToRemove.ID);
+                if (result.IsSuccess)
+                {
+                    supplierFilter.Remove(supplierToRemove);
+                }
                 await grid.Reload();
                 StateHasChanged();
             }

@@ -6,7 +6,9 @@ using INV.Domain.Entities.Purchases;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases;
 using INVUIs.Purchases.PurchaseModels;
+using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 
 namespace INV.Web.Components.Pages.Purchases
 {
@@ -15,24 +17,25 @@ namespace INV.Web.Components.Pages.Purchases
         [Inject] public IPurchaseOrderService purchaseOrderService { get; set; }
         [Inject] public NavigationManager navigationManager { set; get; }
         [Inject] private IBudgetService budgetService { get; set; }
+        [Inject] private IJSRuntime jsRuntime { set; get; }
         private readonly List<PurchaseProductModel> productModel = new();
         private bool showAlert = false;
+        private MyAlert? myAlert;
         public PurchaseModel purchaseModel { set; get; } = new();
         private SupplierInfo selectedSupplier = new();
         private PurchaseHeader purchaseHeaderRef;
         private List<Chapter> chapters;
         private List<Article> articles;
         private string errorMessage { get; set; }
+        private string succesMessage;
 
         protected override async Task OnInitializedAsync()
         {
-            /*var result1 = await budgetService.GetAllArticles();
-            if (result1.IsSuccess)
-            {
-                articles = result1.Value;
-            }*/
+      
+            myAlert = new MyAlert(jsRuntime);
+        
 
-            var result2 = await budgetService.GetAllChapitres();
+        var result2 = await budgetService.GetAllChapitres();
             if (result2.IsSuccess)
             {
                 chapters = result2.Value;
@@ -82,6 +85,7 @@ namespace INV.Web.Components.Pages.Purchases
             if (result.IsSuccess)
             {
                 navigationManager.NavigateTo("/purchases");
+                await myAlert.ShowToast(succesMessage, "The Purcahse has been created.", MyAlertType.success);
             }
         }
 

@@ -12,8 +12,10 @@ using INV.Implementation.Service.Purchses;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases;
 using INVUIs.Purchases.PurchaseModels;
+using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.JSInterop;
 
 namespace INV.Web.Components.Pages.Purchases
 {
@@ -27,6 +29,7 @@ namespace INV.Web.Components.Pages.Purchases
 
         [Inject] public IBudgetService budgetService { get; set; }
 
+        [Inject] private IJSRuntime jsRuntime { set; get; }
         public PurchaseOrder purchaseOrder = new PurchaseOrder();
 
         public List<PurchaseProductModel> products = new List<PurchaseProductModel>();
@@ -37,6 +40,8 @@ namespace INV.Web.Components.Pages.Purchases
         private ISupplier supplier;
 
         private bool canEdit = true;
+        private MyAlert? myAlert;
+        private string succesMessage;
         public PurchaseModel purchaseModel { set; get; } = new();
 
         private SupplierInfo selectedSupplier = new();
@@ -78,6 +83,8 @@ namespace INV.Web.Components.Pages.Purchases
 
         protected override async Task OnInitializedAsync()
         {
+            myAlert = new MyAlert(jsRuntime);
+
             var articelList = await budgetService.GetAllArticles();
             if (articelList.IsSuccess)
             {
@@ -185,17 +192,21 @@ namespace INV.Web.Components.Pages.Purchases
         private async void updatePurchaseToReject()
         {
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Reject, purchaseModel.VisaDate, purchaseModel.VisaNumber, purchaseModel.Observation);
+
+            visibilityReject();
+            await myAlert.ShowToast(succesMessage, "The purchase has been rejected.", MyAlertType.success);
+            await Task.Delay(100);
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
-            displayReject = !displayReject;
             StateHasChanged();
         }
 
         private async void updatePurchaseToVisa()
         {
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Vised, purchaseModel.VisaDate, purchaseModel.VisaNumber, null);
+            visibilityVisa();
+            await myAlert.ShowToast(succesMessage, "The purchase has been validated .", MyAlertType.success);
+            await Task.Delay(100);
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
-
-            displayVisa = !displayVisa;
             StateHasChanged();
         }
     }

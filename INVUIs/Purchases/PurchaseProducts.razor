@@ -15,12 +15,10 @@
                 </Template>
 
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="Designation" Title=@Localizer["Designation"] Width="34%" Visible="@(StatusButton(PurchaseInfo))">
+            <RadzenDataGridColumn Property="CorrectPropertyName" Title=@Localizer["Designation"] Width="34%" Visible="@(StatusButton(PurchaseInfo))">
                 <FooterTemplate>
                     <div style="width: 100%; display: flex; justify-content: flex-start; align-items: center;">
-                      
                         <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Visible="!canEdit" Icon="add_circle" Text=@Localizer["Product.AddButton"] Click="() => productSelector.ShowModal()" />
-                    
                     </div>
                 </FooterTemplate>
             </RadzenDataGridColumn>
@@ -58,11 +56,7 @@
 
 </CascadingValue>
 
-
-    <ProductSelector @ref="productSelector" OnProductSelected="AddProductToGrid" />
-
-
-
+<ProductSelector @ref="productSelector" OnProductSelected="AddProductToGrid" />
 
 <ConformationForm @ref="conformationForm" Titel=@Localizer["Product.DeleteButton"] Message=@Localizer["Product.DeleteMessage"] OnConfirm="DeleteProductConformation" />
 
