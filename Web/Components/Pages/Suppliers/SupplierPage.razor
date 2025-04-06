@@ -1,12 +1,13 @@
 ﻿@page "/suppliers/{id:guid}"
+@inject IStringLocalizer<Resources> Localizer
 
 @rendermode InteractiveServer
 
-
+<PageTitle>@Localizer["Supplier.Profile"]</PageTitle>
 
 @if (supplier is not null)
 {
-    <PageHeader Title="Supplier Profile" />
+    <PageHeader Title=@Localizer["Supplier.Title"] />
 
     <div class="content-profile">
         <div style="width:100%" class="mb-3">
@@ -17,7 +18,7 @@
 
                     <div style="display: flex; justify-content: flex-end;">
                         <button class="btn-custom btn-submit" type="button" @onclick="editSupplier">
-                            <i class="bi bi-pen"></i> Edit
+                            <i class="bi bi-pen"></i> @Localizer["Edit"]
                         </button>
                     </div>
 
@@ -31,14 +32,14 @@
 
         <div class="container-work-supplier">
             <Tabs>
-                <Tab Title="Purchases" IsActive="true">
+                <Tab Title=@Localizer["Purchases"] IsActive="true">
                     <Content>
                         <PurchaseList purchaseOrderInfos="purchases" ShowSupplier="false" />
                     </Content>
                 </Tab>
                 @if (receptions != null && receptions.Count > 0)
                 {
-                    <Tab Title="Reseption">
+                    <Tab Title=@Localizer["Receptions"]>
                         <Content>
                             <ReceptionList Receptions="receptions" ShowSupplier="false" ShowPurchase="true" />
                         </Content>

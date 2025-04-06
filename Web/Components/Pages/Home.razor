@@ -1,12 +1,18 @@
 @page "/"
 
-<PageHeader Title="Dashboard" SubTitle="Overview of your inventory management system" />
+@inject IStringLocalizer<Resources> Localizer
+
+<PageTitle>@Localizer["Dashboard"] </PageTitle>
+@Thread.CurrentThread.CurrentCulture;
+<!--@Thread.CurrentThread.CurrentUICulture; -->
+
+<PageHeader Title=@Localizer["Dashboard.Title"] SubTitle=@Localizer["Dashboard.SubTitle"] />
 
 <div class="dashboard-part1">
-    <DashboardCardInfo Title="Total Products" IconSrc="bi bi-box-seam me-3" Count="@productCount" />
-    <DashboardCardInfo Title="Suppliers" IconSrc="bi bi-person" Count="@supplierCount" />
-    <DashboardCardInfo Title="Purchase Orders" IconSrc="bi bi-cart-check me-3" Count="@purchaseCount" />
-    <DashboardCardInfo Title="Receptions" IconSrc="bi bi-clipboard-check me-3" Count="@receptionCount" />
+    <DashboardCardInfo Title=@Localizer["Products"] IconSrc="bi bi-box-seam" Count="@productCount" />
+    <DashboardCardInfo Title=@Localizer["Suppliers"] IconSrc="bi bi-person" Count="@supplierCount" />
+    <DashboardCardInfo Title=@Localizer["Purchases"] IconSrc="bi bi-cart-check" Count="@purchaseCount" />
+    <DashboardCardInfo Title=@Localizer["Receptions"] IconSrc="bi bi-clipboard-check" Count="@receptionCount" />
 </div>
 
 <div class="dashboard-part2">
@@ -17,8 +23,8 @@
 
                 <RadzenRow>
                     <RadzenColumn Size="12">
-                        <h4>Purchase Status</h4>
-                        <h6 style="text-align:center; color:gray">  Year: @currentYear  </h6>
+                        <h4>@Localizer["Purchase.Status"]</h4>
+                        <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
                         <RadzenChart>
                             <RadzenColumnSeries Data="@revenue"
                             CategoryProperty="Quarter"
@@ -43,9 +49,9 @@
 
                 <RadzenRow>
                     <RadzenColumn Size="12">
-                        <h4>Reception Status</h4>
-                        <h6 style="text-align:center; color:gray">  Year: @currentYear  </h6>
-                        <RadzenChart >
+                        <h4>@Localizer["Reception.Status"]</h4>
+                        <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
+                        <RadzenChart>
                             <RadzenColumnSeries Data="@revenue2"
                             CategoryProperty="Quarter2"
                             ValueProperty="Revenue2"
@@ -71,7 +77,6 @@
     @using INV.App.Suppliers
     @using Radzen
     @using BlazorBootstrap
-    @using System.Globalization
 
     [Inject] ISupplierService supplierService { get; set; }
     [Inject] IProductService productService { get; set; }
@@ -107,14 +112,14 @@
         listPurchaseStatus = await purchaseOrderService.GetPurchaseCountsByStatus();
 
         revenue = new DataItem[] {
-            new DataItem { Quarter = "Rejected", Revenue = listPurchaseStatus[0] },
-            new DataItem { Quarter = "Editing", Revenue = listPurchaseStatus[1] },
-            new DataItem { Quarter = "Validated", Revenue = listPurchaseStatus[2] }
+            new DataItem { Quarter =  @Localizer["Rejected"], Revenue = listPurchaseStatus[0] },
+            new DataItem { Quarter = @Localizer["Editing"], Revenue = listPurchaseStatus[1] },
+            new DataItem { Quarter = @Localizer["Validated"], Revenue = listPurchaseStatus[2] }
     };
 
         revenue2 = new DataItem[] {
-            new DataItem { Quarter2 = "Validated", Revenue2 = listReceptionStatus[0] },
-            new DataItem { Quarter2 = "Editing", Revenue2 = listReceptionStatus[1] }
+            new DataItem { Quarter2 = @Localizer["Validated"], Revenue2 = listReceptionStatus[0] },
+            new DataItem { Quarter2 = @Localizer["Editing"], Revenue2 = listReceptionStatus[1] }
     };
     }
 

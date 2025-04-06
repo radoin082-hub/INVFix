@@ -1,17 +1,17 @@
 ﻿@using INV.App.Suppliers
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
 
 <button type="button" class="addsupplier-button" @onclick=@showSupplierForm>
-    <i class="bi bi-person-plus"></i> Add a Supplier
+    <i class="bi bi-person-plus"></i> @Localizer["Supplier.AddButton"]
 </button>
-
 <div>
     <input type="text" @bind="searchName" @bind:event="oninput" placeholder="Search by supplier name" class="number-input" />
 </div>
 <br>
 @if (supplierFilter is null)
 {
-    <h3>Loading...</h3>
+    <h3>@Localizer["Loading"]...</h3>
 }
 else
 {
@@ -20,10 +20,10 @@ else
         <RadzenDataGrid @ref="grid" Data="@supplierFilter" AllowSorting="true" AllowFiltering="true"
                         Style="width: 100%;" RowSelect="@((SupplierInfo supplier) => NavigateToSupplierDetails(supplier.ID))">
             <Columns>
-                                <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title="Supplier" Width="10%"/>
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title="Email " Width="10%" />
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title="Phone" Width="10%" />
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title="Address" Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title=@Localizer["Supplier"] Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title=@Localizer["Email"] Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title=@Localizer["Phone"] Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title=@Localizer["Address"] Width="10%" />
 
                 <RadzenDataGridColumn  Width="5%">
                     <Template Context="supplier" >
@@ -43,4 +43,4 @@ else
 }
 
 <SupplierForm @ref=supplierForm Update="false"/>
-<ConformationForm @ref=conformationForm Titel="Delete Supplier" Message="Are you sure you want to delete this Supplier?" OnConfirm="ConfirmDeleteSupplier" />
+<ConformationForm @ref="conformationForm" Titel=@Localizer["Supplier.DeleteButton"] Message=@Localizer["Supplier.DeleteMessage"] OnConfirm="ConfirmDeleteSupplier" />

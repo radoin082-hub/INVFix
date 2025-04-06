@@ -1,8 +1,10 @@
 ﻿@using INV.App.Suppliers
 @using INVUIs.Suppliers
+@inject IStringLocalizer<Resources> Localizer
+
 <div class="supplier-details-container">
     @if (!canEdit){
-        <SupplierSelector Title="Select a Supplier" @ref="supplierSelector"
+        <SupplierSelector Title=@Localizer["Supplier.Select"] @ref="supplierSelector"
                           OnSelected="supplierSelected" Supplier="supplierInfo" />
     }
 
@@ -24,25 +26,25 @@
                             <div class="supplier-detail">
                                 <RadzenIcon Icon="business" />
                                 <label>
-                                    <span style="font-weight: bold;">Company:</span> <span style="font-weight: normal;">@supplier.CompanyName @canEdit</span>
+                                    <span style="font-weight: bold;">@Localizer["Company.Name"]:</span> <span style="font-weight: normal;">@supplier.CompanyName @canEdit</span>
                                 </label>
                             </div>
                             <div class="supplier-detail">
                                 <RadzenIcon Icon="location_on" />
                                 <label>
-                                    <span style="font-weight: bold;">Address:</span> <span style="font-weight: normal;">@supplier.Address</span>
+                                    <span style="font-weight: bold;">@Localizer["Address"]:</span> <span style="font-weight: normal;">@supplier.Address</span>
                                 </label>
                             </div>
                             <div class="supplier-detail">
                                 <RadzenIcon Icon="email" />
                                 <label>
-                                    <span style="font-weight: bold;">Email:</span> <span style="font-weight: normal;">@supplier.Email</span>
+                                    <span style="font-weight: bold;">@Localizer["Email"]:</span> <span style="font-weight: normal;">@supplier.Email</span>
                                 </label>
                             </div>
                             <div class="supplier-detail">
                                 <RadzenIcon Icon="phone" />
                                 <label>
-                                    <span style="font-weight: bold;">Phone:</span> <span style="font-weight: normal;">@supplier.Phone</span>
+                                    <span style="font-weight: bold;">@Localizer["Phone"]:</span> <span style="font-weight: normal;">@supplier.Phone</span>
                                 </label>
                             </div>
                         </Template>

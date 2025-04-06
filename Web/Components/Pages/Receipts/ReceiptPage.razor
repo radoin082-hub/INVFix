@@ -2,5 +2,10 @@
 @page "/receptions/new/{purchaseId:guid}"
 @using INV.App.Receipts
 @using INV.Domain.Shared
-<PageHeader Title="Reception Details" SubTitle="Review and manage purchase order details" />
-<NewReception ReceiptInfo="receiptInfo"/>
+@inject IStringLocalizer<Resources> Localizer
+
+
+<PageTitle>@Localizer["Reception"]</PageTitle>
+
+<PageHeader Title=@Localizer["Reception.Title"] SubTitle=@Localizer["Reception.SubTitle"] />
+<NewReception ReceiptInfo="receiptInfo" />

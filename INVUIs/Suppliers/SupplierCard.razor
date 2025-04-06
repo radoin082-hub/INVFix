@@ -1,5 +1,7 @@
 @using INV.Domain.Entities.Suppliers
 @using INVUIs.Shared
+@inject IStringLocalizer<Resources> Localizer
+
 <RadzenCard>
 	<RadzenRow>
 		<RadzenColumn Size="9">
@@ -11,12 +13,12 @@
 	</RadzenRow>
 	<RadzenRow>
 		<RadzenColumn Size="6">
-			<LabledValue Label="Phone" Value="@Supplier.Phone" />
-			<LabledValue Label="Email" Value="@Supplier.Email" />
+			<LabledValue Label=@Localizer["Phone"] Value="@Supplier.Phone" />
+			<LabledValue Label=@Localizer["Email"] Value="@Supplier.Email" />
 
 		</RadzenColumn>
 		<RadzenColumn Size="6">
-			<LabledValue Label="Address" Value="@Supplier.Address" />
+			<LabledValue Label=@Localizer["Address"] Value="@Supplier.Address" />
 			<LabledValue Label="RC N°" Value="@Supplier.RC" />
 		</RadzenColumn>
 	</RadzenRow>
@@ -31,7 +33,7 @@
 		</RadzenColumn>
 		<RadzenColumn Size="6">
 				<LabledValue Label="RIB" Value="@Supplier.RIB" />
-				<LabledValue Label="Bank Agency" Value="@Supplier.BankAgency" />
+				<LabledValue Label=@Localizer["BankAgency"] Value="@Supplier.BankAgency" />
 		</RadzenColumn>
 			
 	</RadzenRow>
@@ -39,7 +41,7 @@
 	<RadzenRow>
 		<RadzenColumn Size="12">
 			<div class="btn-pos-supplier" style="display: flex; align-items: flex-end;">
-				<button class="btn-custom btn-cancel" type="button" @onclick="showMore">more info...</button>
+				<button class="btn-custom btn-cancel" type="button" @onclick="showMore">@Localizer["MoreInfo"]...</button>
 			</div>
 
 		</RadzenColumn>

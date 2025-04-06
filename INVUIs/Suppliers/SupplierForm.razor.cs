@@ -12,7 +12,7 @@ namespace INVUIs.Suppliers
         [Parameter] public EventCallback<SupplierInfo> OnSupplierCreated { get; set; }
 
         [Parameter] public bool Update { get; set; } = false;
-        [Parameter] public string CreateButtonLabel { get; set; } = "Create";
+        [Parameter] public string CreateButtonLabel { get; set; } = "Register";
         [Parameter] public SupplierModel SupplierToEdit { get; set; } 
         [Inject] public ISupplierService SupplierService { get; set; }
         [Inject] public NavigationManager navigationManager { get; set; }

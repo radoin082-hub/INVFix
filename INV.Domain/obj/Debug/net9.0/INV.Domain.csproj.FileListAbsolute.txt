@@ -166,3 +166,16 @@ C:\Users\radoi\OneDrive\Desktop\INV_3.0\INV.Domain\obj\Debug\net9.0\INV.Domain.d
 C:\Users\radoi\OneDrive\Desktop\INV_3.0\INV.Domain\obj\Debug\net9.0\refint\INV.Domain.dll
 C:\Users\radoi\OneDrive\Desktop\INV_3.0\INV.Domain\obj\Debug\net9.0\INV.Domain.pdb
 C:\Users\radoi\OneDrive\Desktop\INV_3.0\INV.Domain\obj\Debug\net9.0\ref\INV.Domain.dll
+C:\Users\bouce\source\repos\INVNew\INV.Domain\bin\Debug\net9.0\INV.Domain.deps.json
+C:\Users\bouce\source\repos\INVNew\INV.Domain\bin\Debug\net9.0\INV.Domain.dll
+C:\Users\bouce\source\repos\INVNew\INV.Domain\bin\Debug\net9.0\INV.Domain.pdb
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.csproj.AssemblyReference.cache
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.AssemblyInfoInputs.cache
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.AssemblyInfo.cs
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.sourcelink.json
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.dll
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\refint\INV.Domain.dll
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.pdb
+C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\ref\INV.Domain.dll

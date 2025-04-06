@@ -14,7 +14,8 @@
           "INV.Infrastructure": "1.0.0",
           "INV.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.Web": "9.0.2",
-          "Radzen.Blazor": "6.1.1"
+          "Radzen.Blazor": "6.2.6",
+          "UIsResources": "1.0.0"
         },
         "runtime": {
           "INVUIs.dll": {}
@@ -1122,7 +1123,7 @@
           }
         }
       },
-      "Radzen.Blazor/6.1.1": {
+      "Radzen.Blazor/6.2.6": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "9.0.2",
           "Microsoft.AspNetCore.Components.Web": "9.0.2",
@@ -1130,8 +1131,8 @@
         },
         "runtime": {
           "lib/net9.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "6.1.1.0",
-            "fileVersion": "6.1.1.0"
+            "assemblyVersion": "6.2.6.0",
+            "fileVersion": "6.2.6.0"
           }
         }
       },
@@ -1414,6 +1415,28 @@
           "INV.Shared.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "UIsResources/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "9.0.2"
+        },
+        "runtime": {
+          "UIsResources.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "ar/UIsResources.resources.dll": {
+            "locale": "ar"
+          },
+          "en/UIsResources.resources.dll": {
+            "locale": "en"
+          },
+          "fr/UIsResources.resources.dll": {
+            "locale": "fr"
           }
         }
       }
@@ -1901,12 +1924,12 @@
       "path": "puppeteersharp/20.1.0",
       "hashPath": "puppeteersharp.20.1.0.nupkg.sha512"
     },
-    "Radzen.Blazor/6.1.1": {
+    "Radzen.Blazor/6.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IC2Wp9IS7ICaAvbt3XoIRB93QEuf9HsEFdgloEr9Ww9Ad3Lzh2v3+/+rvUm/Kr0C+p7AtyMfC4yGXUMAjRqTXQ==",
-      "path": "radzen.blazor/6.1.1",
-      "hashPath": "radzen.blazor.6.1.1.nupkg.sha512"
+      "sha512": "sha512-mkIfMXparYPUw+6goP5OPtmxFbvlkvQ5LdmQ6SEfDNE+ARiqqvI/AbhVzGJ4na1wBk/XOfPp3iuUuYsEw9Hw+w==",
+      "path": "radzen.blazor/6.2.6",
+      "hashPath": "radzen.blazor.6.2.6.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",
@@ -2111,6 +2134,11 @@
       "sha512": ""
     },
     "INV.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UIsResources/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

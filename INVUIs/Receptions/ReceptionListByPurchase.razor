@@ -1,4 +1,6 @@
 ﻿@using INV.Domain.Entities.Receipts
+@inject IStringLocalizer<Resources> Localizer
+
 <div class="d-flex justify-content-between">
     <div>
         @Pills
@@ -6,16 +8,16 @@
 </div>
 @if (Receptions is null)
 {
-    <h3>Loading...</h3>
+    <h3>@Localizer["Loading"]...</h3>
 }
 else
 {
     <div class="Container-list">
         <RadzenDataGrid Data="@Receptions" AllowSorting="true" AllowFiltering="true"
-                        Style="width: 100%;" >
+                        Style="width: 100%;">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(Receipt.Status)" Title="Status" />
-                <RadzenDataGridColumn Property="@nameof(Receipt.Date)" Title="Date"/>  
+                <RadzenDataGridColumn Property="@nameof(Receipt.Status)" Title="@Localizer["Status"]" />
+                <RadzenDataGridColumn Property="@nameof(Receipt.Date)" Title="@Localizer["Date"]" />
             </Columns>
         </RadzenDataGrid>
     </div>

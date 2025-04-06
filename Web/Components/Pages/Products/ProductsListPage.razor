@@ -1,8 +1,9 @@
 ﻿@page "/products"
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
 
-<PageTitle>Products</PageTitle>
-<PageHeader Title="Liste Of Products" SubTitle="Track and Manage Your Products Efficiently" />
+<PageTitle>@Localizer["Products"]</PageTitle>
+<PageHeader Title=@Localizer["Products.Title"] SubTitle=@Localizer["Products.SubTitle"] />
 
-<ProductsList Products=@products/>
+<ProductsList Products=@products />
 

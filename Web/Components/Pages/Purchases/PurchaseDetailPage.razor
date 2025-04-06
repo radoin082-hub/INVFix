@@ -1,9 +1,11 @@
 ﻿@page "/purchases/{id:guid}"
 @using INV.Domain.Entities.Purchases
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
 
-<PageTitle>Purchase Order</PageTitle>
-<PageHeader Title="Purchase Details" SubTitle="Review and manage purchase order details" />
+
+<PageTitle>@Localizer["Purchase.Details"]</PageTitle>
+<PageHeader Title=@Localizer["Purchase.Title"] SubTitle=@Localizer["Purchase.SubTitle"] />
 <div class="mb-3">
 
     <CascadingValue Value="chapters">
@@ -14,13 +16,13 @@
                         <div class="d-flex justify-content-end">
                             @if (purchaseModel.Status == PurchaseStatus.Editing)
                             {
-                                <RadzenButton Click="visibilityReject" Text="Reject"
+                                <RadzenButton Click="visibilityReject" Text=@Localizer["Rejected"]
                                 Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
 
 
-                                <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text="Visi"
+                                <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text=@Localizer["Visaed"]
                                 Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
-                                <RadzenButton Click="Edit" Text="modify" Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
+                                <RadzenButton Click="Edit" Text=@Localizer["Edit"] Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
                             }
 
                         </div>
@@ -34,7 +36,7 @@
 </div>
 
 <Tabs>
-    <Tab Title="Supplier" Active="true">
+    <Tab Title=@Localizer["Supplier"] Active="true">
         <Content>
             <CascadingValue Value="selectedSupplier">
                 <CascadingValue Value="canEdit">
@@ -43,7 +45,7 @@
             </CascadingValue>
         </Content> 
     </Tab>
-    <Tab Title="Products">
+    <Tab Title=@Localizer["Products"]>
         <Content>
             <CascadingValue Value="canEdit">
             <PurchaseProducts ProductList="products" PurchaseInfo="purchaseOrder" />
@@ -52,8 +54,8 @@
     </Tab>
     @if (purchaseOrder.Status == PurchaseStatus.Vised && receptionsListByPurchase.Count > 0)
     {
-        <Tab Title="Receipts">
-        <Content>
+        <Tab Title=@Localizer["Receptions"]>
+            <Content>
 				<ReceptionList Receptions="receptionsListByPurchase" ShowSupplier="false" ShowPurchase="true" />
         </Content>
     </Tab>

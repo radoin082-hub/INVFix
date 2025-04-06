@@ -43,9 +43,18 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<DialogService>();
 builder.Services.AddScoped<PreloadService>();
 builder.Services.AddScoped<NavigationLock>();
-
 builder.Services.AddLocalization();
+builder.Services.AddControllers();
 var app = builder.Build();
+
+string[] supportedCultures = ["en", "fr", "ar"];
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -55,6 +64,8 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
+
 app.UseAntiforgery();
 app.MapStaticAssets();
 app.MapRazorComponents<App>().

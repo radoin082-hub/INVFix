@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\INVUIs",
+    "\\INVUIs\\Purchases",
+    "\\INVUIs\\Receptions",
+    "\\Web",
+    "\\Web\\Components",
+    "\\Web\\Components\\Layout"
   ],
-  "SelectedNode": "\\INV.sln",
+  "SelectedNode": "\\INVUIs\\Purchases\\PurchaseHeader.razor",
   "PreviewInSolutionExplorer": false
 }

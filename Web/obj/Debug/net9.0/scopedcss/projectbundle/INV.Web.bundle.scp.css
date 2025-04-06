@@ -111,9 +111,9 @@ main[b-ljz8einsnp] {
     background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
 }
 
-.navbar-toggler:checked[b-7831hfb3uy] {
-    background-color: rgba(255, 255, 255, 0.5);
-}
+    .navbar-toggler:checked[b-7831hfb3uy] {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 
 .top-row[b-7831hfb3uy] {
     height: 3.5rem;
@@ -133,31 +133,39 @@ main[b-ljz8einsnp] {
 }
 
 
+[dir="rtl"] .bi[b-7831hfb3uy] {
+    margin-left: 0.75rem;
+}
+
+[dir="rtl"] .bi[b-7831hfb3uy] {
+    margin-left: 0.75rem;
+}
+
 .nav-item[b-7831hfb3uy] {
     font-size: 0.9rem;
 }
 
-.nav-item[b-7831hfb3uy]  .nav-link {
-    color: #d7d7d7;
-    background: none;
-    border: none;
-    border-radius: 4px;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    line-height: 3rem;
-    width: 100%;
-}
+    .nav-item[b-7831hfb3uy]  .nav-link {
+        color: #d7d7d7;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+        width: 100%;
+    }
 
-.nav-item[b-7831hfb3uy]  a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
-}
+    .nav-item[b-7831hfb3uy]  a.active {
+        background-color: rgba(255,255,255,0.37);
+        color: white;
+    }
 
-.nav-item[b-7831hfb3uy]  .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
+    .nav-item[b-7831hfb3uy]  .nav-link:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+    }
 
 .nav-scrollable[b-7831hfb3uy] {
     display: none;
@@ -186,20 +194,20 @@ main[b-ljz8einsnp] {
     align-items: center;
 }
 
-.nav-link span[b-7831hfb3uy] {
-    font-size: 0.9em;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-    margin-left: 0.5em;
-}
+    .nav-link span[b-7831hfb3uy] {
+        font-size: 0.9em;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        margin-left: 0.5em;
+    }
 
-.nav-link.active[b-7831hfb3uy] {
-    background-color: #175656;
-    color: white;
-    font-weight: bold;
-}
+    .nav-link.active[b-7831hfb3uy] {
+        background-color: #175656;
+        color: white;
+        font-weight: bold;
+    }
 
-.nav-link:hover .bi[b-7831hfb3uy] {
-    transform: scale(1.2);
-}
+    .nav-link:hover .bi[b-7831hfb3uy] {
+        transform: scale(1.2);
+    }

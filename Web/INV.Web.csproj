@@ -13,6 +13,7 @@
       <ProjectReference Include="..\INV.Implementation\INV.Implementation.csproj" />
       <ProjectReference Include="..\INV.Infrastructure\INV.Infrastructure.csproj" />
       <ProjectReference Include="..\INVUIs\INVUIs.csproj" />
+      <ProjectReference Include="..\WebResources\WebResources.csproj" />
     </ItemGroup>
 
     <ItemGroup>

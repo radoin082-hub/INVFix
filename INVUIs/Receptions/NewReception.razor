@@ -1,5 +1,6 @@
 ﻿@using INV.Domain.Entities.Receipts
 @using INVUIs.Receptions.Models
+@inject IStringLocalizer<Resources> Localizer
 
 <EditForm Model="ReceiptInfo" OnInvalidSubmit="Create" FormName="hello">
     <DataAnnotationsValidator/>
@@ -11,26 +12,27 @@
             <RadzenRow>
                 <RadzenColumn Size="6">
 
-                    <p class="detail-label">Purchase Number</p>
+                    <p class="detail-label">@Localizer["Purchase.Number"]</p>
                     <p class="detail-value number">@ReceiptInfo.purchaseNumber</p>
 
-                    <p class="detail-label">Supplier Name</p>
+                    <p class="detail-label">@Localizer["Supplier.Name"]</p>
                     <p class="detail-value">@ReceiptInfo.supplierName</p>
 
-                    <p class="detail-label">Status</p>
+                    <p class="detail-label">@Localizer["Status"]</p>
                     <p class="status-badge editing"> @ReceiptInfo.Status</p>
+
 
 
                 </RadzenColumn>
                 <RadzenColumn Size="6">
-                    <span class="detail-label">Delivery Number</span>
-                    <InputText @bind-Value="@ReceiptInfo.DeliveryNumber" class="date-input" disabled="@statusInput"/>
+                    <span class="detail-label">@Localizer["Delivery.Number"]</span>
+                    <InputText @bind-Value="@ReceiptInfo.DeliveryNumber" class="date-input" disabled="@statusInput" />
 
-                    <span class="detail-label">Delivery Date</span>
-                    <InputDate @bind-Value="@ReceiptInfo.DeliveryDate" class="date-input" disabled="@statusInput"/>
+                    <span class="detail-label">@Localizer["Delivery.Date"]</span>
+                    <InputDate @bind-Value="@ReceiptInfo.DeliveryDate" class="date-input" disabled="@statusInput" />
 
-                    <span class="detail-label">Documents</span>
-                    <InputFile class="file-upload" disabled="@statusInput"/>
+                    <span class="detail-label">@Localizer["Documents"]</span>
+                    <InputFile class="file-upload" disabled="@statusInput" />
 
                 </RadzenColumn>
 
@@ -49,13 +51,13 @@
                         {
                             @if (statusInput)
                             {
-                                <button type="submit" class="btn-custom btn-submit" @onclick="Validate">validate</button>
-                                <button type="button" class="btn-custom btn-cancel" @onclick="StartEditing">Modifier</button>
+                                <button type="submit" class="btn-custom btn-submit" @onclick="Validate">@Localizer["Validate"]</button>
+                                <button type="button" class="btn-custom btn-cancel" @onclick="StartEditing">@Localizer["Edit"]</button>
                             }
                             else
                             {
-                                <button type="button" class="btn-custom btn-submit" @onclick="SaveChanges">Register </button>
-                                <button type="button" class="btn-custom btn-cancel" @onclick="cancelEditing">Cancel</button>
+                                <button type="button" class="btn-custom btn-submit" @onclick="SaveChanges">@Localizer["Register"] </button>
+                                <button type="button" class="btn-custom btn-cancel" @onclick="cancelEditing">@Localizer["Cancel"]</button>
                             }
                         }
 
@@ -102,14 +104,14 @@
     <div class="Container-list">
         <RadzenDataGrid Data="@products" AllowSorting="true" AllowFiltering="true" Style="width: 100%;">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="Designation"/>
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Quantity"/>
-                <RadzenDataGridColumn Title="Rest" Visible="@restVisibility">
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="@Localizer["Designation"]" />
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="@Localizer["Quantity"]" />
+                <RadzenDataGridColumn Title=@Localizer["Rest"] Visible="@restVisibility">
                     <Template Context="product">
                         @(product.Received)
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="Received">
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Received)" Title=@Localizer["Received"]>
                     <Template Context="product">
                         <InputNumber @bind-Value="product.NEwReceived" disabled="@statusInput"/>
                     </Template>

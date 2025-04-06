@@ -2,35 +2,37 @@
 @using INVUIs.Products.ProductsModel
 @using INVUIs.Purchases.PurchaseModels
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
+
 <CascadingValue Value="products">
 
     <RadzenDataGrid @ref="grid" TItem="PurchaseProductModel" Data="@products" AllowVirtualization="true" Style="height:370px"
     GridLines="DataGridGridLines.Horizontal">
         <Columns>
-            <RadzenDataGridColumn Property="Number" Title="N°" Width="7%">
+            <RadzenDataGridColumn Property="Number" Title=@Localizer["Number"] Width="7%">
                 <Template Context="product">
                     @(products.IndexOf(product) + 1)
                 </Template>
 
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="Designation" Title="Designation" Width="34%" Visible="@(StatusButton(PurchaseInfo))">
+            <RadzenDataGridColumn Property="Designation" Title=@Localizer["Designation"] Width="34%" Visible="@(StatusButton(PurchaseInfo))">
                 <FooterTemplate>
                     <div style="width: 100%; display: flex; justify-content: flex-start; align-items: center;">
                       
-                        <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Visible="!canEdit" Icon="add_circle" Text="Add Product" Click="() => productSelector.ShowModal()"/>
+                        <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Visible="!canEdit" Icon="add_circle" Text=@Localizer["Product.AddButton"] Click="() => productSelector.ShowModal()" />
                     
                     </div>
                 </FooterTemplate>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="UnitMeasure" Title="Unit" Width="10%"/>
-            <RadzenDataGridColumn Property="Quantity" Title="Quantity" Width="10%"/>
-            <RadzenDataGridColumn Property="UnitPrice" Title="Unit Price" Width="10%"/>
-            <RadzenDataGridColumn Property="TVA" Title="TVA" Width="9%">
+            <RadzenDataGridColumn Property="UnitMeasure" Title=@Localizer["UnitMeasure"] Width="10%" />
+            <RadzenDataGridColumn Property="Quantity" Title=@Localizer["Quantity"] Width="10%" />
+            <RadzenDataGridColumn Property="UnitPrice" Title=@Localizer["UnitPrice"] Width="10%" />
+            <RadzenDataGridColumn Property="TVA" Title=@Localizer["TVA"] Width="9%">
                 <Template Context="product">
                     @product.TVA %
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="TotalPrice" Title="Total" Width="18%">
+            <RadzenDataGridColumn Property="TotalPrice" Title=@Localizer["Total"] Width="18%">
                 <Template Context="product">
                     @((product.UnitPrice * product.Quantity).ToString("N"))
                 </Template>
@@ -62,6 +64,6 @@
 
 
 
-<ConformationForm  @ref="conformationForm" Titel="Delete Product" Message="Are you sure you want to delete this Product?" OnConfirm="DeleteProductConformation" />
+<ConformationForm @ref="conformationForm" Titel=@Localizer["Product.DeleteButton"] Message=@Localizer["Product.DeleteMessage"] OnConfirm="DeleteProductConformation" />
 
 <ProductEditForm @ref="productEditForm" selectedProductModel="selectedProductModel" productEdit="loadtab"/>

@@ -1,12 +1,10 @@
 ﻿@page "/suppliers"
 
 @rendermode InteractiveServer 
+@inject IStringLocalizer<Resources> Localizer
 
-<PageTitle>List of Suppliers</PageTitle>
+<PageTitle>@Localizer["Suppliers"] </PageTitle>
 
-
-<PageHeader Title="Liste Of Suppliers" SubTitle="Manage and Track Your Suppliers Efficiently" />
-
-
+<PageHeader Title=@Localizer["Suppliers.Title"] SubTitle=@Localizer["Suppliers.SubTitle"] />
 
 <SupplierList Suppliers="suppliers" />

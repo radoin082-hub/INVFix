@@ -1,7 +1,9 @@
 @using INV.Domain.Entities.Budget
 @using INV.Domain.Entities.Purchases
 @using INVUIs.Shared.Models
-@rendermode InteractiveServer
+@rendermode InteractiveServer 
+@inject IStringLocalizer<Resources> Localizer
+
 <EditForm Model="Purchase" OnValidSubmit="Save" FormName="purchaseForm" Enhance @ref="form">
     <DataAnnotationsValidator/>
 
@@ -9,7 +11,7 @@
         <CascadingValue Value="Articles">
             <div style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 32px; padding-inline: 32px">
                 <div>
-                    <CommandInput Label="Select a Budget:">
+                    <CommandInput Label=@Localizer["Purchase.Select.Budget"]>
                         <InputSelect @bind-Value="Purchase.selectedCategory" disabled="@canEdit">
 
                             @foreach (BudgeType category in Enum.GetValues(typeof(BudgeType)))
@@ -26,7 +28,7 @@
                         </InputSelect>
 
                     </CommandInput>
-                    <CommandInput Label="Choose a Chapter:">
+                    <CommandInput Label=@Localizer["Purchase.Choose.Chapter"] >
                         <InputSelect id="chapter" Value="Purchase.ChapterCode" disabled="@canEdit"
                         ValueExpression="@(() => Purchase.ChapterCode)" ValueChanged="@(async (int code)=>
              {Purchase.ChapterCode =code;
@@ -34,7 +36,7 @@
              })"
                         class="form-control valid">
                             class="form-control valid">
-                            <option value="" selected>--Select--</option>
+                            <option value="" selected>--@Localizer["Select"]--</option>
                             @if (Chapters != null)
                             {
                                 @foreach (var chapter in Chapters)
@@ -56,10 +58,10 @@
                     <div class="input2">
                         <div class="commend-input">
                             <div class="label-input-group">
-                                <label for="article" style="width: 10rem">Choose an Article:</label>
+                                <label for="article" style="width: 10rem">@Localizer["Purchase.Choose.Article"] </label>
                                 <InputSelect id="article" @bind-Value="Purchase.ArticleCode" disabled="@canEdit">
                                     class="form-control valid">
-                                    <option value="" selected>--Select--</option>
+                                    <option value="" selected>--@Localizer["Select"]--</option>
                                     @if (Articles != null)
                                     {
                                         @foreach (var article in Articles)
@@ -81,7 +83,7 @@
                     </div>
                 </div>
                 <div>
-                    <CommandInput Label="Select a Service:">
+                    <CommandInput Label=@Localizer["Purchase.Select.Service"] >
                         <InputSelect @bind-Value="Purchase.selectedService" disabled="@canEdit">
 
                             @foreach (ServiceType service in Enum.GetValues(typeof(ServiceType)))
@@ -102,9 +104,9 @@
                     </CommandInput>
                     <div class="commend-input">
                         <div class="label-input-group">
-                            <label for="productNumber" class="form-label" style="width: 7.5rem">Delivery Time :</label>
+                            <label for="productNumber" class="form-label" style="width: 7.5rem">@Localizer["Delivery.Time"]  </label>
                             <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" disabled="@canEdit" />
-                            <label class="form-label">days</label>
+                            <label class="form-label">@Localizer["Days"]</label>
                         </div>
 
 
@@ -115,7 +117,7 @@
                     @if (Purchase.SupplierId == Guid.Empty)
                     {
                         <div style="display: flex; justify-content: flex-end; width: 100%">
-                            <RadzenButton Size="ButtonSize.Medium" Click="create" Text="Create"
+                            <RadzenButton Size="ButtonSize.Medium" Click="create" Text=@Localizer["Register"]
                             Icon="add_circle" ButtonStyle="ButtonStyle.Success" />
                         </div>
 
@@ -135,14 +137,14 @@
                     @if (Purchase.Status == PurchaseStatus.Reject || Purchase.Status == PurchaseStatus.Vised)
                     {
                     <div class="label-input-group" style="align-items: normal !important;">
-                            <label for="productNumber" class="form-label" style="width: 5rem">VisaNumber :</label>
+                        <label for="productNumber" class="form-label" style="width: 5rem">@Localizer["Visa.Number"] </label>
 
                         <label style="width: 6rem">@Purchase.VisaNumber</label>
 
                         </div>
 
                     <div class="label-input-group" style="align-items: normal !important;">
-                        <label for="productNumber" class="form-label" style="width: 5rem">VisaDate  :</label>
+                        <label for="productNumber" class="form-label" style="width: 5rem">@Localizer["Visa.Date"] </label>
 
                         <label style="width: 7rem">@Purchase.VisaDate</label>
                         </div>
@@ -151,7 +153,7 @@
                     @if (Purchase.Status == PurchaseStatus.Reject)
                     {
                     <div class="label-input-group" style="align-items: normal !important;">
-                            <label for="productNumber" class="form-label" style="width: 5rem">Observation :</label>
+                        <label for="productNumber" class="form-label" style="width: 5rem">@Localizer["Observation"] </label>
                         <label style="width: 6rem">@Purchase.Observation</label>
 
                         </div>

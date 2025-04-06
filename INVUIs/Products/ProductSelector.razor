@@ -1,5 +1,7 @@
 ﻿@using INVUIs.Products.ProductsModel
 @using INVUIs.Purchases.PurchaseModels
+@inject IStringLocalizer<Resources> Localizer
+
 @if (visibility)
 {
     <MyModal>
@@ -10,10 +12,10 @@
                     {
                         <RadzenRow>
                             <RadzenColumn Size="12">
-                                <RadzenLabel Text="Product *" Style="font-size: 14px;" />
+                                <RadzenLabel Text="@(Localizer["Product"] + " *")" Style="font-size: 14px;" />
                                 <RadzenDropDown TValue="Guid?" Name="ProductId" @bind-Value="SelectedProductId"
                                                 Data="@filteredProducts"
-                                                TextProperty="Designation" ValueProperty="Id"
+                                                TextProperty=@Localizer["Designation"] ValueProperty="Id"
                                                 Style="width: 100%; font-size: 14px;"
                                                 AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive"
                                                 Change="onProductSelected">
@@ -23,7 +25,7 @@
                                             <div class="d-flex align-items-center" @onclick:stopPropagation="true"
                                                  @onclick="showProductForm" style="cursor: pointer;">
                                                 <RadzenIcon Icon="add_circle" Style="margin-right: 8px;" />
-                                                <span>Create Product</span>
+                                                <span>@Localizer["Product.CreateButton"]</span>
                                             </div>
                                         }
                                         else
@@ -49,14 +51,14 @@
 
                         <RadzenRow>
                             <RadzenColumn Size="4">
-                                <RadzenLabel Text="Quantity *" Style="font-size: 12px;" />
+                                <RadzenLabel Text="@(Localizer["Quantity"] + " *")" Style="font-size: 12px;" />
                                 <RadzenNumeric TValue="int" Name="Quantity" @bind-Value="Quantity" Min="1"
                                                Style="width: 100%; font-size: 14px;" />
                                 <RadzenRequiredValidator Component="Quantity" Text="Quantity is required" Style="font-size: 12px;" />
                             </RadzenColumn>
 
                             <RadzenColumn Size="8">
-                                <RadzenLabel Text="Unit Price *" Style="font-size: 12px;" />
+                                <RadzenLabel Text="@(Localizer["UnitPrice"] + " *")" Style="font-size: 12px;" />
                                 <RadzenNumeric TValue="decimal" Name="UnitPrice" @bind-Value="UnitPrice" Min="1"
                                                Style="width: 100%; font-size: 14px;" />
                                 <RadzenRequiredValidator Component="UnitPrice" Text="Unit Price is required" Style="font-size: 12px;" />
@@ -66,10 +68,10 @@
                     <RadzenRow Style="display: flex; justify-content: flex-end;">
                         <RadzenColumn Size="12" Style="text-align: right;">
 
-                            <RadzenButton Text="Select" ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;"
+                            <RadzenButton Text=@Localizer["Select"] ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;"
                                           Disabled="@(selectedProductModel == null)"
                                           Click="@Save" />
-                            <RadzenButton Text="Cancel" ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button"
+                            <RadzenButton Text=@Localizer["Cancel"] ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button"
                                           Click="@HideModal" Style="font-size: 14px;" />
                         </RadzenColumn>
                     </RadzenRow>

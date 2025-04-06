@@ -1,86 +1,122 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\",
+  "WorkspaceRootPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\purchases\\purchaseheader.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\purchases\\purchaseheader.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\receptions\\receptionlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\receptionlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\purchases\\newpurchasepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\purchases\\newpurchasepage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\suppliers\\supplierlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\suppliers\\supplierlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\purchases\\purchaselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\purchases\\purchaselist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\components\\pages\\receipts\\receiptlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\receipts\\receiptlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\shared\\models\\commandinput.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\shared\\models\\commandinput.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\components\\pages\\receipts\\receiptpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\receipts\\receiptpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\purchases\\purchasedetailpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\purchases\\purchasedetailpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|c:\\users\\bouce\\source\\repos\\invnew\\inv.infrastructure\\storage\\budget\\budgetstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|solutionrelative:inv.infrastructure\\storage\\budget\\budgetstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD8B2F0C-9879-4BA1-B1AD-A38C8F8D92E6}|INV.App\\INV.App.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.app\\receipts\\receiptinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD8B2F0C-9879-4BA1-B1AD-A38C8F8D92E6}|INV.App\\INV.App.csproj|solutionrelative:inv.app\\receipts\\receiptinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\products\\productselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\products\\productselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\receptions\\newreception.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\newreception.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\receptions\\newreception.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\newreception.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\receptions\\receptionlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\receptionlist.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AB83862-F6EF-4941-BA4D-C266AFB3447B}|INV.Implementation\\INV.Implementation.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.implementation\\service\\purchses\\purchaseorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AB83862-F6EF-4941-BA4D-C266AFB3447B}|INV.Implementation\\INV.Implementation.csproj|solutionrelative:inv.implementation\\service\\purchses\\purchaseorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.infrastructure\\storage\\receipts\\receiptstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|solutionrelative:inv.infrastructure\\storage\\receipts\\receiptstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\products\\productslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\products\\productslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\products\\productslist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\components\\pages\\products\\productdetailpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\products\\productdetailpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\products\\productform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\products\\productform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.infrastructure\\storage\\products\\iproductstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58227CE6-8621-4565-BD75-4AF665172459}|INV.Infrastructure\\INV.Infrastructure.csproj|solutionrelative:inv.infrastructure\\storage\\products\\iproductstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\products\\producteditform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\products\\producteditform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AB83862-F6EF-4941-BA4D-C266AFB3447B}|INV.Implementation\\INV.Implementation.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.implementation\\service\\productservices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AB83862-F6EF-4941-BA4D-C266AFB3447B}|INV.Implementation\\INV.Implementation.csproj|solutionrelative:inv.implementation\\service\\productservices\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4264A1A-46BA-4296-934A-7EEE6DF7F09D}|INV.Shared\\INV.Shared.csproj|c:\\users\\bouce\\source\\repos\\invnew\\inv.shared\\formstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4264A1A-46BA-4296-934A-7EEE6DF7F09D}|INV.Shared\\INV.Shared.csproj|solutionrelative:inv.shared\\formstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD8B2F0C-9879-4BA1-B1AD-A38C8F8D92E6}|INV.App\\INV.App.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\inv.app\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD8B2F0C-9879-4BA1-B1AD-A38C8F8D92E6}|INV.App\\INV.App.csproj|solutionrelative:inv.app\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\web\\components\\pages\\products\\productslistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\products\\productslistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\products\\productsmodel\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\products\\productsmodel\\productmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\inv_3.0\\invuis\\suppliers\\supplierform.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\suppliers\\supplierform.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\suppliers\\supplierform.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\suppliers\\suppliercard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\suppliers\\suppliercard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\suppliers\\supplierlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\suppliers\\supplierlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\wwwroot\\icss\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\wwwroot\\icss\\home.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\receptions\\receptionlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\receptionlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\receipts\\receiptlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\receipts\\receiptlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\receipts\\receiptpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\receipts\\receiptpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\purchases\\purchaseproductsdetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\purchases\\purchaseproductsdetail.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\purchases\\purchaseselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\purchases\\purchaseselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|c:\\users\\bouce\\source\\repos\\invnew\\web\\components\\pages\\purchases\\purchseorderlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C4A70422-573D-4D8A-81A1-9923CD3A5846}|Web\\INV.Web.csproj|solutionrelative:web\\components\\pages\\purchases\\purchseorderlistpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\receptions\\newreception.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\newreception.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\receptions\\receptionlistbypurchase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\receptions\\receptionlistbypurchase.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\suppliers\\supplierselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\suppliers\\supplierselector.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|c:\\users\\bouce\\source\\repos\\invnew\\invuis\\warehouses\\warehouseform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CA4533B-949D-4985-96A2-627900575F4F}|INVUIs\\INVUIs.csproj|solutionrelative:invuis\\warehouses\\warehouseform.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,8 +126,26 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PurchaseHeader.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseHeader.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Purchases\\PurchaseHeader.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseHeader.razor",
+              "RelativeToolTip": "INVUIs\\Purchases\\PurchaseHeader.razor",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T13:58:48.509Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -130,263 +184,339 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "Web\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T10:31:55.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SupplierList.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Suppliers\\SupplierList.razor",
-              "RelativeDocumentMoniker": "INVUIs\\Suppliers\\SupplierList.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Suppliers\\SupplierList.razor",
-              "RelativeToolTip": "INVUIs\\Suppliers\\SupplierList.razor",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T10:29:47.773Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReceiptInfo.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.App\\Receipts\\ReceiptInfo.cs",
-              "RelativeDocumentMoniker": "INV.App\\Receipts\\ReceiptInfo.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.App\\Receipts\\ReceiptInfo.cs",
-              "RelativeToolTip": "INV.App\\Receipts\\ReceiptInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T10:27:22.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ReceiptStorage.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Infrastructure\\Storage\\Receipts\\ReceiptStorage.cs",
-              "RelativeDocumentMoniker": "INV.Infrastructure\\Storage\\Receipts\\ReceiptStorage.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Infrastructure\\Storage\\Receipts\\ReceiptStorage.cs",
-              "RelativeToolTip": "INV.Infrastructure\\Storage\\Receipts\\ReceiptStorage.cs",
-              "ViewState": "AgIAAD0BAAAAAAAAAAAgwDkBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T08:46:23.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReceptionList.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\ReceptionList.razor",
-              "RelativeDocumentMoniker": "INVUIs\\Receptions\\ReceptionList.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\ReceptionList.razor",
-              "RelativeToolTip": "INVUIs\\Receptions\\ReceptionList.razor",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T09:39:21.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReceptionList.razor.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\ReceptionList.razor.cs",
-              "RelativeDocumentMoniker": "INVUIs\\Receptions\\ReceptionList.razor.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\ReceptionList.razor.cs",
-              "RelativeToolTip": "INVUIs\\Receptions\\ReceptionList.razor.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAxwBgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:47:28.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReceiptPage.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
+              "Title": "PurchaseList.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseList.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Purchases\\PurchaseList.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseList.razor",
+              "RelativeToolTip": "INVUIs\\Purchases\\PurchaseList.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T09:50:38.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\appsettings.json",
-              "RelativeDocumentMoniker": "Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\appsettings.json",
-              "RelativeToolTip": "Web\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-13T08:37:39.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T13:58:15.997Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ReceiptListPage.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAACgAAAAAAAAAA==",
+              "Title": "CommandInput.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Shared\\Models\\CommandInput.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Shared\\Models\\CommandInput.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Shared\\Models\\CommandInput.razor",
+              "RelativeToolTip": "INVUIs\\Shared\\Models\\CommandInput.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T10:09:07.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T13:57:34.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NewReception.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\NewReception.razor",
-              "RelativeDocumentMoniker": "INVUIs\\Receptions\\NewReception.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\NewReception.razor",
-              "RelativeToolTip": "INVUIs\\Receptions\\NewReception.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PurchaseDetailPage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\PurchaseDetailPage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Purchases\\PurchaseDetailPage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\PurchaseDetailPage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Purchases\\PurchaseDetailPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T10:17:16.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T13:49:11.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NewPurchasePage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\NewPurchasePage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Purchases\\NewPurchasePage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\NewPurchasePage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Purchases\\NewPurchasePage.razor",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T13:09:58.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductSelector.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductSelector.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductSelector.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductSelector.razor",
+              "RelativeToolTip": "INVUIs\\Products\\ProductSelector.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T17:20:52.771Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "NewReception.razor.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\NewReception.razor.cs",
-              "RelativeDocumentMoniker": "INVUIs\\Receptions\\NewReception.razor.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Receptions\\NewReception.razor.cs",
-              "RelativeToolTip": "INVUIs\\Receptions\\NewReception.razor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T10:26:13.061Z",
-              "EditorCaption": ""
+              "Title": "ProductsList.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductsList.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductsList.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductsList.razor",
+              "RelativeToolTip": "INVUIs\\Products\\ProductsList.razor",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T11:23:54.45Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProductsList.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Products\\ProductsList.razor",
-              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductsList.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Products\\ProductsList.razor",
-              "RelativeToolTip": "INVUIs\\Products\\ProductsList.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAACsAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "BudgetStorage.cs",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\Storage\\Budget\\BudgetStorage.cs",
+              "RelativeDocumentMoniker": "INV.Infrastructure\\Storage\\Budget\\BudgetStorage.cs",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\Storage\\Budget\\BudgetStorage.cs",
+              "RelativeToolTip": "INV.Infrastructure\\Storage\\Budget\\BudgetStorage.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T21:20:19.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductEditForm.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductEditForm.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductEditForm.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductEditForm.razor",
+              "RelativeToolTip": "INVUIs\\Products\\ProductEditForm.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T08:59:05.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T13:06:46.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductForm.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductForm.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductForm.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Products\\ProductForm.razor",
+              "RelativeToolTip": "INVUIs\\Products\\ProductForm.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-06T13:06:48.936Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "PurchaseOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Implementation\\Service\\Purchses\\PurchaseOrderService.cs",
-              "RelativeDocumentMoniker": "INV.Implementation\\Service\\Purchses\\PurchaseOrderService.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Implementation\\Service\\Purchses\\PurchaseOrderService.cs",
-              "RelativeToolTip": "INV.Implementation\\Service\\Purchses\\PurchaseOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAQAAAAAAAAAA==",
+              "Title": "FormState.cs",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\FormState.cs",
+              "RelativeDocumentMoniker": "INV.Shared\\FormState.cs",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\FormState.cs",
+              "RelativeToolTip": "INV.Shared\\FormState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T08:46:23.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IProductStorage.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Infrastructure\\Storage\\Products\\IProductStorage.cs",
-              "RelativeDocumentMoniker": "INV.Infrastructure\\Storage\\Products\\IProductStorage.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Infrastructure\\Storage\\Products\\IProductStorage.cs",
-              "RelativeToolTip": "INV.Infrastructure\\Storage\\Products\\IProductStorage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:19:50.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T13:06:18.21Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ProductDetailPage.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Products\\ProductDetailPage.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Products\\ProductDetailPage.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Products\\ProductDetailPage.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\Products\\ProductDetailPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Title": "SupplierListPage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Suppliers\\SupplierListPage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Suppliers\\SupplierListPage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Suppliers\\SupplierListPage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Suppliers\\SupplierListPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T02:15:47.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T11:07:28.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Implementation\\Service\\ProductServices\\ProductService.cs",
-              "RelativeDocumentMoniker": "INV.Implementation\\Service\\ProductServices\\ProductService.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.Implementation\\Service\\ProductServices\\ProductService.cs",
-              "RelativeToolTip": "INV.Implementation\\Service\\ProductServices\\ProductService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAYwC0AAAA2AAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "SupplierForm.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierForm.razor.cs",
+              "RelativeDocumentMoniker": "INVUIs\\Suppliers\\SupplierForm.razor.cs",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierForm.razor.cs",
+              "RelativeToolTip": "INVUIs\\Suppliers\\SupplierForm.razor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:21:04.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.App\\Products\\IProductService.cs",
-              "RelativeDocumentMoniker": "INV.App\\Products\\IProductService.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INV.App\\Products\\IProductService.cs",
-              "RelativeToolTip": "INV.App\\Products\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:21:16.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T08:40:20.59Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "ProductsListPage.razor",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Products\\ProductsListPage.razor",
-              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Products\\ProductsListPage.razor",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\Web\\Components\\Pages\\Products\\ProductsListPage.razor",
-              "RelativeToolTip": "Web\\Components\\Pages\\Products\\ProductsListPage.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "Web\\Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAuwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-06T08:50:27.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "Web\\Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "Web\\Components\\Layout\\MainLayout.razor.css",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAuwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-06T08:50:53.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\app.css",
+              "RelativeToolTip": "Web\\wwwroot\\app.css",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAuwI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-06T08:51:07.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SupplierCard.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierCard.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Suppliers\\SupplierCard.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierCard.razor",
+              "RelativeToolTip": "INVUIs\\Suppliers\\SupplierCard.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-13T09:02:25.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T16:59:26.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ReceiptPage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Receipts\\ReceiptPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T16:38:19.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Home.css",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\Home.css",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\ICSS\\Home.css",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\Home.css",
+              "RelativeToolTip": "Web\\wwwroot\\ICSS\\Home.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-06T08:52:24.316Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "ProductModel.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Products\\ProductsModel\\ProductModel.cs",
-              "RelativeDocumentMoniker": "INVUIs\\Products\\ProductsModel\\ProductModel.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Products\\ProductsModel\\ProductModel.cs",
-              "RelativeToolTip": "INVUIs\\Products\\ProductsModel\\ProductModel.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T08:54:38.263Z",
-              "EditorCaption": ""
+              "Title": "ReceptionList.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\ReceptionList.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Receptions\\ReceptionList.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\ReceptionList.razor",
+              "RelativeToolTip": "INVUIs\\Receptions\\ReceptionList.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T17:01:24.494Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "SupplierForm.razor.cs",
-              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Suppliers\\SupplierForm.razor.cs",
-              "RelativeDocumentMoniker": "INVUIs\\Suppliers\\SupplierForm.razor.cs",
-              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INV_3.0\\INVUIs\\Suppliers\\SupplierForm.razor.cs",
-              "RelativeToolTip": "INVUIs\\Suppliers\\SupplierForm.razor.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAawGQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T02:22:34.953Z",
-              "EditorCaption": ""
+              "Title": "ReceiptListPage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Receipts\\ReceiptListPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T21:46:10.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PurchaseProductsDetail.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseProductsDetail.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Purchases\\PurchaseProductsDetail.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseProductsDetail.razor",
+              "RelativeToolTip": "INVUIs\\Purchases\\PurchaseProductsDetail.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T21:11:30.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PurchaseSelector.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseSelector.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Purchases\\PurchaseSelector.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Purchases\\PurchaseSelector.razor",
+              "RelativeToolTip": "INVUIs\\Purchases\\PurchaseSelector.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T21:08:31.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PurchseOrderListPage.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\PurchseOrderListPage.razor",
+              "RelativeDocumentMoniker": "Web\\Components\\Pages\\Purchases\\PurchseOrderListPage.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\Components\\Pages\\Purchases\\PurchseOrderListPage.razor",
+              "RelativeToolTip": "Web\\Components\\Pages\\Purchases\\PurchseOrderListPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T16:38:47.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\_Imports.razor",
+              "RelativeDocumentMoniker": "INVUIs\\_Imports.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\_Imports.razor",
+              "RelativeToolTip": "INVUIs\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T20:53:46.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "NewReception.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\NewReception.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Receptions\\NewReception.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\NewReception.razor",
+              "RelativeToolTip": "INVUIs\\Receptions\\NewReception.razor",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAgwG0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T17:04:28.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ReceptionListByPurchase.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\ReceptionListByPurchase.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Receptions\\ReceptionListByPurchase.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Receptions\\ReceptionListByPurchase.razor",
+              "RelativeToolTip": "INVUIs\\Receptions\\ReceptionListByPurchase.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T17:00:48.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "SupplierSelector.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierSelector.razor",
+              "RelativeDocumentMoniker": "INVUIs\\Suppliers\\SupplierSelector.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\Suppliers\\SupplierSelector.razor",
+              "RelativeToolTip": "INVUIs\\Suppliers\\SupplierSelector.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwB8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T16:53:40.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "WareHouseForm.razor",
+              "DocumentMoniker": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\WareHouses\\WareHouseForm.razor",
+              "RelativeDocumentMoniker": "INVUIs\\WareHouses\\WareHouseForm.razor",
+              "ToolTip": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\WareHouses\\WareHouseForm.razor",
+              "RelativeToolTip": "INVUIs\\WareHouses\\WareHouseForm.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-05T16:51:55.594Z"
             }
           ]
         },

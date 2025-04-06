@@ -1,10 +1,15 @@
 ﻿@page "/products/{productId:guid}"
+@inject IStringLocalizer<Resources> Localizer
+
 @using INV.App.Products
 @using INV.App.Receipts
 
 @inject IProductService ProductService
 
-<PageHeader Title="Detailed Product Information" />
+
+<PageTitle>@Localizer["Product.Details"]</PageTitle>
+
+<PageHeader Title=@Localizer["Product.Title"] />
 
 @if (product != null)
 {
@@ -13,26 +18,27 @@
         <RadzenRow>
             <RadzenColumn Size="6">
                 <p>
-                    <strong>Quantité :</strong> @product.Quantity
+                    <strong> @Localizer["Quantity"] :</strong> @product.Quantity
+
                 </p>
                
 
             </RadzenColumn>
             <RadzenColumn Size="6">
                 <p>
-                    <strong>Stock :</strong> @product.WareHouse
+                    <strong>@Localizer["Stock"] :</strong> @product.WareHouse
                 </p>
-                <p><strong>TVA :</strong> @product.TVA%</p>
+                <p><strong>@Localizer["TVA"] :</strong> @product.TVA%</p>
                 <p>
-                    <strong>Unité de mesure :</strong> @product.UnitMeasure
+                    <strong>@Localizer["UnitMeasure"]  :</strong> @product.UnitMeasure
                 </p>
             </RadzenColumn>
         </RadzenRow>
             <RadzenRow>
                     <RadzenColumn Size="12">
                 <div class="footer-form" style="display:flex;flex-direction: row-reverse;">
-                    <button class="btn-custom btn-submit" @onclick="() => ShowProductFormModal(product)">Edit</button>
-                        </div>
+                    <button class="btn-custom btn-submit" @onclick="() => ShowProductFormModal(product)">@Localizer["Edit"]</button>
+                </div>
               
                     </RadzenColumn> 
             </RadzenRow>
@@ -42,15 +48,15 @@
     {
         <RadzenTabs>
             <Tabs>
-                <RadzenTabsItem Text="Réceptions">
+                <RadzenTabsItem Text=@Localizer["Receptions"]>
                     <RadzenDataGrid Data="@product.ReceiptInfos" TItem="ReceiptInfo">
                         <Columns>
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Number" Title="Number" />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="supplierName" Title="supplierName" />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title="Date Of Reception" />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryNumber" Title="Delivery Number" />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryDate" Title="Delivery Date" />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title="Status" />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Number" Title=@Localizer["Number"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="supplierName" Title=@Localizer["Supplier.Name"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title=@Localizer["Reception.Date"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryNumber" Title=@Localizer["Delivery.Number"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryDate" Title=@Localizer["Delivery.Date"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"] />
                         </Columns>
                     </RadzenDataGrid>
                 </RadzenTabsItem>
@@ -60,6 +66,6 @@
 }
 else
 {
-    <p>Loading...</p>
+    <p>@Localizer["Loading"]...</p>
 }
 <ProductForm @ref="ProductForm" productEdit="product"  />

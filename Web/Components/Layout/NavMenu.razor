@@ -1,12 +1,11 @@
-@inject Microsoft.Extensions.Localization.IStringLocalizer<NavMenu> L
+@inject IStringLocalizer<Resources> localizer
+
 
 <div class="top-row ps-3 navbar navbar-dark" style="background-color:#257180 ">
     <div class="container-fluid d-flex align-items-center">
         <img src="Images/logo1.png" alt="Logo" style="width: 100px;margin-left: 30px;" />
         <span class="ms-auto" style="font-weight: normal; font-size: 0.9em; color: #FD8B51;">Manage your inventory online</span>
     </div>
-
-
 </div>
 
 <input type="checkbox" class="navbar-toggler" id="navbar-toggler" />
@@ -18,22 +17,22 @@
         <br />
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="/" Match="NavLinkMatch.All">
-                <span class="bi bi-columns-gap me-3" aria-hidden="true"></span> Dashboard
+                <span class="bi bi-columns-gap me-3" aria-hidden="true"></span> @localizer["Dashboard"]
             </NavLink>
         </div>
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="products">
-                <span class="bi bi-box-seam me-3" aria-hidden="true"></span> Products
+                <span class="bi bi-box-seam me-3" aria-hidden="true"></span> @localizer["Products"]
             </NavLink>
         </div>
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="suppliers">
-                <span class="bi bi-truck me-3" aria-hidden="true"></span> Suppliers
+                <span class="bi bi-truck me-3" aria-hidden="true"></span> @localizer["Suppliers"]
             </NavLink>
         </div>
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="purchases">
-                <span class="bi bi-cart-check me-3" aria-hidden="true"></span> Purchases
+                <span class="bi bi-cart-check me-3" aria-hidden="true"></span>  @localizer["Purchases"]
             </NavLink>
         </div>
 
@@ -58,20 +57,19 @@
 
 
         *@
-
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="receptions">
-                <span class="bi bi-clipboard-check me-3" aria-hidden="true"></span> Receptions
+                <span class="bi bi-clipboard-check me-3" aria-hidden="true"></span>  @localizer["Receptions"]
             </NavLink>
         </div>
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="reports">
-                <span class="bi bi-graph-up me-3" aria-hidden="true"></span> Reports
+                <span class="bi bi-graph-up me-3" aria-hidden="true"></span>  @localizer["Reports"]
             </NavLink>
         </div>
         <div class="nav-item px-4">
             <NavLink class="nav-link d-flex align-items-center" href="logout">
-                <span class="bi bi-door-closed me-3" aria-hidden="true"></span> Disconnect
+                <span class="bi bi-door-closed me-3" aria-hidden="true"></span>  @localizer["Disconnect"]
             </NavLink>
         </div>
 

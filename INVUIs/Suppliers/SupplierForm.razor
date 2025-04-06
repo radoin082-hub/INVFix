@@ -1,3 +1,5 @@
+@inject IStringLocalizer<Resources> Localizer
+
 @if (displayModal)
 {
     <MyModal>
@@ -7,26 +9,26 @@
                 <ValidationSummary />
                 <div class="commend-content">
                     <div class="titel-primary">
-                        <h2>@(Update ? "Edit Supplier" : "Information of Supplier")</h2>
+                        <h2>@(Update ? @Localizer["Supplier.Edit"]: @Localizer["Supplier.Information"])</h2>
                     </div>
 
                     <div class="input">
                         <div class="commend-input">
-                            <label>Full Name</label>
+                            <label>@Localizer["FullName"]</label>
                             <InputText @bind-Value="newSupplier.NameSupplier" placeholder="Enter Supplier Name" />
                             <ValidationMessage For="() => newSupplier.NameSupplier" />
                         </div>
                     </div>
                     <div class="input">
                         <div class="commend-input">
-                            <label>Company Name (Legal from determination)</label>
+                            <label>@Localizer["Company.Name"]</label>
                             <InputText @bind-Value="newSupplier.NameCompany" placeholder="Enter Supplier Company" />
                             <ValidationMessage For="() => newSupplier.NameCompany" />
                         </div>
                     </div>
                     <div class="input">
                         <div class="commend-input">
-                            <label>Address</label>
+                            <label>@Localizer["Address"]</label>
                             <InputText @bind-Value="newSupplier.Address" placeholder="Enter Supplier Address" />
                             <ValidationMessage For="() => newSupplier.Address" />
                         </div>
@@ -34,12 +36,12 @@
 
                     <div class="input2">
                         <div class="commend-input">
-                            <label>Phone</label>
+                            <label>@Localizer["Phone"]</label>
                             <InputText @bind-Value="newSupplier.Phone" placeholder="Enter Supplier Phone" />
                             <ValidationMessage For="() => newSupplier.Phone" />
                         </div>
                         <div class="commend-input">
-                            <label>Email</label>
+                            <label>@Localizer["Email"]</label>
                             <InputText @bind-Value="newSupplier.Email" placeholder="Enter Supplier Email" />
                             <ValidationMessage For="() => newSupplier.Email" />
                         </div>
@@ -79,15 +81,15 @@
                         </div>
 
                         <div class="commend-input">
-                            <label>Bank Address</label>
+                            <label>@Localizer["BankAgency"]</label>
                             <InputText @bind-Value="newSupplier.BankAgency" placeholder="Enter Bank Address" />
                             <ValidationMessage For="() => newSupplier.BankAgency" />
                         </div>
                     </div>
 
                     <div class="footer-form">
-                        <button class="btn-custom btn-cancel" type="button" @onclick="close">Close</button>
-                        <button class="btn-custom btn-submit" type="submit">@((Update ? "Update" : "Create"))</button>
+                        <button class="btn-custom btn-cancel" type="button" @onclick="close">@Localizer["Cancel"]</button>
+                        <button class="btn-custom btn-submit" type="submit">@((Update ? "Update" : @Localizer["Register"]))</button>
                     </div>
                 </div>
             </EditForm>

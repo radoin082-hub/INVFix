@@ -1477,7 +1477,7 @@
           }
         }
       },
-      "Radzen.Blazor/6.1.1": {
+      "Radzen.Blazor/6.2.6": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "9.0.2",
@@ -1985,6 +1985,19 @@
         },
         "runtime": {
           "bin/placeholder/INV.Shared.dll": {}
+        }
+      },
+      "UIsResources/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "9.0.1"
+        },
+        "compile": {
+          "bin/placeholder/UIsResources.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UIsResources.dll": {}
         }
       }
     }
@@ -4529,10 +4542,10 @@
         "puppeteersharp.nuspec"
       ]
     },
-    "Radzen.Blazor/6.1.1": {
-      "sha512": "IC2Wp9IS7ICaAvbt3XoIRB93QEuf9HsEFdgloEr9Ww9Ad3Lzh2v3+/+rvUm/Kr0C+p7AtyMfC4yGXUMAjRqTXQ==",
+    "Radzen.Blazor/6.2.6": {
+      "sha512": "mkIfMXparYPUw+6goP5OPtmxFbvlkvQ5LdmQ6SEfDNE+ARiqqvI/AbhVzGJ4na1wBk/XOfPp3iuUuYsEw9Hw+w==",
       "type": "package",
-      "path": "radzen.blazor/6.1.1",
+      "path": "radzen.blazor/6.2.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4552,7 +4565,7 @@
         "lib/net8.0/Radzen.Blazor.xml",
         "lib/net9.0/Radzen.Blazor.dll",
         "lib/net9.0/Radzen.Blazor.xml",
-        "radzen.blazor.6.1.1.nupkg.sha512",
+        "radzen.blazor.6.2.6.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -4561,10 +4574,6 @@
         "staticwebassets/css/default-base.css",
         "staticwebassets/css/default-wcag.css",
         "staticwebassets/css/default.css",
-        "staticwebassets/css/fluent-base.css",
-        "staticwebassets/css/fluent-dark-base.css",
-        "staticwebassets/css/fluent-dark.css",
-        "staticwebassets/css/fluent.css",
         "staticwebassets/css/humanistic-base.css",
         "staticwebassets/css/humanistic-dark-base.css",
         "staticwebassets/css/humanistic-dark-wcag.css",
@@ -4577,10 +4586,6 @@
         "staticwebassets/css/material-dark.css",
         "staticwebassets/css/material-wcag.css",
         "staticwebassets/css/material.css",
-        "staticwebassets/css/material3-base.css",
-        "staticwebassets/css/material3-dark-base.css",
-        "staticwebassets/css/material3-dark.css",
-        "staticwebassets/css/material3.css",
         "staticwebassets/css/software-base.css",
         "staticwebassets/css/software-dark-base.css",
         "staticwebassets/css/software-dark-wcag.css",
@@ -5377,6 +5382,11 @@
       "type": "project",
       "path": "../INV.Shared/INV.Shared.csproj",
       "msbuildProject": "../INV.Shared/INV.Shared.csproj"
+    },
+    "UIsResources/1.0.0": {
+      "type": "project",
+      "path": "../UIsResources/UIsResources.csproj",
+      "msbuildProject": "../UIsResources/UIsResources.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5387,48 +5397,60 @@
       "INV.Infrastructure >= 1.0.0",
       "INV.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.Web >= 9.0.2",
-      "Radzen.Blazor >= 6.1.1"
+      "Radzen.Blazor >= 6.2.6",
+      "UIsResources >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\radoi\\.nuget\\packages\\": {}
+    "C:\\Users\\bouce\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INVUIs\\INVUIs.csproj",
+      "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj",
       "projectName": "INVUIs",
-      "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INVUIs\\INVUIs.csproj",
-      "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INVUIs\\obj\\",
+      "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj",
+      "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.App\\INV.App.csproj": {
-              "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.App\\INV.App.csproj"
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj"
             },
-            "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Domain\\INV.Domain.csproj": {
-              "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Domain\\INV.Domain.csproj"
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
             },
-            "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Implementation\\INV.Implementation.csproj": {
-              "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Implementation\\INV.Implementation.csproj"
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj"
             },
-            "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Infrastructure\\INV.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Infrastructure\\INV.Infrastructure.csproj"
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj"
             },
-            "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Shared\\INV.Shared.csproj": {
-              "projectPath": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\INV.Shared\\INV.Shared.csproj"
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj"
+            },
+            "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj": {
+              "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj"
             }
           }
         }
@@ -5442,7 +5464,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -5454,7 +5477,7 @@
           },
           "Radzen.Blazor": {
             "target": "Package",
-            "version": "[6.1.1, )"
+            "version": "[6.2.6, )"
           }
         },
         "imports": [
@@ -5473,7 +5496,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -5482,7 +5505,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Farsi.Library 2.7.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "message": "Le package 'Farsi.Library 2.7.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net9.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "Farsi.Library",
       "targetGraphs": [
         "net9.0"

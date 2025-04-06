@@ -1,8 +1,9 @@
 ﻿@using INV.App.Suppliers
 @inject IJSRuntime JSRuntime
+@inject IStringLocalizer<Resources> Localizer
 
 <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" JustifyContent="JustifyContent.Start" Gap="0.5rem" class="supplier-selector">
-    <RadzenLabel Text="Select Supplier" Component="DropDownDataGridChangeEvent" Style="width: max-content" />
+    <RadzenLabel Text=@Localizer["Supplier.Select"] Component="DropDownDataGridChangeEvent" Style="width: 100px" />
 
     <RadzenDropDownDataGrid TValue="SupplierInfo"
                             @bind-Value="selectedSupplier"
@@ -12,11 +13,12 @@
                             Change="@(args => selectRowSepplier((SupplierInfo)args))"
                             Responsive="true">
         <Columns>
-            <RadzenDropDownDataGridColumn Property="CompanyName" Title="Company Name" />
-            <RadzenDropDownDataGridColumn Property="Email" Title="Email" />
+
+            <RadzenDropDownDataGridColumn Property="CompanyName" Title=@Localizer["Company.Name"] />
+            <RadzenDropDownDataGridColumn Property="Email" Title=@Localizer["Email"] />
         </Columns>
     </RadzenDropDownDataGrid>
-    <RadzenButton Text="Supplier" Click="supplierForm.ShowModal" Style="margin-left: 1rem;" 
+    <RadzenButton Text=@Localizer["Supplier"] Click="supplierForm.ShowModal" Style="margin-left: 1rem;"
                   Shade="Shade.Light" ButtonStyle="ButtonStyle.Base" Icon="note_add"/>
 
 </RadzenStack>

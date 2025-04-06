@@ -18,6 +18,7 @@
       <ProjectReference Include="..\INV.Implementation\INV.Implementation.csproj" />
       <ProjectReference Include="..\INV.Infrastructure\INV.Infrastructure.csproj" />
       <ProjectReference Include="..\INV.Shared\INV.Shared.csproj" />
+      <ProjectReference Include="..\UIsResources\UIsResources.csproj" />
     
     </ItemGroup>
 

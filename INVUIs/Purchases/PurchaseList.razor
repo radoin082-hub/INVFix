@@ -1,6 +1,7 @@
 ﻿@using INV.App.Purchases
 @inject NavigationManager Navigation
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
 
 <div class="d-flex justify-content-between">
     <input type="text" @bind-value="SearchTerm" placeholder="Search by order number or by supplier name" class="number-input" @bind-value:event="oninput"/>
@@ -10,7 +11,7 @@
 </div> 
 @if (purchaseOrderInfos is null)
 {
-    <h3>Loading...</h3>
+    <h3>@Localizer["Loading"]...</h3>
 }
 else
 {
@@ -19,16 +20,16 @@ else
                         Style="width: 100%;" RowSelect="@((PurchaseOrderInfo purchaseOrderInfo) => navigatepage(purchaseOrderInfo.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title=@Localizer["Date"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeType)" Title=@Localizer["BudgetType"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.ServiceType)" Title=@Localizer["ServiceType"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title=@Localizer["BudgetArticle"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title=@Localizer["Supplier.Name"] Visible="ShowSupplier" />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] />
 
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title="Status" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title="Number" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title="Date" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeType)" Title="BudgeType" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.ServiceType)" Title="ServiceType" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title="BudgeArticle" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title="Supplier Name" Visible="ShowSupplier"/>
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title="TotalTTC" />
-             
+
             </Columns>
         </RadzenDataGrid>
     </div>

@@ -1,3 +1,3 @@
-C:\Users\bouce\Source\Repos\INV_3.0\INVUIs\wwwroot\exampleJsInterop.js
+C:\Users\bouce\source\repos\INVNew\INVUIs\wwwroot\exampleJsInterop.js
 wwwroot\background.png
 wwwroot\exampleJsInterop.js

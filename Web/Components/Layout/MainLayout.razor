@@ -1,15 +1,14 @@
 @inherits LayoutComponentBase
-@inject Microsoft.Extensions.Localization.IStringLocalizer<MainLayout> L
 
-<div class="page">
+<div class="page" dir="@direction">
     <div class="sidebar">
-        <NavMenu/>
+        <NavMenu />
     </div>
 
     <main>
-        @*<div class="top-row px-10" ; style="display: flex; justify-content: center; align-items: center; font-weight: bold;font-size: 1.5em; height: 60px; color:#257180; background-color:#F2E5BF;">
-            Inventory Management System
-        </div>*@
+
+        <NavBar />
+
 
         <article class="content px-4">
             @Body
@@ -22,3 +21,12 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+@code {
+    private string direction = "ltr";
+
+    protected override void OnInitialized()
+    {
+        var culture = System.Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        direction = culture == "ar" ? "rtl" : "ltr";
+    }
+}

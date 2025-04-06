@@ -1,10 +1,12 @@
 ﻿@page "/receptions"
+@inject IStringLocalizer<Resources> Localizer
 
-<PageHeader Title="List of Receptions" SubTitle="Track and Manage Your Receptions Efficiently" />
+<PageTitle>@Localizer["Receptions"]</PageTitle>
+<PageHeader Title=@Localizer["Receptions.Title"] SubTitle=@Localizer["Receptions.SubTitle"] />
 
 <ReceptionList Receptions=@receipts>
 	<Pills>
-		<button type="button" class="addsupplier-button" @onclick="() => purchaseSelector.ShowModal()"><i class="bi bi-person-plus"></i> Select a purchase to receive</button>
-		<PurchaseSelector Title="Select Command" Command="purchases" OnSelected="CommandSelectednew" @ref="purchaseSelector" />
+		<button type="button" class="addsupplier-button" @onclick="() => purchaseSelector.ShowModal()"><i class="bi bi-person-plus"></i> @Localizer["Receptions.SelectPurchase"]</button>
+		<PurchaseSelector Title=@Localizer["Receptions.SelectPurchase"] Command="purchases" OnSelected="CommandSelectednew" @ref="purchaseSelector" />
 	</Pills>
 </ReceptionList>

@@ -1,41 +1,141 @@
 is_global = true
 build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = INVUIs
 build_property.RootNamespace = INVUIs
-build_property.ProjectDir = C:\Users\radoi\OneDrive\Desktop\web2\INVUIs\
+build_property.ProjectDir = C:\Users\bouce\source\repos\INVNew\INVUIs\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\radoi\OneDrive\Desktop\web2\INVUIs
+build_property.MSBuildProjectDirectory = C:\Users\bouce\source\repos\INVNew\INVUIs
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/radoi/OneDrive/Desktop/web2/INVUIs/Orders/PurchaseOrderList.razor]
-build_metadata.AdditionalFiles.TargetPath = T3JkZXJzXFB1cmNoYXNlT3JkZXJMaXN0LnJhem9y
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Dashboard/DashboardCardInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = RGFzaGJvYXJkXERhc2hib2FyZENhcmRJbmZvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/radoi/OneDrive/Desktop/web2/INVUIs/Suppliers/SupplierForm.razor]
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Products/ProductEditForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZHVjdHNcUHJvZHVjdEVkaXRGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Products/ProductForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZHVjdHNcUHJvZHVjdEZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Products/ProductSelector.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZHVjdHNcUHJvZHVjdFNlbGVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Products/ProductsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UHJvZHVjdHNcUHJvZHVjdHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseCard.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlQ2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseList.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlUHJvZHVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseProductsDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlUHJvZHVjdHNEZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseSelector.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlU2VsZWN0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Receptions/NewReception.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVjZXB0aW9uc1xOZXdSZWNlcHRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Receptions/ReceptionList.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVjZXB0aW9uc1xSZWNlcHRpb25MaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Receptions/ReceptionListByPurchase.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVjZXB0aW9uc1xSZWNlcHRpb25MaXN0QnlQdXJjaGFzZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/ConformationForm.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbmZvcm1hdGlvbkZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/LabledValue.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExhYmxlZFZhbHVlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/Models/CommandInput.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1vZGVsc1xDb21tYW5kSW5wdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/MyButton.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE15QnV0dG9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/MyModal.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE15TW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Shared/PageHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2VIZWFkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Suppliers/SupplierCard.razor]
+build_metadata.AdditionalFiles.TargetPath = U3VwcGxpZXJzXFN1cHBsaWVyQ2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Suppliers/SupplierForm.razor]
 build_metadata.AdditionalFiles.TargetPath = U3VwcGxpZXJzXFN1cHBsaWVyRm9ybS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/radoi/OneDrive/Desktop/web2/INVUIs/Suppliers/SupplierList.razor]
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Suppliers/SupplierList.razor]
 build_metadata.AdditionalFiles.TargetPath = U3VwcGxpZXJzXFN1cHBsaWVyTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/radoi/OneDrive/Desktop/web2/INVUIs/Suppliers/SupplierSelector.razor]
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Suppliers/SupplierSelector.razor]
 build_metadata.AdditionalFiles.TargetPath = U3VwcGxpZXJzXFN1cHBsaWVyU2VsZWN0b3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/radoi/OneDrive/Desktop/web2/INVUIs/_Imports.razor]
+[C:/Users/bouce/source/repos/INVNew/INVUIs/WareHouses/WareHouseForm.razor]
+build_metadata.AdditionalFiles.TargetPath = V2FyZUhvdXNlc1xXYXJlSG91c2VGb3JtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Components/Status/Status.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTdGF0dXNcU3RhdHVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-8s2dm92tkz
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseSupplier.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlU3VwcGxpZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-q7so4rwle3

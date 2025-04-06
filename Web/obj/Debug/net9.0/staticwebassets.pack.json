@@ -1,235 +1,239 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INV.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\INV.Web.kg5iajit03.bundle.scp.css"
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INV.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\INV.Web.o0gt8tot8k.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\DCSS\\Createreception.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\DCSS\\Createreception.css",
       "PackagePath": "staticwebassets\\DCSS\\Createreception.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\DCSS\\Supplier.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\DCSS\\Supplier.css",
       "PackagePath": "staticwebassets\\DCSS\\Supplier.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\ICSS\\BonCommande.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\BonCommande.css",
       "PackagePath": "staticwebassets\\ICSS\\BonCommande.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\ICSS\\Home.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\Home.css",
       "PackagePath": "staticwebassets\\ICSS\\Home.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\ICSS\\ListPurchaseOrder.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\ListPurchaseOrder.css",
       "PackagePath": "staticwebassets\\ICSS\\ListPurchaseOrder.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\ICSS\\PurchaseOrder.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\PurchaseOrder.css",
       "PackagePath": "staticwebassets\\ICSS\\PurchaseOrder.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\ICSS\\SupplierList.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\ICSS\\SupplierList.css",
       "PackagePath": "staticwebassets\\ICSS\\SupplierList.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\Images\\danger.png",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\Images\\danger.png",
       "PackagePath": "staticwebassets\\Images\\danger.png"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\Images\\logo1.png",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\Images\\logo1.png",
       "PackagePath": "staticwebassets\\Images\\logo1.png"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\Images\\pdf.png",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\Images\\pdf.png",
       "PackagePath": "staticwebassets\\Images\\pdf.png"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\Images\\succes.png",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\Images\\succes.png",
       "PackagePath": "staticwebassets\\Images\\succes.png"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\app.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\JS\\sweetalert2.all.min.js",
+      "PackagePath": "staticwebassets\\JS\\sweetalert2.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\radoi\\OneDrive\\Desktop\\INV_3.0\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {

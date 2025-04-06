@@ -1,9 +1,11 @@
 ﻿@page "/purchases/create"
 @rendermode InteractiveServer
+@inject IStringLocalizer<Resources> Localizer
 
-<PageTitle>Purchase Order</PageTitle>
 
-<PageHeader Title="Create New Purchase"/>
+<PageTitle>@Localizer["Purchase.New"]</PageTitle>
+
+<PageHeader Title=@Localizer["Purchase.New.Title"] />
 @if (showAlert)
 {
     <Alert Color="AlertColor.Warning">
@@ -20,13 +22,15 @@
 
 <RadzenTabs RenderMode="TabRenderMode.Client">
     <Tabs>
-        <RadzenTabsItem Text="economic operator">
+            <RadzenTabsItem Text=@Localizer["EconomicOperator"]>
+
             <CascadingValue Value="selectedSupplier">
                 <PurchaseSupplier OnSupplierSelected="@(supplier => selectedSupplier = supplier)" />
             </CascadingValue>
         </RadzenTabsItem>
 
-        <RadzenTabsItem Text="Products Order">
+            <RadzenTabsItem Text=@Localizer["Products.Order"]>
+
             <CascadingValue Value="productModel">
                 <PurchaseProducts/>
             </CascadingValue>
