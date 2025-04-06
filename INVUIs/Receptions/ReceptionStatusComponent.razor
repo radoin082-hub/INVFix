@@ -1,0 +1,11 @@
+<div class="container-status">
+    <div class="content-status @GetStatusClass()">
+    @if(text){
+     <span>@ReceptionStatus.ToString().ToUpper()</span>
+    }
+    @if(icon){
+     <i class="@GetStatusIcon()"></i>
+    }
+      
+    </div>
+</div>

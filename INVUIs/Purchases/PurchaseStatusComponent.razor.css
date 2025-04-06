@@ -1,0 +1,39 @@
+.container-status {
+    display: flex;
+    align-items: center;
+}
+
+/* main badge container */
+.content-status {
+    font-weight: 500;
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* space between text and icon */
+    font-size: 0.9rem;
+}
+
+/* statuses */
+.status-completed {
+    background-color: rgb(220 252 231);
+    color: rgb(22 101 52);
+}
+
+.status-in-progress {
+    background-color: rgb(255, 245, 204); 
+    color: rgb(202, 138, 4); 
+}
+
+.status-pending {
+    background-color: rgb(254, 226, 226); /* light red/pink background */
+    color: rgb(185, 28, 28); /* strong red text */
+}
+
+/* icon styles */
+.bi-check-circle,
+.bi-clock,
+.bi-exclamation-circle {
+    font-size: 1rem;
+}

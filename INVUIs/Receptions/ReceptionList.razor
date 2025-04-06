@@ -43,8 +43,11 @@ else
                 </RadzenDataGridColumn>
 
 
-                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="160px" />
-
+                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="160px">
+                     <Template Context="reception">
+                        <ReceptionStatusComponent Text="false" Icon="true" ReceptionStatus="@reception.Status" />
+                    </Template>
+                 </RadzenDataGridColumn>
             </Columns>
         </RadzenDataGrid>
     </div>

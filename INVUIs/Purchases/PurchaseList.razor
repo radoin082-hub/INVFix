@@ -20,7 +20,11 @@ else
                         Style="width: 100%;" RowSelect="@((PurchaseOrderInfo purchaseOrderInfo) => navigatepage(purchaseOrderInfo.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"]>
+                    <Template Context="Purchase">
+                        <PurchaseStatusComponent Text="false" Icon="true" PurchaseStatus="Purchase.Status" />
+                    </Template>
+                </RadzenDataGridColumn>
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title=@Localizer["Date"] />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeType)" Title=@Localizer["BudgetType"] />
@@ -28,9 +32,8 @@ else
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title=@Localizer["BudgetArticle"] />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title=@Localizer["Supplier.Name"] Visible="ShowSupplier" />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] />
-
-
             </Columns>
         </RadzenDataGrid>
+
     </div>
 }
