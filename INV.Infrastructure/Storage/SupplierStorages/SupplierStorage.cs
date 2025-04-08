@@ -48,6 +48,9 @@ IF NOT EXISTS (SELECT 1 FROM [INV].[purchase].[ORDERS] WHERE SupplierId = @aId)
 
         private const string countofSuppliers = @"SELECT COUNT(*)  FROM [dbo].[SUPPLIERS];";
 
+        private const string selectPurchaseCountBySupplierIdQuery =
+            "SELECT COUNT(*) FROM [purchase].[ORDERS] WHERE SupplierId = @aSupplierId";
+
         public async Task<int> InsertSupplier(Supplier supplier)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
@@ -110,7 +113,6 @@ IF NOT EXISTS (SELECT 1 FROM [INV].[purchase].[ORDERS] WHERE SupplierId = @aId)
 
             return count != null ? Convert.ToInt32(count) : 0;
         }
-
 
         public async Task<int> UpdateSupplier(Supplier supplier)
         {
@@ -183,5 +185,14 @@ IF NOT EXISTS (SELECT 1 FROM [INV].[purchase].[ORDERS] WHERE SupplierId = @aId)
             return await cmd.ExecuteNonQueryAsync();
         }
 
+        public async ValueTask<bool> SelectPurchaseCountBySupplierId(Guid supplierId)
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            var cmd = new SqlCommand(selectPurchaseCountBySupplierIdQuery, sqlConnection);
+            cmd.Parameters.AddWithValue("@aSupplierId", supplierId);
+            await sqlConnection.OpenAsync();
+            int count = (int)(await cmd.ExecuteScalarAsync() ?? 0);
+            return count > 0;
+        }
     }
 }

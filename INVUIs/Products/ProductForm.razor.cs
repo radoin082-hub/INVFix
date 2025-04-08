@@ -33,8 +33,8 @@ public partial class ProductForm : ComponentBase
 
     private List<WareHouseModel> WareHouse = new()
 {
-    new WareHouseModel { Id = Guid.NewGuid(), WareHouseName = "Chetma" },
-    new WareHouseModel { Id = Guid.NewGuid(), WareHouseName = "Biskra" }
+    new WareHouseModel { Id =new Guid("CF234288-B792-4FDA-BDFC-4D9AF018CA41"), WareHouseName = "stock campus chetma                               " },
+    new WareHouseModel { Id = new Guid("BF33EB94-40DA-452F-BB30-9525E052CB46"), WareHouseName = "magazin université centrale                       " }
 };
 
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
@@ -64,7 +64,8 @@ public partial class ProductForm : ComponentBase
                 UnitMeasure = productModel.UnitMeasure,
                 Designation = productModel.Designation,
                 TVA = productModel.TVA,
-                DefaultWareHouseId = productModel.WareHouseId
+                DefaultWareHouseId = productModel.WareHouseId,
+                
             };
             result = await productService.CreateProduct(productadd);
             Hide();

@@ -74,7 +74,10 @@ namespace INV.Web.Components.Pages.Purchases
                     Status = purchaseModel.Status,
                     Observation = purchaseModel.Observation,
                     VisaDate = purchaseModel.VisaDate,
-                    VisaNumber = purchaseModel.VisaNumber
+                    VisaNumber = purchaseModel.VisaNumber,
+                    TotalTTC = purchaseModel.TotalTTC,
+                    TotalHT = purchaseModel.TotalHT,
+                    TotalTVA = purchaseModel.TotalTVA,
                 };
 
                 await purchaseOrderService.UpdatePurchaseOrder(purchaseUpdate);
@@ -114,7 +117,9 @@ namespace INV.Web.Components.Pages.Purchases
                     Status = purchaseOrder.Status,
                     Observation = purchaseOrder.Observation,
                     VisaDate = purchaseOrder.VisaDate,
-                    VisaNumber = purchaseOrder.VisaNumber
+                    VisaNumber = purchaseOrder.VisaNumber,
+                   
+
                 };
             }
 
@@ -134,8 +139,9 @@ namespace INV.Web.Components.Pages.Purchases
                     Designation = s.Designation,
                     Quantity = s.Quantity,
                     UnitPrice = s.UnitPrice,
+                    UnitMeasure = s.UnitMeasure,
                     TVA = s.TVA,
-                    UnitMeasure = "U"
+                    TotalPrice = s.Quantity * s.UnitPrice
                 }).ToList();
             }
             var receiptsByPurchase = await receiptService.GetReceiptsByPurchaseIdWhenStatus(purchaseOrder.Id);

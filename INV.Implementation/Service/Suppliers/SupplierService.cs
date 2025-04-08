@@ -1,6 +1,7 @@
 ﻿using INV.App.Suppliers;
 using INV.Domain.Entities.Suppliers;
 using INV.Domain.Shared;
+using INV.Infrastructure.Storage.Products;
 using INV.Infrastructure.Storage.SupplierStorages;
 
 namespace INV.Implementation.Service.Suppliers
@@ -95,6 +96,9 @@ namespace INV.Implementation.Service.Suppliers
         {
             try
             {
+                bool purchaseCount = await supplierStorage.SelectPurchaseCountBySupplierId(id);
+                if (purchaseCount)
+                    return Error.Failure("ErrorDelete", "The supplier has purchases.");
                 await supplierStorage.DeleteSupplierById(id);
                 return Result.Success();
             }

@@ -22,11 +22,11 @@ else
             <Columns>
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title=@Localizer["Supplier"] Width="10%" />
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title=@Localizer["Email"] Width="10%" />
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title=@Localizer["Phone"] Width="10%" />
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title=@Localizer["Address"] Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title=@Localizer["Phone"] Width="10%" Filterable="false" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title=@Localizer["Address"] Width="10%" Filterable="false" />
 
-                <RadzenDataGridColumn  Width="5%">
-                    <Template Context="supplier" >
+                <RadzenDataGridColumn Width="5%" Filterable="false">
+                    <Template Context="supplier"  >
                         <RadzenButton Icon="delete" ButtonStyle="@ButtonStyle.Danger"
                                       
                                       @onclick:stopPropagation="true"

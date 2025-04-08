@@ -15,14 +15,14 @@
                 </Template>
 
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="CorrectPropertyName" Title=@Localizer["Designation"] Width="34%" Visible="@(StatusButton(PurchaseInfo))">
+            <RadzenDataGridColumn Property="Designation" Title=@Localizer["Designation"] Width="34%" Visible="@(StatusButton(PurchaseInfo))">
                 <FooterTemplate>
                     <div style="width: 100%; display: flex; justify-content: flex-start; align-items: center;">
                         <RadzenButton Size="ButtonSize.Small" ButtonStyle="ButtonStyle.Success" Visible="!canEdit" Icon="add_circle" Text=@Localizer["Product.AddButton"] Click="() => productSelector.ShowModal()" />
                     </div>
                 </FooterTemplate>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn Property="UnitMeasure" Title=@Localizer["UnitMeasure"] Width="10%" />
+         @*    <RadzenDataGridColumn Property="UnitMeasure" Title=@Localizer["UnitMeasure"] Width="10%" /> *@
             <RadzenDataGridColumn Property="Quantity" Title=@Localizer["Quantity"] Width="10%" />
             <RadzenDataGridColumn Property="UnitPrice" Title=@Localizer["UnitPrice"] Width="10%" />
             <RadzenDataGridColumn Property="TVA" Title=@Localizer["TVA"] Width="9%">

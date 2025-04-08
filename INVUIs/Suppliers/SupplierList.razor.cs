@@ -6,8 +6,11 @@ using INV.Domain.Entities.Suppliers;
 using INV.Implementation.Service.Products;
 using INV.Implementation.Service.Purchses;
 using INVUIs.Shared;
+using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Radzen.Blazor;
+using Xunit.Sdk;
 
 namespace INVUIs.Suppliers
 {
@@ -16,16 +19,24 @@ namespace INVUIs.Suppliers
         [Inject] private ISupplierService supplierService { get; set; }
         [Parameter] public List<SupplierInfo> Suppliers { get; set; } = new();
         [Inject] private NavigationManager navigationManager { get; set; }
+        [Inject] private IJSRuntime jsRuntime { set; get; }
         public List<SupplierInfo> supplierFilter { get; set; } = new();
         private RadzenDataGrid<SupplierInfo> grid;
         public SupplierInfo supplierDelete;
         private ConformationForm conformationForm;
         private string _searchName = "";
         private Guid supplierId;
+        private string errorMessage;
+        private MyAlert? myAlert;
 
         private void NavigateToSupplierDetails(Guid supplierId)
         {
             navigationManager.NavigateTo($"/suppliers/{supplierId}");
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            myAlert = new MyAlert(jsRuntime);
         }
 
         protected override void OnParametersSet()
@@ -103,8 +114,15 @@ namespace INVUIs.Suppliers
                 if (result.IsSuccess)
                 {
                     supplierFilter.Remove(supplierToRemove);
+                    await myAlert.ShowAlert("Delete Succusfuly", "The supplier has been deleted.", MyAlertType.success);
+                    await grid.Reload();
                 }
-                await grid.Reload();
+                else
+                {
+                    errorMessage = result.Error.Description;
+                    await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
+                }
+
                 StateHasChanged();
             }
         }
