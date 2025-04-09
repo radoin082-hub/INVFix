@@ -31,11 +31,9 @@ namespace INV.Web.Components.Pages.Purchases
 
         protected override async Task OnInitializedAsync()
         {
-      
             myAlert = new MyAlert(jsRuntime);
-        
 
-        var result2 = await budgetService.GetAllChapitres();
+            var result2 = await budgetService.GetAllChapitres();
             if (result2.IsSuccess)
             {
                 chapters = result2.Value;

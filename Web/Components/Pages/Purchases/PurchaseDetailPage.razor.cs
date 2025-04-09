@@ -118,8 +118,6 @@ namespace INV.Web.Components.Pages.Purchases
                     Observation = purchaseOrder.Observation,
                     VisaDate = purchaseOrder.VisaDate,
                     VisaNumber = purchaseOrder.VisaNumber,
-                   
-
                 };
             }
 
@@ -139,7 +137,7 @@ namespace INV.Web.Components.Pages.Purchases
                     Designation = s.Designation,
                     Quantity = s.Quantity,
                     UnitPrice = s.UnitPrice,
-                    UnitMeasure = s.UnitMeasure,
+
                     TVA = s.TVA,
                     TotalPrice = s.Quantity * s.UnitPrice
                 }).ToList();

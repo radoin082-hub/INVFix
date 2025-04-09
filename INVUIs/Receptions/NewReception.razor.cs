@@ -57,7 +57,6 @@ namespace INVUIs.Receptions
         {
         }
 
-
         private async Task Validate()
         {
             statusInput = true;
@@ -76,7 +75,7 @@ namespace INVUIs.Receptions
 
         private async Task SaveChanges()
         {
-            bool send = checkInputs();
+            bool send = await checkInputs();
             if (send)
             {
                 if (products.FindAll(s => s.NEwReceived == 0).Count > 0)
@@ -95,6 +94,10 @@ namespace INVUIs.Receptions
                     await myAlert!.ShowAlert("Error",
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
+                }
+
+                if (ReceiptInfo.DeliveryDate == null || ReceiptInfo.DeliveryNumber == null)
+                {
                 }
 
                 Receipt receiptToSave = new()
@@ -125,17 +128,18 @@ namespace INVUIs.Receptions
                     await receptionService.CreateReceipt(receiptToSave);
                 }
 
-
                 cancelEditing();
             }
         }
 
         private void cancelEditing() => statusInput = true;
 
-        private bool checkInputs()
+        private async Task<bool> checkInputs()
         {
             if (ReceiptInfo.DeliveryDate is null || ReceiptInfo.DeliveryNumber is null)
             {
+                await myAlert!.ShowAlert("Error",
+                      "The delivery date or delivery number is missing.", MyAlertType.error);
                 return false;
             }
 
