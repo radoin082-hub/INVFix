@@ -3636,4 +3636,4 @@ C:\Users\bouce\source\repos\INVNew\Web\bin\Debug\net9.0\UIsResources.pdb
 C:\Users\bouce\source\repos\INVNew\Web\bin\Debug\net9.0\ar\UIsResources.resources.dll
 C:\Users\bouce\source\repos\INVNew\Web\bin\Debug\net9.0\en\UIsResources.resources.dll
 C:\Users\bouce\source\repos\INVNew\Web\bin\Debug\net9.0\fr\UIsResources.resources.dll
-C:\Users\bouce\source\repos\INVNew\Web\obj\Debug\net9.0\compressed\021ct6d7ij-4jdurnq65s.gz
+C:\Users\bouce\source\repos\INVNew\Web\obj\Debug\net9.0\compressed\021ct6d7ij-0fe4gn6uk5.gz

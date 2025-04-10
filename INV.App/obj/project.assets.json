@@ -1861,7 +1861,7 @@
       "projectName": "INV.App",
       "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj",
       "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bouce\\Source\\Repos\\INVNew\\INV.App\\obj\\",
+      "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

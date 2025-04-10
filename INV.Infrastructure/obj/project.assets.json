@@ -3907,7 +3907,7 @@
       "projectName": "INV.Infrastructure",
       "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bouce\\Source\\Repos\\INVNew\\INV.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

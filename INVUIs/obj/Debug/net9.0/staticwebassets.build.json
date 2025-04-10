@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O3XxOPGQKKiHYskFN9txwrekjwhKbvqsd06jxq4vY3U=",
+  "Hash": "Lxr2rnhaFcv+SkAVyb8cjcGj06AGbj8MV9w310ZMO5E=",
   "Source": "INVUIs",
   "BasePath": "_content/INVUIs",
   "Mode": "Default",
@@ -5076,12 +5076,12 @@
       "OriginalItemSpec": "C:\\Users\\bouce\\.nuget\\packages\\radzen.blazor\\6.2.6\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-7w3o8ejw8x.gz",
+      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-q30tjr51j6.gz",
       "SourceId": "INVUIs",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/INVUIs",
-      "RelativePath": "INVUIs#[.{fingerprint=7w3o8ejw8x}]!.bundle.scp.css.gz",
+      "RelativePath": "INVUIs#[.{fingerprint=q30tjr51j6}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -5090,8 +5090,8 @@
       "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "d86hnlbhoh",
-      "Integrity": "zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs=",
+      "Fingerprint": "7o3vr5zodc",
+      "Integrity": "qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css"
@@ -6063,12 +6063,12 @@
       "OriginalItemSpec": "C:\\Users\\bouce\\.nuget\\packages\\bootstrapblazor\\9.3.1-beta02\\staticwebassets\\Components\\ValidateForm\\ValidateForm.razor.js"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-o7hb1lwnli.gz",
+      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-6emzzpyusw.gz",
       "SourceId": "INVUIs",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/INVUIs",
-      "RelativePath": "INVUIs#[.{fingerprint=o7hb1lwnli}]?.styles.css.gz",
+      "RelativePath": "INVUIs#[.{fingerprint=6emzzpyusw}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -6077,8 +6077,8 @@
       "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\bundle\\INVUIs.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "xofxpn7vt8",
-      "Integrity": "sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s=",
+      "Fingerprint": "zdl2zfdlwf",
+      "Integrity": "x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\bundle\\INVUIs.styles.css"
@@ -6350,8 +6350,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "o7hb1lwnli",
-      "Integrity": "HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M=",
+      "Fingerprint": "6emzzpyusw",
+      "Integrity": "HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\bundle\\INVUIs.styles.css"
@@ -6371,8 +6371,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "7w3o8ejw8x",
-      "Integrity": "t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go=",
+      "Fingerprint": "q30tjr51j6",
+      "Integrity": "OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css"
@@ -32162,13 +32162,13 @@
       ]
     },
     {
-      "Route": "INVUIs.7w3o8ejw8x.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-7w3o8ejw8x.gz",
+      "Route": "INVUIs.6emzzpyusw.styles.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-6emzzpyusw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001666666667"
+          "Quality": "0.001184834123"
         }
       ],
       "ResponseHeaders": [
@@ -32178,15 +32178,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "599"
+          "Value": "843"
         },
         {
           "Name": "ETag",
-          "Value": "\"zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs=\""
+          "Value": "\"x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -32206,305 +32206,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7w3o8ejw8x"
-        },
-        {
-          "Name": "label",
-          "Value": "INVUIs.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.7w3o8ejw8x.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1705"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7w3o8ejw8x"
-        },
-        {
-          "Name": "label",
-          "Value": "INVUIs.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.7w3o8ejw8x.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-7w3o8ejw8x.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "599"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "7w3o8ejw8x"
-        },
-        {
-          "Name": "label",
-          "Value": "INVUIs.bundle.scp.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-7w3o8ejw8x.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001666666667"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "599"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1705"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-t1l18uPk5/8Bad4l9rbgbsxft3jbXnSDkDdfSSQt7go="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-7w3o8ejw8x.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "599"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:06:23 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-zRTNaijNkflKUD1NsnrwhuXnSeLGufr4zEuoYgIvxZs="
-        }
-      ]
-    },
-    {
-      "Route": "INVUIs.o7hb1lwnli.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-o7hb1lwnli.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001506024096"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "663"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M=\""
+          "Value": "W/\"HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc=\""
         },
         {
           "Name": "Link",
@@ -32514,11 +32216,11 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o7hb1lwnli"
+          "Value": "6emzzpyusw"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M="
+          "Value": "sha256-HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc="
         },
         {
           "Name": "label",
@@ -32527,7 +32229,7 @@
       ]
     },
     {
-      "Route": "INVUIs.o7hb1lwnli.styles.css",
+      "Route": "INVUIs.6emzzpyusw.styles.css",
       "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\bundle\\INVUIs.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -32541,7 +32243,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1861"
+          "Value": "2858"
         },
         {
           "Name": "Content-Type",
@@ -32549,11 +32251,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M=\""
+          "Value": "\"HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Link",
@@ -32563,11 +32265,11 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o7hb1lwnli"
+          "Value": "6emzzpyusw"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M="
+          "Value": "sha256-HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc="
         },
         {
           "Name": "label",
@@ -32576,8 +32278,8 @@
       ]
     },
     {
-      "Route": "INVUIs.o7hb1lwnli.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-o7hb1lwnli.gz",
+      "Route": "INVUIs.6emzzpyusw.styles.css.gz",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-6emzzpyusw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -32586,7 +32288,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "663"
+          "Value": "843"
         },
         {
           "Name": "Content-Type",
@@ -32594,11 +32296,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s=\""
+          "Value": "\"x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -32616,7 +32318,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o7hb1lwnli"
+          "Value": "6emzzpyusw"
         },
         {
           "Name": "label",
@@ -32624,18 +32326,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s="
+          "Value": "sha256-x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE="
         }
       ]
     },
     {
-      "Route": "INVUIs.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-o7hb1lwnli.gz",
+      "Route": "INVUIs.bundle.scp.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-q30tjr51j6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001506024096"
+          "Quality": "0.001282051282"
         }
       ],
       "ResponseHeaders": [
@@ -32645,15 +32347,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "663"
+          "Value": "779"
         },
         {
           "Name": "ETag",
-          "Value": "\"sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s=\""
+          "Value": "\"qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -32673,7 +32375,305 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M=\""
+          "Value": "W/\"OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.bundle.scp.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2702"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-q30tjr51j6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.q30tjr51j6.bundle.scp.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-q30tjr51j6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001282051282"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "779"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q30tjr51j6"
+        },
+        {
+          "Name": "label",
+          "Value": "INVUIs.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.q30tjr51j6.bundle.scp.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2702"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q30tjr51j6"
+        },
+        {
+          "Name": "label",
+          "Value": "INVUIs.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OotA1SqxQsCbvzzq82gF5xW9nAIE04NvPcjtfR+Wg2Y="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.q30tjr51j6.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\j5qhcsxu6k-q30tjr51j6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q30tjr51j6"
+        },
+        {
+          "Name": "label",
+          "Value": "INVUIs.bundle.scp.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qXyeIYdhq3ivb8w+QYgllujHEZ/xmUyDeUZlydtyz8o="
+        }
+      ]
+    },
+    {
+      "Route": "INVUIs.styles.css",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-6emzzpyusw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001184834123"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "843"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc=\""
         },
         {
           "Name": "Link",
@@ -32683,7 +32683,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M="
+          "Value": "sha256-HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc="
         }
       ]
     },
@@ -32702,7 +32702,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1861"
+          "Value": "2858"
         },
         {
           "Name": "Content-Type",
@@ -32710,11 +32710,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M=\""
+          "Value": "\"HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Link",
@@ -32724,13 +32724,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HP+XwgeBQZmcVSogXrUEqLwGiC3NO2WACuQJxJz3n1M="
+          "Value": "sha256-HgNsgjyxdfVvSH39PBb0jQ6fIvntPrR50ekSP10vhTc="
         }
       ]
     },
     {
       "Route": "INVUIs.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-o7hb1lwnli.gz",
+      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\compressed\\xedorg6f1j-6emzzpyusw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -32739,7 +32739,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "663"
+          "Value": "843"
         },
         {
           "Name": "Content-Type",
@@ -32747,11 +32747,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s=\""
+          "Value": "\"x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:32 GMT"
+          "Value": "Wed, 09 Apr 2025 21:38:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -32769,7 +32769,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-sXI9IyWmKdg7qOz2dVfKyDsEB4PiqXMPY7t77uqC30s="
+          "Value": "sha256-x4cN1k/6noFhFEmIs/6GmayYkChZkeFnISXUOwPKpqE="
         }
       ]
     }

@@ -132,10 +132,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/bouce/source/repos/INVNew/INVUIs/Components/Status/Status.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTdGF0dXNcU3RhdHVzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-8s2dm92tkz
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseStatusComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlU3RhdHVzQ29tcG9uZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1o8kvckrxx
 
 [C:/Users/bouce/source/repos/INVNew/INVUIs/Purchases/PurchaseSupplier.razor]
 build_metadata.AdditionalFiles.TargetPath = UHVyY2hhc2VzXFB1cmNoYXNlU3VwcGxpZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-q7so4rwle3
+
+[C:/Users/bouce/source/repos/INVNew/INVUIs/Receptions/ReceptionStatusComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVjZXB0aW9uc1xSZWNlcHRpb25TdGF0dXNDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-r1rl6a7mdv

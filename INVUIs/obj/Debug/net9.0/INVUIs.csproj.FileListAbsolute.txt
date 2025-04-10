@@ -1711,7 +1711,6 @@ C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\INVUIs.AssemblyInfoIn
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\INVUIs.AssemblyInfo.cs
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\INVUIs.csproj.CoreCompileInputs.cache
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\INVUIs.sourcelink.json
-C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\Components\Status\Status.razor.rz.scp.css
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\Purchases\PurchaseSupplier.razor.rz.scp.css
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\bundle\INVUIs.styles.css
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\projectbundle\INVUIs.bundle.scp.css
@@ -1862,7 +1861,6 @@ C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\36w3eu0hkb
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\mfzx4sb2rv-79hai7knhw.gz
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\o9szr4dzh0-6pqz8bsss0.gz
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\eojifsclv0-7t9tbfaemk.gz
-C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\j5qhcsxu6k-7w3o8ejw8x.gz
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -1885,4 +1883,7 @@ C:\Users\bouce\source\repos\INVNew\INVUIs\bin\Debug\net9.0\UIsResources.pdb
 C:\Users\bouce\source\repos\INVNew\INVUIs\bin\Debug\net9.0\ar\UIsResources.resources.dll
 C:\Users\bouce\source\repos\INVNew\INVUIs\bin\Debug\net9.0\en\UIsResources.resources.dll
 C:\Users\bouce\source\repos\INVNew\INVUIs\bin\Debug\net9.0\fr\UIsResources.resources.dll
-C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\xedorg6f1j-o7hb1lwnli.gz
+C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\Purchases\PurchaseStatusComponent.razor.rz.scp.css
+C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\scopedcss\Receptions\ReceptionStatusComponent.razor.rz.scp.css
+C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\xedorg6f1j-6emzzpyusw.gz
+C:\Users\bouce\source\repos\INVNew\INVUIs\obj\Debug\net9.0\compressed\j5qhcsxu6k-q30tjr51j6.gz

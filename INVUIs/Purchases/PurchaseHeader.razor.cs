@@ -104,7 +104,7 @@ public partial class PurchaseHeader : ComponentBase
                 if (errors.Any())
                 {
                     var errorMessage = string.Join("<br>", errors);
-                    await myAlert.ShowAlert("Error validation ", errorMessage, MyAlertType.warning);
+                    await myAlert.ShowAlert(Localizer["ErrorValidation"], errorMessage, MyAlertType.warning);
                 }
 
                 return;

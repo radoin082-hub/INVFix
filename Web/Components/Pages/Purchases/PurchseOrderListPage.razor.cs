@@ -6,6 +6,14 @@ namespace INV.Web.Components.Pages.Purchases
 {
     public partial class PurchseOrderListPage : ComponentBase
     {
+
+        private string SearchTerm { get; set; } = "";
+
+        private List<PurchaseOrderInfo> displayedItems =>
+            purchaseOrderInfos.Where(i =>
+                i.Number.ToString().Contains(SearchTerm) ||
+                i.SupplierName.ToString().ToLower().Contains(SearchTerm.ToLower()))
+                    .ToList();
         [Inject] public NavigationManager navigationManager { set; get; }
         [Inject] public IPurchaseOrderService purchaseOrderService { set; get; }
         private List<PurchaseOrderInfo> purchaseOrderInfos;

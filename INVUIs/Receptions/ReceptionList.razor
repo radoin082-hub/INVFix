@@ -23,27 +23,27 @@ else
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Number)" Title=@Localizer["Number"] Width="150px" />
-                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Date)" Title=@Localizer["Date"] Width="160px">
+                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Date)" Title=@Localizer["Date"] Width="150px">
                     <Template Context="reception">
                         @(reception.Date == default ? string.Empty : reception.Date.ToString())
                     </Template>
                 </RadzenDataGridColumn>
 
-                <RadzenDataGridColumn Title=@Localizer["Purchase"] Visible="ShowPurchase" Width="150px">
+                <RadzenDataGridColumn Title=@Localizer["Purchase"] Visible="ShowPurchase" Width="200px">
                     <Template Context="reception">
                         N° @(reception.purchaseNumber) - @(reception.PurchaseDate == default ? string.Empty : reception.PurchaseDate)
                     </Template>
                 </RadzenDataGridColumn>
 
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.supplierName)" Title=@Localizer["Supplier.Name"] Visible="ShowSupplier" />
-                <RadzenDataGridColumn Title=@Localizer["Delivery"] Sortable="false" Filterable="false" Width="260px">
+                <RadzenDataGridColumn Title=@Localizer["Delivery"] Sortable="false" Filterable="false" Width="200px">
                     <Template Context="reception">
                         N° @(reception.DeliveryNumber) - @(reception.DeliveryDate == default ? string.Empty : reception.DeliveryDate)
                     </Template>
                 </RadzenDataGridColumn>
 
 
-                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="160px">
+                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="150px">
                      <Template Context="reception">
                         <ReceptionStatusComponent Text="false" Icon="true" ReceptionStatus="@reception.Status" />
                     </Template>

@@ -123,7 +123,7 @@
   <data name="Supplier.Information" xml:space="preserve">
     <value>Information of Supplier</value>
   </data>
-  <data name="Supplier.AddButton" xml:space="preserve">
+  <data name="Suppliers.AddButton" xml:space="preserve">
     <value>Add Supplier</value>
   </data>
   <data name="Product.AddButton" xml:space="preserve">
@@ -144,13 +144,13 @@
   <data name="Product.DeleteButton" xml:space="preserve">
     <value>Delete Product</value>
   </data>
-  <data name="Supplier.DeleteButton" xml:space="preserve">
+  <data name="Suppliers.DeleteButton" xml:space="preserve">
     <value>Delete Supplier</value>
   </data>
   <data name="Product.DeleteMessage" xml:space="preserve">
     <value>Are you sure you want to delete this product?</value>
   </data>
-  <data name="Supplier.DeleteMessage" xml:space="preserve">
+  <data name="Suppliers.DeleteMessage" xml:space="preserve">
     <value>Are you sure you want to delete this supplier?</value>
   </data>
   <data name="Save" xml:space="preserve">
@@ -158,6 +158,9 @@
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -293,5 +296,29 @@
   </data>
   <data name="Days" xml:space="preserve">
     <value>days</value>
+  </data>
+  <data name="Suppliers.Search" xml:space="preserve">
+    <value>Search by supplier name</value>
+  </data>
+  <data name="YES" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="DeleteSuccessfully" xml:space="preserve">
+    <value>Delete Successfully.</value>
+  </data>
+  <data name="TheProductHasBeenDeleted" xml:space="preserve">
+    <value>The product has been deleted.</value>
+  </data>
+  <data name="TheSupplierHasBeenDeleted" xml:space="preserve">
+    <value>The supplier has been deleted.</value>
+  </data>
+  <data name="ErrorDelete" xml:space="preserve">
+    <value>Error Delete</value>
+  </data>
+  <data name="ErrorValidation" xml:space="preserve">
+    <value>Error Validation</value>
   </data>
 </root>

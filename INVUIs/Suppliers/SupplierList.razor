@@ -2,11 +2,12 @@
 @rendermode InteractiveServer
 @inject IStringLocalizer<Resources> Localizer
 
-<button type="button" class="addsupplier-button" @onclick=@showSupplierForm>
-    <i class="bi bi-person-plus"></i> @Localizer["Supplier.AddButton"]
-</button>
+
 <div>
-    <input type="text" @bind="searchName" @bind:event="oninput" placeholder="Search by supplier name" class="number-input" />
+    <input type="text" @bind="searchName" @bind:event="oninput" placeholder=@Localizer["Suppliers.Search"] class="number-input" />
+    <button type="button" class="addsupplier-button" @onclick=@showSupplierForm>
+        <i class="bi bi-person-plus"></i> @Localizer["Suppliers.AddButton"]
+    </button>
 </div>
 <br>
 @if (supplierFilter is null)
@@ -25,7 +26,7 @@ else
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title=@Localizer["Phone"] Width="10%" Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title=@Localizer["Address"] Width="10%" Filterable="false" />
 
-                <RadzenDataGridColumn Width="5%" Filterable="false">
+                <RadzenDataGridColumn Width="4%" Filterable="false">
                     <Template Context="supplier"  >
                         <RadzenButton Icon="delete" ButtonStyle="@ButtonStyle.Danger"
                                       
@@ -43,4 +44,4 @@ else
 }
 
 <SupplierForm @ref=supplierForm Update="false"/>
-<ConformationForm @ref="conformationForm" Titel=@Localizer["Supplier.DeleteButton"] Message=@Localizer["Supplier.DeleteMessage"] OnConfirm="ConfirmDeleteSupplier" />
+<ConformationForm @ref="conformationForm" Titel=@Localizer["Suppliers.DeleteButton"] Message=@Localizer["Suppliers.DeleteMessage"] OnConfirm="ConfirmDeleteSupplier" />

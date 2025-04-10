@@ -114,13 +114,18 @@ namespace INVUIs.Suppliers
                 if (result.IsSuccess)
                 {
                     supplierFilter.Remove(supplierToRemove);
-                    await myAlert.ShowAlert("Delete Succusfuly", "The supplier has been deleted.", MyAlertType.success);
+                    await myAlert.ShowAlert(
+   Localizer["DeleteSuccessfully"],
+   Localizer["TheSupplierHasBeenDeleted"],
+   MyAlertType.success
+);
                     await grid.Reload();
                 }
                 else
                 {
                     errorMessage = result.Error.Description;
-                    await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
+                    await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
+
                 }
 
                 StateHasChanged();

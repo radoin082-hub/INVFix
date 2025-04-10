@@ -28,7 +28,7 @@ else
                 <RadzenDataGridColumn Property="@nameof(ProductInfo.UnitMeasure)" Title=@Localizer["UnitMeasure"] Width="80px" Sortable="false" Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" />
 
-                <RadzenDataGridColumn Title=@Localizer["Actions"] Sortable="false" Filterable="false" Width="70px">
+                <RadzenDataGridColumn Sortable="false" Filterable="false" Width="70px">
                     <Template Context="product">
                         <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger"
                                       Click="(e => DeleteProduct(product.Id))"

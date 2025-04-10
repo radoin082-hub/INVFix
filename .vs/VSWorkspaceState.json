@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\INVUIs",
+    "\\INVUIs\\Products",
     "\\INVUIs\\Purchases",
     "\\INVUIs\\Receptions",
     "\\Web",
     "\\Web\\Components",
     "\\Web\\Components\\Layout"
   ],
-  "SelectedNode": "\\INVUIs\\Purchases\\PurchaseHeader.razor",
+  "SelectedNode": "\\INVUIs\\Products\\ProductEditForm.razor",
   "PreviewInSolutionExplorer": false
 }

@@ -285,4 +285,7 @@
   <data name="Visaed" xml:space="preserve">
     <value>مؤشّر</value>
   </data>
+  <data name="Purchases.Search" xml:space="preserve">
+    <value>البحث حسب رقم الطلب أو اسم المورّد</value>
+  </data>
 </root>

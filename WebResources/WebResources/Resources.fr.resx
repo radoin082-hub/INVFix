@@ -130,28 +130,28 @@
     <value>Déconnexion</value>
   </data>
   <data name="Purchase" xml:space="preserve">
-    <value>Achat</value>
+    <value>Bon de Commande</value>
   </data>
   <data name="Purchase.Status" xml:space="preserve">
-    <value>Statut d'achat</value>
+    <value>Statut bon de commande</value>
   </data>
   <data name="Reception.Status" xml:space="preserve">
     <value>Statut de réception</value>
   </data>
   <data name="Purchase.Details" xml:space="preserve">
-    <value>Détails  de l'achat</value>
+    <value>Détails  du bon de commande</value>
   </data>
   <data name="Purchase.New" xml:space="preserve">
-    <value>Nouvel Achat</value>
+    <value>Nouveau bon de commande</value>
   </data>
   <data name="Purchase.New.Title" xml:space="preserve">
-    <value>Créer un nouvel ordre d'achat</value>
+    <value>Créer un nouveau bon de commande</value>
   </data>
   <data name="Purchases" xml:space="preserve">
-    <value>Achats</value>
+    <value>Bons de Commande</value>
   </data>
   <data name="Purchases.Title" xml:space="preserve">
-    <value>Liste des achats</value>
+    <value>Liste des bons de commande</value>
   </data>
   <data name="Receptions" xml:space="preserve">
     <value>Réceptions</value>
@@ -187,7 +187,7 @@
     <value>Produits</value>
   </data>
   <data name="Purchase.AddButton" xml:space="preserve">
-    <value>Ajouter un achat</value>
+    <value>Ajouter un bon de commande</value>
   </data>
   <data name="Products.Title" xml:space="preserve">
     <value>Liste des produits</value>
@@ -202,16 +202,16 @@
     <value>Suivez et gérez vos réceptions efficacement</value>
   </data>
   <data name="Purchases.SubTitle" xml:space="preserve">
-    <value>Suivez et gérez vos achats efficacement</value>
+    <value>Suivez et gérez vos bons de commande efficacement</value>
   </data>
   <data name="Reception.SubTitle" xml:space="preserve">
     <value>Révisez et gérez les détails de la réception</value>
   </data>
   <data name="Purchase.SubTitle" xml:space="preserve">
-    <value>Révisez et gérez les détails de la réception</value>
+    <value>Révisez et gérez les détails du bon de commande</value>
   </data>
   <data name="Purchase.Title" xml:space="preserve">
-    <value>Détails  de l'achat</value>
+    <value>Détails du bon de commande</value>
   </data>
   <data name="Product.Title" xml:space="preserve">
     <value>Détails du produit</value>
@@ -284,5 +284,8 @@
   </data>
   <data name="Visaed" xml:space="preserve">
     <value>Visé</value>
+  </data>
+  <data name="Purchases.Search" xml:space="preserve">
+    <value>Rechercher par numéro de commande ou par nom du fournisseur</value>
   </data>
 </root>

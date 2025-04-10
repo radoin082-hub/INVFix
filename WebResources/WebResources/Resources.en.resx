@@ -285,4 +285,7 @@
   <data name="Visaed" xml:space="preserve">
     <value>Visaed</value>
   </data>
+  <data name="Purchases.Search" xml:space="preserve">
+    <value>Search by order number or by supplier name</value>
+  </data>
 </root>

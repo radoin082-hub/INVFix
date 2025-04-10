@@ -1,3 +1,6 @@
+@inject IStringLocalizer<Resources> Localizer
+
+
 @if (display)
 {
     <MyModal Titel="@Titel">
@@ -6,8 +9,8 @@
                 <h4>@Message</h4>
             </div>
             <div class="footer-form mt-4">
-                <button type="button" class="btn-custom btn-cancel" @onclick="hide">NO</button>
-                <button type="button" class="btn-custom btn-submit" @onclick="submit">YES</button>
+                <button type="button" class="btn-custom btn-cancel" @onclick="hide">@Localizer["NO"]</button>
+                <button type="button" class="btn-custom btn-submit" @onclick="submit">@Localizer["YES"]</button>
             </div>
         </Pills>
     </MyModal>
