@@ -74,16 +74,16 @@
 
         <Pills>
             <div class="conformation-content">
-                <label>Number</label>
+                <label>@Localizer["Number"]</label>
                 <input type="text" class="form-control" @bind="purchaseModel.VisaNumber" />
-                <label>Date</label>
+                <label>@Localizer["Date"]</label>
                 <input type="date" class="form-control" @bind="purchaseModel.VisaDate" />
-                <label>Observation</label>
+                <label>@Localizer["Observation"]</label>
                 <input type="text" class="form-control" @bind="purchaseModel.Observation" />
 
                 <div class="footer-form mt-3">
-                    <button @onclick="visibilityReject" class="btn-custom btn-cancel">cancel</button>
-                    <button @onclick="updatePurchaseToReject" class="btn-custom btn-submit">Submit</button>
+                    <button @onclick="visibilityReject" class="btn-custom btn-cancel">@Localizer["Cancel"]</button>
+                    <button @onclick="updatePurchaseToReject" class="btn-custom btn-submit">@Localizer["Submit"]</button>
 
                 </div>
             </div>
@@ -99,17 +99,17 @@
 
         <Pills>
             <div class="conformation-content">
-                <label>Number</label>
+                <label>@Localizer["Number"]</label>
                 <input type="text" class="form-control" @bind="purchaseModel.VisaNumber" />
-                <label>Date</label>
+                <label>@Localizer["Date"]</label>
                 <input type="date" class="form-control" @bind="purchaseModel.VisaDate" />
                 <div class="footer-form mt-3">
-                    <button @onclick="visibilityVisa" class="btn-custom btn-cancel">cancel</button>
-                    <button @onclick="updatePurchaseToVisa" class="btn-custom btn-submit">Submit</button>
+                    <button @onclick="visibilityVisa" class="btn-custom btn-cancel">@Localizer["Cancel"]</button>
+                    <button @onclick="updatePurchaseToVisa" class="btn-custom btn-submit">@Localizer["Submit"]</button>
 
                 </div>
             </div>
         </Pills>
     </MyModal>
 }
-<ConformationForm @ref="conformationForm" Titel="Validate Purcahse" Message="Are you sure You Will Validate This Purchase?" OnConfirm="ConfirmDeleteProduct" />
+<ConformationForm @ref="conformationForm" Titel=@Localizer["Purchase.Validate"] Message=@Localizer["Purchase.ValidateMessage"] OnConfirm="ConfirmDeleteProduct" />

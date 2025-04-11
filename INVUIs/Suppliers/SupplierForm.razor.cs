@@ -82,14 +82,15 @@ namespace INVUIs.Suppliers
                 var result = await SupplierService.SetSupplier(sup);
                 close();
                 navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
-                await myAlert.ShowToast(succesMessage, "The Supplier has been Edited.", MyAlertType.success);
+                await myAlert.ShowToast(succesMessage, Localizer["Supplier.Edited"], MyAlertType.success);
             }
             else
             {
                 result = await SupplierService.AddSupplier(sup);
                 close();
                 navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
-                await myAlert.ShowToast(succesMessage, "The Supplier has been created.", MyAlertType.success);
+                await myAlert.ShowToast(succesMessage, Localizer["Supplier.Created"], MyAlertType.success);
+
             }
 
             success = "The supplier has been " + (Update ? "updated" : "added") + " successfully";
@@ -114,7 +115,8 @@ namespace INVUIs.Suppliers
             await OnSupplierCreated.InvokeAsync(createdSupplierInfo);
             // await OnSave.InvokeAsync(createdSupplierInfo);
             CloseModel();
-            success = "The supplier has been added successfully";
+            success = Localizer["Supplier.Created"];
+
             await ClearForm();
         }
 

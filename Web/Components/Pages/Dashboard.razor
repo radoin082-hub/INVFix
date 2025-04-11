@@ -71,7 +71,8 @@
                 <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
 
                 <RadzenStack AlignItems="AlignItems.Start" Gap="0.5rem" Style="flex-direction:row !important">
-                    <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
+                  
+               <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
                     <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
                 </RadzenStack>
 

@@ -2,6 +2,8 @@
 @using INV.Domain.Entities.Products
 @using INV.Domain.Entities.Purchases
 @using INVUIs.Products.ProductsModel
+@inject IStringLocalizer<Resources> Localizer
+
 @if (products != null)
 {
     @* <div class="Container-list">
@@ -49,5 +51,5 @@
 }
 else
 {
-    <h1>Loading</h1>
+    <h1>@Localizer["Loading"]</h1>
 }

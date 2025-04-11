@@ -83,7 +83,7 @@ namespace INV.Web.Components.Pages.Purchases
             if (result.IsSuccess)
             {
                 navigationManager.NavigateTo("/purchases");
-                await myAlert.ShowToast(succesMessage, "The Purcahse has been created.", MyAlertType.success);
+                await myAlert.ShowToast(succesMessage, Localizer["Purchase.Created"], MyAlertType.success);
             }
         }
 

@@ -52,10 +52,13 @@
                     <RadzenDataGrid Data="@product.ReceiptInfos" TItem="ReceiptInfo">
                         <Columns>
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Number" Title=@Localizer["Number"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title=@Localizer["Date"] />
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="supplierName" Title=@Localizer["Supplier.Name"] />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title=@Localizer["Reception.Date"] />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryNumber" Title=@Localizer["Delivery.Number"] />
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="DeliveryDate" Title=@Localizer["Delivery.Date"] />
+                            <RadzenDataGridColumn Title=@Localizer["Delivery"]>
+                                <Template Context="reception">
+                                    N° @(reception.DeliveryNumber) - @(reception.DeliveryDate == default ? string.Empty : reception.DeliveryDate)
+                                </Template>
+                            </RadzenDataGridColumn>
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"] />
                         </Columns>
                     </RadzenDataGrid>

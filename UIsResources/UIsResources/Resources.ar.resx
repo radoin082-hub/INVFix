@@ -171,9 +171,6 @@
   <data name="Address" xml:space="preserve">
     <value>العنوان</value>
   </data>
-  <data name="Delivery" xml:space="preserve">
-    <value>التوصيل </value>
-  </data>
   <data name="BudgetType" xml:space="preserve">
     <value>الميزانية</value>
   </data>
@@ -297,9 +294,6 @@
   <data name="Days" xml:space="preserve">
     <value>أيام</value>
   </data>
-  <data name="Suppliers.Search" xml:space="preserve">
-    <value>البحث حسب اسم المورّد</value>
-  </data>
   <data name="YES" xml:space="preserve">
     <value>نعم</value>
   </data>
@@ -309,16 +303,43 @@
   <data name="DeleteSuccessfully" xml:space="preserve">
     <value>تم الحذف بنجاح.</value>
   </data>
-  <data name="TheProductHasBeenDeleted" xml:space="preserve">
-    <value>تم حذف المنتج.</value>
-  </data>
-  <data name="TheSupplierHasBeenDeleted" xml:space="preserve">
-    <value>تم حذف المورد.</value>
-  </data>
   <data name="ErrorDelete" xml:space="preserve">
     <value>خطأ في الحذف</value>
   </data>
   <data name="ErrorValidation" xml:space="preserve">
     <value>خطأ في التحقق من الصحة</value>
+  </data>
+  <data name="Product.Edit" xml:space="preserve">
+    <value>تعديل منتج</value>
+  </data>
+  <data name="Product.Deleted" xml:space="preserve">
+    <value>تم حذف المنتج.</value>
+  </data>
+  <data name="Product.Edited" xml:space="preserve">
+    <value>تم تعديل المنتج.</value>
+  </data>
+  <data name="Product.Created" xml:space="preserve">
+    <value>تم إنشاء المنتج.</value>
+  </data>
+  <data name="Product.Created.Title" xml:space="preserve">
+    <value>تم إنشاء المنتج</value>
+  </data>
+  <data name="Product.Edited.Title" xml:space="preserve">
+    <value>تم تعديل المنتج</value>
+  </data>
+  <data name="Supplier.Deleted" xml:space="preserve">
+    <value>تم حذف المورد.</value>
+  </data>
+  <data name="Supplier.Edited" xml:space="preserve">
+    <value>تم تعديل المورد.</value>
+  </data>
+  <data name="Supplier.Created" xml:space="preserve">
+    <value>تم إنشاء المورد.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>البحث...</value>
+  </data>
+  <data name="Motif" xml:space="preserve">
+    <value>سبب</value>
   </data>
 </root>

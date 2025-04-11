@@ -285,7 +285,37 @@
   <data name="Visaed" xml:space="preserve">
     <value>مؤشّر</value>
   </data>
-  <data name="Purchases.Search" xml:space="preserve">
-    <value>البحث حسب رقم الطلب أو اسم المورّد</value>
+  <data name="Dashboard.Text.Labels" xml:space="preserve">
+    <value>عرض تسميات البيانات</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>التاريخ </value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>ملاحظة</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Purchase.Validate" xml:space="preserve">
+    <value>تأكيد الشراء</value>
+  </data>
+  <data name="Purchase.Validated" xml:space="preserve">
+    <value> تم تأكيد الشراء</value>
+  </data>
+  <data name="Purchase.Rejected" xml:space="preserve">
+    <value>تم رفض الشراء</value>
+  </data>
+  <data name="Purchase.ValidateMessage" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد تأكيد هذا الشراء؟</value>
+  </data>
+  <data name="Purchase.Created" xml:space="preserve">
+    <value>تم إنشاء الشراء .</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>التوصيل </value>
   </data>
 </root>

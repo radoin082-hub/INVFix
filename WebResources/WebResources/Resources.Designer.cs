@@ -63,9 +63,54 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Dashboard {
             get {
                 return ResourceManager.GetString("Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Dashboard_SubTitle {
+            get {
+                return ResourceManager.GetString("Dashboard.SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Dashboard_Text_Labels {
+            get {
+                return ResourceManager.GetString("Dashboard.Text.Labels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Dashboard_Title {
+            get {
+                return ResourceManager.GetString("Dashboard.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
             }
         }
         
@@ -117,6 +162,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Editing {
+            get {
+                return ResourceManager.GetString("Editing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
@@ -129,6 +183,15 @@ namespace WebResources.WebResources {
         public static string Number {
             get {
                 return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Observation {
+            get {
+                return ResourceManager.GetString("Observation", resourceCulture);
             }
         }
         
@@ -207,6 +270,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Purchase_Created {
+            get {
+                return ResourceManager.GetString("Purchase.Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Purchase_Details {
             get {
                 return ResourceManager.GetString("Purchase.Details", resourceCulture);
@@ -234,6 +306,24 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Purchase_Rejected {
+            get {
+                return ResourceManager.GetString("Purchase.Rejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Purchase_Status {
+            get {
+                return ResourceManager.GetString("Purchase.Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Purchase_SubTitle {
             get {
                 return ResourceManager.GetString("Purchase.SubTitle", resourceCulture);
@@ -246,6 +336,33 @@ namespace WebResources.WebResources {
         public static string Purchase_Title {
             get {
                 return ResourceManager.GetString("Purchase.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Purchase_Validate {
+            get {
+                return ResourceManager.GetString("Purchase.Validate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Purchase_Validated {
+            get {
+                return ResourceManager.GetString("Purchase.Validated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Purchase_ValidateMessage {
+            get {
+                return ResourceManager.GetString("Purchase.ValidateMessage", resourceCulture);
             }
         }
         
@@ -315,6 +432,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Reception_Status {
+            get {
+                return ResourceManager.GetString("Reception.Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Reception_SubTitle {
             get {
                 return ResourceManager.GetString("Reception.SubTitle", resourceCulture);
@@ -369,6 +495,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Rejected {
+            get {
+                return ResourceManager.GetString("Rejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Reports {
             get {
                 return ResourceManager.GetString("Reports", resourceCulture);
@@ -390,6 +525,15 @@ namespace WebResources.WebResources {
         public static string Stock {
             get {
                 return ResourceManager.GetString("Stock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
             }
         }
         
@@ -477,9 +621,36 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Validated {
+            get {
+                return ResourceManager.GetString("Validated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Visaed {
+            get {
+                return ResourceManager.GetString("Visaed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Warehouse {
             get {
                 return ResourceManager.GetString("Warehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
             }
         }
     }

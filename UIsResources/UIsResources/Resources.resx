@@ -309,16 +309,49 @@
   <data name="DeleteSuccessfully" xml:space="preserve">
     <value />
   </data>
-  <data name="TheProductHasBeenDeleted" xml:space="preserve">
-    <value />
-  </data>
-  <data name="TheSupplierHasBeenDeleted" xml:space="preserve">
-    <value />
-  </data>
   <data name="ErrorDelete" xml:space="preserve">
     <value />
   </data>
   <data name="ErrorValidation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Edit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Products.Search" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Deleted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Edited" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Created" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Created.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Product.Edited.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Supplier.Deleted" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Supplier.Edited" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Supplier.Created" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Receptions.Search" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Motif" xml:space="preserve">
     <value />
   </data>
 </root>
