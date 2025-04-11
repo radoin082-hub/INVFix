@@ -23,19 +23,24 @@
 }
 
 .status-in-progress[b-1o8kvckrxx] {
-    background-color: rgb(255, 245, 204); 
-    color: rgb(202, 138, 4); 
+    background-color: rgb(255, 245, 204);
+    color: rgb(202, 138, 4);
 }
 
-.status-pending[b-1o8kvckrxx] {
+.status-canceled[b-1o8kvckrxx] {
     background-color: rgb(254, 226, 226); /* light red/pink background */
     color: rgb(185, 28, 28); /* strong red text */
 }
 
+.status-pending[b-1o8kvckrxx] {
+    background-color: rgb(229, 239, 255); /* light blue background */
+    color: rgb(30, 64, 175); /* deep blue text */
+}
 /* icon styles */
-.bi-check-circle[b-1o8kvckrxx],
-.bi-clock[b-1o8kvckrxx],
-.bi-exclamation-circle[b-1o8kvckrxx] {
+.bi bi-check-circle[b-1o8kvckrxx],
+.bi bi-pen[b-1o8kvckrxx],
+.bi bi-x-circle[b-1o8kvckrxx],
+.bi bi-hourglass-split[b-1o8kvckrxx] {
     font-size: 1rem;
 }
 /* _content/INVUIs/Purchases/PurchaseSupplier.razor.rz.scp.css */

@@ -4,6 +4,7 @@
     {
         Reject = -1,
         Editing = 0,
-        Vised = 1
+        Validated = 1,
+        Vised = 2
     }
 }

@@ -21,7 +21,8 @@ namespace INVUIs.Purchases
             {
                 PurchaseStatus.Vised => "status-completed",
                 PurchaseStatus.Editing => "status-in-progress",
-                PurchaseStatus.Reject => "status-pending",
+                PurchaseStatus.Reject => "status-canceled",
+                PurchaseStatus.Validated => "status-pending",
                 _ => string.Empty
             };
         }
@@ -33,6 +34,7 @@ namespace INVUIs.Purchases
                 PurchaseStatus.Vised => "bi bi-check-circle", // Font Awesome icon for completed
                 PurchaseStatus.Editing => "bi bi-pen", // Font Awesome spinning icon
                 PurchaseStatus.Reject => "bi bi-x-circle", // Font Awesome clock icon
+                PurchaseStatus.Validated => "bi bi-hourglass-split", // Font Awesome clock icon
                 _ => "fas fa-question-circle"
             };
         }

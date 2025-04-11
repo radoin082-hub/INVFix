@@ -7,7 +7,8 @@ using Microsoft.Data.SqlClient;
 namespace INV.Infrastructure.Storage.Products
 {
     public partial class ProductStorage
-    {      private static ProductInfo getProductData(SqlDataReader reader)
+    {
+        private static ProductInfo getProductData(SqlDataReader reader)
         {
             return new ProductInfo
             {
@@ -18,7 +19,8 @@ namespace INV.Infrastructure.Storage.Products
                 TVA = (int)reader["TVA"],
             };
         }
-          private static ProductInfo MapToProductInfo(SqlDataReader reader)
+
+        private static ProductInfo MapToProductInfo(SqlDataReader reader)
         {
             return new ProductInfo
             {
@@ -26,7 +28,8 @@ namespace INV.Infrastructure.Storage.Products
                 Designation = (string)reader["Designation"],
                 UnitMeasure = (string)reader["UnitMeasure"],
                 Quantity = (int)reader["Quantity"],
-                TVA = (int)reader["TVA"]
+                TVA = (int)reader["TVA"],
+                WareHouse = reader["WarehouseName"] != DBNull.Value ? (string)reader["WarehouseName"] : null
             };
         }
 
@@ -63,7 +66,7 @@ namespace INV.Infrastructure.Storage.Products
                         DeliveryNumber = row.IsNull("DeliveryNumber") ? string.Empty : row["DeliveryNumber"].ToString(),
                         DeliveryDate = row.IsNull("DeliveryDate") ? default : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
                         Status = (ReceiptStatus)row["Status"],
-                        supplierName = (string)row["SupplierName"]
+                        //supplierName = (string)row["SupplierName"]
                     };
                     product.ReceiptInfos.Add(receipt);
                 }
@@ -71,6 +74,5 @@ namespace INV.Infrastructure.Storage.Products
 
             return product;
         }
-
     }
 }

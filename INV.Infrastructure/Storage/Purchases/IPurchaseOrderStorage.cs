@@ -37,7 +37,7 @@ namespace INV.Infrastructure.Storage.Purchases
 
         ValueTask InsertProductPurchase(PurchaseProduct purchaseProduct);
 
-        ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif);
+        ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string? visaNumber, string? motif);
 
         ValueTask<int> SelectPurchaseCount();
 

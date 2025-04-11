@@ -188,7 +188,7 @@ namespace INV.Implementation.Service.Purchses
             }
         }
 
-        public async ValueTask DecisionCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber, string motif)
+        public async ValueTask DecisionCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string? visaNumber, string? motif)
         {
             await purchaseOrderStorage.DecinsonCF(purchaseId, status, date, visaNumber, motif);
         }

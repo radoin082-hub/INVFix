@@ -11,28 +11,34 @@
     <CascadingValue Value="chapters">
         <CascadingValue Value="articles">
             <CascadingValue Value="canEdit">
-                <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" OnEdit="modeEditing" Purchase="purchaseModel" >
+                <PurchaseHeader @ref="purchaseHeaderRef" OnCreate="OnInitializedAsync" OnEdit="modeEditing" Purchase="purchaseModel">
                     <Pills>
                         <div class="d-flex justify-content-end">
-                            @if (purchaseModel.Status == PurchaseStatus.Editing)
+                            @if (purchaseModel.Status == PurchaseStatus.Validated)
                             {
                                 <RadzenButton Click="visibilityReject" Text=@Localizer["Rejected"]
-                                Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
+                                              Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
 
 
                                 <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text=@Localizer["Visaed"]
-                                Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
-                                <RadzenButton Click="Edit" Text=@Localizer["Edit"] Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
+                                              Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
                             }
+                            @if (purchaseModel.Status == PurchaseStatus.Editing)
+                            {
+                                <RadzenButton Click="showConformation" Text=@Localizer["Validated"]
+                                              Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
+                                <RadzenButton Click="Edit" Text=@Localizer["Edit"] Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
 
+
+                            }
                         </div>
-                       
-            </Pills>
-</PurchaseHeader>
+
+                    </Pills>
+                </PurchaseHeader>
             </CascadingValue>
+        </CascadingValue>
     </CascadingValue>
-    </CascadingValue>
-   
+
 </div>
 
 <Tabs>
@@ -40,15 +46,15 @@
         <Content>
             <CascadingValue Value="selectedSupplier">
                 <CascadingValue Value="canEdit">
-                <PurchaseSupplier OnSupplierSelected="@(supplier => selectedSupplier = supplier)" supplier="selectedSupplier" />
+                    <PurchaseSupplier OnSupplierSelected="@(supplier => selectedSupplier = supplier)" supplier="selectedSupplier" />
+                </CascadingValue>
             </CascadingValue>
-            </CascadingValue>
-        </Content> 
+        </Content>
     </Tab>
     <Tab Title=@Localizer["Products"]>
         <Content>
             <CascadingValue Value="canEdit">
-            <PurchaseProducts ProductList="products" PurchaseInfo="purchaseOrder" />
+                <PurchaseProducts ProductList="products" PurchaseInfo="purchaseOrder" />
             </CascadingValue>
         </Content>
     </Tab>
@@ -56,13 +62,13 @@
     {
         <Tab Title=@Localizer["Receptions"]>
             <Content>
-				<ReceptionList Receptions="receptionsListByPurchase" ShowSupplier="false" ShowPurchase="true" />
-        </Content>
-    </Tab>
-	}
+                <ReceptionList Receptions="receptionsListByPurchase" ShowSupplier="false" ShowPurchase="true" />
+            </Content>
+        </Tab>
+    }
 </Tabs>
 
-@if(displayReject)
+@if (displayReject)
 {
     <MyModal Titel="Reject">
 
@@ -81,7 +87,7 @@
 
                 </div>
             </div>
-          
+
 
         </Pills>
     </MyModal>
@@ -106,3 +112,4 @@
         </Pills>
     </MyModal>
 }
+<ConformationForm @ref="conformationForm" Titel="Validate Purcahse" Message="Are you sure You Will Validate This Purchase?" OnConfirm="ConfirmDeleteProduct" />

@@ -75,7 +75,13 @@ namespace INVUIs.Suppliers
             string searchLower = searchName.Trim().ToLower();
 
             supplierFilter = Suppliers
-                .Where(s => s.Name.ToLower().Contains(searchLower) || s.Email.ToLower().Contains(searchLower))
+                .Where(s => (s.Name?.ToLower().Contains(searchLower) ?? false) ||
+                            (s.Email?.ToLower().Contains(searchLower) ?? false) ||
+                            (s.CompanyName?.ToLower().Contains(searchLower) ?? false) ||
+                            (s.AccountName?.ToLower().Contains(searchLower) ?? false) ||
+                            (s.Phone?.ToLower().Contains(searchLower) ?? false) ||
+                            (s.Address?.ToLower().Contains(searchLower) ?? false))
+
                 .OrderBy(s => s.Name)
                 .ToList();
 
@@ -114,18 +120,13 @@ namespace INVUIs.Suppliers
                 if (result.IsSuccess)
                 {
                     supplierFilter.Remove(supplierToRemove);
-                    await myAlert.ShowAlert(
-   Localizer["DeleteSuccessfully"],
-   Localizer["TheSupplierHasBeenDeleted"],
-   MyAlertType.success
-);
+                    await myAlert.ShowAlert("Delete Succusfuly", "The supplier has been deleted.", MyAlertType.success);
                     await grid.Reload();
                 }
                 else
                 {
                     errorMessage = result.Error.Description;
-                    await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
-
+                    await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
                 }
 
                 StateHasChanged();

@@ -16,6 +16,7 @@ public partial class ProductForm : ComponentBase
 {
     [Parameter] public EventCallback<ProductInfo> OnProductCreated { get; set; }
     [Parameter] public ProductDetail productEdit { get; set; }
+    [Parameter] public bool ShowToast { get; set; } = true;
 
     [Parameter] public RenderFragment Pills { get; set; }
     [Inject] private IProductService productService { set; get; }
@@ -65,11 +66,11 @@ public partial class ProductForm : ComponentBase
                 Designation = productModel.Designation,
                 TVA = productModel.TVA,
                 DefaultWareHouseId = productModel.WareHouseId,
-                
             };
             result = await productService.CreateProduct(productadd);
             Hide();
-            await myAlert.ShowToast(succesMessage, "The product has been created.", MyAlertType.success);
+            if (ShowToast)
+                await myAlert.ShowToast(succesMessage, "The product has been created.", MyAlertType.success);
         }
         else
         {
@@ -86,6 +87,7 @@ public partial class ProductForm : ComponentBase
 
             Hide();
             await myAlert.ShowToast(succesMessage, "The product has been Edited.", MyAlertType.success);
+            navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
         }
 
         if (result.IsSuccess)

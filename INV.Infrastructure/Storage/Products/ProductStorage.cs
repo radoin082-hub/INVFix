@@ -23,13 +23,22 @@ namespace INV.Infrastructure.Storage.Products
 
         private const string updateProductCommand = @"
             UPDATE [dbo].[PRODUCTS] SET Designation = @aDesignation, UnitMeasure = @aUnitMeasure,Quantity = @aQuantity,
-           TVA = @aTVA  WHERE Id = @aId";
+           TVA = @aTVA , DefaultWareHouseId = @aDefaultWareHouseId WHERE Id = @aId";
 
         private const string deleteProductCommand = @"
             Delete from [dbo].[PRODUCTS] where Id=@aId";
 
         private const string selectProductsQuery = @"
-            SELECT * FROM [dbo].[PRODUCTS] ";
+            SELECT
+    p.Id,
+    p.Designation,
+    p.UnitMeasure,
+    p.Quantity,
+    p.TVA,
+    p.DefaultWareHouseId,
+    w.Name AS WarehouseName
+FROM INV.dbo.PRODUCTS p
+LEFT JOIN INV.dbo.WareHouse w ON p.DefaultWareHouseId = w.Id ";
 
         private const string selectProductCountByIdQuery = @"
             SELECT count(*) FROM Products WHERE Designation = @aDesignation";
@@ -66,6 +75,7 @@ namespace INV.Infrastructure.Storage.Products
             cmd.Parameters.AddWithValue("@aUnitMeasure", product.UnitMeasure);
             cmd.Parameters.AddWithValue("@aQuantity", product.Quantity);
             cmd.Parameters.AddWithValue("@aTVA", product.TVA);
+            cmd.Parameters.AddWithValue("@aDefaultWareHouseId", product.DefaultWareHouseId);
 
             return await cmd.ExecuteNonQueryAsync();
         }

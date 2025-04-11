@@ -141,3 +141,9 @@ tbody tr:hover {
 .footer-card {
     flex-direction: row !important;
 }
+
+/*Search*/
+.search-zone {
+    display: flex;
+    justify-content: space-between;
+}

@@ -22,18 +22,23 @@
 }
 
 .status-in-progress {
-    background-color: rgb(255, 245, 204); 
-    color: rgb(202, 138, 4); 
+    background-color: rgb(255, 245, 204);
+    color: rgb(202, 138, 4);
 }
 
-.status-pending {
+.status-canceled {
     background-color: rgb(254, 226, 226); /* light red/pink background */
     color: rgb(185, 28, 28); /* strong red text */
 }
 
+.status-pending {
+    background-color: rgb(229, 239, 255); /* light blue background */
+    color: rgb(30, 64, 175); /* deep blue text */
+}
 /* icon styles */
-.bi-check-circle,
-.bi-clock,
-.bi-exclamation-circle {
+.bi bi-check-circle,
+.bi bi-pen,
+.bi bi-x-circle,
+.bi bi-hourglass-split {
     font-size: 1rem;
 }

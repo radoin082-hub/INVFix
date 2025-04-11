@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using INVUIs.Receptions.Models;
 using INV.Domain.Shared;
 using INV.Shared;
+using System.Linq;
 
 namespace INVUIs.Receptions
 {
@@ -23,5 +24,48 @@ namespace INVUIs.Receptions
 
         public EditContext editContext { get; set; }
         private bool CommandSelected = false;
+
+        private string searchTerm;
+
+        public string SearchTerm
+        {
+            get => searchTerm;
+            set
+            {
+                if (searchTerm != value)
+                {
+                    searchTerm = value;
+                    FilterReceptions();
+                }
+            }
+        }
+
+        private List<ReceiptInfo> filteredReceptions;
+
+        public List<ReceiptInfo> FilteredReceptions
+        {
+            get => filteredReceptions ?? Receptions;
+            set => filteredReceptions = value;
+        }
+
+        private void FilterReceptions()
+        {
+            if (string.IsNullOrWhiteSpace(SearchTerm))
+            {
+                FilteredReceptions = Receptions;
+            }
+            else
+            {
+                FilteredReceptions = Receptions
+                    .Where(r => (r.Number?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                                (r.supplierName?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                                (r.purchaseNumber?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                                (r.DeliveryNumber?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                                r.Status.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ||
+                                (r.Date.HasValue && r.Date.Value.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                                (r.DeliveryDate.HasValue && r.DeliveryDate.Value.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)))
+                    .ToList();
+            }
+        }
     }
 }

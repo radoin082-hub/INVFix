@@ -5,8 +5,9 @@
 
 <PageTitle>@Localizer["Purchases"]</PageTitle>
 <PageHeader Title=@Localizer["Purchases.Title"] SubTitle=@Localizer["Purchases.SubTitle"] />
-<input type="text" @bind-value="SearchTerm" placeholder=@Localizer["Purchases.Search"] class="number-input" @bind-value:event ="oninput" />
-<button type="button" class="addsupplier-button" @onclick="NavigateToPurchaseOrder"><i class="bi bi-cart-plus"></i> @Localizer["Purchase.AddButton"] </button>
 
 <PurchaseList purchaseOrderInfos="purchaseOrderInfos">
+    <Pills>
+        <button type="button" class="addsupplier-button" @onclick="NavigateToPurchaseOrder"><i class="bi bi-cart-plus"></i> @Localizer["Purchase.AddButton"] </button>
+    </Pills>
 </PurchaseList>

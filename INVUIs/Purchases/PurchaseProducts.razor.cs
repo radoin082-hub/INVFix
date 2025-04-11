@@ -88,7 +88,6 @@ public partial class PurchaseProducts : ComponentBase
                 UnitPrice = product.UnitPrice,
             };
             await purchaseOrderService.CreateProductPurchase(purchaseProduct);
-            await grid.Reload();
         }
         else
         {
@@ -101,6 +100,7 @@ public partial class PurchaseProducts : ComponentBase
         }
 
         products.Add(product);
+        await grid.Reload();
         StateHasChanged();
     }
 

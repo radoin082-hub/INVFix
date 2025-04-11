@@ -8,6 +8,7 @@ using INVUIs.Purchases.PurchaseModels;
 using INVUIs.Shared;
 using INVUIs.Shared.MyAlert;
 using Microsoft.JSInterop;
+using INV.App.Purchases;
 
 namespace INVUIs.Products
 {
@@ -29,6 +30,15 @@ namespace INVUIs.Products
         private Guid productIdToDelete;
         private string errorMessage;
         private string succesMessage;
+        private string searchTerm { get; set; } = "";
+
+        private List<ProductInfo> displayedItems =>
+           Products?.Where(i =>
+               (i?.Designation?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+               (i?.Quantity.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+               (i?.UnitMeasure?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+               (i?.WareHouse?.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ?? false)
+           ).ToList() ?? new List<ProductInfo>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -57,18 +67,13 @@ namespace INVUIs.Products
             if (result.IsSuccess)
             {
                 Products.Remove(productToRemove);
-                await myAlert.ShowAlert(
-    Localizer["DeleteSuccessfully"],
-    Localizer["TheProductHasBeenDeleted"],
-    MyAlertType.success
-);
-
+                await myAlert.ShowAlert("Delete Succusfuly", "The product has been deleted.", MyAlertType.success);
                 await grid.Reload();
             }
             else
             {
                 errorMessage = result.Error.Description;
-                await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
+                await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
             }
             StateHasChanged();
         }

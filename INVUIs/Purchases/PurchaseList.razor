@@ -3,7 +3,14 @@
 @rendermode InteractiveServer
 @inject IStringLocalizer<Resources> Localizer
 
-
+<div class="search-zone">
+    <div style="width:35%">
+        <input type="text" @bind="SearchTerm" placeholder="Search by order number or by supplier name" class="number-input" @bind:event="oninput" />
+    </div>
+    <div>
+        @Pills
+    </div>
+</div>
 @if (purchaseOrderInfos is null)
 {
     <h3>@Localizer["Loading"]...</h3>
@@ -11,7 +18,7 @@
 else
 {
     <div class="Container-list">
-        <RadzenDataGrid Data="@purchaseOrderInfos.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
+        <RadzenDataGrid Data="@displayedItems.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
                         Style="width: 100%;" RowSelect="@((PurchaseOrderInfo purchaseOrderInfo) => navigatepage(purchaseOrderInfo.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
@@ -29,6 +36,5 @@ else
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] />
             </Columns>
         </RadzenDataGrid>
-
     </div>
 }

@@ -8,14 +8,17 @@ using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Receipts;
 using INV.Domain.Entities.Suppliers;
 using INV.Domain.Shared;
+using INV.Implementation.Service.Products;
 using INV.Implementation.Service.Purchses;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases;
 using INVUIs.Purchases.PurchaseModels;
+using INVUIs.Shared;
 using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.JSInterop;
+using Xunit.Sdk;
 
 namespace INV.Web.Components.Pages.Purchases
 {
@@ -47,7 +50,7 @@ namespace INV.Web.Components.Pages.Purchases
         private SupplierInfo selectedSupplier = new();
         private bool displayVisa = false;
         private bool displayReject = false;
-
+        private ConformationForm conformationForm;
         public List<Article> articles;
         public List<Chapter> chapters;
 
@@ -81,6 +84,7 @@ namespace INV.Web.Components.Pages.Purchases
                 };
 
                 await purchaseOrderService.UpdatePurchaseOrder(purchaseUpdate);
+                Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
             }
         }
 
@@ -175,6 +179,19 @@ namespace INV.Web.Components.Pages.Purchases
             }
         }
 
+        private void showConformation()
+        {
+            conformationForm.show();
+        }
+
+        private async Task ConfirmDeleteProduct()
+        {
+            await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Validated, null, null, null);
+            conformationForm.hide();
+            Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+            await myAlert.ShowToast(succesMessage, "The purchase has been Validated.", MyAlertType.success);
+        }
+
         public void Edit()
         {
             canEdit = !canEdit;
@@ -198,9 +215,9 @@ namespace INV.Web.Components.Pages.Purchases
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Reject, purchaseModel.VisaDate, purchaseModel.VisaNumber, purchaseModel.Observation);
 
             visibilityReject();
-            await myAlert.ShowToast(succesMessage, "The purchase has been rejected.", MyAlertType.success);
-            await Task.Delay(100);
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+            await Task.Delay(100);
+            await myAlert.ShowToast(succesMessage, "The purchase has been rejected.", MyAlertType.success);
             StateHasChanged();
         }
 
@@ -208,9 +225,10 @@ namespace INV.Web.Components.Pages.Purchases
         {
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Vised, purchaseModel.VisaDate, purchaseModel.VisaNumber, null);
             visibilityVisa();
-            await myAlert.ShowToast(succesMessage, "The purchase has been validated .", MyAlertType.success);
-            await Task.Delay(100);
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
+            await Task.Delay(100);
+            await myAlert.ShowToast(succesMessage, "The purchase has been validated .", MyAlertType.success);
+
             StateHasChanged();
         }
     }

@@ -5,12 +5,16 @@
 @rendermode InteractiveServer
 @inject IStringLocalizer<Resources> Localizer
 
-
-<button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
-    <i class="bi bi-cart-plus"></i> @Localizer["Product.AddButton"]
-</button>
-<br />
-<br />
+<div class="search-zone">
+    <div style="width:35%">
+        <input type="text" @bind="searchTerm" placeholder="Search" class="number-input" @bind:event="oninput" />
+    </div>
+    <div>
+        <button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
+            <i class="bi bi-cart-plus"></i> @Localizer["Product.AddButton"]
+        </button>
+    </div>
+</div>
 
 @if (Products is null)
 {
@@ -19,16 +23,16 @@
 else
 {
     <div class="Container-list">
-        <RadzenDataGrid @ref="grid" Data="@Products" AllowSorting="true"
+        <RadzenDataGrid @ref="grid" Data="@displayedItems" TItem="ProductInfo" AllowSorting="true"
                         AllowFiltering="true" RowSelect="@((ProductInfo ProductInfo) => navigatepage(ProductInfo.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(ProductInfo.Designation)" Title=@Localizer["Designation"] Width="300px" />
-                <RadzenDataGridColumn Property="@nameof(ProductInfo.Quantity)" Title=@Localizer["Quantity"] Width="100px" />
-                <RadzenDataGridColumn Property="@nameof(ProductInfo.UnitMeasure)" Title=@Localizer["UnitMeasure"] Width="80px" Sortable="false" Filterable="false" />
-                <RadzenDataGridColumn Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" />
+                <RadzenDataGridColumn TItem="ProductInfo" Property="Designation" Title=@Localizer["Designation"] Width="300px" />
+                <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.Quantity)" Title=@Localizer["Quantity"] Width="100px" />
+                <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.UnitMeasure)" Title=@Localizer["UnitMeasure"] Width="80px" Sortable="false" Filterable="false" />
+                <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" />
 
-                <RadzenDataGridColumn Sortable="false" Filterable="false" Width="70px">
+                <RadzenDataGridColumn TItem="ProductInfo" Title=@Localizer["Actions"] Sortable="false" Filterable="false" Width="70px">
                     <Template Context="product">
                         <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger"
                                       Click="(e => DeleteProduct(product.Id))"

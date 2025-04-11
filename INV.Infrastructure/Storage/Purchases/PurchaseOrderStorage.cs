@@ -89,10 +89,18 @@ namespace INV.Infrastructure.Storage.Purchases
 
         private const string countofPurchases = @"SELECT COUNT(*)  FROM [purchase].[ORDERS];";
 
-        private const string countofStatusPurchases = @"SELECT COUNT(o.Status) AS Count
-            FROM ( SELECT 0 AS Status UNION ALL SELECT -1UNION ALL SELECT 1) AS s
-            LEFT JOIN [purchase].[ORDERS] AS o ON o.Status = s.Status AND YEAR(o.Date) = YEAR(GETDATE()) 
-            GROUP BY s.Status;";
+        private const string countofStatusPurchases = @" SELECT COUNT(o.Status) AS Count
+                                                        FROM (
+                                                            SELECT 0 AS Status
+                                                            UNION ALL SELECT -1
+                                                            UNION ALL SELECT 1
+                                                            UNION ALL SELECT 2
+                                                        ) AS s
+                                                        LEFT JOIN [purchase].[ORDERS] AS o
+                                                            ON o.Status = s.Status
+                                                            AND YEAR(o.Date) = YEAR(GETDATE())
+                                                        GROUP BY s.Status
+                                                        ORDER BY s.Status;";
 
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
@@ -337,18 +345,18 @@ namespace INV.Infrastructure.Storage.Purchases
             throw new NotImplementedException();
         }
 
-        public async ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string visaNumber,
-            string motif)
+        public async ValueTask DecinsonCF(Guid purchaseId, PurchaseStatus status, DateOnly? date, string? visaNumber, string? motif)
         {
             using var sqlConnection = new SqlConnection(_connectionString);
             var cmd = new SqlCommand(DecisionCFPurchaseCommand, sqlConnection);
             await sqlConnection.OpenAsync();
 
             cmd.Parameters.AddWithValue("@aId", purchaseId);
-            cmd.Parameters.AddWithValue("@aVisaNumber", visaNumber);
-            cmd.Parameters.AddWithValue("@aVisaDate", date);
-            cmd.Parameters.AddWithValue("@aStatus", status);
-            cmd.Parameters.AddWithValue("@aMotif", (object)motif ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@aVisaNumber", (object?)visaNumber ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@aVisaDate", (object?)date ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@aStatus", (object?)status ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@aMotif", (object?)motif ?? DBNull.Value);
+
             await cmd.ExecuteNonQueryAsync();
         }
 
