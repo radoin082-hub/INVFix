@@ -1,17 +1,21 @@
 ﻿@using INV.App.Purchases
 @using INV.Domain.Entities.Purchases
 @using INVUIs.Shared
+@inject IStringLocalizer<Resources> Localizer
 
 
 @if (displayVisa)
 {
     <div class="popup">
         <div class="popup-content">
-            <input type="date" placeholder="Date Visa" @bind-value="purchaseInfo.VisaDate"/>
-            <input type="text" placeholder="Number Visa" @bind-value="purchaseInfo.VisaNumber"/>
+         
+            <input type="date" placeholder=@Localizer["Visa.Date"] @bind-value="purchaseInfo.VisaDate" />
+            <input type="text" placeholder=@Localizer["Visa.Number"] @bind-value="purchaseInfo.VisaNumber" />
+
             <div class="footer-form">
-                <button class="btn-custom btn-cancel" @onclick="HideVisa">Close</button>
-                <button class="btn-custom btn-submit" @onclick="() => visa(purchaseInfo)">Save</button>
+         
+                <button class="btn-custom btn-cancel" @onclick="HideVisa">@Localizer["Close"]</button>
+                <button class="btn-custom btn-submit" @onclick="() => visa(purchaseInfo)">@Localizer["Save"]</button>
 
             </div>
         </div>
@@ -22,12 +26,13 @@
 {
     <div class="popup">
         <div class="popup-content">
-            <input type="date" placeholder="Date Visa" @bind-value="purchaseInfo.VisaDate"/>
-            <input type="text" placeholder="Number Visa" @bind-value="purchaseInfo.VisaNumber"/>
-            <input type="text" placeholder="Motif" @bind-value="purchaseInfo.Observation"/>
+            <input type="date" placeholder=@Localizer["Visa.Date"] @bind-value="purchaseInfo.VisaDate" />
+            <input type="text" placeholder=@Localizer["Visa.Number"] @bind-value="purchaseInfo.VisaNumber" />
+            <input type="text" placeholder=@Localizer["Motif"] @bind-value="purchaseInfo.Observation" />
             <div class="footer-form">
-                <button class="btn-custom btn-cancel" @onclick="HideReject">Close</button>
-                <button class="btn-custom btn-submit" @onclick="() => reject(purchaseInfo)">Save</button>
+                <button class="btn-custom btn-cancel" @onclick="HideReject">@Localizer["Close"]</button>
+                <button class="btn-custom btn-submit" @onclick="() => reject(purchaseInfo)">@Localizer["Save"]</button>
+
 
             </div>
         </div>
@@ -37,37 +42,38 @@
 <RadzenCard>
     <RadzenRow>
         <RadzenColumn Size="9">
-            <LabledValue Label="Number" Value="@purchaseInfo.Number" />
-        
+            <LabledValue Label=@Localizer["Number"] Value="@purchaseInfo.Number" />
+
         </RadzenColumn>
         <RadzenColumn Size="3">
              @if (purchaseInfo.Status == PurchaseStatus.Editing)
     {
             <div style="display:flex;justify-content:end">
-                <button @onclick="Showreject" class="btn-custom btn-delete">Reject</button>
-                <button @onclick="ShowVisa" class="btn-custom btn-submit">Visa</button>
+                    <button @onclick="Showreject" class="btn-custom btn-delete">@Localizer["Reject"] </button>
+                    <button @onclick="ShowVisa" class="btn-custom btn-submit">@Localizer["Visa"] </button>
+
             </div>
     }
         </RadzenColumn>
     </RadzenRow>
     <RadzenRow>
         <RadzenColumn Size="6">
-            <LabledValue Label="Status" Status="@purchaseInfo.Status" />
-            <LabledValue Label="Supplier Name" Value="@purchaseInfo.SupplierName" />
-            <LabledValue Label="Date" Value="@purchaseInfo.Date.ToShortDateString()" />
-            <LabledValue Label="Completion Delay" Number="@purchaseInfo.CompletionDelay" />
+            <LabledValue Label=@Localizer["Status"] Status="@purchaseInfo.Status" />
+            <LabledValue Label=@Localizer["Supplier.Name"] Value="@purchaseInfo.SupplierName" />
+            <LabledValue Label=@Localizer["Date"] Value="@purchaseInfo.Date.ToShortDateString()" />
+            <LabledValue Label=@Localizer["Delivery.Time"] Number="@purchaseInfo.CompletionDelay" />
 
-           
 
         </RadzenColumn>
         <RadzenColumn Size="6">
          
           
-            <LabledValue Label="Budget Article" Value="@purchaseInfo.BudgeArticle" />
-            <LabledValue Label="Service Type" ServiceType="@purchaseInfo.ServiceType" />
-            <LabledValue Label="Budget Type" BudgeType="@purchaseInfo.BudgeType" />
-            
-           
+            <LabledValue Label=@Localizer["BudgetArticle"] Value="@purchaseInfo.BudgeArticle" />
+            <LabledValue Label=@Localizer["ServiceType"] ServiceType="@purchaseInfo.ServiceType" />
+            <LabledValue Label=@Localizer["BudgetType"] BudgeType="@purchaseInfo.BudgeType" />
+
+
+
         </RadzenColumn>
     </RadzenRow>
     @if (purchaseInfo.Status == PurchaseStatus.Vised || purchaseInfo.Status == PurchaseStatus.Reject)
@@ -75,14 +81,14 @@
         <RadzenRow>
             <RadzenColumn Size="6">
 
-                <LabledValue Label="Visi Date" Date="@purchaseInfo.VisaDate" />
-                <LabledValue Label="Visi Number" Value="@purchaseInfo.VisaNumber" />
+                <LabledValue Label=@Localizer["Visa.Date"] Date="@purchaseInfo.VisaDate" />
+                <LabledValue Label=@Localizer["Visa.Number"] Value="@purchaseInfo.VisaNumber" />
             </RadzenColumn>
             @if (purchaseInfo.Status == PurchaseStatus.Reject)
             {
             <RadzenColumn Size="6">
 
-                <LabledValue Label="Observation" Value="@purchaseInfo.Observation" />
+                    <LabledValue Label=@Localizer["Observation"] Value="@purchaseInfo.Observation" />
             </RadzenColumn>
             }
           

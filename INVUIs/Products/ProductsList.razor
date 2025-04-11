@@ -7,7 +7,7 @@
 
 <div class="search-zone">
     <div style="width:35%">
-        <input type="text" @bind="searchTerm" placeholder="Search" class="number-input" @bind:event="oninput" />
+        <input type="text" @bind="searchTerm" placeholder=@Localizer["Search"] class="number-input" @bind:event="oninput" />
     </div>
     <div>
         <button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
@@ -32,7 +32,7 @@ else
                 <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.UnitMeasure)" Title=@Localizer["UnitMeasure"] Width="80px" Sortable="false" Filterable="false" />
                 <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" />
 
-                <RadzenDataGridColumn TItem="ProductInfo" Title=@Localizer["Actions"] Sortable="false" Filterable="false" Width="70px">
+                <RadzenDataGridColumn TItem="ProductInfo" Sortable="false" Filterable="false" Width="70px">
                     <Template Context="product">
                         <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger"
                                       Click="(e => DeleteProduct(product.Id))"
@@ -48,4 +48,4 @@ else
 <ProductEditForm @ref="productEditForm" selectedProductModel="newProduct" />
 
 <ProductForm @ref="productForm" OnProductCreated="OnProductCreated" productEdit="productEdit" />
-<ConformationForm @ref="conformationForm" Titel=@Localizer["DeleteProductTitle"] Message=@Localizer["DeleteProductMessage"] OnConfirm="ConfirmDeleteProduct" />
+<ConformationForm @ref="conformationForm" Titel=@Localizer["Product.DeleteButton"] Message=@Localizer["Product.DeleteMessage"] OnConfirm="ConfirmDeleteProduct" />

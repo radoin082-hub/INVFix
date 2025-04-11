@@ -285,7 +285,37 @@
   <data name="Visaed" xml:space="preserve">
     <value>Visaed</value>
   </data>
-  <data name="Purchases.Search" xml:space="preserve">
-    <value>Search by order number or by supplier name</value>
+  <data name="Dashboard.Text.Labels" xml:space="preserve">
+    <value>Show Data Labels</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date </value>
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value>Observation</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Purchase.Validate" xml:space="preserve">
+    <value>Validate Purchase </value>
+  </data>
+  <data name="Purchase.Validated" xml:space="preserve">
+    <value>The purchase has been validated.</value>
+  </data>
+  <data name="Purchase.Rejected" xml:space="preserve">
+    <value>The purchase has been rejected.</value>
+  </data>
+  <data name="Purchase.ValidateMessage" xml:space="preserve">
+    <value>Are you sure you want to validate this purchase?</value>
+  </data>
+  <data name="Purchase.Created" xml:space="preserve">
+    <value>The purchase has been created.</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Delivery</value>
   </data>
 </root>

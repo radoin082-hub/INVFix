@@ -171,9 +171,6 @@
   <data name="Address" xml:space="preserve">
     <value>Adresse</value>
   </data>
-  <data name="Delivery" xml:space="preserve">
-    <value>Livraison</value>
-  </data>
   <data name="BudgetType" xml:space="preserve">
     <value>Budget</value>
   </data>
@@ -196,7 +193,7 @@
     <value>Bon de Commande</value>
   </data>
   <data name="Purchase.Number" xml:space="preserve">
-    <value>Numéro du BC</value>
+    <value>Numéro du bon de commande</value>
   </data>
   <data name="Supplier.Name" xml:space="preserve">
     <value>Nom du fournisseur</value>
@@ -297,9 +294,6 @@
   <data name="Days" xml:space="preserve">
     <value>jours</value>
   </data>
-  <data name="Suppliers.Search" xml:space="preserve">
-    <value>Rechercher par nom du fournisseur</value>
-  </data>
   <data name="YES" xml:space="preserve">
     <value>OUI</value>
   </data>
@@ -309,16 +303,43 @@
   <data name="DeleteSuccessfully" xml:space="preserve">
     <value>Supprimé avec succès.</value>
   </data>
-  <data name="TheProductHasBeenDeleted" xml:space="preserve">
-    <value>Le produit a été supprimé.</value>
-  </data>
-  <data name="TheSupplierHasBeenDeleted" xml:space="preserve">
-    <value>Le fournisseur a été supprimé.</value>
-  </data>
   <data name="ErrorDelete" xml:space="preserve">
     <value>Erreur de suppression</value>
   </data>
   <data name="ErrorValidation" xml:space="preserve">
     <value>Erreur de validation</value>
+  </data>
+  <data name="Product.Edit" xml:space="preserve">
+    <value>Modifier un produit</value>
+  </data>
+  <data name="Product.Deleted" xml:space="preserve">
+    <value>Le produit a été supprimé.</value>
+  </data>
+  <data name="Product.Edited" xml:space="preserve">
+    <value>Le produit a été modifié.</value>
+  </data>
+  <data name="Product.Created" xml:space="preserve">
+    <value>Le produit a été créé.</value>
+  </data>
+  <data name="Product.Created.Title" xml:space="preserve">
+    <value>Produit créé</value>
+  </data>
+  <data name="Product.Edited.Title" xml:space="preserve">
+    <value>Produit modifié</value>
+  </data>
+  <data name="Supplier.Deleted" xml:space="preserve">
+    <value>Le fournisseur a été supprimé.</value>
+  </data>
+  <data name="Supplier.Edited" xml:space="preserve">
+    <value>Le fournisseur a été modifié.</value>
+  </data>
+  <data name="Supplier.Created" xml:space="preserve">
+    <value>Le fournisseur a été créé.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Rechercher...</value>
+  </data>
+  <data name="Motif" xml:space="preserve">
+    <value>Motif</value>
   </data>
 </root>

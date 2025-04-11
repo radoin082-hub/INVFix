@@ -189,7 +189,7 @@ namespace INV.Web.Components.Pages.Purchases
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Validated, null, null, null);
             conformationForm.hide();
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
-            await myAlert.ShowToast(succesMessage, "The purchase has been Validated.", MyAlertType.success);
+            await myAlert.ShowToast(succesMessage, Localizer["Purchase.Validated"], MyAlertType.success);
         }
 
         public void Edit()
@@ -217,7 +217,7 @@ namespace INV.Web.Components.Pages.Purchases
             visibilityReject();
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
             await Task.Delay(100);
-            await myAlert.ShowToast(succesMessage, "The purchase has been rejected.", MyAlertType.success);
+            await myAlert.ShowToast(succesMessage, Localizer["Purchase.Rejected"], MyAlertType.success);
             StateHasChanged();
         }
 
@@ -227,7 +227,7 @@ namespace INV.Web.Components.Pages.Purchases
             visibilityVisa();
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
             await Task.Delay(100);
-            await myAlert.ShowToast(succesMessage, "The purchase has been validated .", MyAlertType.success);
+            await myAlert.ShowToast(succesMessage, Localizer["Purchase.Validated"], MyAlertType.success);
 
             StateHasChanged();
         }

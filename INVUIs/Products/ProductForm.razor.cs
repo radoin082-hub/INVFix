@@ -40,7 +40,7 @@ public partial class ProductForm : ComponentBase
 
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
     private bool visibility = false;
-    private string succesMessage => formState == FormState.Create ? "Product created" : "Product updated";
+    private string succesMessage => formState == FormState.Create ? Localizer["Product.Created.Title"] : Localizer["Product.Edited.Title"];
 
     protected override async Task OnInitializedAsync()
     {
@@ -70,7 +70,7 @@ public partial class ProductForm : ComponentBase
             result = await productService.CreateProduct(productadd);
             Hide();
             if (ShowToast)
-                await myAlert.ShowToast(succesMessage, "The product has been created.", MyAlertType.success);
+                await myAlert.ShowToast(succesMessage, Localizer["Product.Created"], MyAlertType.success);
         }
         else
         {
@@ -86,7 +86,7 @@ public partial class ProductForm : ComponentBase
             result = await productService.SetProducts(productupdate);
 
             Hide();
-            await myAlert.ShowToast(succesMessage, "The product has been Edited.", MyAlertType.success);
+            await myAlert.ShowToast(succesMessage, Localizer["Product.Edited"], MyAlertType.success);
             navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
         }
 

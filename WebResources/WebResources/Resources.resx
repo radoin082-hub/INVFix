@@ -120,6 +120,9 @@
   <data name="Dashboard" xml:space="preserve">
     <value />
   </data>
+  <data name="Dashboard.Text.Labels" xml:space="preserve">
+    <value />
+  </data>
   <data name="Dashboard.Title" xml:space="preserve">
     <value />
   </data>
@@ -283,6 +286,33 @@
     <value />
   </data>
   <data name="Visaed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Observation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Purchase.Validate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Purchase.Validated" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Purchase.Rejected" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Purchase.ValidateMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Purchase.Created" xml:space="preserve">
     <value />
   </data>
 </root>
