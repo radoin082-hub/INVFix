@@ -57,7 +57,17 @@ namespace INVUIs.Products
         private async Task DeleteProduct(Guid productId)
         {
             productIdToDelete = productId;
-            conformationForm.show();
+            var result = await ProductService.RemoveProduct(productIdToDelete);
+            if (result.IsSuccess)
+            {
+                conformationForm.show();
+            }
+            else
+            {
+                errorMessage = result.Error.Description;
+                await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
+            }
+          
         }
 
         private async Task ConfirmDeleteProduct()

@@ -1,4 +1,6 @@
-﻿using INV.App.Suppliers;
+﻿using BlazorBootstrap;
+using BootstrapBlazor.Components;
+using INV.App.Suppliers;
 using INV.Domain.Entities.Suppliers;
 using INV.Domain.Shared;
 using INVUIs.Shared.MyAlert;
@@ -25,6 +27,7 @@ namespace INVUIs.Suppliers
         private Result result;
         private string success = string.Empty;
         private string succesMessage;
+        private SupplierList supplierList;
 
         protected override async Task OnInitializedAsync()
         {
@@ -78,12 +81,14 @@ namespace INVUIs.Suppliers
             {
                 var result = await SupplierService.SetSupplier(sup);
                 close();
+                navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
                 await myAlert.ShowToast(succesMessage, "The Supplier has been Edited.", MyAlertType.success);
             }
             else
             {
                 result = await SupplierService.AddSupplier(sup);
                 close();
+                navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
                 await myAlert.ShowToast(succesMessage, "The Supplier has been created.", MyAlertType.success);
             }
 

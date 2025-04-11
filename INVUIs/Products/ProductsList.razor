@@ -25,7 +25,7 @@ else
     <div class="Container-list">
         <RadzenDataGrid @ref="grid" Data="@displayedItems" TItem="ProductInfo" AllowSorting="true"
                         AllowFiltering="true" RowSelect="@((ProductInfo ProductInfo) => navigatepage(ProductInfo.Id))"
-                        PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
+                        PageSize="6" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
                 <RadzenDataGridColumn TItem="ProductInfo" Property="Designation" Title=@Localizer["Designation"] Width="300px" />
                 <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.Quantity)" Title=@Localizer["Quantity"] Width="100px" />

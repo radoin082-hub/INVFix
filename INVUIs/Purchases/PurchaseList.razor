@@ -5,7 +5,7 @@
 
 <div class="search-zone">
     <div style="width:35%">
-        <input type="text" @bind="SearchTerm" placeholder="Search by order number or by supplier name" class="number-input" @bind:event="oninput" />
+        <input type="text" @bind="SearchTerm" placeholder="Search" class="number-input" @bind:event="oninput" />
     </div>
     <div>
         @Pills
@@ -20,7 +20,7 @@ else
     <div class="Container-list">
         <RadzenDataGrid Data="@displayedItems.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
                         Style="width: 100%;" RowSelect="@((PurchaseOrderInfo purchaseOrderInfo) => navigatepage(purchaseOrderInfo.Id))"
-                        PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
+                        PageSize="6" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"]>
                     <Template Context="Purchase">

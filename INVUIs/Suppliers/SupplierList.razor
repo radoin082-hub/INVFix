@@ -3,7 +3,7 @@
 @inject IStringLocalizer<Resources> Localizer
 <div class="search-zone">
     <div style="width:35%">
-        <input type="text" @bind="searchName" @bind:event="oninput" placeholder="Search by supplier name" class="number-input" />
+        <input type="text" @bind="searchName" @bind:event="oninput" placeholder="Search" class="number-input" />
     </div>
     <div>
         <button type="button" class="addsupplier-button" @onclick=@showSupplierForm>
@@ -24,7 +24,8 @@ else
 
     <div class="Container-list">
         <RadzenDataGrid @ref="grid" Data="@supplierFilter" AllowSorting="true" AllowFiltering="true"
-                        Style="width: 100%;" RowSelect="@((SupplierInfo supplier) => NavigateToSupplierDetails(supplier.ID))">
+                        PageSize="6" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Style="width: 100%;"
+                        RowSelect="@((SupplierInfo supplier) => NavigateToSupplierDetails(supplier.ID))">
             <Columns>
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title=@Localizer["Supplier"] Width="10%" />
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title=@Localizer["Email"] Width="10%" />

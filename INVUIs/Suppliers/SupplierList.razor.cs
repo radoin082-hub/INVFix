@@ -21,7 +21,7 @@ namespace INVUIs.Suppliers
         [Inject] private NavigationManager navigationManager { get; set; }
         [Inject] private IJSRuntime jsRuntime { set; get; }
         public List<SupplierInfo> supplierFilter { get; set; } = new();
-        private RadzenDataGrid<SupplierInfo> grid;
+        public RadzenDataGrid<SupplierInfo> grid;
         public SupplierInfo supplierDelete;
         private ConformationForm conformationForm;
         private string _searchName = "";
@@ -101,7 +101,16 @@ namespace INVUIs.Suppliers
         private async Task DeleteSupplier(SupplierInfo Suppliers)
         {
             supplierId = Suppliers.ID;
-            conformationForm.show();
+            var result = await supplierService.RemoveSupplierById(supplierId);
+            if (result.IsFailure)
+            {
+                errorMessage = result.Error.Description;
+                await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
+            }
+            else
+            {
+                conformationForm.show();
+            }
             StateHasChanged();
         }
 
@@ -120,14 +129,11 @@ namespace INVUIs.Suppliers
                 if (result.IsSuccess)
                 {
                     supplierFilter.Remove(supplierToRemove);
-                    await myAlert.ShowAlert("Delete Succusfuly", "The supplier has been deleted.", MyAlertType.success);
                     await grid.Reload();
+                    await myAlert.ShowAlert("Delete Succusfuly", "The supplier has been deleted.", MyAlertType.success);
+                    
                 }
-                else
-                {
-                    errorMessage = result.Error.Description;
-                    await myAlert.ShowAlert("Error Delete", errorMessage, MyAlertType.error);
-                }
+               
 
                 StateHasChanged();
             }
