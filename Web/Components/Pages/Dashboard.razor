@@ -1,4 +1,4 @@
-@page "/s"
+@page "/"
 
 @inject IStringLocalizer<Resources> Localizer
 
@@ -24,7 +24,7 @@
 
                 <RadzenStack AlignItems="AlignItems.End" Gap="0.5rem" Style="flex-direction:row !important">
                     <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text="Show Data Labels" Component="dataLabels" />
+                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
                 </RadzenStack>
 
 
@@ -72,7 +72,7 @@
 
                 <RadzenStack AlignItems="AlignItems.Start" Gap="0.5rem" Style="flex-direction:row !important">
                     <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text="Show Data Labels" Component="dataLabels" />
+                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
                 </RadzenStack>
 
 
@@ -129,10 +129,10 @@
         listPurchaseStatus = await purchaseOrderService.GetPurchaseCountsByStatus();
 
         revenue = new DataItem[] {
-            new DataItem { Quarter =  @Localizer["Rejected"], Revenue = listPurchaseStatus[0] },
+            new DataItem { Quarter = @Localizer["Rejected"], Revenue = listPurchaseStatus[0] },
             new DataItem { Quarter = @Localizer["Editing"], Revenue = listPurchaseStatus[1] },
             new DataItem { Quarter = @Localizer["Validated"], Revenue = listPurchaseStatus[2] },
-            new DataItem { Quarter = @Localizer["Visi"], Revenue = listPurchaseStatus[3] }
+            new DataItem { Quarter = @Localizer["Visaed"], Revenue = listPurchaseStatus[3] }
     };
 
         revenue2 = new DataItem[] {
