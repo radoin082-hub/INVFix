@@ -321,4 +321,7 @@
   <data name="Search" xml:space="preserve">
     <value />
   </data>
+  <data name="AtLeastOneProduct" xml:space="preserve">
+    <value />
+  </data>
 </root>

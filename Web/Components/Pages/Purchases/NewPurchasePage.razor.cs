@@ -45,13 +45,13 @@ namespace INV.Web.Components.Pages.Purchases
             await purchaseHeaderRef.SubmitForm();
             if (productModel.Count == 0)
             {
-                showError("Please add at least one product before submitting the order.");
+                showError(Localizer["AtLeastOneProduct"]);
                 return;
             }
 
             if (selectedSupplier.Name is null)
             {
-                showError("Please select a supplier.");
+                showError(Localizer["Supplier.Select"]);
                 return;
             }
 

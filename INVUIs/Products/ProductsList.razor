@@ -6,15 +6,18 @@
 @inject IStringLocalizer<Resources> Localizer
 
 <div class="search-zone">
-    <div style="width:35%">
-        <input type="text" @bind="searchTerm" placeholder=@Localizer["Search"] class="number-input" @bind:event="oninput" />
+    <div style="width:35%" class="search-container">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" @bind="searchTerm" placeholder=@Localizer["Search"] class="search-input" @bind:event="oninput" />
     </div> 
+
     <div>
         <button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
             <i class="bi bi-cart-plus"></i> @Localizer["Product.AddButton"]
         </button>
     </div>
 </div>
+
 
 @if (Products is null)
 {

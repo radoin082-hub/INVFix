@@ -321,4 +321,7 @@
   <data name="Search" xml:space="preserve">
     <value>Search...</value>
   </data>
+  <data name="AtLeastOneProduct" xml:space="preserve">
+    <value>Please add at least one product before confirming the purchase order.</value>
+  </data>
 </root>

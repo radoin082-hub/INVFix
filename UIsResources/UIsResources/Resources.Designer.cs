@@ -180,6 +180,15 @@ namespace UIsResources.UIsResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Delivery_Missing {
+            get {
+                return ResourceManager.GetString("Delivery.Missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Delivery_Number {
             get {
                 return ResourceManager.GetString("Delivery.Number", resourceCulture);
@@ -228,6 +237,15 @@ namespace UIsResources.UIsResources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         
@@ -516,6 +534,15 @@ namespace UIsResources.UIsResources {
         public static string Received {
             get {
                 return ResourceManager.GetString("Received", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Reception_MustValidate {
+            get {
+                return ResourceManager.GetString("Reception.MustValidate", resourceCulture);
             }
         }
         

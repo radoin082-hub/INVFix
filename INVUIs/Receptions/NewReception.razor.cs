@@ -80,7 +80,7 @@ namespace INVUIs.Receptions
             {
                 if (products.FindAll(s => s.NEwReceived == 0).Count > 0)
                 {
-                    await myAlert!.ShowAlert("Error",
+                    await myAlert!.ShowAlert(Localizer["Error"],
                         "The received quantity cannot be zero.", MyAlertType.error);
                     return;
                 }
@@ -91,7 +91,7 @@ namespace INVUIs.Receptions
                         ReceiptInfo.ReceiptProducts.FirstOrDefault(p => p.ProductId == product.ProductId);
                     if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received ||
                         product.NEwReceived == 0) continue;
-                    await myAlert!.ShowAlert("Error",
+                    await myAlert!.ShowAlert(Localizer["Error"],
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
                 }
@@ -138,8 +138,8 @@ namespace INVUIs.Receptions
         {
             if (ReceiptInfo.DeliveryDate is null || ReceiptInfo.DeliveryNumber is null)
             {
-                await myAlert!.ShowAlert("Error",
-                      "The delivery date or delivery number is missing.", MyAlertType.error);
+                await myAlert!.ShowAlert(Localizer["Error"], Localizer["Delivery.Missing"]
+                      , MyAlertType.error);
                 return false;
             }
 
@@ -151,7 +151,7 @@ namespace INVUIs.Receptions
             if (!isValidated)
             {
                 context.PreventNavigation();
-                await myAlert.ShowToast(null, "You must validate the reception before leaving.", MyAlertType.error);
+                await myAlert.ShowToast(null, Localizer["Reception.MustValidate"], MyAlertType.error);
             }
         }
     }

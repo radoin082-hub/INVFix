@@ -207,6 +207,9 @@
   <data name="Delivery.Date" xml:space="preserve">
     <value> تاريخ التوصيل </value>
   </data>
+  <data name="Delivery.Missing" xml:space="preserve">
+    <value>تاريخ التسليم أو رقم التسليم ناقص.</value>
+  </data>
   <data name="Delivery.Time" xml:space="preserve">
     <value> مدة التوصيل </value>
   </data>
@@ -309,6 +312,9 @@
   <data name="ErrorValidation" xml:space="preserve">
     <value>خطأ في التحقق من الصحة</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ </value>
+  </data>
   <data name="Product.Edit" xml:space="preserve">
     <value>تعديل منتج</value>
   </data>
@@ -347,5 +353,8 @@
   </data>
   <data name="NothingDisplay" xml:space="preserve">
     <value>  🛈 لا يوجد بيانات للعرض</value>
+  </data>
+  <data name="Reception.MustValidate" xml:space="preserve">
+    <value>يجب تأكيد الاستلام قبل المغادرة.</value>
   </data>
 </root>

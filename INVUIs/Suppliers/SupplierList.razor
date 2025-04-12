@@ -1,9 +1,13 @@
 ﻿@using INV.App.Suppliers
 @rendermode InteractiveServer
 @inject IStringLocalizer<Resources> Localizer
+
+
+
 <div class="search-zone">
-    <div style="width:35%">
-        <input type="text" @bind="searchName" @bind:event="oninput" placeholder=@Localizer["Search"] class="number-input" />
+    <div style="width:35%" class="search-container">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" @bind="searchName" placeholder=@Localizer["Search"] class="search-input" @bind:event="oninput" />
     </div>
     <div>
         <button type="button" class="addsupplier-button" @onclick=@showSupplierForm>

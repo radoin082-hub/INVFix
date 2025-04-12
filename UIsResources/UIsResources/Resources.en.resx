@@ -207,6 +207,9 @@
   <data name="Delivery.Date" xml:space="preserve">
     <value>Delivery Date</value>
   </data>
+  <data name="Delivery.Missing" xml:space="preserve">
+    <value>The delivery date or delivery number is missing.</value>
+  </data>
   <data name="Delivery.Time" xml:space="preserve">
     <value>Delivery Time</value>
   </data>
@@ -250,7 +253,7 @@
     <value>Select</value>
   </data>
   <data name="Supplier.Select" xml:space="preserve">
-    <value>Select Supplier</value>
+    <value>Select a supplier</value>
   </data>
   <data name="Purchase.Selector.Text" xml:space="preserve">
     <value>Enter Supplier name or email</value>
@@ -309,6 +312,9 @@
   <data name="ErrorValidation" xml:space="preserve">
     <value>Error Validation</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Product.Edit" xml:space="preserve">
     <value>Edit Product</value>
   </data>
@@ -347,5 +353,8 @@
   </data>
   <data name="NothingDisplay" xml:space="preserve">
     <value>  🛈 Nothing to display</value>
+  </data>
+  <data name="Reception.MustValidate" xml:space="preserve">
+    <value>You must validate the reception before leaving.</value>
   </data>
 </root>

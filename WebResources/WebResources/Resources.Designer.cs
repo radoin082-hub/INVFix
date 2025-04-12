@@ -63,6 +63,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string AtLeastOneProduct {
+            get {
+                return ResourceManager.GetString("AtLeastOneProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);

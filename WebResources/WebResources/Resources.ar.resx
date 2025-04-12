@@ -321,4 +321,7 @@
   <data name="Search" xml:space="preserve">
     <value>البحث...</value>
   </data>
+  <data name="AtLeastOneProduct" xml:space="preserve">
+    <value>الرجاء إضافة منتج واحد على الأقل قبل تأكيد الطلب.</value>
+  </data>
 </root>
