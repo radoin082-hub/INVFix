@@ -42,5 +42,9 @@ namespace INV.Infrastructure.Storage.Purchases
         ValueTask<int> SelectPurchaseCount();
 
         ValueTask<List<int>> SelectPurchaseCountsByStatus();
+
+        ValueTask<long> SelectNextPurchaseOrderNumberAsync();
+
+        ValueTask<long> SetPurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber);
     }
 }

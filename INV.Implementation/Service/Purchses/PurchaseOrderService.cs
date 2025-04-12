@@ -202,5 +202,15 @@ namespace INV.Implementation.Service.Purchses
         {
             return await purchaseOrderStorage.SelectPurchaseCountsByStatus();
         }
+
+        public async ValueTask<long> GetNextPurchaseOrderNumberAsync()
+        {
+            return await purchaseOrderStorage.SelectNextPurchaseOrderNumberAsync();
+        }
+
+        public async ValueTask<long> UpdatePurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber)
+        {
+            return await purchaseOrderStorage.SetPurchaseOrderNumberAsync(purchaseOrderId, newNumber);
+        }
     }
 }

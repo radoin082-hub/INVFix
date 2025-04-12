@@ -127,7 +127,7 @@ LEFT JOIN INV.dbo.WareHouse w ON p.DefaultWareHouseId = w.Id ";
             {
                 CommandType = CommandType.StoredProcedure
             };
-            cmd.Parameters.AddWithValue("@ProductId", productId);
+            cmd.Parameters.AddWithValue("@aProductId", productId);
 
             var dataSet = new DataSet();
             using var adapter = new SqlDataAdapter(cmd);

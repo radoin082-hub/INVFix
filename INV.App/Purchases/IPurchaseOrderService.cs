@@ -36,5 +36,9 @@ namespace INV.App.Purchases
         ValueTask<int> GetPurchaseCount();
 
         ValueTask<List<int>> GetPurchaseCountsByStatus();
+
+        ValueTask<long> GetNextPurchaseOrderNumberAsync();
+
+        ValueTask<long> UpdatePurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber);
     }
 }

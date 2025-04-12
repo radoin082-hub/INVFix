@@ -70,7 +70,7 @@
                 <h4>@Localizer["Reception.Status"]</h4>
                 <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
 
-                <RadzenStack AlignItems="AlignItems.Start" Gap="0.5rem" Style="flex-direction:row !important">
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Gap="0.5rem" Style="flex-direction:row !important">
                   
                <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
                     <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
@@ -85,6 +85,7 @@
                     </RadzenChart>
                 </RadzenStack>
             </RadzenStack>
+            <EventConsole @ref=@console />
         </RadzenCard>
     </div>
 </div>
@@ -95,13 +96,13 @@
     @using INV.App.Products
     @using INV.App.Suppliers
     @using Radzen
-    @using BlazorBootstrap
+    @using Orientation = Radzen.Orientation
 
     [Inject] ISupplierService supplierService { get; set; }
     [Inject] IProductService productService { get; set; }
     [Inject] IPurchaseOrderService purchaseOrderService { get; set; }
     [Inject] IReceiptService receiptService { get; set; }
-
+    EventConsole console;
     bool showDataLabels = false;
     bool showDataLabels2 = false;
     private int supplierCount = 0;
@@ -116,7 +117,7 @@
     private DateOnly currentDate;
     private int currentYear;
 
-
+    
 
     protected override async Task OnInitializedAsync()
     {
@@ -144,6 +145,7 @@
 
     void OnSeriesClick(SeriesClickEventArgs args)
     {
+        console.Log(args);
     }
     string FormatAsUSD(object value)
     {

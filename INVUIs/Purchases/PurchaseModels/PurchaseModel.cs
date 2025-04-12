@@ -11,7 +11,7 @@ namespace INVUIs.Purchases.PurchaseModels
         public DateOnly Date { set; get; }
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "Please select an article.")]
+        // [Required(ErrorMessage = "Please select an article.")]
         public string selectedArticle { get; set; }
 
         public int ArticleCode { get; set; }
@@ -22,8 +22,8 @@ namespace INVUIs.Purchases.PurchaseModels
 
         public string title_chapter { get; set; }
 
-        [Required(ErrorMessage = "Please select a chapter.")]
-        public string selectedChapter { get; set; }
+        ///[Required(ErrorMessage = "Please select a chapter.")]
+        //public string selectedChapter { get; set; }
 
         [Required(ErrorMessage = "Please select a budget category.")]
         public BudgeType selectedCategory { get; set; }

@@ -26,7 +26,7 @@
                             @if (purchaseModel.Status == PurchaseStatus.Editing)
                             {
                                 <RadzenButton Click="showConformation" Text=@Localizer["Validated"]
-                                              Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
+                                              Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
                                 <RadzenButton Click="Edit" Text=@Localizer["Edit"] Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
 
 

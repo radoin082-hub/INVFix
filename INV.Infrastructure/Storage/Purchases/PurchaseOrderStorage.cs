@@ -102,6 +102,14 @@ namespace INV.Infrastructure.Storage.Purchases
                                                         GROUP BY s.Status
                                                         ORDER BY s.Status;";
 
+        private const string selectnewnumberPurchaseOrder = @"SELECT MAX(CAST([Number] AS BIGINT)) + 1 AS NextNumber
+FROM [INV].[purchase].[ORDERS]
+WHERE ISNUMERIC([Number]) = 1;";
+
+        private const string setNumberPurchaseOrder = @" UPDATE [INV].[purchase].[ORDERS]
+SET [Number] = @aNumber
+WHERE [Id] = @aId;";
+
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
             await using var sqlConnection = new SqlConnection(_connectionString);
@@ -122,7 +130,7 @@ namespace INV.Infrastructure.Storage.Purchases
             await sqlConnection.OpenAsync();
 
             cmd.Parameters.AddWithValue("@aId", purchaseOrder.Id);
-            cmd.Parameters.AddWithValue("@aNumber", "1"); //purchaseOrder.Number);
+            cmd.Parameters.AddWithValue("@aNumber", "Wait"); //purchaseOrder.Number);
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
             cmd.Parameters.AddWithValue("@aBudgetChapter", purchaseOrder.BudgetChapter);
@@ -387,6 +395,27 @@ namespace INV.Infrastructure.Storage.Purchases
             }
 
             return result;
+        }
+
+        public async ValueTask<long> SelectNextPurchaseOrderNumberAsync()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            await sqlConnection.OpenAsync();
+            using var cmd = new SqlCommand(selectnewnumberPurchaseOrder, sqlConnection);
+
+            var result = await cmd.ExecuteScalarAsync();
+            return Convert.ToInt64(result);
+        }
+
+        public async ValueTask<long> SetPurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber)
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            await sqlConnection.OpenAsync();
+            using var cmd = new SqlCommand(setNumberPurchaseOrder, sqlConnection);
+            cmd.Parameters.AddWithValue("@aNumber", newNumber.ToString());
+            cmd.Parameters.AddWithValue("@aId", purchaseOrderId);
+
+            return await cmd.ExecuteNonQueryAsync();
         }
     }
 }

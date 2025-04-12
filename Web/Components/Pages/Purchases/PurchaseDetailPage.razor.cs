@@ -187,6 +187,8 @@ namespace INV.Web.Components.Pages.Purchases
         private async Task ConfirmDeleteProduct()
         {
             await purchaseOrderService.DecisionCF(purchaseModel.Id, PurchaseStatus.Validated, null, null, null);
+            var numberPurchase = await purchaseOrderService.GetNextPurchaseOrderNumberAsync();
+            await purchaseOrderService.UpdatePurchaseOrderNumberAsync(purchaseModel.Id, numberPurchase);
             conformationForm.hide();
             Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
             await myAlert.ShowToast(succesMessage, Localizer["Purchase.Validated"], MyAlertType.success);
