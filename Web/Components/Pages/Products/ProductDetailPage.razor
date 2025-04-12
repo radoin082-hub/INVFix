@@ -61,6 +61,8 @@
                             </RadzenDataGridColumn>
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"] />
                         </Columns>
+                        <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
+
                     </RadzenDataGrid>
                 </RadzenTabsItem>
             </Tabs>

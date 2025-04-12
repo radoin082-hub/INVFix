@@ -342,4 +342,10 @@
   <data name="Motif" xml:space="preserve">
     <value>Motif</value>
   </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Livraison</value>
+  </data>
+  <data name="NothingDisplay" xml:space="preserve">
+    <value> 🛈 Rien à afficher</value>
+  </data>
 </root>

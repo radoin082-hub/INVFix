@@ -315,4 +315,10 @@
   <data name="Purchase.Created" xml:space="preserve">
     <value />
   </data>
+  <data name="Delivery" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value />
+  </data>
 </root>

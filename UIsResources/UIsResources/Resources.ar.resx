@@ -342,4 +342,10 @@
   <data name="Motif" xml:space="preserve">
     <value>سبب</value>
   </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>التوصيل </value>
+  </data>
+  <data name="NothingDisplay" xml:space="preserve">
+    <value>  🛈 لا يوجد بيانات للعرض</value>
+  </data>
 </root>

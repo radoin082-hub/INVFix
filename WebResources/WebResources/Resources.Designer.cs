@@ -117,6 +117,15 @@ namespace WebResources.WebResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string Delivery {
+            get {
+                return ResourceManager.GetString("Delivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Delivery_Date {
             get {
                 return ResourceManager.GetString("Delivery.Date", resourceCulture);
@@ -507,6 +516,15 @@ namespace WebResources.WebResources {
         public static string Reports {
             get {
                 return ResourceManager.GetString("Reports", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         

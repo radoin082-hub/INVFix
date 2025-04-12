@@ -297,6 +297,15 @@ namespace UIsResources.UIsResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
+        public static string NothingDisplay {
+            get {
+                return ResourceManager.GetString("NothingDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à .
+        /// </summary>
         public static string Number {
             get {
                 return ResourceManager.GetString("Number", resourceCulture);
@@ -423,15 +432,6 @@ namespace UIsResources.UIsResources {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à .
         /// </summary>
-        public static string Products_Search {
-            get {
-                return ResourceManager.GetString("Products.Search", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
-        /// </summary>
         public static string Purchase {
             get {
                 return ResourceManager.GetString("Purchase", resourceCulture);
@@ -516,15 +516,6 @@ namespace UIsResources.UIsResources {
         public static string Received {
             get {
                 return ResourceManager.GetString("Received", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
-        /// </summary>
-        public static string Receptions_Search {
-            get {
-                return ResourceManager.GetString("Receptions.Search", resourceCulture);
             }
         }
         
@@ -687,15 +678,6 @@ namespace UIsResources.UIsResources {
         public static string Suppliers_DeleteMessage {
             get {
                 return ResourceManager.GetString("Suppliers.DeleteMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à .
-        /// </summary>
-        public static string Suppliers_Search {
-            get {
-                return ResourceManager.GetString("Suppliers.Search", resourceCulture);
             }
         }
         

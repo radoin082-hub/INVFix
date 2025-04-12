@@ -4,75 +4,56 @@
 <div class="top-row ps-3 navbar navbar-dark" style="background-color:#257180 ">
     <div class="container-fluid d-flex align-items-center">
         <img src="Images/logo1.png" alt="Logo" style="width: 100px;margin-left: 30px;" />
-        <span class="ms-auto" style="font-weight: normal; font-size: 0.9em; color: #FD8B51;">Manage your inventory online</span>
+        <span class="ms-auto" style="font-weight: normal; font-size: 0.8em; color: #FD8B51;">Manage your inventory online</span>
     </div>
 </div>
 
 <input type="checkbox" class="navbar-toggler" id="navbar-toggler" />
-<div class="nav-scrollable" style="background-color:#257180">
-    <nav class="flex-column" aria-expanded="false">
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="/" Match="NavLinkMatch.All">
-                <span class="bi bi-columns-gap me-3" aria-hidden="true"></span> @localizer["Dashboard"]
-            </NavLink>
-        </div>
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="products">
-                <span class="bi bi-box-seam me-3" aria-hidden="true"></span> @localizer["Products"]
-            </NavLink>
-        </div>
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="suppliers">
-                <span class="bi bi-truck me-3" aria-hidden="true"></span> @localizer["Suppliers"]
-            </NavLink>
-        </div>
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="purchases">
-                <span class="bi bi-cart-check me-3" aria-hidden="true"></span>  @localizer["Purchases"]
-            </NavLink>
+    <div class="nav-scrollable" style="background-color:#257180; height: calc(100vh - 56px); overflow-y: auto;">
+
+    <div class="d-flex flex-column h-100">
+        <nav class="flex-column">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="/" Match="NavLinkMatch.All">
+                    <span class="bi bi-columns-gap me-3" aria-hidden="true"></span> @localizer["Dashboard"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="products">
+                    <span class="bi bi-box-seam me-3" aria-hidden="true"></span> @localizer["Products"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="suppliers">
+                    <span class="bi bi-truck me-3" aria-hidden="true"></span> @localizer["Suppliers"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="purchases">
+                    <span class="bi bi-cart-check me-3" aria-hidden="true"></span> @localizer["Purchases"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="receptions">
+                    <span class="bi bi-clipboard-check me-3" aria-hidden="true"></span> @localizer["Receptions"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-4">
+                <NavLink class="nav-link d-flex align-items-center" href="reports">
+                    <span class="bi bi-graph-up me-3" aria-hidden="true"></span> @localizer["Reports"]
+                </NavLink>
+            </div>
+        </nav>
+        <hr class="my-3 mt-auto" style="border-color: #fefefe;" />
+        <div class="nav-item px-4  mb-3">
+                <NavLink class="nav-link d-flex align-items-center" href="logout">
+                    <span class="bi bi-box-arrow-right me-3" aria-hidden="true"></span> @localizer["Disconnect"]
+                </NavLink>
+            </div>
         </div>
 
-        @*  <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="inventory" style="color: white;">
-                <span class="bi bi-archive me-3" aria-hidden="true"></span> Inventory
-            </NavLink>
-        </div>
-
-
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="toast" style="color: white;">
-                <span class="bi bi-bell me-3" aria-hidden="true"></span> Toast
-            </NavLink>
-        </div>
-
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="categories" style="color: white;">
-                <span class="bi bi-tags me-3" aria-hidden="true"></span> Categories
-            </NavLink>
-        </div>
-
-
-        *@
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="receptions">
-                <span class="bi bi-clipboard-check me-3" aria-hidden="true"></span>  @localizer["Receptions"]
-            </NavLink>
-        </div>
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="reports">
-                <span class="bi bi-graph-up me-3" aria-hidden="true"></span>  @localizer["Reports"]
-            </NavLink>
-        </div>
-        <div class="nav-item px-4">
-            <NavLink class="nav-link d-flex align-items-center" href="logout">
-                <span class="bi bi-door-closed me-3" aria-hidden="true"></span>  @localizer["Disconnect"]
-            </NavLink>
-        </div>
-
-
-    </nav>
 </div>

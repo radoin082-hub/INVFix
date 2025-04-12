@@ -8,7 +8,7 @@
 <div class="search-zone">
     <div style="width:35%">
         <input type="text" @bind="searchTerm" placeholder=@Localizer["Search"] class="number-input" @bind:event="oninput" />
-    </div>
+    </div> 
     <div>
         <button class="addsupplier-button" @onclick="() => productForm?.ShowModal()">
             <i class="bi bi-cart-plus"></i> @Localizer["Product.AddButton"]
@@ -40,7 +40,10 @@ else
                         </RadzenButton>
                     </Template>
                 </RadzenDataGridColumn>
-            </Columns>
+            </Columns>    
+            <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
+
+
         </RadzenDataGrid>
     </div>
 }

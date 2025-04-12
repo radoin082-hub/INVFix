@@ -120,6 +120,9 @@
   <data name="Dashboard" xml:space="preserve">
     <value>لوحة التحكم</value>
   </data>
+  <data name="Dashboard.Text.Labels" xml:space="preserve">
+    <value>عرض تسميات البيانات</value>
+  </data>
   <data name="Dashboard.Title" xml:space="preserve">
     <value>لوحة التحكم</value>
   </data>
@@ -285,9 +288,6 @@
   <data name="Visaed" xml:space="preserve">
     <value>مؤشّر</value>
   </data>
-  <data name="Dashboard.Text.Labels" xml:space="preserve">
-    <value>عرض تسميات البيانات</value>
-  </data>
   <data name="Date" xml:space="preserve">
     <value>التاريخ </value>
   </data>
@@ -317,5 +317,8 @@
   </data>
   <data name="Delivery" xml:space="preserve">
     <value>التوصيل </value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>البحث...</value>
   </data>
 </root>

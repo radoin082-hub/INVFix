@@ -171,9 +171,6 @@
   <data name="Address" xml:space="preserve">
     <value />
   </data>
-  <data name="Delivery" xml:space="preserve">
-    <value />
-  </data>
   <data name="BudgetType" xml:space="preserve">
     <value />
   </data>
@@ -297,9 +294,6 @@
   <data name="Days" xml:space="preserve">
     <value />
   </data>
-  <data name="Suppliers.Search" xml:space="preserve">
-    <value />
-  </data>
   <data name="YES" xml:space="preserve">
     <value />
   </data>
@@ -316,9 +310,6 @@
     <value />
   </data>
   <data name="Product.Edit" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Products.Search" xml:space="preserve">
     <value />
   </data>
   <data name="Product.Deleted" xml:space="preserve">
@@ -348,10 +339,13 @@
   <data name="Search" xml:space="preserve">
     <value />
   </data>
-  <data name="Receptions.Search" xml:space="preserve">
+  <data name="Motif" xml:space="preserve">
     <value />
   </data>
-  <data name="Motif" xml:space="preserve">
+  <data name="Delivery" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NothingDisplay" xml:space="preserve">
     <value />
   </data>
 </root>

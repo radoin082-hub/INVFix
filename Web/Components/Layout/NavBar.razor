@@ -1,15 +1,29 @@
-﻿<div class="mynavbar">
+﻿@inject IStringLocalizer<Resources> localizer
+@inject IStringLocalizer<Resources> localizer
+@{
+    string userName = "Ali Sriti";  
+    string userInitial = userName.Length > 0 ? userName[0].ToString() : "";  
+}
+
+
+<div class="mynavbar">
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search..." />
-        <button class="search-button">🔍</button>
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" class="search-input" placeholder=@localizer["Search"] />
+
     </div>
 
     <div class="icons-container">
         <CultureSelector/>
-    <button class="theme-toggle">🌙</button>
+        <button class="theme-toggle" style="color: black;">
+            <i class="bi bi-brightness-high"></i>
+        </button>
 
         <div class="notification-container">
-            <button class="notification-button">🔔<span class="notification-badge">3</span></button>
+            <button class="notification-button" style="color: black;">
+                <i class="bi bi-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
             <div class="notification-dropdown">
                 <p>Alert 1: Update available</p>
                 <p>Alert 2: New reception added</p>
@@ -17,200 +31,18 @@
             </div>
         </div>
     <div class="user-profile">
-        <i class="fa-solid fa-user user-icon"></i>
+            <span class="user-initials">@userInitial</span> 
             <span class="user-name">Ali Sriti</span>
             <div class="user-dropdown">
                 <p>👤 My Profile</p>
                 <p>⚙️ Settings</p>
                 <p>🚪 Log Out</p>
             </div>
+
+            </div>
+        </div>
     </div>
-    </div>
-</div>
-
-<style>
-    body {
-        transition: background 0.3s, color 0.3s;
-    }
-
-    .dark-mode {
-        background-color: #222;
-        color: white;
-    }
-
-    .mynavbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        padding: 8px 14px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .dark-mode .mynavbar {
-        background-color: #333;
-    }
-
-    .search-container {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .search-input {
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        outline: none;
-        transition: all 0.3s ease;
-    }
-
-    .dark-mode .search-input {
-        background-color: #444;
-        color: white;
-        border-color: #777;
-    }
-
-    .search-button {
-        background: #ffb200;
-        border: none;
-        padding: 7px 8px;
-        cursor: pointer;
-        border-radius: 6px;
-        color: white;
-        font-size: 16px;
-        transition: background 0.3s ease;
-    }
-
-    .search-button:hover {
-        background: #e09b00;
-    }
-
-    .icons-container {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-left: auto;
-    }
-
-    .theme-toggle {
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-        transform: rotate(20deg);
-    }
-
-    .notification-container {
-        position: relative;
-    }
-
-    .notification-button {
-        background: none;
-        border: none;
-        font-size: 20px;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .notification-badge {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: red;
-        color: white;
-        font-size: 12px;
-        border-radius: 50%;
-        padding: 3px 6px;
-    }
-
-    .notification-dropdown {
-        display: none;
-        position: absolute;
-        top: 30px;
-        right: 0;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        width: 200px;
-    }
-
-    .dark-mode .notification-dropdown {
-        background: #333;
-        color: white;
-        border-color: #555;
-    }
-
-    .notification-container:hover .notification-dropdown {
-        display: block;
-    }
-
-    .user-profile {
-        position: relative;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        gap: 8px;
-    }
-
-    .user-name {
-        font-size: 16px;
-        font-weight: bold;
-        color: #333;
-    }
-
-    .user-icon {
-        font-size: 24px;
-        color: #ffb200;
-        padding: 8px;
-        border-radius: 50%;
-        background: #f3f3f3;
-    }
-
-    .dark-mode .user-name {
-        color: white;
-    }
-    .dark-mode .user-icon {
-        background: #444;
-        color: white;
-    }
-
-    .user-dropdown {
-        display: none;
-        position: absolute;
-        top: 40px;
-        right: 0;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        width: 150px;
-    }
-
-    .dark-mode .user-dropdown {
-        background: #333;
-        color: white;
-        border-color: #555;
-    }
-
-    .user-profile:hover .user-dropdown {
-        display: block;
-    }
 
 
-</style>
 
-<script>
-    document.querySelector(".theme-toggle").addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-</script>
+
