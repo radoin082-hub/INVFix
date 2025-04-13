@@ -20,18 +20,15 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-
 .bi[b-7831hfb3uy] {
     display: inline-block;
     position: relative;
     width: 1.25rem;
     height: 1.25rem;
     margin-right: 0.75rem;
-    top: -1px;
     background-size: cover;
     transition: transform 0.2s;
 }
-
 
 [dir="rtl"] .bi[b-7831hfb3uy] {
     margin-left: 0.75rem;
@@ -42,7 +39,8 @@
 }
 
 .nav-item[b-7831hfb3uy] {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
 }
 
     .nav-item[b-7831hfb3uy]  .nav-link {
@@ -69,6 +67,7 @@
 
 .nav-scrollable[b-7831hfb3uy] {
     display: none;
+    background-color: #1e5b67 !important;
 }
 
 .navbar-toggler:checked ~ .nav-scrollable[b-7831hfb3uy] {

@@ -1,0 +1,24 @@
+﻿.dashboard-part1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width:100%;
+}
+
+.dashboard-part2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.graph-1, .graph-2 {
+    width:100%;
+    border-radius: 8px;
+    background-color: rgb(255 255 255);
+    border: 1px solid rgb(0 0 0 / .06);
+}
+
+    .graph-1:hover, .graph-2:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }

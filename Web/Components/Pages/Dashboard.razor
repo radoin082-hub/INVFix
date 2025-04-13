@@ -9,84 +9,60 @@
 <PageHeader Title=@Localizer["Dashboard.Title"] SubTitle=@Localizer["Dashboard.SubTitle"] />
 
 <div class="dashboard-part1">
-    <DashboardCardInfo Title=@Localizer["Products"] IconSrc="bi bi-box-seam" Count="@productCount" />
-    <DashboardCardInfo Title=@Localizer["Suppliers"] IconSrc="bi bi-person" Count="@supplierCount" />
-    <DashboardCardInfo Title=@Localizer["Purchases"] IconSrc="bi bi-cart-check" Count="@purchaseCount" />
-    <DashboardCardInfo Title=@Localizer["Receptions"] IconSrc="bi bi-clipboard-check" Count="@receptionCount" />
+    <DashboardCardInfo Title=@Localizer["Products"] IconSrc="bi bi-box-seam" Count="@productCount" style="product" />
+    <DashboardCardInfo Title=@Localizer["Suppliers"] IconSrc="bi bi-person" Count="@supplierCount" style="supplier"/>
+    <DashboardCardInfo Title=@Localizer["Purchases"] IconSrc="bi bi-cart-check" Count="@purchaseCount" style="purchase"/>
+    <DashboardCardInfo Title=@Localizer["Receptions"] IconSrc="bi bi-clipboard-check" Count="@receptionCount" style="reception"/>
 </div>
 
 <div class="dashboard-part2 mt-3">
     <div class="graph-1">
-        <RadzenCard Variant="Variant.Outlined" Style="width: 90%;">
-            <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="AlignItems.Center">
-                <h4>@Localizer["Purchase.Status"]</h4>
-                <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
-
-                <RadzenStack AlignItems="AlignItems.End" Gap="0.5rem" Style="flex-direction:row !important">
-                    <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
-                </RadzenStack>
-
-
-                <RadzenStack Style="width: 100%; max-width: 600px;">
-                    <RadzenChart SeriesClick=@OnSeriesClick>
+        <div class="chart-card">
+            <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="AlignItems.Center" Style="padding:1rem !important">
+                <div style="width:100%;display:flex;align-items:flex-end;justify-content: space-between;">
+                    <h4 style="font-size:1.2rem;font-weight:500;">@Localizer["Purchase.Status"]</h4>
+                    <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
+                </div>
+                <RadzenStack Style="width: 100%;">
+                    <RadzenChart SeriesClick=@OnSeriesClick Style="height:30vh;">
                         <RadzenPieSeries Data="@revenue" Title="Revenue" CategoryProperty="Quarter" ValueProperty="Revenue" Fills="@(new string[] {"#EF4444", "#F59E0B",  "#10B981", "#3B82F6" })">
                             <RadzenSeriesDataLabels Visible="@showDataLabels" />
                         </RadzenPieSeries>
                     </RadzenChart>
                 </RadzenStack>
-            </RadzenStack>
-        </RadzenCard>
 
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Stretch" Gap="0.5rem" Style="flex-direction:row !important;">
+                <RadzenCheckBox @bind-Value="@showDataLabels" Name="dataLabels"></RadzenCheckBox>
+                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" Style="color: rgb(107 114 128); font-weight:500;" />
+            </RadzenStack>
+            </RadzenStack>
+
+        </div>
     </div>
 
     <div class="graph-2">
-        @*  <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12">
-            <RadzenCard Variant="Variant.Outlined">
 
+        <div class="chart-card">
+            <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="AlignItems.Center" Style="padding:1rem !important;">
+                <div style="width:100%;display:flex;align-items:flex-end;justify-content: space-between;">
+                    <h4 style="font-size:1.2rem;font-weight:500;">@Localizer["Reception.Status"]</h4>
+                    <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
+                </div>
 
-                <RadzenRow>
-                    <RadzenColumn Size="12">
-                        <h4>@Localizer["Reception.Status"]</h4>
-                        <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
-                        <RadzenChart>
-                            <RadzenColumnSeries Data="@revenue2"
-                            CategoryProperty="Quarter2"
-                            ValueProperty="Revenue2"
-                                                Fills="@(new string[] { "#4ade80", "#3B82F6" })">
-                            </RadzenColumnSeries>
-
-                            <RadzenValueAxis Formatter="@FormatAsUSD" Min="0">
-                                <RadzenGridLines Visible="true" />      
-                                <RadzenLegend Visible="false"/>
-                            </RadzenValueAxis>
-                        </RadzenChart>
-                    </RadzenColumn>
-                </RadzenRow>
-            </RadzenCard>
-        </RadzenStack> *@
-        <RadzenCard Variant="Variant.Outlined" Style="width: 100%;">
-            <RadzenStack class="rz-p-0 rz-p-md-6 rz-p-lg-12" AlignItems="AlignItems.Center">
-                <h4>@Localizer["Reception.Status"]</h4>
-                <h6 style="text-align:center; color:gray">  @Localizer["Year"]: @currentYear  </h6>
-
-                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Start" Gap="0.5rem" Style="flex-direction:row !important">
-                  
-               <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
-                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" />
-                </RadzenStack>
-
-
-                <RadzenStack Style="width: 100%; max-width: 600px;">
-                    <RadzenChart SeriesClick=@OnSeriesClick>
+                <RadzenStack Style="width: 100%;">
+                    <RadzenChart SeriesClick=@OnSeriesClick Style="height:30vh;">
                         <RadzenPieSeries Data="@revenue2" Title="Revenue2" CategoryProperty="Quarter2" ValueProperty="Revenue2" Fills="@(new string[] { "#10B981", "#F59E0B" })">
                             <RadzenSeriesDataLabels Visible="@showDataLabels2" />
                         </RadzenPieSeries>
                     </RadzenChart>
                 </RadzenStack>
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Stretch" Gap="0.5rem" Style="flex-direction:row !important;">
+                    <RadzenCheckBox @bind-Value="@showDataLabels2" Name="dataLabels"></RadzenCheckBox>
+                    <RadzenLabel Text=@Localizer["Dashboard.Text.Labels"] Component="dataLabels" Style="color: rgb(107 114 128); font-weight:400;" />
+                </RadzenStack>
             </RadzenStack>
-            <EventConsole @ref=@console />
-        </RadzenCard>
+     @*        <EventConsole @ref=@console /> *@
+        </div>
     </div>
 </div>
 

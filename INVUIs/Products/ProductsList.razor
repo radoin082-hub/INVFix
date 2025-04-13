@@ -33,7 +33,7 @@ else
                 <RadzenDataGridColumn TItem="ProductInfo" Property="Designation" Title=@Localizer["Designation"] Width="300px" />
                 <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.Quantity)" Title=@Localizer["Quantity"] Width="100px" />
                 <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.UnitMeasure)" Title=@Localizer["UnitMeasure"] Width="80px" Sortable="false" Filterable="false" />
-                <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" />
+                <RadzenDataGridColumn TItem="ProductInfo" Property="@nameof(ProductInfo.WareHouse)" Title=@Localizer["Warehouse"] Width="200px" Filterable="false" />
 
                 <RadzenDataGridColumn TItem="ProductInfo" Sortable="false" Filterable="false" Width="70px">
                     <Template Context="product">

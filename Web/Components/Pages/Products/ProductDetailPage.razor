@@ -49,7 +49,8 @@
         <RadzenTabs>
             <Tabs>
                 <RadzenTabsItem Text=@Localizer["Receptions"]>
-                    <RadzenDataGrid Data="@product.ReceiptInfos" TItem="ReceiptInfo">
+                    <RadzenDataGrid Data="@product.ReceiptInfos" TItem="ReceiptInfo"
+                                    PageSize="4" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
                         <Columns>
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Number" Title=@Localizer["Number"] />
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title=@Localizer["Date"] />
@@ -59,7 +60,12 @@
                                     N° @(reception.DeliveryNumber) - @(reception.DeliveryDate == default ? string.Empty : reception.DeliveryDate)
                                 </Template>
                             </RadzenDataGridColumn>
-                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"] />
+                          @*   <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"] /> *@
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Status" Title=@Localizer["Status"]>
+                                <Template Context="reception">
+                                    <ReceptionStatusComponent Text="false" Icon="true" ReceptionStatus="@reception.Status" />
+                                </Template>
+                            </RadzenDataGridColumn>
                         </Columns>
                         <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
 

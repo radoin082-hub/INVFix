@@ -20,7 +20,6 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-
 .bi {
     display: inline-block;
     position: relative;
@@ -31,7 +30,6 @@
     transition: transform 0.2s;
 }
 
-
 [dir="rtl"] .bi {
     margin-left: 0.75rem;
 }
@@ -41,7 +39,8 @@
 }
 
 .nav-item {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
 }
 
     .nav-item ::deep .nav-link {
@@ -68,6 +67,7 @@
 
 .nav-scrollable {
     display: none;
+    background-color: #1e5b67 !important;
 }
 
 .navbar-toggler:checked ~ .nav-scrollable {

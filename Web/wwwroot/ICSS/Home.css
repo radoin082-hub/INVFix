@@ -1,13 +1,1 @@
-﻿.dashboard-part1 {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.dashboard-part2 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.graph-1 , .graph-2{
-    width:50%;
-}
+﻿
