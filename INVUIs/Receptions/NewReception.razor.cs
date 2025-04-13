@@ -33,6 +33,7 @@ namespace INVUIs.Receptions
             {
                 if (ReceiptInfo.Status == ReceiptStatus.validated)
                 {
+                    isValidated = true;
                     cancelEditing();
                     restVisibility = false;
                 }
