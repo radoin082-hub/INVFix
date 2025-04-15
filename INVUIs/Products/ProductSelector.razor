@@ -6,7 +6,7 @@
 {
     <MyModal>
         <Pills>
-            <RadzenTemplateForm TItem="PurchaseProductModel" Data="@selectedProductModel" Submit="@onSelectClicked">
+            <RadzenTemplateForm TItem="PurchaseProductModel" Data="@selectedProductModel" Submit="@onSelectClicked" Style="min-width: 300px;">
                 <RadzenStack Gap="1rem">
                     @if (!isProductSelected && (SelectedProductId == null || SelectedProductId == Guid.Empty))
                     {
@@ -67,13 +67,16 @@
                     }
                     <RadzenRow Style="display: flex; justify-content: flex-end;">
                         <RadzenColumn Size="12" Style="text-align: right;">
+                            <div class="footer-form">
+                                <RadzenButton Text=@Localizer["Cancel"] ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button"
+                                              Click="@HideModal" Style="font-size: 14px;" />
+                                <RadzenButton Text=@Localizer["Select"] ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;"
+                                              Disabled="@(selectedProductModel == null)"
+                                              Click="@Save" />
+                                
 
-                            <RadzenButton Text=@Localizer["Select"] ButtonStyle="ButtonStyle.Success" ButtonType="ButtonType.Submit" Style="margin-left: 1rem; font-size: 14px;"
-                                          Disabled="@(selectedProductModel == null)"
-                                          Click="@Save" />
-                            <RadzenButton Text=@Localizer["Cancel"] ButtonStyle="@ButtonStyle.Danger" ButtonType="ButtonType.Button"
-                                          Click="@HideModal" Style="font-size: 14px;" />
-                        </RadzenColumn>
+                            </div>
+                                   </RadzenColumn>
                     </RadzenRow>
                 </RadzenStack>
             </RadzenTemplateForm>

@@ -15,6 +15,7 @@ namespace INV.App.Suppliers
 
         ValueTask<Result> RemoveSupplierById(Guid id);
 
+        ValueTask<bool> GetPurchaseCountBySupplierId(Guid supplierId);
         ValueTask<int> GetSupplierCountAsync();
     }
 }

@@ -51,7 +51,7 @@
 
                 <RadzenStack Style="width: 100%;">
                     <RadzenChart SeriesClick=@OnSeriesClick Style="height:30vh;">
-                        <RadzenPieSeries Data="@revenue2" Title="Revenue2" CategoryProperty="Quarter2" ValueProperty="Revenue2" Fills="@(new string[] { "#10B981", "#F59E0B" })">
+                        <RadzenPieSeries Data="@revenue2" Title="Revenue2" CategoryProperty="Quarter2" ValueProperty="Revenue2" Fills="@(new string[] { "#F59E0B", "#10B981" })">
                             <RadzenSeriesDataLabels Visible="@showDataLabels2" />
                         </RadzenPieSeries>
                     </RadzenChart>
@@ -114,8 +114,8 @@
     };
 
         revenue2 = new DataItem[] {
-            new DataItem { Quarter2 = @Localizer["Validated"], Revenue2 = listReceptionStatus[0] },
-            new DataItem { Quarter2 = @Localizer["Editing"], Revenue2 = listReceptionStatus[1] }
+            new DataItem { Quarter2 = @Localizer["Editing"], Revenue2 = listReceptionStatus[0] },
+            new DataItem { Quarter2 = @Localizer["Validated"], Revenue2 = listReceptionStatus[1] }
     };
     }
 

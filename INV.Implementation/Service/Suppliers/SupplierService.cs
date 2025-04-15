@@ -107,6 +107,18 @@ namespace INV.Implementation.Service.Suppliers
                 return Error.Exception(e);
             }
         }
+        public async ValueTask<bool> GetPurchaseCountBySupplierId(Guid supplierId)
+        {
+            try
+            {
+                return await supplierStorage.SelectPurchaseCountBySupplierId(supplierId);
+            }
+            catch (Exception e)
+            {
+                // Handle exception or log it as needed
+                throw new Exception("An error occurred while checking purchase count.", e);
+            }
+        }
 
         public async ValueTask<int> GetSupplierCountAsync()
         {

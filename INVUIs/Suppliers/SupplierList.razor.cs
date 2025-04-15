@@ -101,10 +101,9 @@ namespace INVUIs.Suppliers
         private async Task DeleteSupplier(SupplierInfo Suppliers)
         {
             supplierId = Suppliers.ID;
-            var result = await supplierService.RemoveSupplierById(supplierId);
-            if (result.IsFailure)
+            var result = await supplierService.GetPurchaseCountBySupplierId(supplierId);
+            if (result)
             {
-                errorMessage = result.Error.Description;
                 await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
             }
             else
@@ -131,9 +130,7 @@ namespace INVUIs.Suppliers
                     supplierFilter.Remove(supplierToRemove);
                     await grid.Reload();
                     await myAlert.ShowAlert(Localizer["DeleteSuccessfully"], Localizer["Supplier.Deleted"], MyAlertType.success);
-
                 }
-
 
                 StateHasChanged();
             }
