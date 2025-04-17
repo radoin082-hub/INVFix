@@ -1,17 +1,10 @@
-﻿@inject IStringLocalizer<Resources> localizer
-@inject IStringLocalizer<Resources> localizer
-@{
+﻿@{
     string userName = "Ali Sriti";  
     string userInitial = userName.Length > 0 ? userName[0].ToString() : "";  
 }
 
 
 <div class="mynavbar">
-    <div class="search-container">
-        <i class="bi bi-search search-icon"></i>
-        <input type="text" class="search-input" placeholder=@localizer["Search"] />
-
-    </div>
 
     <div class="icons-container">
         <CultureSelector/>

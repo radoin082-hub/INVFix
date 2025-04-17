@@ -45,7 +45,7 @@ else
 
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="150px">
                     <Template Context="reception">
-                        <ReceptionStatusComponent Text="false" Icon="true" ReceptionStatus="@reception.Status" />
+                        <ReceptionStatusComponent Text="true" Icon="true" ReceptionStatus="@reception.Status" />
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>

@@ -6,7 +6,7 @@
 
 <ReceptionList Receptions=@receipts>
 	<Pills>
-		<button type="button" class="addsupplier-button" @onclick="() => purchaseSelector.ShowModal()"><i class="bi bi-person-plus"></i> @Localizer["Receptions.SelectPurchase"]</button>
+		<button type="button" class="addsupplier-button" @onclick="() => purchaseSelector.ShowModal()"><i class="bi bi-clipboard-plus"></i> @Localizer["Receptions.SelectPurchase"]</button>
 		<PurchaseSelector Title=@Localizer["Receptions.SelectPurchase"] Command="purchases" OnSelected="CommandSelectednew" @ref="purchaseSelector" />
 	</Pills>
 </ReceptionList>

@@ -171,6 +171,9 @@
   <data name="Address" xml:space="preserve">
     <value />
   </data>
+  <data name="Supplier.Address.Enter" xml:space="preserve">
+    <value />
+  </data>
   <data name="BudgetType" xml:space="preserve">
     <value />
   </data>
@@ -198,7 +201,19 @@
   <data name="Supplier.Name" xml:space="preserve">
     <value />
   </data>
+  <data name="Supplier.Name.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Supplier.Phone.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Supplier.Email.Enter" xml:space="preserve">
+    <value />
+  </data>
   <data name="Company.Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Company.Name.Enter" xml:space="preserve">
     <value />
   </data>
   <data name="FullName" xml:space="preserve">
@@ -268,6 +283,9 @@
     <value />
   </data>
   <data name="BankAgency" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BankAgency.Enter" xml:space="preserve">
     <value />
   </data>
   <data name="Supplier.Edit" xml:space="preserve">
@@ -355,6 +373,39 @@
     <value />
   </data>
   <data name="Reception.MustValidate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalTTC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ART" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NIS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NIF" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BankAccount" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BankAccount.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RC" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RC.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NIF.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ART.Enter" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NIS.Enter" xml:space="preserve">
     <value />
   </data>
 </root>

@@ -19,20 +19,20 @@
 		</RadzenColumn>
 		<RadzenColumn Size="6">
 			<LabledValue Label=@Localizer["Address"] Value="@Supplier.Address" />
-			<LabledValue Label="RC N°" Value="@Supplier.RC" />
+			<LabledValue Label=@Localizer["RC"] Value="@Supplier.RC" />
 		</RadzenColumn>
 	</RadzenRow>
 	@if (moreInfoVisible)
 		{
 	<RadzenRow>
 		<RadzenColumn Size="6">
-				<LabledValue Label="NIS" Value="@Supplier.NIS" />
-				<LabledValue Label="NIF" Value="@Supplier.NIF" />
-				<LabledValue Label="ART" Value="@Supplier.ART" />
+				<LabledValue Label=@Localizer["NIS"] Value="@Supplier.NIS" />
+				<LabledValue Label=@Localizer["NIF"] Value="@Supplier.NIF" />
+				<LabledValue Label=@Localizer["ART"] Value="@Supplier.ART" />
 
 		</RadzenColumn>
 		<RadzenColumn Size="6">
-				<LabledValue Label="RIB" Value="@Supplier.RIB" />
+				<LabledValue Label=@Localizer["BankAccount"] Value="@Supplier.RIB" />
 				<LabledValue Label=@Localizer["BankAgency"] Value="@Supplier.BankAgency" />
 		</RadzenColumn>
 			

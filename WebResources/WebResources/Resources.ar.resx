@@ -133,37 +133,37 @@
     <value>تسجيل الخروج</value>
   </data>
   <data name="Purchase" xml:space="preserve">
-    <value>الشراء </value>
+    <value>سند الطلب</value>
   </data>
   <data name="Purchase.Status" xml:space="preserve">
-    <value>حالة الشراء </value>
+    <value>حالة سند الطلب</value>
   </data>
   <data name="Reception.Status" xml:space="preserve">
-    <value>حالة الاستلام</value>
+    <value>حالة وصل الاستلام</value>
   </data>
   <data name="Purchase.Details" xml:space="preserve">
-    <value>تفاصيل الشراء </value>
+    <value>تفاصيل سند الطلب</value>
   </data>
   <data name="Purchase.New" xml:space="preserve">
-    <value>شراء جديد</value>
+    <value>سند الطلب جديد</value>
   </data>
   <data name="Purchase.New.Title" xml:space="preserve">
-    <value>أنشئ أمر شراء جديد</value>
+    <value>أنشئ أمر سند الطلب جديد</value>
   </data>
   <data name="Purchases" xml:space="preserve">
-    <value>المشتريات</value>
+    <value>سندات الطلب</value>
   </data>
   <data name="Purchases.Title" xml:space="preserve">
-    <value>قائمة المشتريات</value>
+    <value>قائمة سندات الطلب</value>
   </data>
   <data name="Receptions" xml:space="preserve">
-    <value>الاستلامات </value>
+    <value>وصول الاستلام</value>
   </data>
   <data name="Reception" xml:space="preserve">
-    <value>تفاصيل الاستلام</value>
+    <value>تفاصيل وصل الاستلام</value>
   </data>
   <data name="Reception.Title" xml:space="preserve">
-    <value>تفاصيل الاستلام</value>
+    <value>تفاصيل وصل الاستلام</value>
   </data>
   <data name="Reports" xml:space="preserve">
     <value>التقارير</value>
@@ -187,40 +187,40 @@
     <value> قائمة الموردون</value>
   </data>
   <data name="Products" xml:space="preserve">
-    <value>المنتجات</value>
+    <value>المواد</value>
   </data>
   <data name="Purchase.AddButton" xml:space="preserve">
-    <value>إضافة شراء</value>
+    <value>إضافة سند الطلب</value>
   </data>
   <data name="Products.Title" xml:space="preserve">
-    <value>قائمة المنتجات</value>
+    <value>قائمة المواد</value>
   </data>
   <data name="Receptions.Title" xml:space="preserve">
-    <value>قائمة الاستلامات</value>
+    <value>قائمة وصول الاستلامات</value>
   </data>
   <data name="Products.SubTitle" xml:space="preserve">
-    <value>تتبع وأدر منتجاتك بكفاءة</value>
+    <value>تتبّع المواد وأدرها بكفاءة.</value>
   </data>
   <data name="Receptions.SubTitle" xml:space="preserve">
-    <value>تتبع وأدر استلاماتك بكفاءة</value>
+    <value>تتبّع وصول الاستلام وأدرها بكفاءة.</value>
   </data>
   <data name="Purchases.SubTitle" xml:space="preserve">
-    <value>تتبع وأدر مشترياتك بكفاءة</value>
+    <value> تتبّع سندات الطلب وأدرها بكفاءة.</value>
   </data>
   <data name="Reception.SubTitle" xml:space="preserve">
-    <value> راجع وأدر تفاصيل الاستلام</value>
+    <value> راجع وأدر تفاصيل وصل الاستلام</value>
   </data>
   <data name="Purchase.SubTitle" xml:space="preserve">
-    <value> راجع وأدر تفاصيل الشراء </value>
+    <value> راجع وأدر تفاصيل سند الطلب</value>
   </data>
   <data name="Purchase.Title" xml:space="preserve">
-    <value>تفاصيل الشراء </value>
+    <value>تفاصيل سند الطلب</value>
   </data>
   <data name="Product.Title" xml:space="preserve">
-    <value> تفاصيل المنتج</value>
+    <value> تفاصيل المادة</value>
   </data>
   <data name="Product.Details" xml:space="preserve">
-    <value> تفاصيل المنتج</value>
+    <value> تفاصيل المادة</value>
   </data>
   <data name="Quantity" xml:space="preserve">
     <value>الكمية </value>
@@ -229,7 +229,7 @@
     <value>المخزون </value>
   </data>
   <data name="TVA" xml:space="preserve">
-    <value>TVA</value>
+    <value>القيمة الضريبية</value>
   </data>
   <data name="UnitMeasure" xml:space="preserve">
     <value>وحدة القياس</value>
@@ -253,10 +253,10 @@
     <value>اسم المورد</value>
   </data>
   <data name="Reception.Date" xml:space="preserve">
-    <value>تاريخ الاستلام</value>
+    <value>تاريخ وصل الاستلام</value>
   </data>
   <data name="Reception.Num" xml:space="preserve">
-    <value>رقم الاستلام</value>
+    <value>رقم وصل الاستلام</value>
   </data>
   <data name="Delivery.Date" xml:space="preserve">
     <value> تاريخ التوصيل </value>
@@ -268,10 +268,10 @@
     <value>المتعامل الاقتصادي</value>
   </data>
   <data name="Products.Order" xml:space="preserve">
-    <value>طلب المنتجات</value>
+    <value>طلب المواد</value>
   </data>
   <data name="Receptions.SelectPurchase" xml:space="preserve">
-    <value>اختر عملية شراء للاستلام</value>
+    <value>اختر وصل الاستلام</value>
   </data>
   <data name="Year" xml:space="preserve">
     <value>سنة </value>
@@ -301,19 +301,19 @@
     <value>إرسال</value>
   </data>
   <data name="Purchase.Validate" xml:space="preserve">
-    <value>تأكيد الشراء</value>
+    <value>تأكيد سند الطلب</value>
   </data>
   <data name="Purchase.Validated" xml:space="preserve">
-    <value> تم تأكيد الشراء</value>
+    <value> تم تأكيد سند الطلب</value>
   </data>
   <data name="Purchase.Rejected" xml:space="preserve">
-    <value>تم رفض الشراء</value>
+    <value>تم رفض سند الطلب</value>
   </data>
   <data name="Purchase.ValidateMessage" xml:space="preserve">
-    <value>هل أنت متأكد أنك تريد تأكيد هذا الشراء؟</value>
+    <value>هل أنت متأكد أنك تريد تأكيد هذا سند الطلب؟</value>
   </data>
   <data name="Purchase.Created" xml:space="preserve">
-    <value>تم إنشاء الشراء .</value>
+    <value>تم إنشاء سند الطلب.</value>
   </data>
   <data name="Delivery" xml:space="preserve">
     <value>التوصيل </value>
