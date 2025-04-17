@@ -107,7 +107,6 @@ public partial class ProductSelector : ComponentBase
                         Designation = product.Designation,
                         UnitMeasure = product.UnitMeasure,
                         TVA = product.TVA,
-                        /*     UnitPrice = product.UnitPrice,*/
                         Quantity = product.Quantity
                     };
 

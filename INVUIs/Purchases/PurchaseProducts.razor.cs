@@ -7,7 +7,9 @@ using INVUIs.Products;
 using INVUIs.Products.ProductsModel;
 using INVUIs.Purchases.PurchaseModels;
 using INVUIs.Shared;
+using INVUIs.Shared.MyAlert;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Radzen.Blazor;
 
 namespace INVUIs.Purchases;
@@ -21,6 +23,7 @@ public partial class PurchaseProducts : ComponentBase
     [Parameter] public EventCallback<PurchaseProductModel> OnEditProduct { get; set; }
     [Parameter] public List<PurchaseProductModel> ProductList { get; set; }
     [Inject] private IPurchaseOrderService purchaseOrderService { get; set; }
+    [Inject] private IJSRuntime jsRuntime { set; get; }
     private ConformationForm conformationForm;
     private List<int> TVAOptions = new() { 9, 19 };
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
@@ -29,6 +32,7 @@ public partial class PurchaseProducts : ComponentBase
     private ProductForm productForm = new();
     public ProductSelector productSelector = new();
     private PurchaseProductModel? selectedProductModel = null;
+    private MyAlert? myAlert;
     public ProductModel productModel { get; set; }
 
     private bool showEditPopup = false;
@@ -41,6 +45,11 @@ public partial class PurchaseProducts : ComponentBase
             return true;
         }
         return false;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        myAlert = new MyAlert(jsRuntime);
     }
 
     protected override void OnParametersSet()
@@ -76,7 +85,6 @@ public partial class PurchaseProducts : ComponentBase
 
     private async Task AddProductToGrid(PurchaseProductModel product)
     {
-        // product.Number = products.Count + 1;
         product.TotalPrice = product.Quantity * product.UnitPrice;
         if (PurchaseInfo is not null)
         {
@@ -98,9 +106,17 @@ public partial class PurchaseProducts : ComponentBase
                 UnitPrice = product.UnitPrice,
             };
         }
+        if (product.Quantity < 1 && product.UnitPrice < 1)
+        {
+            await myAlert.ShowToast("Invalid Values", "Quantity and Unit Price must be greater than zero.", MyAlertType.error);
+            productSelector.LoadProducts();
+        }
+        else
+        {
+            products.Add(product);
+            await grid.Reload();
+        }
 
-        products.Add(product);
-        await grid.Reload();
         StateHasChanged();
     }
 
@@ -147,7 +163,7 @@ public partial class PurchaseProducts : ComponentBase
     public async void loadtab()
     {
         var product = products.FirstOrDefault(p => p.Designation == selectedProductModel.Designation);
-        if (product != null)
+        if (product != null && product.Quantity > 0 && product.UnitPrice > 0)
         {
             product.Quantity = selectedProductModel.Quantity;
             product.UnitPrice = selectedProductModel.UnitPrice;

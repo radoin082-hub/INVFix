@@ -66,7 +66,7 @@ namespace INV.Web.Components.Pages.Purchases
                 BudgetType = purchaseModel.selectedCategory,
                 ServiceType = purchaseModel.selectedService,
                 CompletionDelay = int.Parse(purchaseModel.DeliveryTime),
-                Date = DateOnly.FromDateTime(DateTime.Now.Date),
+                Date = purchaseModel.Date,
                 TotalHT = purchaseModel.TotalHT,
                 TotalTVA = purchaseModel.TotalTVA,
                 TotalTTC = purchaseModel.TotalTTC

@@ -104,15 +104,23 @@
                     <div class="commend-input">
                         <div class="label-input-group">
                             <label for="productNumber" class="form-label" style="width: 7.5rem">@Localizer["Delivery.Time"]  </label>
-                            <InputText @bind-Value="Purchase.DeliveryTime" style="width: 6rem" disabled="@canEdit" />
+                            <InputText @bind-Value="Purchase.DeliveryTime" style="width: 7rem" disabled="@canEdit" />
                             <label class="form-label">@Localizer["Days"]</label>
                         </div>
 
+                    
+
+                        
+
 
                     </div>
+                    <div class="commend-input">
+                    <div class="label-input-group">
+                        <label for="productNumber" class="form-label" style="width: 7.5rem">Date of Creation</label>
+                        <InputDate @bind-Value="Purchase.Date" style="width: 7rem" disabled="@canEdit" />
 
-
-
+                    </div>
+                    </div>
                     @if (Purchase.SupplierId == Guid.Empty)
                     {
                         <div style="display: flex; justify-content: flex-end; width: 100%">

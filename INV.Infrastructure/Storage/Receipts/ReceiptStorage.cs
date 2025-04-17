@@ -23,8 +23,8 @@ namespace INV.Infrastructure.Storage.Receipts
         private const string selectReceiptsByPurchaseIdQueryWhenStatus1 = "SELECT * FROM reception.GetList() WHERE PurchaseId = @aPurchaseId and Status=1";
 
         private const string insertReceiptCommand = @"
-            INSERT INTO [reception].[HEADERS] (Id, PurchaseId, Date, DeliveryNumber, DeliveryDate, Status)
-            VALUES (@aId, @aPurchaseId, @aDate, @aDeliveryNumber, @aDeliveryDate, @aStatus)";
+            INSERT INTO [reception].[HEADERS] (Id, PurchaseId, Date, DeliveryNumber, DeliveryDate, Status,Number)
+            VALUES (@aId, @aPurchaseId, @aDate, @aDeliveryNumber, @aDeliveryDate, @aStatus,@aNumber)";
 
         private const string updateReceiptCommand = @"
             UPDATE [reception].[HEADERS]
@@ -160,6 +160,7 @@ WHERE O.SupplierId = @aSupplierId;";
             cmd.Parameters.AddWithValue("@aDeliveryNumber", receipt.DeliveryNumber);
             cmd.Parameters.AddWithValue("@aDeliveryDate", receipt.DeliveryDate);
             cmd.Parameters.AddWithValue("@aStatus", receipt.Status);
+            cmd.Parameters.AddWithValue("@aNumber", "0");
 
             return await cmd.ExecuteNonQueryAsync();
         }

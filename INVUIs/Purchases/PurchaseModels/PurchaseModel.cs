@@ -8,27 +8,29 @@ namespace INVUIs.Purchases.PurchaseModels
     public class PurchaseModel
     {
         public Guid SupplierId { get; set; }
-        public DateOnly Date { set; get; }
+
+        [Required(ErrorMessage = "Please select an DateC.")]
+        public DateOnly Date { set; get; } = DateOnly.FromDateTime(DateTime.Now);
+
         public Guid Id { get; set; }
 
-        // [Required(ErrorMessage = "Please select an article.")]
         public string selectedArticle { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a Article Code.")]
         public int ArticleCode { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a Chapter.")]
         public int ChapterCode { get; set; }
 
         public string description_article { get; set; }
 
         public string title_chapter { get; set; }
 
-        ///[Required(ErrorMessage = "Please select a chapter.")]
-        //public string selectedChapter { get; set; }
-
         [Required(ErrorMessage = "Please select a budget category.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a Category.")]
         public BudgeType selectedCategory { get; set; }
 
-        [Required(ErrorMessage = "Please select a service.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a Service.")]
         public ServiceType selectedService { get; set; }
 
         [Required(ErrorMessage = "Delivery time is required.")]
