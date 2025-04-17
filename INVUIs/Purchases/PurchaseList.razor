@@ -25,7 +25,7 @@ else
             <Columns>
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"]>
                     <Template Context="Purchase">
-                        <PurchaseStatusComponent Text="false" Icon="true" PurchaseStatus="Purchase.Status" />
+                        <PurchaseStatusComponent Text="true" Icon="true" PurchaseStatus="Purchase.Status" />
                     </Template>
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] />

@@ -30,9 +30,6 @@
     transition: transform 0.2s;
 }
 
-[dir="rtl"] .bi {
-    margin-left: 0.75rem;
-}
 
 [dir="rtl"] .bi {
     margin-left: 0.75rem;

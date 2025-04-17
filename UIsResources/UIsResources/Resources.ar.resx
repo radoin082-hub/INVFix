@@ -127,13 +127,13 @@
     <value>إضافة مورد</value>
   </data>
   <data name="Product.AddButton" xml:space="preserve">
-    <value>إضافة منتج</value>
+    <value>إضافة مادة</value>
   </data>
   <data name="Product" xml:space="preserve">
-    <value> المنتج</value>
+    <value>المادة</value>
   </data>
   <data name="Designation" xml:space="preserve">
-    <value>التسمية</value>
+    <value>الوصف </value>
   </data>
   <data name="Loading" xml:space="preserve">
     <value>جارٍ التحميل</value>
@@ -142,13 +142,13 @@
     <value>التاريخ </value>
   </data>
   <data name="Product.DeleteButton" xml:space="preserve">
-    <value>حذف المنتج</value>
+    <value>حذف المادة</value>
   </data>
   <data name="Suppliers.DeleteButton" xml:space="preserve">
     <value>حذف المورد</value>
   </data>
   <data name="Product.DeleteMessage" xml:space="preserve">
-    <value> هل أنت متأكد من أنك تريد حذف هذا المنتج؟</value>
+    <value> هل أنت متأكد من أنك تريد حذف هذه المادة؟</value>
   </data>
   <data name="Suppliers.DeleteMessage" xml:space="preserve">
     <value> هل أنت متأكد من أنك تريد حذف هذا المورد؟</value>
@@ -171,14 +171,17 @@
   <data name="Address" xml:space="preserve">
     <value>العنوان</value>
   </data>
+  <data name="Supplier.Address.Enter" xml:space="preserve">
+    <value>أدخل عنوان المورد </value>
+  </data>
   <data name="BudgetType" xml:space="preserve">
-    <value>الميزانية</value>
+    <value>النفقة</value>
   </data>
   <data name="ServiceType" xml:space="preserve">
-    <value>الخدمة</value>
+    <value>نوع الطلب</value>
   </data>
   <data name="BudgetArticle" xml:space="preserve">
-    <value> بند الميزانية</value>
+    <value>المادة</value>
   </data>
   <data name="MoreInfo" xml:space="preserve">
     <value> المزيد من المعلومات</value>
@@ -190,16 +193,28 @@
     <value>الرقم </value>
   </data>
   <data name="Purchase" xml:space="preserve">
-    <value>الشراء </value>
+    <value>سند الطلب</value>
   </data>
   <data name="Purchase.Number" xml:space="preserve">
-    <value>رقم الشراء  </value>
+    <value>رقم سند الطلب</value>
   </data>
   <data name="Supplier.Name" xml:space="preserve">
     <value>اسم المورد</value>
   </data>
+  <data name="Supplier.Name.Enter" xml:space="preserve">
+    <value> أدخل اسم المورد</value>
+  </data>
+  <data name="Supplier.Phone.Enter" xml:space="preserve">
+    <value> أدخل هاتف المورد</value>
+  </data>
+  <data name="Supplier.Email.Enter" xml:space="preserve">
+    <value> أدخل البريد الإلكتروني للمورد</value>
+  </data>
   <data name="Company.Name" xml:space="preserve">
     <value>اسم الشركة</value>
+  </data>
+  <data name="Company.Name.Enter" xml:space="preserve">
+    <value> أدخل اسم الشركة</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>الاسم الكامل</value>
@@ -247,7 +262,7 @@
     <value>المستودع</value>
   </data>
   <data name="Product.CreateButton" xml:space="preserve">
-    <value>إنشاء منتج</value>
+    <value>إنشاء مادة</value>
   </data>
   <data name="Select" xml:space="preserve">
     <value>اختر</value>
@@ -259,7 +274,7 @@
     <value>أدخل اسم المورد أو بريده الإلكتروني</value>
   </data>
   <data name="Purchase.Selector.Title" xml:space="preserve">
-    <value>اختر عملية شراء</value>
+    <value>اختر سند الطلب</value>
   </data>
   <data name="Rest" xml:space="preserve">
     <value>الباقي </value>
@@ -268,7 +283,10 @@
     <value>الأفعال</value>
   </data>
   <data name="BankAgency" xml:space="preserve">
-    <value>وكالة بنكية</value>
+    <value>الوكالة البنكية</value>
+  </data>
+  <data name="BankAgency.Enter" xml:space="preserve">
+    <value> أدخل الوكالة البنكية</value>
   </data>
   <data name="Supplier.Edit" xml:space="preserve">
     <value>تعديل المورد </value>
@@ -283,16 +301,16 @@
     <value>رقم التأشيرة</value>
   </data>
   <data name="Purchase.Select.Service" xml:space="preserve">
-    <value>اختر خدمة</value>
+    <value>اختر نوع الطلب</value>
   </data>
   <data name="Purchase.Select.Budget" xml:space="preserve">
-    <value>اختر الميزانية</value>
+    <value>اختر النفقة</value>
   </data>
   <data name="Purchase.Choose.Article" xml:space="preserve">
-    <value>اختر مادة</value>
+    <value>اختر المادة</value>
   </data>
   <data name="Purchase.Choose.Chapter" xml:space="preserve">
-    <value> اختر فصلاً</value>
+    <value> اختر الباب</value>
   </data>
   <data name="Days" xml:space="preserve">
     <value>أيام</value>
@@ -316,22 +334,22 @@
     <value>خطأ </value>
   </data>
   <data name="Product.Edit" xml:space="preserve">
-    <value>تعديل منتج</value>
+    <value>تعديل مادة</value>
   </data>
   <data name="Product.Deleted" xml:space="preserve">
-    <value>تم حذف المنتج.</value>
+    <value>تم حذف المادة.</value>
   </data>
   <data name="Product.Edited" xml:space="preserve">
-    <value>تم تعديل المنتج.</value>
+    <value>تم تعديل المادة.</value>
   </data>
   <data name="Product.Created" xml:space="preserve">
-    <value>تم إنشاء المنتج.</value>
+    <value>تم إنشاء المادة.</value>
   </data>
   <data name="Product.Created.Title" xml:space="preserve">
-    <value>تم إنشاء المنتج</value>
+    <value>تم إنشاء المادة</value>
   </data>
   <data name="Product.Edited.Title" xml:space="preserve">
-    <value>تم تعديل المنتج</value>
+    <value>تم تعديل المادة</value>
   </data>
   <data name="Supplier.Deleted" xml:space="preserve">
     <value>تم حذف المورد.</value>
@@ -355,6 +373,39 @@
     <value>  🛈 لا يوجد بيانات للعرض</value>
   </data>
   <data name="Reception.MustValidate" xml:space="preserve">
-    <value>يجب تأكيد الاستلام قبل المغادرة.</value>
+    <value>يجب تأكيد وصل الاستلام قبل المغادرة.</value>
+  </data>
+  <data name="TotalTTC" xml:space="preserve">
+    <value>القيمة الإجمالية</value>
+  </data>
+  <data name="ART" xml:space="preserve">
+    <value>رقم المادة (ART)</value>
+  </data>
+  <data name="NIS" xml:space="preserve">
+    <value> رقم التعريف الإحصائي (NIS)</value>
+  </data>
+  <data name="NIF" xml:space="preserve">
+    <value> رقم التعريف الجبائي (NIF)</value>
+  </data>
+  <data name="BankAccount" xml:space="preserve">
+    <value>كشف الحساب البنكي (RIB)</value>
+  </data>
+  <data name="BankAccount.Enter" xml:space="preserve">
+    <value>أدخل RIB</value>
+  </data>
+  <data name="RC" xml:space="preserve">
+    <value>رقم السجل التجاري (RC) </value>
+  </data>
+  <data name="RC.Enter" xml:space="preserve">
+    <value>أدخل RC</value>
+  </data>
+  <data name="NIF.Enter" xml:space="preserve">
+    <value>أدخل NIF</value>
+  </data>
+  <data name="ART.Enter" xml:space="preserve">
+    <value>أدخل ART</value>
+  </data>
+  <data name="NIS.Enter" xml:space="preserve">
+    <value>أدخل NIS</value>
   </data>
 </root>

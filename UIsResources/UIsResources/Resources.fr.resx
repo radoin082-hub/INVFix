@@ -171,6 +171,9 @@
   <data name="Address" xml:space="preserve">
     <value>Adresse</value>
   </data>
+  <data name="Supplier.Address.Enter" xml:space="preserve">
+    <value>Entrez l'adresse du fournisseur</value>
+  </data>
   <data name="BudgetType" xml:space="preserve">
     <value>Budget</value>
   </data>
@@ -198,8 +201,20 @@
   <data name="Supplier.Name" xml:space="preserve">
     <value>Nom du fournisseur</value>
   </data>
+  <data name="Supplier.Name.Enter" xml:space="preserve">
+    <value>Entrez le nom du fournisseur</value>
+  </data>
+  <data name="Supplier.Phone.Enter" xml:space="preserve">
+    <value>Entrez le téléphone du fournisseur</value>
+  </data>
+  <data name="Supplier.Email.Enter" xml:space="preserve">
+    <value>Entrez l'email du fournisseur</value>
+  </data>
   <data name="Company.Name" xml:space="preserve">
     <value>Nom de l’entreprise</value>
+  </data>
+  <data name="Company.Name.Enter" xml:space="preserve">
+    <value>Entrez le nom de l’entreprise</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Nom complet</value>
@@ -269,6 +284,9 @@
   </data>
   <data name="BankAgency" xml:space="preserve">
     <value>Agence bancaire</value>
+  </data>
+  <data name="BankAgency.Enter" xml:space="preserve">
+    <value>Entrez l'agence bancaire</value>
   </data>
   <data name="Supplier.Edit" xml:space="preserve">
     <value>Modifier le fournisseur</value>
@@ -356,5 +374,38 @@
   </data>
   <data name="Reception.MustValidate" xml:space="preserve">
     <value>Vous devez valider la réception avant de quitter.</value>
+  </data>
+  <data name="TotalTTC" xml:space="preserve">
+    <value>Total TTC</value>
+  </data>
+  <data name="ART" xml:space="preserve">
+    <value>Numéro d'article (ART)</value>
+  </data>
+  <data name="NIS" xml:space="preserve">
+    <value>Numéro d’Identification Statistique  (NIS) </value>
+  </data>
+  <data name="NIF" xml:space="preserve">
+    <value>Numéro d’Identification Fiscale (NIF)</value>
+  </data>
+  <data name="BankAccount" xml:space="preserve">
+    <value>Compte bancaire (RIB)</value>
+  </data>
+  <data name="BankAccount.Enter" xml:space="preserve">
+    <value>Entrez le compte bancaire (RIB)</value>
+  </data>
+  <data name="RC" xml:space="preserve">
+    <value>Numéro RC</value>
+  </data>
+  <data name="RC.Enter" xml:space="preserve">
+    <value>Entrez RC</value>
+  </data>
+  <data name="NIF.Enter" xml:space="preserve">
+    <value>Entrez NIF</value>
+  </data>
+  <data name="ART.Enter" xml:space="preserve">
+    <value>Entrez ART</value>
+  </data>
+  <data name="NIS.Enter" xml:space="preserve">
+    <value>Entrez NIS</value>
   </data>
 </root>
