@@ -274,7 +274,7 @@
     <value>Enter Supplier name or email</value>
   </data>
   <data name="Purchase.Selector.Title" xml:space="preserve">
-    <value>Select Command</value>
+    <value>Select a Purchase Order</value>
   </data>
   <data name="Rest" xml:space="preserve">
     <value>Rest</value>
