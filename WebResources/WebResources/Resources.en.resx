@@ -285,8 +285,8 @@
   <data name="Rejected" xml:space="preserve">
     <value>Rejected</value>
   </data>
-  <data name="Visaed" xml:space="preserve">
-    <value>Visaed</value>
+  <data name="Approved" xml:space="preserve">
+    <value>Approved</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>Date </value>

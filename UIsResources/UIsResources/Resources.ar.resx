@@ -279,9 +279,6 @@
   <data name="Rest" xml:space="preserve">
     <value>الباقي </value>
   </data>
-  <data name="Actions" xml:space="preserve">
-    <value>الأفعال</value>
-  </data>
   <data name="BankAgency" xml:space="preserve">
     <value>الوكالة البنكية</value>
   </data>

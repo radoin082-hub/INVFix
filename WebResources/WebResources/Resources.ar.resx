@@ -196,7 +196,7 @@
     <value>قائمة المواد</value>
   </data>
   <data name="Receptions.Title" xml:space="preserve">
-    <value>قائمة وصول الاستلامات</value>
+    <value>قائمة وصول الاستلام</value>
   </data>
   <data name="Products.SubTitle" xml:space="preserve">
     <value>تتبّع المواد وأدرها بكفاءة.</value>
@@ -285,7 +285,7 @@
   <data name="Rejected" xml:space="preserve">
     <value>مرفوض</value>
   </data>
-  <data name="Visaed" xml:space="preserve">
+  <data name="Approved" xml:space="preserve">
     <value>مؤشّر</value>
   </data>
   <data name="Date" xml:space="preserve">
