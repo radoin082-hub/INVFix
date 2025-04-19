@@ -55,6 +55,7 @@
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Number" Title=@Localizer["Number"] />
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="Date" Title=@Localizer["Date"] />
                             <RadzenDataGridColumn TItem="ReceiptInfo" Property="supplierName" Title=@Localizer["Supplier.Name"] />
+                            <RadzenDataGridColumn TItem="ReceiptInfo" Property="Quantity" Title=@Localizer["Quantity"] />
                     @*         <RadzenDataGridColumn Title=@Localizer["Delivery"] >
                                 <Template Context="reception">
                                     N° @(reception.DeliveryNumber) - @(reception.DeliveryDate == default ? string.Empty : reception.DeliveryDate)
@@ -78,4 +79,4 @@ else
 {
     <p>@Localizer["Loading"]...</p>
 }
-<ProductForm @ref="ProductForm" productEdit="product"  />
+<ProductForm @ref="ProductForm" productEdit="product"/>

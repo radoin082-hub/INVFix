@@ -10,6 +10,7 @@ public class ReceiptInfo
     public Guid PurchaseId { get; set; }
     public string purchaseNumber { get; set; }
     public DateOnly PurchaseDate { get; set; }
+    public int Quantity { get; set; }
     public Guid supplierId { get; set; }
     public string supplierName { get; set; }
     public string DeliveryNumber { get; set; }

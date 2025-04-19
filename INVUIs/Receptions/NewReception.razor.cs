@@ -149,13 +149,13 @@ namespace INVUIs.Receptions
             return true;
         }
 
-        /* private async Task beforeNavigation(LocationChangingContext context)
-         {
-             if (!isValidated)
-             {
-                 context.PreventNavigation();
-                 await myAlert.ShowToast(null, Localizer["Reception.MustValidate"], MyAlertType.error);
-             }
-         }*/
+        private async Task beforeNavigation(LocationChangingContext context)
+        {
+            if (!isValidated)
+            {
+                context.PreventNavigation();
+                await myAlert.ShowToast(null, Localizer["Reception.MustValidate"], MyAlertType.error);
+            }
+        }
     }
 }

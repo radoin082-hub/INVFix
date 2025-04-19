@@ -130,7 +130,7 @@ WHERE [Id] = @aId;";
             await sqlConnection.OpenAsync();
 
             cmd.Parameters.AddWithValue("@aId", purchaseOrder.Id);
-            cmd.Parameters.AddWithValue("@aNumber", "Wait"); //purchaseOrder.Number);
+            cmd.Parameters.AddWithValue("@aNumber", "0");
             cmd.Parameters.AddWithValue("@aSupplierId", purchaseOrder.SupplierId);
             cmd.Parameters.AddWithValue("@aDate", purchaseOrder.Date);
             cmd.Parameters.AddWithValue("@aBudgetChapter", purchaseOrder.BudgetChapter);

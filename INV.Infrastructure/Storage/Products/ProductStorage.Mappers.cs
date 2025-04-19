@@ -66,7 +66,8 @@ namespace INV.Infrastructure.Storage.Products
                         DeliveryNumber = row.IsNull("DeliveryNumber") ? string.Empty : row["DeliveryNumber"].ToString(),
                         DeliveryDate = row.IsNull("DeliveryDate") ? default : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
                         Status = (ReceiptStatus)row["Status"],
-                        supplierName = (string)row["CompanyName"]
+                        supplierName = (string)row["CompanyName"],
+                        Quantity = Convert.ToInt32(row["Quantity"]),
                     };
                     product.ReceiptInfos.Add(receipt);
                 }
