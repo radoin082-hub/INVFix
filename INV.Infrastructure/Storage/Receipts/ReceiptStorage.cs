@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using BootstrapBlazor.Components;
 using INV.App.Receipts;
 using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Purchases;
@@ -72,7 +74,11 @@ WHERE O.SupplierId = @aSupplierId;";
             FROM (SELECT 0 AS Status UNION ALL SELECT 1) AS s
             LEFT JOIN [reception].[HEADERS] AS h  ON h.Status = s.Status AND YEAR(h.Date) = YEAR(GETDATE()) 
             GROUP BY s.Status";
+        private const string selectnewnumberReception =@" SELECT MAX(CAST([Number] AS BIGINT)) + 1 AS NextNumber 
+            FROM[INV].reception.HEADERS WHERE ISNUMERIC([Number]) = 1";
 
+        private const string setNumberReception = @"UPDATE [INV].reception.HEADERS
+                                    SET [Number] = @aNumber WHERE [Id] = @aId;";
         public async ValueTask<ReceiptDetail> CreateReceiptFromPurchase(Guid purchaseId)
         {
             using var connection = new SqlConnection(_connectionString);
@@ -429,6 +435,27 @@ WHERE O.SupplierId = @aSupplierId;";
             }
 
             return result;
+        }
+
+        public async ValueTask<long> SelectNextReceptionNumber()
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            await sqlConnection.OpenAsync();
+            using var cmd = new SqlCommand(selectnewnumberReception, sqlConnection);
+
+            var result = await cmd.ExecuteScalarAsync();
+            return Convert.ToInt64(result);
+        }
+
+        public async ValueTask<long> SetReceptionNumber(Guid purchaseOrderId, long newNumber)
+        {
+            using var sqlConnection = new SqlConnection(_connectionString);
+            await sqlConnection.OpenAsync();
+            using var cmd = new SqlCommand(setNumberReception, sqlConnection);
+            cmd.Parameters.AddWithValue("@aNumber", newNumber.ToString());
+            cmd.Parameters.AddWithValue("@aId", purchaseOrderId);
+
+            return await cmd.ExecuteNonQueryAsync();
         }
     }
 }

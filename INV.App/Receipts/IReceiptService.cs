@@ -38,5 +38,8 @@ namespace INV.App.Receipts
         ValueTask<int> GetReceptionCount();
 
         ValueTask<List<int>> GetReceptionStatusCount();
+
+        ValueTask<long> GetNextReceptionNumber();
+        ValueTask<long> UpdateReceptionNumber(Guid purchaseOrderId, long newNumber);
     }
 }

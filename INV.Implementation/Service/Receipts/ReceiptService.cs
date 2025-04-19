@@ -259,5 +259,15 @@ namespace INV.Implementation.Service.Receipts
 
             return errors;
         }
+
+        public async ValueTask<long> GetNextReceptionNumber()
+        {
+            return await receiptStorage.SelectNextReceptionNumber();
+        }
+
+        public async ValueTask<long> UpdateReceptionNumber(Guid purchaseOrderId, long newNumber)
+        {
+            return await receiptStorage.SetReceptionNumber(purchaseOrderId,newNumber);
+        }
     }
 }

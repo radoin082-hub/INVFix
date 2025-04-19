@@ -43,4 +43,7 @@ public interface IReceiptStorage
     ValueTask<int> SelectSupplierCount();
 
     ValueTask<List<int>> SelectReceptionCountsByStatus();
+
+    ValueTask<long> SelectNextReceptionNumber();
+    ValueTask<long> SetReceptionNumber(Guid purchaseOrderId, long newNumber);
 }
