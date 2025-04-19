@@ -63,6 +63,8 @@ namespace INVUIs.Receptions
             statusInput = true;
             isValidated = true;
             var result = await receptionService.ValidateReceipt(ReceiptInfo.Id);
+            var numberReception = await receptionService.GetNextReceptionNumber();
+            await receptionService.UpdateReceptionNumber(ReceiptInfo.Id, numberReception);
             ReceiptInfo.Status = ReceiptStatus.validated;
             restVisibility = false;
             StateHasChanged();
