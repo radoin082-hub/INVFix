@@ -3,14 +3,14 @@
     padding-bottom: 10px;
     display: flex;
     justify-content: right;
-    background-color: transparent;
+    background-color: white;
     width: 100%;
     border-bottom: 1px solid #0000001a;
+    margin-top:0;
 }
 
 [dir="rtl"] .mynavbar {
-    left: 0;
-    right: unset;
+    justify-content: left;
 }
 
 /*
