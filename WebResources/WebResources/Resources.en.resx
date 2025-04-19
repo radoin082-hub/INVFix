@@ -288,6 +288,9 @@
   <data name="Approved" xml:space="preserve">
     <value>Approved</value>
   </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approve</value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>Date </value>
   </data>
@@ -323,5 +326,11 @@
   </data>
   <data name="AtLeastOneProduct" xml:space="preserve">
     <value>Please add at least one product before confirming the purchase order.</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
   </data>
 </root>

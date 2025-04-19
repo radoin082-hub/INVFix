@@ -286,7 +286,10 @@
     <value>Rejeté</value>
   </data>
   <data name="Approved" xml:space="preserve">
-    <value>Visé</value>
+    <value>Approuvé</value>
+  </data>
+  <data name="Approve" xml:space="preserve">
+    <value>Approuver</value>
   </data>
   <data name="Date" xml:space="preserve">
     <value>Date</value>
@@ -323,5 +326,11 @@
   </data>
   <data name="AtLeastOneProduct" xml:space="preserve">
     <value>Veuillez ajouter au moins un produit avant de confirmer le bon de commande.</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Rejeter</value>
   </data>
 </root>

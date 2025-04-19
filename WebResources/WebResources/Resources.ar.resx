@@ -288,6 +288,9 @@
   <data name="Approved" xml:space="preserve">
     <value>مؤشّر</value>
   </data>
+  <data name="Approve" xml:space="preserve">
+    <value>تأشيرة </value>
+  </data>
   <data name="Date" xml:space="preserve">
     <value>التاريخ </value>
   </data>
@@ -323,5 +326,11 @@
   </data>
   <data name="AtLeastOneProduct" xml:space="preserve">
     <value>الرجاء إضافة منتج واحد على الأقل قبل تأكيد الطلب.</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>رفض</value>
   </data>
 </root>

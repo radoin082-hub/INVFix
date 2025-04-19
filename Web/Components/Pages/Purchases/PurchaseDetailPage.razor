@@ -16,16 +16,16 @@
                         <div class="d-flex justify-content-end">
                             @if (purchaseModel.Status == PurchaseStatus.Validated)
                             {
-                                <RadzenButton Click="visibilityReject" Text=@Localizer["Rejected"]
+                                <RadzenButton Click="visibilityReject" Text=@Localizer["Reject"]
                                               Icon="add_circle" ButtonStyle="ButtonStyle.Danger" Visible="@canEdit" />
 
 
-                                <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text=@Localizer["Visaed"]
+                                <RadzenButton class="btn-custom btn-submit" Click="visibilityVisa" Text=@Localizer["Approve"]
                                               Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
                             }
                             @if (purchaseModel.Status == PurchaseStatus.Editing)
                             {
-                                <RadzenButton Click="showConformation" Text=@Localizer["Validated"]
+                                <RadzenButton Click="showConformation" Text=@Localizer["Validate"]
                                               Icon="add_circle" ButtonStyle="ButtonStyle.Success" Visible="@canEdit" />
                                 <RadzenButton Click="Edit" Text=@Localizer["Edit"] Icon="add_circle" ButtonStyle="ButtonStyle.Info" />
 
