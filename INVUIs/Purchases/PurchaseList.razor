@@ -21,20 +21,20 @@ else
     <div class="Container-list">
         <RadzenDataGrid Data="@displayedItems.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
                         Style="width: 100%;" RowSelect="@((PurchaseOrderInfo purchaseOrderInfo) => navigatepage(purchaseOrderInfo.Id))"
-                        PageSize="6" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
+                        PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"]>
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Status)" Title=@Localizer["Status"] Filterable="false">
                     <Template Context="Purchase">
                         <PurchaseStatusComponent Text="true" Icon="true" PurchaseStatus="Purchase.Status" />
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title=@Localizer["Date"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] Filterable="false" />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title=@Localizer["Date"] Filterable="false" />
             @*     <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeType)" Title=@Localizer["BudgetType"] />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.ServiceType)" Title=@Localizer["ServiceType"] /> *@
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title=@Localizer["BudgetArticle"] />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title=@Localizer["Supplier"] Visible="ShowSupplier" />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title=@Localizer["BudgetArticle"] Filterable="false" />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title=@Localizer["Supplier"] Visible="ShowSupplier" Filterable="false" />
+                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] Filterable="false" />
             </Columns>
             <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
 

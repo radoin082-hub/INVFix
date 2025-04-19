@@ -1,22 +1,17 @@
-﻿
-
-
-.mynavbar {
+﻿.mynavbar {
+    padding: 0 30px;
+    padding-bottom: 10px;
     display: flex;
-    position: absolute;
-    right: 0;
-    background: #ffffff;
-    padding: 10px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    width: 30%;
+    justify-content: right;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 1px solid #0000001a;
 }
 
 [dir="rtl"] .mynavbar {
-    left: 0; 
-    right: unset; 
+    left: 0;
+    right: unset;
 }
-
 
 /*
 .search-container {
@@ -173,5 +168,4 @@
         width: 100%;
         justify-content: space-between;
     }
-
 }

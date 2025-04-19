@@ -9,6 +9,7 @@ using INVUIs.Shared;
 using INVUIs.Shared.MyAlert;
 using Microsoft.JSInterop;
 using INV.App.Purchases;
+using BootstrapBlazor.Components;
 
 namespace INVUIs.Products
 {
@@ -48,7 +49,8 @@ namespace INVUIs.Products
         private async Task OnProductCreated(ProductInfo product)
         {
             Products.Add(product);
-            await grid.Reload();
+            navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
+
             StateHasChanged();
         }
 
@@ -65,9 +67,8 @@ namespace INVUIs.Products
             else
             {
                 errorMessage = result.Error.Description;
-                await myAlert.ShowAlert(Localizer["ErrorDelete"] , errorMessage, MyAlertType.error);
+                await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
             }
-          
         }
 
         private async Task ConfirmDeleteProduct()

@@ -27,12 +27,12 @@ else
 {
 
     <div class="Container-list">
-        <RadzenDataGrid @ref="grid" Data="@supplierFilter" AllowSorting="true" AllowFiltering="true"
-                        PageSize="6" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Style="width: 100%;"
+        <RadzenDataGrid @ref="grid" Data="@supplierFilter" AllowSorting="true" AllowFiltering="true" 
+                        PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true" Style="width: 100%;"
                         RowSelect="@((SupplierInfo supplier) => NavigateToSupplierDetails(supplier.ID))">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title=@Localizer["Supplier"] Width="10%" />
-                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title=@Localizer["Email"] Width="10%" />
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.CompanyName)" Title=@Localizer["Supplier"] Width="10%" Filterable="false"/>
+                <RadzenDataGridColumn Property="@nameof(SupplierInfo.Email)" Title=@Localizer["Email"] Width="10%" Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Phone)" Title=@Localizer["Phone"] Width="10%" Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(SupplierInfo.Address)" Title=@Localizer["Address"] Width="10%" Filterable="false" />
 

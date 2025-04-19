@@ -104,7 +104,7 @@ namespace INVUIs.Suppliers
             var result = await supplierService.GetPurchaseCountBySupplierId(supplierId);
             if (result)
             {
-                await myAlert.ShowAlert(Localizer["ErrorDelete"], errorMessage, MyAlertType.error);
+                await myAlert.ShowAlert(Localizer["ErrorDelete"], "The supplier has purchases.", MyAlertType.error);
             }
             else
             {

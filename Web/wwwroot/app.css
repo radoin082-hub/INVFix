@@ -5,6 +5,14 @@
     --background-color: #F2E5BF;
 }
 
+article.content.px-4 {
+    padding: 0.5rem 0 !important;
+}
+
+.rz-grid-table td {
+    padding: 0.25rem 0.5rem !important;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #f9fafb;
