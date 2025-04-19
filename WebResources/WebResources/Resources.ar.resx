@@ -271,7 +271,7 @@
     <value>طلب المواد</value>
   </data>
   <data name="Receptions.SelectPurchase" xml:space="preserve">
-    <value>اختر وصل الاستلام</value>
+    <value>اختر سند طلب للاستلام</value>
   </data>
   <data name="Year" xml:space="preserve">
     <value>سنة </value>

@@ -271,7 +271,7 @@
     <value>Commande de produits</value>
   </data>
   <data name="Receptions.SelectPurchase" xml:space="preserve">
-    <value>Sélectionnez un achat à recevoir</value>
+    <value>Sélectionnez un bon de commande à recevoir</value>
   </data>
   <data name="Year" xml:space="preserve">
     <value>Année</value>

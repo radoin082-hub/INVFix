@@ -136,7 +136,7 @@
     <value>Purchase Order</value>
   </data>
   <data name="Purchase.Status" xml:space="preserve">
-    <value>Purchase Status</value>
+    <value>Purchase Order Status</value>
   </data>
   <data name="Reception.Status" xml:space="preserve">
     <value>Reception Status</value>
@@ -214,7 +214,7 @@
     <value>Review and manage purchase order details</value>
   </data>
   <data name="Purchase.Title" xml:space="preserve">
-    <value>Purchase Details</value>
+    <value>Purchase Order Details</value>
   </data>
   <data name="Product.Title" xml:space="preserve">
     <value>Product Details</value>
@@ -271,7 +271,7 @@
     <value>Products Order</value>
   </data>
   <data name="Receptions.SelectPurchase" xml:space="preserve">
-    <value>Select a purchase to receive</value>
+    <value>Select a purchase order to receive</value>
   </data>
   <data name="Year" xml:space="preserve">
     <value>Year</value>
@@ -301,7 +301,7 @@
     <value>Submit</value>
   </data>
   <data name="Purchase.Validate" xml:space="preserve">
-    <value>Validate Purchase </value>
+    <value>Validate Purchase Order</value>
   </data>
   <data name="Purchase.Validated" xml:space="preserve">
     <value>The purchase order has been validated.</value>
