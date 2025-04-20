@@ -1,3 +1,4 @@
+using System.Linq;
 using INV.App.Purchases;
 using INV.App.Receipts;
 using INV.Domain.Entities.Purchases;
@@ -79,9 +80,10 @@ namespace INVUIs.Receptions
         private async Task SaveChanges()
         {
             bool send = await checkInputs();
+
             if (send)
             {
-                if (products.FindAll(s => s.NEwReceived == 0).Count > 0)
+                if (products.FindAll(s => s.NEwReceived > 0).Count <= 0)
                 {
                     await myAlert!.ShowAlert(Localizer["Error"],
                         "The received quantity cannot be zero.", MyAlertType.error);
@@ -92,8 +94,7 @@ namespace INVUIs.Receptions
                 {
                     var receiptProduct =
                         ReceiptInfo.ReceiptProducts.FirstOrDefault(p => p.ProductId == product.ProductId);
-                    if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received ||
-                        product.NEwReceived == 0) continue;
+                    if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received) continue;
                     await myAlert!.ShowAlert(Localizer["Error"],
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
