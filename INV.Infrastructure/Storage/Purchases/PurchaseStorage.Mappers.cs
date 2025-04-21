@@ -1,13 +1,15 @@
 ﻿using INV.App.Purchases;
 using INV.Domain.Entities.Budget;
+using INV.Domain.Entities.Products;
 using INV.Domain.Entities.Purchases;
+using INV.Domain.Entities.Suppliers;
 using Microsoft.Data.SqlClient;
 
 namespace INV.Infrastructure.Storage.Purchases
 {
-public partial class PurchaseOrderStorage
-{
-         private static PurchaseOrder getPurchaseOrdersData(SqlDataReader reader)
+    public partial class PurchaseOrderStorage
+    {
+        private static PurchaseOrder getPurchaseOrdersData(SqlDataReader reader)
         {
             return new PurchaseOrder
             {
@@ -25,8 +27,8 @@ public partial class PurchaseOrderStorage
                 CompletionDelay = (int)reader["CompletionDelay"],
                 VisaNumber = reader.IsDBNull(reader.GetOrdinal("VisaNumber")) ? null : reader["VisaNumber"].ToString(),
                 VisaDate = reader.IsDBNull(reader.GetOrdinal("VisaDate"))
-    ? null
-    : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
+                    ? null
+                    : DateOnly.FromDateTime((DateTime)reader["VisaDate"]),
                 Observation = reader.IsDBNull(reader.GetOrdinal("Observation")) ? null : (string)reader["Observation"],
 
                 Status = (PurchaseStatus)reader["Status"]
@@ -75,5 +77,56 @@ public partial class PurchaseOrderStorage
                 UnitPrice = (decimal)reader["UnitPrice"],
             };
         }
-}
+
+        private static PurchaseDetail getPurchaseDetailData(SqlDataReader reader)
+        {
+            return new PurchaseDetail
+            {
+                Id = (Guid)reader["Id"],
+                Number = (string)reader["Number"],
+                SupplierId = (Guid)reader["SupplierId"],
+                Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
+                BudgetChapter = (int)reader["BudgetChapter"],
+                BudgetArticle = (int)reader["BudgetArticle"],
+                BudgetType = (BudgeType)(int)reader["BudgetType"],
+                ServiceType = (ServiceType)(int)reader["ServiceType"],
+                TotalHT = (decimal)reader["TotalHT"],
+                TotalTVA = (decimal)reader["TotalTVA"],
+                TotalTTC = (decimal)reader["TotalTTC"],
+                CompletionDelay = (int)reader["CompletionDelay"],
+                Supplier = new Supplier
+                {
+                    Id = (Guid)reader["SupplierId"],
+                    CompanyName = (string)reader["CompanyName"],
+                    ManagerName = (string)reader["ManagerName"],
+                    Address = (string)reader["Address"],
+                    Phone = (string)reader["Phone"],
+                    Email = (string)reader["Email"],
+                    RC = (string)reader["RC"],
+                    NIS = (string)reader["NIS"],
+                    ART = (string)reader["ART"],
+                    RIB = (string)reader["RIB"],
+                    NIF = (string)reader["NIF"],
+                    BankAgency = (string)reader["BankAgency"],
+                    State = (SupplierState)(int)reader["Status"]
+                },
+                Products = new List<Product>()
+            };
+        }
+
+        private static Product getProductsData(SqlDataReader reader)
+        {
+            return new Product
+            {
+                Id = (Guid)reader["ProductId"],
+                DefaultWareHouseId = (Guid)reader["DefaultWareHouseId"],
+                Designation = (string)reader["Designation"],
+                UnitMeasure = (string)reader["UnitMeasure"],
+                Quantity = (int)reader["Quantity"],
+                UnitPrice = (decimal)reader["UnitPrice"],
+                TVA = (int)reader["TVA"],
+                /*WareHouse = (string)reader["DefaultWareHouseId"]*/
+            };
+        }
+    }
 }

@@ -457,5 +457,35 @@ WHERE O.SupplierId = @aSupplierId;";
 
             return await cmd.ExecuteNonQueryAsync();
         }
+        public async IAsyncEnumerable<ReceiptDetail> SelectReceptionDetail(Guid receptionId)
+        {
+            await using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(getReceptionDetailsProcedure, sqlConnection)
+            {
+                CommandType = System.Data.CommandType.StoredProcedure,
+                Parameters = { new SqlParameter("@aReceptionId", receptionId) }
+            };
+            await sqlConnection.OpenAsync();
+            using var reader = await cmd.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                var receptionDetail = getReceptionDetailReader(reader);
+
+                await reader.NextResultAsync();
+                while (await reader.ReadAsync())
+                {
+                    receptionDetail.ReceiptProducts.Add(getReceiptProductInfoReader(reader));
+                }
+
+                await reader.NextResultAsync();
+                if (await reader.ReadAsync())
+                {
+                    receptionDetail.PurchaseOrder = getPurchaseOrderReader(reader);
+                }
+
+                yield return receptionDetail;
+            }
+        }
     }
 }

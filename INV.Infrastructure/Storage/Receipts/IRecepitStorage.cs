@@ -46,4 +46,6 @@ public interface IReceiptStorage
 
     ValueTask<long> SelectNextReceptionNumber();
     ValueTask<long> SetReceptionNumber(Guid purchaseOrderId, long newNumber);
+    IAsyncEnumerable<ReceiptDetail> SelectReceptionDetail(Guid receptionId);
+
 }

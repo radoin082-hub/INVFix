@@ -1,28 +1,22 @@
 ﻿@code {
-    [Parameter]
-    public string? Title { get; set; }
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public string? IconSrc { get; set; }
 
-    [Parameter]
-    public string? IconSrc { get; set; }
+    [Parameter] public int Count { get; set; }
 
-    [Parameter]
-    public int Count { get; set; }
-    
-    [Parameter]
-    public string? style { get; set; }
+    [Parameter] public string StyleCard { get; set; }
 
-  
+
 }
-
 
 
 <div class="dashboard-card">
     <h3>@Title</h3>
     <div class="dashboard-card-content">
         <div class="count">@Count</div>
-        <div class="icon-container" id="@style">
+        <div class="icon-container" id="@StyleCard">
             <i class="@IconSrc"></i>
-    </div>
+        </div>
     </div>
 </div>
 

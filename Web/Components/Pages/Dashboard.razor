@@ -1,5 +1,10 @@
 @page "/"
-
+@using INV.App.Receipts
+@using INV.App.Purchases
+@using INV.App.Products
+@using INV.App.Suppliers
+@using Radzen
+@using Orientation = Radzen.Orientation
 @inject IStringLocalizer<Resources> Localizer
 
 <PageTitle>@Localizer["Dashboard"] </PageTitle>
@@ -9,10 +14,10 @@
 <PageHeader Title=@Localizer["Dashboard.Title"] SubTitle=@Localizer["Dashboard.SubTitle"] />
 
 <div class="dashboard-part1">
-    <DashboardCardInfo Title=@Localizer["Products"] IconSrc="bi bi-box-seam" Count="@productCount" style="product" />
-    <DashboardCardInfo Title=@Localizer["Suppliers"] IconSrc="bi bi-person" Count="@supplierCount" style="supplier"/>
-    <DashboardCardInfo Title=@Localizer["Purchases"] IconSrc="bi bi-cart-check" Count="@purchaseCount" style="purchase"/>
-    <DashboardCardInfo Title=@Localizer["Receptions"] IconSrc="bi bi-clipboard-check" Count="@receptionCount" style="reception"/>
+    <DashboardCardInfo Title=@Localizer["Products"] IconSrc="bi bi-box-seam" Count="@productCount" StyleCard="product" />
+    <DashboardCardInfo Title=@Localizer["Suppliers"] IconSrc="bi bi-person" Count="@supplierCount" StyleCard="supplier"/>
+    <DashboardCardInfo Title=@Localizer["Purchases"] IconSrc="bi bi-cart-check" Count="@purchaseCount" StyleCard="purchase"/>
+    <DashboardCardInfo Title=@Localizer["Receptions"] IconSrc="bi bi-clipboard-check" Count="@receptionCount" StyleCard="reception"/>
 </div>
 
 <div class="dashboard-part2 mt-3">
@@ -67,12 +72,7 @@
 </div>
 
 @code {
-    @using INV.App.Receipts
-    @using INV.App.Purchases
-    @using INV.App.Products
-    @using INV.App.Suppliers
-    @using Radzen
-    @using Orientation = Radzen.Orientation
+
 
     [Inject] ISupplierService supplierService { get; set; }
     [Inject] IProductService productService { get; set; }
@@ -92,7 +92,6 @@
     private DataItem[] revenue2;
     private DateOnly currentDate;
     private int currentYear;
-
     
 
     protected override async Task OnInitializedAsync()

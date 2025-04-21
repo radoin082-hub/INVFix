@@ -40,5 +40,7 @@ namespace INV.App.Purchases
         ValueTask<long> GetNextPurchaseOrderNumberAsync();
 
         ValueTask<long> UpdatePurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber);
+        ValueTask<Result<List<PurchaseDetail>>> GetPurchaseOrderDetail(Guid purchaseId);
+
     }
 }

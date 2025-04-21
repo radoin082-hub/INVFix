@@ -1,0 +1,6 @@
+### Download Purchase_PdfReport
+GET http://localhost:5095/purchase/DownloadPdf/D69A31B3-887E-4E43-8421-0E5FFC9580AE/Ar
+
+### Dowonload Purchase_ExcelReport
+
+GET http://localhost:5273/purchase/DownloadExcel/be3132e8-f69d-4697-87ab-3a3297ae2af6/Fr

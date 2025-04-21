@@ -1,0 +1,162 @@
+@using INV.Domain.Entities.Suppliers
+@model Supplier
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>تقرير المورد</title>
+    <style>
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            font-size: 14px;
+            margin: 40px auto;
+            width: 100%;
+            max-width: 960px;
+            color: #000;
+            background-color: #fff;
+            direction: rtl;
+            text-align: right;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+        }
+
+        .generated-date {
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td {
+            padding: 6px 10px;
+            vertical-align: top;
+        }
+
+        .label {
+            font-weight: bold;
+            width: 30%;
+            white-space: nowrap;
+        }
+
+        .value {
+            width: 70%;
+        }
+
+        .status-active {
+            font-weight: bold;
+            color: green;
+        }
+
+        .status-inactive {
+            font-weight: bold;
+            color: red;
+        }
+
+        .footer {
+            position: absolute;
+            right: 400px;
+            top: 1200px;
+            text-align: center;
+            font-size: 11px;
+            margin-top: 60px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>الملف التعريفي للمورد</h1>
+    <div class="generated-date">تم الإنشاء في @DateTime.Now.ToString("dd/MM/yyyy - HH:mm")</div>
+
+    <h2>معلومات الشركة</h2>
+    <table>
+        <tr>
+            <td class="label">اسم الشركة:</td>
+            <td class="value">@Model.CompanyName</td>
+        </tr>
+        <tr>
+            <td class="label">اسم المدير:</td>
+            <td class="value">@Model.ManagerName</td>
+        </tr>
+        <tr>
+            <td class="label">العنوان:</td>
+            <td class="value">@Model.Address</td>
+        </tr>
+        <tr>
+            <td class="label">الهاتف:</td>
+            <td class="value">@Model.Phone</td>
+        </tr>
+        <tr>
+            <td class="label">البريد الإلكتروني:</td>
+            <td class="value">@Model.Email</td>
+        </tr>
+        <tr>
+            <td class="label">الحالة:</td>
+            <td class="value @(Model.State == SupplierState.Active ? "status-active" : "status-inactive")">
+                @(Model.State == SupplierState.Active ? "نشط" : "غير نشط")
+            </td>
+        </tr>
+    </table>
+
+    <h2>معلومات قانونية</h2>
+    <table>
+        <tr>
+            <td class="label">السجل التجاري (RC):</td>
+            <td class="value">@Model.RC</td>
+        </tr>
+        <tr>
+            <td class="label">الرقم الوطني للإحصاء (NIS):</td>
+            <td class="value">@Model.NIS</td>
+        </tr>
+        <tr>
+            <td class="label">ART:</td>
+            <td class="value">@Model.ART</td>
+        </tr>
+        <tr>
+            <td class="label">الرقم الضريبي (NIF):</td>
+            <td class="value">@Model.NIF</td>
+        </tr>
+    </table>
+
+    <h2>معلومات بنكية</h2>
+    <table>
+        <tr>
+            <td class="label">رقم الحساب البنكي (RIB):</td>
+            <td class="value">@Model.RIB</td>
+        </tr>
+        <tr>
+            <td class="label">الوكالة البنكية:</td>
+            <td class="value">@Model.BankAgency</td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        &copy; @DateTime.Now.Year - تقرير مفصل عن المورد
+    </div>
+
+</body>
+</html>

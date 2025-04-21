@@ -1,0 +1,113 @@
+﻿@model INV.App.Receipts.ReceiptDetail
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 850px;
+            height: 1230px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: left;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .invoice-info {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            text-align: right;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+        .Col_Number {
+            width: 5%;
+        }
+        .Col_Designation {
+            width: 30%;
+        }
+        .Col_Unit {
+            width: 6%;
+        }
+        .Col_Quantity {
+            width: 10%;
+        }
+        .Col_Received {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div >
+            <h2>Invoice Reception</h2>
+            <p>@Model.PurchaseOrder.Supplier.CompanyName<br><br>@Model.PurchaseOrder.Supplier.Address</p>
+            <p>Phone: @Model.PurchaseOrder.Supplier.Phone<br>Email: @Model.PurchaseOrder.Supplier.Email</p>
+        </div>
+        <div class="invoice-info">
+            <p class="bold">Invoice # INT-001</p>
+            <p>Account: 786-54984</p>
+            <p>Order ID: #92</p>
+            <p>Invoice Date: @Model.PurchaseOrder.Date</p>
+            <p>Completion Date: @Model.PurchaseOrder.CompletionDelay</p>
+        </div>
+    </div>
+    <hr>
+    <p class="bold">Bill To</p>
+    <p>Mohamed Kheider</p>
+    <p>BP 145 RP، 07000<br>-Alia-</p>
+    <p>Phone: +(213) 741-5790<br>Email: email@univ-biskra.dz</p>
+    <table>
+        <tr>
+            <th>N°</th>
+            <th>PRODUCT</th>
+            <th>UNIT</th>
+            <th>QTY</th>
+            <th>RECEIVED</th>
+        </tr>
+        @foreach (var product in Model.ReceiptProducts)
+        { <tr>
+            <td class="Col_Number">@(Model.ReceiptProducts.IndexOf(product) + 1)</td>
+            <td class="Col_Designation">@product.Designation</td>
+            <td class="Col_Unit">@product.UnitMeasure</td>
+            <td class="Col_Quantity">@product.Quantity</td>
+            <td class="Col_Received">@product.Received</td>
+        </tr>
+        }
+    </table>
+</div>
+
+</body>
+</html>

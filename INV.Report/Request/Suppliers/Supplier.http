@@ -1,0 +1,4 @@
+﻿### suppier info Fr
+GET  http://localhost:5273/Supplier/DowonloadPdf/6AAA9A51-BBE1-416B-99EC-5C08B6514C38/Fr
+### suppier info Ar
+GET  http://localhost:5273/Supplier/DowonloadPdf/6AAA9A51-BBE1-416B-99EC-5C08B6514C38/Ar

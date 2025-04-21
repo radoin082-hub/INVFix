@@ -1,0 +1,513 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Report\\INV.Report.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj",
+        "projectName": "INV.App",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "BootstrapBlazor.BootstrapIcon.Extensions": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "NumberToWordsArabic": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "PuppeteerSharp": {
+              "target": "Package",
+              "version": "[20.1.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj",
+        "projectName": "INV.Domain",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "BootstrapBlazor.BootstrapIcon.Extensions": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "PuppeteerSharp": {
+              "target": "Package",
+              "version": "[20.1.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj",
+        "projectName": "INV.Implementation",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "BootstrapBlazor.BootstrapIcon.Extensions": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "EasternArabicNumeralsConvertor": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Farsi.Library": {
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "NumberToWordsConverter": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "PuppeteerSharp": {
+              "target": "Package",
+              "version": "[20.1.0, )"
+            },
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "System.Linq.Async": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj",
+        "projectName": "INV.Infrastructure",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "BootstrapBlazor": {
+              "target": "Package",
+              "version": "[9.3.1-beta02, )"
+            },
+            "BootstrapBlazor.BootstrapIcon.Extensions": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.13.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "PuppeteerSharp": {
+              "target": "Package",
+              "version": "[20.1.0, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Report\\INV.Report.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Report\\INV.Report.csproj",
+        "projectName": "INV.Report",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Report\\INV.Report.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Report\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Humanizer": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "OfficeOpenXml.Extension.AspNetCore": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Wkhtmltopdf.NetCore": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

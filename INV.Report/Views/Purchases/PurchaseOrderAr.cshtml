@@ -1,0 +1,356 @@
+﻿@using System.Globalization
+@using Humanizer
+@using INV.Domain.Entities.Budget
+@model INV.App.Purchases.PurchaseDetail
+
+
+@{
+    string totalInWordsArab = Convert.ToInt32(Model.TotalTTC).ToWords(new CultureInfo("ar"));
+
+    string serviceTypeLabel(ServiceType serviceType) => serviceType switch
+    {
+        ServiceType.Works => "نفقات",
+        ServiceType.Services => "خدمات",
+        ServiceType.Equipment => "معدات"
+    };
+
+    string budgeTypeLabel(BudgeType budgeType) => budgeType switch
+    {
+        BudgeType.Operating => "تشغيل",
+        BudgeType.Equipment => "تجهيز",
+        BudgeType.Other => "أخرى"
+    };
+}
+
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سند الطلب</title>
+    <style>
+        body {
+            font-family: 'Amiri', 'Tajawal', 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0px;
+        }
+
+        .red {
+            width: 100%;
+            border-spacing: 0;
+            overflow: hidden;
+            border: 1px black;
+        }
+
+        .header {
+            background-color: #e2e2e2;
+            font-weight: bold;
+            text-align: center;
+            padding: 4px;
+            font-size: 18px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .titel-page {
+            display: flex;
+            justify-content: center;
+        }
+
+        .part1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .informationusers {
+            width: 62%;
+            right: 300px;
+            position: absolute;
+            top: 30px;
+        }
+
+        .addinfo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 22%;
+            border: 2px dashed black;
+            text-align: center;
+            padding: 10px;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .addinfo h5 {
+            margin: 9px 0;
+            font-size: 14px;
+            line-height: 2.2;
+        }
+
+        .Col_Number {
+            width: 5%;
+        }
+
+        .Col_Designation {
+            width: 30%;
+        }
+
+        .Col_Unit {
+            width: 5%;
+            font-size: 10px;
+        }
+
+        .Col_Quantity {
+            width: 7%;
+        }
+
+        .Price {
+            width: 10%;
+        }
+
+        .Col_TVA {
+            width: 6%;
+            font-size: 10px;
+        }
+
+        .Col_Total {
+            width: 10%;
+        }
+
+        .Border {
+            border: none !important;
+        }
+
+        .inline-labels {
+            display: flex;
+            justify-content: space-between;
+            gap: 500px;
+        }
+
+        .compact-text p {
+            margin: 2px 0;
+            line-height: 1.2;
+        }
+
+        .label-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="titel-page">
+        <p>الجمهورية الجزائرية الديمقراطية الشعبية</p>
+    </div>
+    <div class="part1">
+        <div class="informationusers">
+            <table class="red">
+                <tbody>
+                <tr>
+                    <td class="header" colspan="2">سند الطلب</td>
+                </tr>
+                <tr>
+                    <td>رقم: @Model.Number</td>
+                    <td>تاريخ: @Model.Date</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="red">
+                <tbody>
+                <tr>
+                    <td class="header">التعريف بالمصلحة المتعاقدة</td>
+                </tr>
+                <tr>
+                    <td class="compact-text">
+                        <p>التسمية: كلية الأداب ولغات</p>
+                        <p>رمز المسير(الأمر بالصرف): 14608</p>
+                        <p>العنوان: ص . ب 123 جامعة محمد خيضر بسكرة</p>
+                        <p>الهاتف و الفاكس: 033 74 00 00</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="red">
+                <tbody>
+                <tr>
+                    <td class="header">التعريف بالمتعامل اقتصادي</td>
+                </tr>
+                <tr>
+                    <td class="compact-text">
+                        <p>الاسم ولقب:@Model.Supplier.CompanyName</p>
+                        <p>يتصرف لحساب: @Model.Supplier.ManagerName</p>
+                        <p>العنوان: @Model.Supplier.Address</p>
+                        <p>الهاتف الفاكس: @Model.Supplier.Phone</p>
+                        <p class="inline-labels">
+                            <span class="label-group">
+
+                                <label>رقم سجل تجاري: </label> <label>@Model.Supplier.RC</label>
+                            </span>
+                            <span class="label-group">
+
+                                <label>رقم جبائي :</label> <label> @Model.Supplier.ART</label>
+                            </span>
+
+                        </p>
+
+                        <p class="inline-labels">
+                            <span class="label-group">
+
+                                <label>رقم اعتماد : </label>
+                                <label>@Model.Supplier.NIF</label>
+                            </span>
+                            <span class="label-group">
+
+                                <label>رقم تعريف احصائي: </label>
+                                <label>@Model.Supplier.NIS</label>
+
+                            </span>
+
+                        </p>
+
+                        <p class="inline-labels">
+                            <span class="label-group">
+                                <label>كشف حساب بنكي: </label>
+                                <label>@Model.Supplier.RIB</label>
+                            </span>
+                            <span class="label-group">
+                                <label>بنك: </label>
+                                <label>@Model.Supplier.BankAgency </label>
+                            </span>
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="addinfo">
+            <h5>حيز مخصص </h5>
+            <h5>لمصلحة المراقبة </h5>
+            <h5> المالية </h5>
+            <h5> ب:...............</h5>
+            <h5> في:..............</h5>
+            <h5> هذا الحيز مخصص </h5>
+            <h5> لمصلحة الرقابة المالية </h5>
+            <h5> لوضع خاتم التأشيرة </h5>
+            <h5> لافضل مراقبة و متابعة </h5>
+        </div>
+    </div>
+
+    <div class="part3" style="position: absolute;top: 440px;width: 97%;">
+        <table class="red">
+            <tbody>
+            <tr>
+                <td class="header" colspan="4">خصوصيات الطلب</td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        @foreach (ServiceType serviceType in Enum.GetValues(typeof(ServiceType)))
+                        {
+                            if (Model.ServiceType == serviceType)
+                            {
+                                <li>@serviceTypeLabel(serviceType)</li>
+                            }
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        @foreach (BudgeType budgeType in Enum.GetValues(typeof(BudgeType)))
+                        {
+                            if (Model.BudgetType == budgeType)
+                            {
+                                <li>@budgeTypeLabel(budgeType)</li>
+                            }
+                        }
+                    </ul>
+                </td>
+                <td>الباب: @Model.BudgetArticle</td>
+                <td>موضوع الطلب: @Model.BudgetArticle</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="part4" style="position: absolute;top: 530px;width: 97%;">
+
+
+        <table class="red">
+            <tbody>
+            <tr>
+                <th class="Col_Number">الرقم</th>
+                <th class="Col_Designation">البيانات</th>
+                <th class="Col_Unit">وحدة القياس</th>
+                <th class="Col_Quantity">الكمية</th>
+                <th class="Price">سعر الوحدة</th>
+                <th class="Col_TVA">قيمة الضريبة</th>
+                <th class="Col_Total">المبلغ</th>
+            </tr>
+            @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td class="Col_Number">@(Model.Products.IndexOf(product) + 1)</td>
+                    <td class="Col_Designation">@product.Designation</td>
+                    <td class="Col_Unit">@product.UnitMeasure</td>
+                    <td class="Col_Quantity">@product.Quantity</td>
+                    <td class="Price">@product.UnitPrice.ToString("N2")</td>
+                    <td class="Col_TVA">@product.TVA%</td>
+                    <td class="Col_Total">@((product.Quantity * product.UnitPrice).ToString("N2"))</td>
+                </tr>
+            }
+            <tr>
+                <td colspan="4" class="Border"></td>
+                <td colspan="2">المبلغ بدون الرسم</td>
+                <td>@Model.TotalHT.ToString("N2")</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="Border"></td>
+                <td colspan="2">مبلغ الضريبة</td>
+                <td>@Model.TotalTVA.ToString("N2")</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="Border"></td>
+                <td colspan="2">المبلغ الاجمالي</td>
+                <td>@Model.TotalTTC.ToString("N2")</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="part6" style="position: absolute;top: 1100px;width: 97%;">
+        <table class="red">
+            <tbody>
+            <tr>
+                <td> يوقف السند على المبلغ الاجمالي (بالحروف): @totalInWordsArab دينار جزائري </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="part7" style="position: absolute;top: 1180px;width: 80%;">
+        <p>يلتزم المتعامل الاقتصادي بتنفيذ هذا الطلب حسب الشروط المحددة</p>
+        <p>تقدر مدة التنفيذ ب(@Model.CompletionDelay) أيام من تاريخ الامضاء</p>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -208,7 +208,18 @@ namespace INV.Implementation.Service.Purchses
         {
             return await purchaseOrderStorage.SelectNextPurchaseOrderNumberAsync();
         }
-
+        public async ValueTask<Result<List<PurchaseDetail>>> GetPurchaseOrderDetail(Guid purchaseId)
+        {
+            try
+            {
+                IAsyncEnumerable<PurchaseDetail> result = purchaseOrderStorage.SelectPurchaseDetail(purchaseId);
+                return Result.Success(await result.ToListAsync());
+            }
+            catch (Exception e)
+            {
+                return Error.Exception(e);
+            }
+        }
         public async ValueTask<long> UpdatePurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber)
         {
             return await purchaseOrderStorage.SetPurchaseOrderNumberAsync(purchaseOrderId, newNumber);

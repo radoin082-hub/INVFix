@@ -4,7 +4,10 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using INV.App.Purchases;
 using INV.App.Receipts;
+using INV.App.Suppliers;
+using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Receipts;
 using Microsoft.Data.SqlClient;
 
@@ -121,6 +124,53 @@ namespace INV.Infrastructure.Storage.Receipts
                 //UnitPrice = row.IsNull("UnitPrice") ? 0m : row.Field<decimal?>("UnitPrice") ?? 0m,
                 Received = row.IsNull("Received") ? 0 : row.Field<int>("Received"),
                 DefaultWareHouseId = row.IsNull("WareHouseId") ? Guid.Empty : row.Field<Guid>("WareHouseId")
+            };
+        }
+        private static ReceiptDetail getReceptionDetailReader(SqlDataReader reader)
+        {
+            return new ReceiptDetail
+            {
+                Id = (Guid)reader["Id"],
+                PurchaseId = (Guid)reader["PurchaseId"],
+                Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
+                DeliveryNumber = (string)reader["DeliveryNumber"],
+                DeliveryDate = DateOnly.FromDateTime((DateTime)reader["DeliveryDate"]),
+                Status = (ReceiptStatus)reader["Status"],
+                PurchaseOrder = new PurchaseOrderInfo(),
+                ReceiptProducts = new List<ReceiptProductInfo>()
+            };
+        }
+        private static ReceiptProductInfo getReceiptProductInfoReader(SqlDataReader reader)
+        {
+            return new ReceiptProductInfo()
+            {
+                ReceptionId = (Guid)reader["ReceptionId"],
+                ProductId = (Guid)reader["ProductId"],
+                Designation = (string)reader["Designation"],
+                UnitMeasure = (string)reader["UnitMeasure"],
+                Quantity = (int)reader["Quantity"],
+                Received = (int)reader["Received"],
+            };
+        }
+        private static PurchaseOrderInfo getPurchaseOrderReader(SqlDataReader reader)
+        {
+            return new PurchaseOrderInfo
+            {
+                Id = (Guid)reader["Id"],
+                Number = (string)reader["Number"],
+                SupplierName = (string)reader["SupplierName"],
+                Date = DateOnly.FromDateTime((DateTime)reader["Date"]),
+                BudgeType = (BudgeType)reader["BudgetArticle"],
+                ServiceType = (ServiceType)reader["ServiceType"],
+                TotalTTC = (decimal)reader["TotalTC"],
+                CompletionDelay = (int)reader["CompletionDelay"],
+                Supplier = new SupplierInfo
+                {
+                    CompanyName = (string)reader["ManagerName"],
+                    Address = (string)reader["Address"],
+                    Phone = (string)reader["Phone"],
+                    Email = (string)reader["Email"],
+                }
             };
         }
     }

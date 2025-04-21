@@ -1,0 +1,6 @@
+@INV.Report_HostAddress = http://localhost:5095
+
+GET {{INV.Report_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -110,6 +110,8 @@ WHERE ISNUMERIC([Number]) = 1;";
 SET [Number] = @aNumber
 WHERE [Id] = @aId;";
 
+        private const string selectPuchaseDetailQuery = "dbo.GetPurchaseDetailsById";
+
         public async IAsyncEnumerable<PurchaseOrderInfo> SelectPurchaseOrderInfo()
         {
             await using var sqlConnection = new SqlConnection(_connectionString);
@@ -416,6 +418,31 @@ WHERE [Id] = @aId;";
             cmd.Parameters.AddWithValue("@aId", purchaseOrderId);
 
             return await cmd.ExecuteNonQueryAsync();
+        }
+        public async IAsyncEnumerable<PurchaseDetail> SelectPurchaseDetail(Guid purchaseId)
+        {
+            await using var sqlConnection = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand(selectPuchaseDetailQuery, sqlConnection)
+            {
+                CommandType = CommandType.StoredProcedure,
+                Parameters = { new SqlParameter("@aPurchaseId", purchaseId) }
+            };
+            await sqlConnection.OpenAsync();
+            using var reader = await cmd.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                var purchaseDetail = getPurchaseDetailData(reader);
+      
+                await reader.NextResultAsync();
+                while (await reader.ReadAsync())
+                {
+                    purchaseDetail.Products.Add(getProductsData(reader));
+                    
+                }
+        
+                yield return purchaseDetail;
+            }
         }
     }
 }

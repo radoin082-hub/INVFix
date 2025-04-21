@@ -46,5 +46,7 @@ namespace INV.Infrastructure.Storage.Purchases
         ValueTask<long> SelectNextPurchaseOrderNumberAsync();
 
         ValueTask<long> SetPurchaseOrderNumberAsync(Guid purchaseOrderId, long newNumber);
+        IAsyncEnumerable<PurchaseDetail> SelectPurchaseDetail(Guid purchaseId);
+
     }
 }

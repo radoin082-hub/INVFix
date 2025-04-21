@@ -1,4 +1,5 @@
-﻿using INV.Domain.Entities.Budget;
+﻿using INV.App.Suppliers;
+using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Purchases;
 
 namespace INV.App.Purchases
@@ -12,7 +13,6 @@ namespace INV.App.Purchases
         public BudgeType BudgeType { set; get; }
         public ServiceType ServiceType { set; get; }
         public Guid SupplierId { set; get; }
-
         public string SupplierName { set; get; }
 
         public decimal TotalTTC { get; set; }
@@ -22,7 +22,8 @@ namespace INV.App.Purchases
         public DateOnly? VisaDate { get; set; }
         public string VisaNumber { get; set; }
         public string Observation { get; set; }
-
+        
+        public SupplierInfo Supplier { get; set; }
         public PurchaseStatus Status { get; set; }
     }
 }

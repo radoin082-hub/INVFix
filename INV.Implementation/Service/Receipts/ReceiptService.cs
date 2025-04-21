@@ -269,5 +269,17 @@ namespace INV.Implementation.Service.Receipts
         {
             return await receiptStorage.SetReceptionNumber(purchaseOrderId,newNumber);
         }
+        public async ValueTask<Result<List<ReceiptDetail>>> GetReceiptDetail(Guid purchaseId)
+        {
+            try
+            {
+                IAsyncEnumerable<ReceiptDetail> result = receiptStorage.SelectReceptionDetail(purchaseId);
+                return Result.Success(await result.ToListAsync());
+            }
+            catch (Exception e)
+            {
+                return Error.Exception(e);
+            }
+        }
     }
 }

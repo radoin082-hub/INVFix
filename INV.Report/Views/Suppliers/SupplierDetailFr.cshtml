@@ -1,0 +1,127 @@
+@using INV.Domain.Entities.Suppliers
+@model Supplier
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Supplier Profile Report</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            margin: 40px auto;
+            max-width: 960px;
+            color: #000;
+            background-color: #fff;
+        }
+
+        h1, h2 {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 40px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+        }
+
+        .generated-date {
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        td {
+            padding: 6px 10px;
+            vertical-align: top;
+        }
+
+        .label {
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .value {
+            width: 70%;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .status-active {
+            font-weight: bold;
+            color: green;
+        }
+
+        .status-inactive {
+            font-weight: bold;
+            color: red;
+        }
+
+        .footer {
+            position: absolute;
+            right: 350px;
+            top: 1200px;
+            text-align: center;
+            font-size: 11px;
+            margin-top: 60px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Supplier Profile</h1>
+    <div class="generated-date">Generated on @DateTime.Now.ToString("dd/MM/yyyy - HH:mm")</div>
+
+    <h2>Company Information</h2>
+    <table>
+        <tr><td class="label">Company Name:</td><td class="value">@Model.CompanyName</td></tr>
+        <tr><td class="label">Manager Name:</td><td class="value">@Model.ManagerName</td></tr>
+        <tr><td class="label">Address:</td><td class="value">@Model.Address</td></tr>
+        <tr><td class="label">Phone:</td><td class="value">@Model.Phone</td></tr>
+        <tr><td class="label">Email:</td><td class="value">@Model.Email</td></tr>
+        <tr><td class="label">Status:</td>
+            <td class="value @(Model.State == SupplierState.Active ? "status-active" : "status-inactive")">
+                @Model.State
+            </td>
+        </tr>
+    </table>
+
+    <h2>Legal Information</h2>
+    <table>
+        <tr><td class="label">RC:</td><td class="value">@Model.RC</td></tr>
+        <tr><td class="label">NIS:</td><td class="value">@Model.NIS</td></tr>
+        <tr><td class="label">ART:</td><td class="value">@Model.ART</td></tr>
+        <tr><td class="label">NIF:</td><td class="value">@Model.NIF</td></tr>
+    </table>
+
+    <h2>Banking Information</h2>
+    <table>
+        <tr><td class="label">RIB:</td><td class="value">@Model.RIB</td></tr>
+        <tr><td class="label">Bank Agency:</td><td class="value">@Model.BankAgency</td></tr>
+    </table>
+
+    <div class="footer">
+        © @DateTime.Now.Year - Supplier Detail Report 
+    </div>
+
+</body>
+</html>
