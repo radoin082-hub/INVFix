@@ -23,7 +23,13 @@ else
                         Style="width: 100%;" RowSelect="@((ReceiptInfo Receptions) => navigatepage(Receptions.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Number)" Title=@Localizer["Number"] Width="150px" Filterable="false" />
+                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Number)" Title=@Localizer["Number"] Width="150px" Filterable="false">
+                    <Template Context="reception">
+                        @(reception.Number == default ? string.Empty : reception.Number)
+                        <RadzenButton Icon="get_app" Click="()=>DownloadFile(reception.Id)"  
+                                      @onclick:stopPropagation="true"/>
+                    </Template>
+                </RadzenDataGridColumn>
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Date)" Title=@Localizer["Date"] Width="150px" Filterable="false">
                     <Template Context="reception">
                         @(reception.Date == default ? string.Empty : reception.Date.ToString())
@@ -54,3 +60,10 @@ else
         </RadzenDataGrid>
     </div>
 }
+<script>
+    function openPdf(byteArray) {
+        const blob = new Blob([new Uint8Array(byteArray)], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+    }
+</script>

@@ -1,4 +1,7 @@
 ﻿### Receipt_details
-GET http://localhost:5273/receipt/DownloadPdf/c34dc21e-4c71-4ee8-82a4-ca28dc2711f6/Fr
+GET http://localhost:5095/receipt/DownloadPdf/C3C1E881-08CD-4EFC-8CB1-4C22EB14F343/Fr
 ###    
-GET http://localhost:5273/receipt/DownloadPdf/937ADCF2-381B-4110-87A0-49B1C3DBDE7B/Ar
+GET http://localhost:5095/receipt/DownloadPdf/937ADCF2-381B-4110-87A0-49B1C3DBDE7B/Ar
+
+
+

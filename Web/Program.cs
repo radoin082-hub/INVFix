@@ -45,6 +45,7 @@ builder.Services.AddScoped<PreloadService>();
 builder.Services.AddScoped<NavigationLock>();
 builder.Services.AddLocalization();
 builder.Services.AddControllers();
+builder.Services.AddHttpClient();
 var app = builder.Build();
 
 string[] supportedCultures = ["en", "fr", "ar"];
