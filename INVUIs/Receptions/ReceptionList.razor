@@ -23,7 +23,8 @@ else
                         Style="width: 100%;" RowSelect="@((ReceiptInfo Receptions) => navigatepage(Receptions.Id))"
                         PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Number)" Title=@Localizer["Number"] Width="150px" Filterable="false" />
+                
+                <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Number)" Title=@Localizer["Number"] Width="150px" Filterable="false"/>     
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Date)" Title=@Localizer["Date"] Width="150px" Filterable="false">
                     <Template Context="reception">
                         @(reception.Date == default ? string.Empty : reception.Date.ToString())
@@ -46,6 +47,16 @@ else
                 <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="150px" Filterable="false">
                     <Template Context="reception">
                         <ReceptionStatusComponent Text="true" Icon="true" ReceptionStatus="@reception.Status" />
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn  Title=Download Width="110px" Filterable="false" >
+                    <Template Context="reception" >
+                        <div  style="text-align:center">
+                            <button class="btn-grid btn-download" @onclick="() => downloadFile(reception.Id)" @onclick:stopPropagation="true">
+                                <i class="bi bi-download"></i>
+                            </button>
+                        </div>
+                
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>

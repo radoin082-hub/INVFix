@@ -6,6 +6,7 @@ using INVUIs.Receptions.Models;
 using INV.Domain.Shared;
 using INV.Shared;
 using System.Linq;
+using System;
 
 namespace INVUIs.Receptions
 {
@@ -66,6 +67,10 @@ namespace INVUIs.Receptions
                                 (r.DeliveryDate.HasValue && r.DeliveryDate.Value.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)))
                     .ToList();
             }
+        }
+
+        private void downloadFile(Guid Id)
+        {
         }
     }
 }

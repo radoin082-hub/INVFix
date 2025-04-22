@@ -15,6 +15,10 @@ namespace INVUIs.Purchases
 
         private string SearchTerm { get; set; } = "";
 
+        private void downloadFile(Guid id)
+        {
+        }
+
         private List<PurchaseOrderInfo> displayedItems =>
          purchaseOrderInfos?.Where(i =>
              (i?.Number?.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
