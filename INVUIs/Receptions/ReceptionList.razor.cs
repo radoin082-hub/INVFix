@@ -6,7 +6,7 @@ using INVUIs.Receptions.Models;
 using INV.Domain.Shared;
 using INV.Shared;
 using System.Linq;
-using Microsoft.JSInterop;
+using System;
 
 namespace INVUIs.Receptions
 {
@@ -63,31 +63,14 @@ namespace INVUIs.Receptions
                                 (r.purchaseNumber?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
                                 (r.DeliveryNumber?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
                                 r.Status.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ||
-                                (r.Date.HasValue && r.Date.Value.ToString()
-                                    .Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)) ||
-                                (r.DeliveryDate.HasValue && r.DeliveryDate.Value.ToString()
-                                    .Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)))
+                                (r.Date.HasValue && r.Date.Value.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                                (r.DeliveryDate.HasValue && r.DeliveryDate.Value.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)))
                     .ToList();
             }
         }
 
-        [Inject] private HttpClient HttpClient { get; set; }
-        [Inject] private NavigationManager NavigationManager { get; set; }
-        [Inject] private IJSRuntime jsRuntime { get; set; }
-
-        private async Task DownloadFile(Guid id)
+        private void downloadFile(Guid Id)
         {
-            var url = $"http://localhost:5095/receipt/DownloadPdf/{id}/Fr";
-            /*
-            client.DefaultRequestHeaders.Clear();
-            client.DefaultRequestHeaders.Add("API-KEY", "Bh9OAJZp1Wu8LeNlbZXDfGQGvLc5iY5jd9sXwf15mFbPUnPNenM7yDfYR0JYGPCBwiVdHFMXux47UubKzLkxl8qKJmSasD39qAjqJh6KIpgS6PFXE6b431AuD186OQwB");
-            */
-            var response = await HttpClient.GetAsync(url);
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsByteArrayAsync();
-                await jsRuntime.InvokeVoidAsync("openPdf", content);
-            }
         }
     }
 }

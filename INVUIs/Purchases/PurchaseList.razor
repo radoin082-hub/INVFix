@@ -30,11 +30,19 @@ else
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Number)" Title=@Localizer["Number"] Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.Date)" Title=@Localizer["Date"] Filterable="false" />
-            @*     <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeType)" Title=@Localizer["BudgetType"] />
-                <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.ServiceType)" Title=@Localizer["ServiceType"] /> *@
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.BudgeArticle)" Title=@Localizer["BudgetArticle"] Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.SupplierName)" Title=@Localizer["Supplier"] Visible="ShowSupplier" Filterable="false" />
                 <RadzenDataGridColumn Property="@nameof(PurchaseOrderInfo.TotalTTC)" Title=@Localizer["TotalTTC"] Filterable="false" />
+                <RadzenDataGridColumn Title=Download Width="110px" Filterable="false">
+                    <Template Context="displayedItems">
+                        <div style="text-align:center">
+                            <button class="btn-grid btn-download" @onclick="() => downloadFile(displayedItems.Id)" @onclick:stopPropagation="true">
+                                <i class="bi bi-download"></i>
+                            </button>
+                        </div>
+
+                    </Template>
+                </RadzenDataGridColumn>
             </Columns>
             <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
 
