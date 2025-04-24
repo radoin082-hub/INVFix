@@ -16,10 +16,10 @@ public class ReceptionPdf(IGeneratePdf generatePdf, IReceiptService receiptServi
         var result = await receiptService.GetReceiptDetail(receiptId);
         var receiptDetail = result.Value.FirstOrDefault();
         if (result.IsFailure)
-            return BadRequest(result.Error);
+            return BadRequest("Error while fetching receipt");
 
         if (receiptDetail is null)
-            return NotFound();
+            return NotFound("Not Found");
 
         return await generatePdf.GetPdf("Views/Receptions/ReceptionDetailFr.cshtml", receiptDetail);
     }

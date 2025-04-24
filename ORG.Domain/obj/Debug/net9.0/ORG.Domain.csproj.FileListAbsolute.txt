@@ -1,0 +1,13 @@
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\bin\Debug\net9.0\ORG.Domain.deps.json
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\bin\Debug\net9.0\ORG.Domain.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\bin\Debug\net9.0\ORG.Domain.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.csproj.AssemblyReference.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.AssemblyInfoInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.AssemblyInfo.cs
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.csproj.CoreCompileInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.sourcelink.json
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\refint\ORG.Domain.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ORG.Domain.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.Domain\obj\Debug\net9.0\ref\ORG.Domain.dll

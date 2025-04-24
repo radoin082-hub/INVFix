@@ -9,4 +9,5 @@ internal class ReceiptProductModel
     public int Quantity { get; set; }
     public string Designation { get; set; }
     public decimal UnitPrice { set; get; }
+    public Guid WareHouseId { set; get; }
 }

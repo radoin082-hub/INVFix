@@ -24,7 +24,6 @@
       <PackageReference Include="NumberToWordsConverter" Version="1.0.0" />
       <PackageReference Include="PuppeteerSharp" Version="20.1.0" />
       <PackageReference Include="System.Collections" Version="4.3.0" />
-      <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.1" />
       <PackageReference Include="System.Linq.Async" Version="6.0.1" />
       <PackageReference Include="xunit" Version="2.9.3" />
     </ItemGroup>

@@ -13,6 +13,10 @@
       <ProjectReference Include="..\INV.Implementation\INV.Implementation.csproj" />
       <ProjectReference Include="..\INV.Infrastructure\INV.Infrastructure.csproj" />
       <ProjectReference Include="..\INVUIs\INVUIs.csproj" />
+      <ProjectReference Include="..\ORG.App\ORG.App.csproj" />
+      <ProjectReference Include="..\ORG.Domain\ORG.Domain.csproj" />
+      <ProjectReference Include="..\ORG.Implementation\ORG.Implementation.csproj" />
+      <ProjectReference Include="..\OrgUis\OrgUis.csproj" />
       <ProjectReference Include="..\WebResources\WebResources.csproj" />
     </ItemGroup>
 
@@ -24,12 +28,11 @@
       <PackageReference Include="BootstrapBlazor.BootstrapIcon.Extensions" Version="9.1.0" />
       <PackageReference Include="EasternArabicNumeralsConvertor" Version="1.0.0" />
       <PackageReference Include="Farsi.Library" Version="2.7.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
       <PackageReference Include="NumberToWordsArabic" Version="1.0.0" />
       <PackageReference Include="NumberToWordsConverter" Version="1.0.0" />
       <PackageReference Include="PuppeteerSharp" Version="20.1.0" />
       <PackageReference Include="Radzen.Blazor" Version="6.2.7" />
-      <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>

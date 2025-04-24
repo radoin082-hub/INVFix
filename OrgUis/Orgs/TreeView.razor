@@ -1,0 +1,41 @@
+﻿@using ORG.Domain.Entities.Node
+
+@if (Nodes is not null)
+{
+    @foreach (var node in Nodes)
+    {
+        <div class="tree-node">
+            <div class="node-left">
+                <button class="btn-icon expand-btn"
+                        @onclick="() => ToggleExpand.InvokeAsync(node)">
+                    <i class="@(node.IsExpanded ? "bi bi-chevron-down" : "bi bi-chevron-right")" ></i>
+                </button>
+                <i class="bi bi-folder"></i>
+                <span class="node-name">@node.Name</span>
+            </div>
+            <div class="node-right">
+                <span class="node-type">(@node.Type.ToString())</span>
+                <button class="btn-icon"
+                        title="Add child"
+                        @onclick="() => AddChild.InvokeAsync(node)">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+        </div>
+
+        @if (node.IsExpanded && node.Children?.Any() == true)
+        {
+            <div class="tree-children">
+                <TreeView Nodes="node.Children"
+                           AddChild="AddChild"
+                           ToggleExpand="ToggleExpand" />
+            </div>
+        }
+    }
+}
+
+@code {
+    [Parameter] public List<Node> Nodes { get; set; }
+    [Parameter] public EventCallback<Node> AddChild { get; set; }
+    [Parameter] public EventCallback<Node> ToggleExpand { get; set; }
+}

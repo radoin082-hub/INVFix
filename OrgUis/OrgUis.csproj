@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ORG.App\ORG.App.csproj" />
+      <ProjectReference Include="..\ORG.Domain\ORG.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="bootstrap" Version="5.3.5" />
+      <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.1" />
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.1" />
+    </ItemGroup>
+
+</Project>

@@ -42,12 +42,13 @@ namespace INV.Infrastructure.Storage.Receipts
         private const string selectProductsByReceptionIdQuery = "SELECT * FROM [reception].[PRODUCTS] WHERE ReceptionId = @aReceptionId";
 
         private const string insertReceiptProductCommand = @"
-            INSERT INTO [reception].[PRODUCTS] (ReceptionId, ProductId, Quantity)
-            VALUES (@aReceptionId, @aProductId, @aQuantity)";
+            INSERT INTO [reception].[PRODUCTS] (ReceptionId, ProductId, Quantity, WareHouseId)
+            VALUES (@aReceptionId, @aProductId, @aQuantity,@aWareHouseId)";
 
         private const string updateReceiptProductCommand = @"
             UPDATE [reception].[PRODUCTS]
-            SET Quantity = @aQuantity
+            SET Quantity = @aQuantity 
+            ,   WareHouseId=@aWareHouseId
             WHERE ReceptionId = @aReceptionId AND ProductId = @aProductId";
 
         private const string deleteReceiptProductCommand = @"
@@ -239,7 +240,7 @@ WHERE O.SupplierId = @aSupplierId;";
             cmd.Parameters.AddWithValue("@aReceptionId", receiptProduct.ReceptionId);
             cmd.Parameters.AddWithValue("@aProductId", receiptProduct.ProductId);
             cmd.Parameters.AddWithValue("@aQuantity", receiptProduct.Quantity);
-
+            cmd.Parameters.AddWithValue("@aWareHouseId", receiptProduct.WareHouseId);
             return await cmd.ExecuteNonQueryAsync();
         }
 
@@ -252,6 +253,7 @@ WHERE O.SupplierId = @aSupplierId;";
             cmd.Parameters.AddWithValue("@aReceptionId", receiptProduct.ReceptionId);
             cmd.Parameters.AddWithValue("@aProductId", receiptProduct.ProductId);
             cmd.Parameters.AddWithValue("@aQuantity", receiptProduct.Quantity);
+            cmd.Parameters.AddWithValue("@aWareHouseId", receiptProduct.WareHouseId);
 
             return await cmd.ExecuteNonQueryAsync();
         }

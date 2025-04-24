@@ -1,0 +1,16 @@
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\bin\Debug\net9.0\ORG.Infrastructure.deps.json
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\bin\Debug\net9.0\ORG.Infrastructure.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\bin\Debug\net9.0\ORG.Infrastructure.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\bin\Debug\net9.0\ORG.Domain.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\bin\Debug\net9.0\ORG.Domain.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.AssemblyInfo.cs
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.sourcelink.json
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infr.25DA163F.Up2Date
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\refint\ORG.Infrastructure.dll
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ORG.Infrastructure.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.Infrastructure\obj\Debug\net9.0\ref\ORG.Infrastructure.dll

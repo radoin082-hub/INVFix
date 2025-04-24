@@ -7,6 +7,7 @@ using INV.Domain.Shared;
 using INV.Shared;
 using System.Linq;
 using System;
+using Microsoft.JSInterop;
 
 namespace INVUIs.Receptions
 {
@@ -18,6 +19,10 @@ namespace INVUIs.Receptions
         [Parameter] public bool ShowPurchase { get; set; } = true;
         [Parameter] public bool ShowSupplier { get; set; } = true;
         [Inject] public NavigationManager navigationManager { set; get; }
+        [Inject] private HttpClient httpClient { set; get; }  
+        [Inject] private IJSRuntime jsRuntime { set; get; }
+        
+
 
         public async Task navigatepage(Guid id) => Navigation.NavigateTo($"receptions/{id}");
 
@@ -69,8 +74,17 @@ namespace INVUIs.Receptions
             }
         }
 
-        private void downloadFile(Guid Id)
+       
+        private async Task downloadFile(Guid Id)
         {
+            Console.WriteLine(Localizer);
+            var responce = $" http://localhost:5095/receipt/DownloadPdf/{Id}/Fr";
+            var res = await httpClient.GetAsync(responce);
+            if (res.IsSuccessStatusCode)
+            {
+                var bytes = await res.Content.ReadAsByteArrayAsync();
+                await jsRuntime.InvokeVoidAsync("openPdf", bytes);
+            }
         }
     }
 }

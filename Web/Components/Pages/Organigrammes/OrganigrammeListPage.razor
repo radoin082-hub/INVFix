@@ -1,0 +1,212 @@
+﻿@page "/Orgs"
+@using ORG.App.Orgs
+@using ORG.Domain.Entities.Node
+@using OrgUis.Models
+
+@rendermode InteractiveServer
+
+<PageHeader Title="Org"/>
+
+<button class="btn-create-root mb-3" @onclick="AddRoot">
+  + Create Root 
+</button>
+
+@if (tree is null)
+{
+    <div class="loading-container">
+        <RadzenProgressBarCircular
+            Value="100"
+            ShowValue="false"
+            Mode="ProgressBarMode.Indeterminate" />
+    </div>
+}
+else
+{
+    <div class="tree-wrapper">
+        <TreeView
+            Nodes="tree"
+            AddChild="AddChild"
+            ToggleExpand="DropDownNode" />
+    </div>
+}
+
+@if (visible)
+{
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <EditForm Model="nodeModel" OnValidSubmit="AddNode">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <h4>Add New Node</h4>
+
+                <label>Node Name</label>
+                <InputText @bind-Value="nodeModel.Name" class="form-control" />
+
+                <label class="mt-2">Node Type</label>
+                <InputSelect @bind-Value="nodeModel.NodeType" class="form-control">
+                    @foreach (var type in Enum.GetValues(typeof(NodeType)))
+                    {
+                        <option value="@type">@type</option>
+                    }
+                </InputSelect>
+
+                <label class="mt-2">Description</label>
+                <InputText @bind-Value="nodeModel.Description" class="form-control" />
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">OK</button>
+                    <button type="button" class="btn btn-danger" @onclick="CancelAddNode">Cancel</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+
+<style>
+   
+    .tree-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #212529;
+    }
+
+
+    .btn-create-root {
+        background-color: #0b1e33;
+        border: none;
+        color: #fff;
+        padding: 8px 14px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+    .btn-create-root:hover {
+        background-color: #0a192d;
+    }
+
+   
+    .tree-wrapper {
+        background: #fff;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 16px;
+    }
+
+
+    .tree-node {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        position: relative;
+    }
+    .tree-node + .tree-node {
+        border-top: 1px solid #f1f1f1;
+    }
+
+
+    .node-left {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .btn-icon {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #6c757d;
+        font-size: 16px;
+    }
+    .btn-icon:hover {
+        color: #333;
+    }
+    .node-icon {
+        color: #ffc107;
+        font-size: 16px;
+    }
+    .node-name {
+        font-weight: 500;
+        color: #212529;
+    }
+
+  
+    .node-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .node-type {
+        color: #6c757d;
+        font-size: 13px;
+    }
+
+    
+    .add-child-btn {
+        display: none;
+        background: #198754;
+        color: #fff;
+        padding: 4px;
+        border-radius: 50%;
+    }
+    .tree-node:hover .add-child-btn {
+        display: inline-flex;
+    }
+    .add-child-btn:hover {
+        background: #157347;
+    }
+
+ 
+    .tree-children {
+        border-left: 2px solid #e9ecef;
+        margin-left: 22px;
+        padding-left: 14px;
+    }
+
+   
+    .popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+    }
+    .popup-content {
+        background: #fff;
+        border-radius: 10px;
+        padding: 24px;
+        width: 360px;
+        max-width: 90%;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    .popup-content h4 {
+        margin-bottom: 16px;
+    }
+    .popup-content label {
+        display: block;
+        margin-top: 8px;
+        font-weight: 500;
+    }
+    .form-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 16px;
+    }
+    @keyframes fadeIn {
+        from { transform: scale(0.95); opacity: 0; }
+        to   { transform: scale(1);    opacity: 1; }
+    }
+
+  
+    .loading-container {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+
+</style>

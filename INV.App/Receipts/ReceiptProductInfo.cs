@@ -11,4 +11,5 @@ public class ReceiptProductInfo
     public decimal UnitPrice { set; get; }
     public Guid DefaultWareHouseId { get; set; }
     public string PurchaseNumber { get; set; }
+    
 }

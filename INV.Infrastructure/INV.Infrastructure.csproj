@@ -17,11 +17,10 @@
       <PackageReference Include="BootstrapBlazor.BootstrapIcon.Extensions" Version="9.1.0" />
       <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.1" />
       <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.1" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
       <PackageReference Include="Moq" Version="4.20.72" />
       <PackageReference Include="PuppeteerSharp" Version="20.1.0" />
-      <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.1" />
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
       <PackageReference Include="xunit" Version="2.9.3" />
     </ItemGroup>
 

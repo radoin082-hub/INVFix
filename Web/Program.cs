@@ -20,6 +20,9 @@ using INV.Infrastructure.Storage.WareHousesStorages;
 using INV.Web.Components;
 using INV.Web.Services.Suppliers;
 using Microsoft.AspNetCore.Components.Routing;
+using ORG.App.Orgs;
+using ORG.Implementation.Service.Orgs;
+using ORG.Infrastructure.Storage.Orgs;
 using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +40,9 @@ builder.Services.AddScoped<IWareHouseStorage, WareHouseStorage>();
 builder.Services.AddScoped<IWareHouseService, WareHouseService>();
 builder.Services.AddScoped<IBudgetStorage, BudgetStorage>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
+builder.Services.AddScoped<IOrgService, OrgService>();
+builder.Services.AddScoped<IOrgStorage, OrgStorage>();
+builder.Services.AddHttpClient();
 builder.Services.AddRadzenComponents();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -69,6 +75,5 @@ app.MapControllers();
 
 app.UseAntiforgery();
 app.MapStaticAssets();
-app.MapRazorComponents<App>().
-    AddInteractiveServerRenderMode();
+app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 app.Run();

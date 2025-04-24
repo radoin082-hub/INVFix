@@ -120,6 +120,12 @@
                         <InputNumber @bind-Value="product.NEwReceived" disabled="@statusInput"/>
                     </Template>
                 </RadzenDataGridColumn>
+                <RadzenDataGridColumn Title="@Localizer["Warehouse"]">
+                    <Template Context="product">
+                        <RadzenDropDown @bind-Value="product.WareHouseId" Data="@WareHouse" TextProperty="WareHouseName" ValueProperty="Id" Disabled="@statusInput" Style="width: 100%;"
+                                       />
+                    </Template>
+                </RadzenDataGridColumn>
             </Columns>
             <EmptyTemplate>@Localizer["NothingDisplay"]</EmptyTemplate>
 

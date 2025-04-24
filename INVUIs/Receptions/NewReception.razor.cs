@@ -7,6 +7,7 @@ using INV.Domain.Shared;
 using INVUIs.Receptions.Models;
 using INVUIs.Shared.Models;
 using INVUIs.Shared.MyAlert;
+using INVUIs.WareHouses.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.JSInterop;
@@ -116,7 +117,7 @@ namespace INVUIs.Receptions
                         ReceptionId = p.ReceptionId,
                         ProductId = p.ProductId,
                         Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.NEwReceived,
-                        WareHouseId = p.DefaultWareHouseId
+                        WareHouseId = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.WareHouseId,
                     }).ToList(),
                     Status = ReceiptStatus.editing
                 };
@@ -158,5 +159,10 @@ namespace INVUIs.Receptions
                 await myAlert.ShowToast(null, Localizer["Reception.MustValidate"], MyAlertType.error);
             }
         }
+        private List<WareHouseModel> WareHouse = new()
+        {
+            new WareHouseModel { Id =new Guid("CF234288-B792-4FDA-BDFC-4D9AF018CA41"), WareHouseName = "stock campus chetma                               " },
+            new WareHouseModel { Id = new Guid("BF33EB94-40DA-452F-BB30-9525E052CB46"), WareHouseName = "magazin université centrale                       " }
+        };
     }
 }
