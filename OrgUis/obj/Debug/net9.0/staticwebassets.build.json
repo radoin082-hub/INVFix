@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1RWfU5ZVrz3CxyAECdEtAQNNN6Rro/YxYWZewJ+Zzmg=",
+  "Hash": "PY/6113o9DLlsemt9EeEFUrxCh1LSh2GSVFxfJc50DI=",
   "Source": "OrgUis",
   "BasePath": "_content/OrgUis",
   "Mode": "Default",
@@ -941,6 +941,27 @@
       "OriginalItemSpec": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map"
     },
     {
+      "Identity": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js",
+      "SourceId": "OrgUis",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\",
+      "BasePath": "_content/OrgUis",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1pk6trjijm",
+      "Integrity": "uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js"
+    },
+    {
       "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\0if5xb1if4-8odi0me81w.gz",
       "SourceId": "OrgUis",
       "SourceType": "Discovered",
@@ -1107,6 +1128,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\8gvi1bptrs-1pk6trjijm.gz",
+      "SourceId": "OrgUis",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/OrgUis",
+      "RelativePath": "js/site#[.{fingerprint=1pk6trjijm}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "5n56angbw1",
+      "Integrity": "79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js"
     },
     {
       "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\9gy7noownk-n2fyjk766i.gz",
@@ -1550,6 +1592,27 @@
       "OriginalItemSpec": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.rtl.min.css"
     },
     {
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\mb5n1unuen-dovhj5uj1u.gz",
+      "SourceId": "OrgUis",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/OrgUis",
+      "RelativePath": "dragHelper#[.{fingerprint=dovhj5uj1u}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "q5xbyhwxko",
+      "Integrity": "Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js"
+    },
+    {
       "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\n3bdsmsz7g-z03y41h7sr.gz",
       "SourceId": "OrgUis",
       "SourceType": "Discovered",
@@ -1905,6 +1968,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js",
+      "SourceId": "OrgUis",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\",
+      "BasePath": "_content/OrgUis",
+      "RelativePath": "dragHelper#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dovhj5uj1u",
+      "Integrity": "nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\dragHelper.js"
     },
     {
       "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\exampleJsInterop.js",
@@ -11548,6 +11632,304 @@
       ]
     },
     {
+      "Route": "dragHelper.dovhj5uj1u.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\mb5n1unuen-dovhj5uj1u.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.010101010101"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dovhj5uj1u"
+        },
+        {
+          "Name": "label",
+          "Value": "dragHelper.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I="
+        }
+      ]
+    },
+    {
+      "Route": "dragHelper.dovhj5uj1u.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dovhj5uj1u"
+        },
+        {
+          "Name": "label",
+          "Value": "dragHelper.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I="
+        }
+      ]
+    },
+    {
+      "Route": "dragHelper.dovhj5uj1u.js.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\mb5n1unuen-dovhj5uj1u.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dovhj5uj1u"
+        },
+        {
+          "Name": "label",
+          "Value": "dragHelper.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw="
+        }
+      ]
+    },
+    {
+      "Route": "dragHelper.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\mb5n1unuen-dovhj5uj1u.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.010101010101"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I="
+        }
+      ]
+    },
+    {
+      "Route": "dragHelper.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nYHEgoU/0b5+KbVWSCXC32IjsFpF0Y2KXPEHbn2vr3I="
+        }
+      ]
+    },
+    {
+      "Route": "dragHelper.js.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\mb5n1unuen-dovhj5uj1u.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "98"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:26:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Yv2eYq/NVv76+jDPjENt/Sx1w8nLLfjuilNaOGdQDuw="
+        }
+      ]
+    },
+    {
       "Route": "exampleJsInterop.6pqz8bsss0.js",
       "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\ugxmzrdtgq-6pqz8bsss0.gz",
       "Selectors": [
@@ -15418,6 +15800,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-3+aMagGFsXYWhknpE553wMtct79B/WPvYmAGSvvOvEQ="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.1pk6trjijm.js",
+      "AssetFile": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "67"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1pk6trjijm"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.1pk6trjijm.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\8gvi1bptrs-1pk6trjijm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.014492753623"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1pk6trjijm"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.1pk6trjijm.js.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\8gvi1bptrs-1pk6trjijm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1pk6trjijm"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "67"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\8gvi1bptrs-1pk6trjijm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.014492753623"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uxhLZ5ObK2z3zo+NIDQb1IrrmULyUwzDbsMB3t0hWFc="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\Debug\\net9.0\\compressed\\8gvi1bptrs-1pk6trjijm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:14:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-79dEfAsHvjSYA0XbhXWz+WtilqEfW+UtXp9f9bSDKUo="
         }
       ]
     }

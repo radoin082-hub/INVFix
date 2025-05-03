@@ -9,6 +9,7 @@
       "OrgUis/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.Web": "9.0.1",
+          "Microsoft.JSInterop": "9.0.3",
           "ORG.App": "1.0.0",
           "ORG.Domain": "1.0.0",
           "System.Configuration.ConfigurationManager": "9.0.1",
@@ -62,7 +63,7 @@
           "Microsoft.AspNetCore.Components.Forms": "9.0.1",
           "Microsoft.Extensions.DependencyInjection": "9.0.1",
           "Microsoft.Extensions.Primitives": "9.0.1",
-          "Microsoft.JSInterop": "9.0.1"
+          "Microsoft.JSInterop": "9.0.3"
         },
         "runtime": {
           "lib/net9.0/Microsoft.AspNetCore.Components.Web.dll": {
@@ -129,11 +130,11 @@
           }
         }
       },
-      "Microsoft.JSInterop/9.0.1": {
+      "Microsoft.JSInterop/9.0.3": {
         "runtime": {
           "lib/net9.0/Microsoft.JSInterop.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61009"
+            "fileVersion": "9.0.325.11220"
           }
         }
       },
@@ -356,12 +357,12 @@
       "path": "microsoft.extensions.primitives/9.0.1",
       "hashPath": "microsoft.extensions.primitives.9.0.1.nupkg.sha512"
     },
-    "Microsoft.JSInterop/9.0.1": {
+    "Microsoft.JSInterop/9.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/xBwIfb0YoC2Muv6EsHjxpqZw2aKv94+i0g0FWZvqvGv3DeAy+8wipAuECVvKYEs2EIclRD41bjajHLoD6mTtw==",
-      "path": "microsoft.jsinterop/9.0.1",
-      "hashPath": "microsoft.jsinterop.9.0.1.nupkg.sha512"
+      "sha512": "sha512-SIuEX0PXeWqeb/2Uih6sUXyTAouWRc7n5a5Dr4HAGFKOmw1/e3D5JOcMXq3xM2H6X2OMa4DVE2FJ8U7kn9cYYQ==",
+      "path": "microsoft.jsinterop/9.0.3",
+      "hashPath": "microsoft.jsinterop.9.0.3.nupkg.sha512"
     },
     "Microsoft.SqlServer.Server/1.0.0": {
       "type": "package",

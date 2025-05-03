@@ -407,7 +407,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.JSInterop/9.0.1": {
+      "Microsoft.JSInterop/9.0.3": {
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.JSInterop.dll": {
@@ -981,10 +981,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.JSInterop/9.0.1": {
-      "sha512": "/xBwIfb0YoC2Muv6EsHjxpqZw2aKv94+i0g0FWZvqvGv3DeAy+8wipAuECVvKYEs2EIclRD41bjajHLoD6mTtw==",
+    "Microsoft.JSInterop/9.0.3": {
+      "sha512": "SIuEX0PXeWqeb/2Uih6sUXyTAouWRc7n5a5Dr4HAGFKOmw1/e3D5JOcMXq3xM2H6X2OMa4DVE2FJ8U7kn9cYYQ==",
       "type": "package",
-      "path": "microsoft.jsinterop/9.0.1",
+      "path": "microsoft.jsinterop/9.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -992,7 +992,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net9.0/Microsoft.JSInterop.dll",
         "lib/net9.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.9.0.1.nupkg.sha512",
+        "microsoft.jsinterop.9.0.3.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -1161,6 +1161,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.AspNetCore.Components.Web >= 9.0.1",
+      "Microsoft.JSInterop >= 9.0.3",
       "ORG.App >= 1.0.0",
       "ORG.Domain >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 9.0.1",
@@ -1219,6 +1220,10 @@
           "Microsoft.AspNetCore.Components.Web": {
             "target": "Package",
             "version": "[9.0.1, )"
+          },
+          "Microsoft.JSInterop": {
+            "target": "Package",
+            "version": "[9.0.3, )"
           },
           "System.Configuration.ConfigurationManager": {
             "target": "Package",

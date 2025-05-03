@@ -73,3 +73,5 @@ C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\xu3u47ifg9-c
 C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\ewdpifw9ni-nd7yxyuic7.gz
 C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\5k0xb8wk4x-fw9op1z7az.gz
 C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\k6wybz57jb-bi4v2s709r.gz
+C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\8gvi1bptrs-1pk6trjijm.gz
+C:\Users\radoi\RiderProjects\INV\OrgUis\obj\Debug\net9.0\compressed\mb5n1unuen-dovhj5uj1u.gz

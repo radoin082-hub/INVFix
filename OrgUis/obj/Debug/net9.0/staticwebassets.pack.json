@@ -177,8 +177,16 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\radoi\\.nuget\\packages\\bootstrap\\5.3.5\\contentFiles\\any\\any\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
       "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\background.png",
       "PackagePath": "staticwebassets\\background.png"
+    },
+    {
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\dragHelper.js",
+      "PackagePath": "staticwebassets\\dragHelper.js"
     },
     {
       "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\wwwroot\\exampleJsInterop.js",

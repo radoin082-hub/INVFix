@@ -180,6 +180,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[9.0.1, )"
