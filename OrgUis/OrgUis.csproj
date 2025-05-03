@@ -27,10 +27,4 @@
       <Folder Include="Shared\" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="..\..\..\.nuget\packages\bootstrap\5.3.5\contentFiles\any\any\wwwroot\js\site.js">
-        <Link>wwwroot\js\site.js</Link>
-      </Content>
-    </ItemGroup>
-
 </Project>
