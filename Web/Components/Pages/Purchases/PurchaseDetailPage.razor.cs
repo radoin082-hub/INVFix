@@ -22,7 +22,7 @@ using Xunit.Sdk;
 
 namespace INV.Web.Components.Pages.Purchases
 {
-    public partial class PurchaseDetailPage
+    public partial class PurchaseDetailPage :ComponentBase
     {
         [Parameter] public Guid Id { get; set; }
         [Inject] public IPurchaseOrderService purchaseOrderService { set; get; }
@@ -143,7 +143,8 @@ namespace INV.Web.Components.Pages.Purchases
                     UnitPrice = s.UnitPrice,
 
                     TVA = s.TVA,
-                    TotalPrice = s.Quantity * s.UnitPrice
+                    TotalPrice = s.Quantity * s.UnitPrice,
+                    Received = s.Received
                 }).ToList();
             }
             var receiptsByPurchase = await receiptService.GetReceiptsByPurchaseIdWhenStatus(purchaseOrder.Id);

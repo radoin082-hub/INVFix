@@ -19,7 +19,18 @@
     <ItemGroup>
       <PackageReference Include="bootstrap" Version="5.3.5" />
       <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.1" />
+      <PackageReference Include="Microsoft.JSInterop" Version="9.0.3" />
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Shared\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\.nuget\packages\bootstrap\5.3.5\contentFiles\any\any\wwwroot\js\site.js">
+        <Link>wwwroot\js\site.js</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

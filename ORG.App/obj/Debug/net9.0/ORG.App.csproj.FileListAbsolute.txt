@@ -1,0 +1,16 @@
+C:\Users\radoi\RiderProjects\INV\ORG.App\bin\Debug\net9.0\ORG.App.deps.json
+C:\Users\radoi\RiderProjects\INV\ORG.App\bin\Debug\net9.0\ORG.App.dll
+C:\Users\radoi\RiderProjects\INV\ORG.App\bin\Debug\net9.0\ORG.App.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.App\bin\Debug\net9.0\ORG.Domain.dll
+C:\Users\radoi\RiderProjects\INV\ORG.App\bin\Debug\net9.0\ORG.Domain.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.csproj.AssemblyReference.cache
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.AssemblyInfoInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.AssemblyInfo.cs
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.csproj.CoreCompileInputs.cache
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.sourcelink.json
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.csproj.Up2Date
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.dll
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\refint\ORG.App.dll
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ORG.App.pdb
+C:\Users\radoi\RiderProjects\INV\ORG.App\obj\Debug\net9.0\ref\ORG.App.dll

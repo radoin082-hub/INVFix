@@ -1,8 +1,10 @@
 using System.Linq;
 using INV.App.Purchases;
 using INV.App.Receipts;
+using INV.App.WareHouses;
 using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Receipts;
+using INV.Domain.Entities.WareHouses;
 using INV.Domain.Shared;
 using INVUIs.Receptions.Models;
 using INVUIs.Shared.Models;
@@ -22,14 +24,35 @@ namespace INVUIs.Receptions
         [Inject] private IJSRuntime jsRuntime { set; get; }
         [Inject] private NavigationManager navigationManager { get; set; }
         [Inject] private NavigationLock navigationLock { get; set; }
+        [Inject] private IWareHouseService wareHouseService { get; set; }
+        private ReceptionStorageLocation receptionStorageLocation;
         private MyAlert? myAlert;
         private List<ReceiptProductModel> products { get; set; }
+        private List<ReceiptProductInfo> ReceiptProductInfo { get; set; } = new();
+        private ReceiptProductModel? product = null;
+        public List<WareHouse> WareHouses;
         private bool statusInput = false;
         private bool restVisibility = true;
         private bool isValidated = false;
 
+        public async Task showLocal(ReceiptProductModel receiptProductModel)
+        {
+            product = receiptProductModel;
+            await receptionStorageLocation.Show(product);
+            StateHasChanged();
+        }
+
+        public async Task<ReceiptProductModel> a(ReceiptProductModel receiptProductModel)
+        {
+            product = receiptProductModel;
+            return product;
+        }
+
+
         protected override async Task OnInitializedAsync()
         {
+            var result = await wareHouseService.GetAllWareHousesByWarhouseType();
+            WareHouses = result.Value;
             myAlert = new MyAlert(jsRuntime);
             if (ReceiptInfo != null && ReceiptInfo.ReceiptProducts != null)
             {
@@ -81,70 +104,100 @@ namespace INVUIs.Receptions
         private async Task SaveChanges()
         {
             bool send = await checkInputs();
+            if (!send) return;
 
-            if (send)
+            // Check for zero quantity
+            /*if (products.All(p => p.NEwReceived <= 0))
             {
-                if (products.FindAll(s => s.NEwReceived > 0).Count <= 0)
-                {
-                    await myAlert!.ShowAlert(Localizer["Error"],
-                        "The received quantity cannot be zero.", MyAlertType.error);
-                    return;
-                }
+                await myAlert!.ShowAlert(Localizer["Error"],
+                    "The received quantity cannot be zero.", MyAlertType.error);
+                return;
+            }*/
 
-                foreach (var product in products)
+            // Check for exceeding ordered quantity
+            foreach (var p in products)
+            {
+                var existing = ReceiptInfo.ReceiptProducts
+                    .FirstOrDefault(rp => rp.ProductId == p.ProductId);
+                if (existing != null && p.NEwReceived > existing.Quantity)
                 {
-                    var receiptProduct =
-                        ReceiptInfo.ReceiptProducts.FirstOrDefault(p => p.ProductId == product.ProductId);
-                    if (receiptProduct == null || product.NEwReceived <= receiptProduct.Received) continue;
                     await myAlert!.ShowAlert(Localizer["Error"],
                         "The received quantity cannot be greater than the quantity ordered.", MyAlertType.error);
                     return;
                 }
-
-                if (ReceiptInfo.DeliveryDate == null || ReceiptInfo.DeliveryNumber == null)
-                {
-                }
-
-                Receipt receiptToSave = new()
-                {
-                    Id = ReceiptInfo.Id,
-                    Date = (DateOnly)ReceiptInfo.Date,
-                    DeliveryDate = (DateOnly)ReceiptInfo.DeliveryDate,
-                    DeliveryNumber = ReceiptInfo.DeliveryNumber,
-                    PurchaseId = ReceiptInfo.PurchaseId,
-                    Products = ReceiptInfo.ReceiptProducts.Select(p => new ReceiptProduct()
-                    {
-                        ReceptionId = p.ReceptionId,
-                        ProductId = p.ProductId,
-                        Quantity = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.NEwReceived,
-                        WareHouseId = products.FirstOrDefault(pp => p.ProductId == pp.ProductId)!.WareHouseId,
-                    }).ToList(),
-                    Status = ReceiptStatus.editing
-                };
-
-                var result = await receptionService.GetReceiptById(ReceiptInfo.Id);
-
-                if (result.IsSuccess)
-                {
-                    await receptionService.UpdateReceipt(receiptToSave);
-                }
-                else
-                {
-                    await receptionService.CreateReceipt(receiptToSave);
-                }
-
-                cancelEditing();
             }
+
+            // Validate delivery info
+            if (ReceiptInfo.DeliveryDate == null || string.IsNullOrWhiteSpace(ReceiptInfo.DeliveryNumber))
+            {
+                await myAlert!.ShowAlert(Localizer["Error"], Localizer["Delivery.Missing"], MyAlertType.error);
+                return;
+            }
+
+            // Build receipt product list
+            var updatedReceiptProducts = products.Select(p => new ReceiptProductInfo
+            {
+                ReceptionId = ReceiptInfo.Id,
+                ProductId = p.ProductId,
+                Quantity = p.NEwReceived,
+                Received = p.Received,
+                Designation = p.Designation,
+                UnitPrice = p.UnitPrice,
+                DefaultWareHouseId = p.WareHouseId,
+                ReceiptProductDetails = p.ReceiptProductDetails?.Select(d => new ReceiptProductDetails
+                {
+                    ReceiptProductId = ReceiptInfo.Id,
+                    ProductId = d.ProductId,
+                    WarhouseId = d.WarhouseId,
+                    WarhouseName = d.WarhouseName,
+                    Quantity = d.Quantity
+                }).ToList() ?? new List<ReceiptProductDetails>()
+            }).ToList();
+
+            var receiptToSave = new ReceiptInfo
+            {
+                Id = ReceiptInfo.Id,
+                Number = ReceiptInfo.Number,
+                Date = ReceiptInfo.Date,
+                PurchaseId = ReceiptInfo.PurchaseId,
+                purchaseNumber = ReceiptInfo.purchaseNumber,
+                PurchaseDate = ReceiptInfo.PurchaseDate,
+                Quantity = updatedReceiptProducts.Sum(p => p.Quantity),
+                supplierId = ReceiptInfo.supplierId,
+                supplierName = ReceiptInfo.supplierName,
+                DeliveryNumber = ReceiptInfo.DeliveryNumber,
+                DeliveryDate = ReceiptInfo.DeliveryDate,
+                Status = ReceiptStatus.editing,
+                ReceiptProducts = updatedReceiptProducts
+            };
+            
+            var existingReceipt = await receptionService.GetReceiptById(ReceiptInfo.Id);
+
+            if (existingReceipt.IsSuccess)
+            {
+                await receptionService.UpdateReceipt(receiptToSave);
+            }
+            else
+            {
+                await receptionService.CreateReceipt(receiptToSave);
+            }
+
+            cancelEditing();
         }
 
-        private void cancelEditing() => statusInput = true;
+
+        private void cancelEditing()
+        {
+            statusInput = true;
+            isValidated = true;
+        }
 
         private async Task<bool> checkInputs()
         {
             if (ReceiptInfo.DeliveryDate is null || ReceiptInfo.DeliveryNumber is null)
             {
                 await myAlert!.ShowAlert(Localizer["Error"], Localizer["Delivery.Missing"]
-                      , MyAlertType.error);
+                    , MyAlertType.error);
                 return false;
             }
 
@@ -159,10 +212,15 @@ namespace INVUIs.Receptions
                 await myAlert.ShowToast(null, Localizer["Reception.MustValidate"], MyAlertType.error);
             }
         }
-        private List<WareHouseModel> WareHouse = new()
+
+        private void locationsSaved(List<ReceiptProductDetails> details)
         {
-            new WareHouseModel { Id =new Guid("CF234288-B792-4FDA-BDFC-4D9AF018CA41"), WareHouseName = "stock campus chetma                               " },
-            new WareHouseModel { Id = new Guid("BF33EB94-40DA-452F-BB30-9525E052CB46"), WareHouseName = "magazin université centrale                       " }
-        };
+            if (product is not null)
+            {
+                product.ReceiptProductDetails = details;
+            }
+
+            StateHasChanged();
+        }
     }
 }

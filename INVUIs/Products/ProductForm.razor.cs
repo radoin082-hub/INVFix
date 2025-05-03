@@ -1,5 +1,7 @@
 ﻿using INV.App.Products;
+using INV.App.WareHouses;
 using INV.Domain.Entities.Products;
+using INV.Domain.Entities.WareHouses;
 using INV.Domain.Shared;
 using INV.Shared;
 using INVUIs.Products.ProductsModel;
@@ -22,6 +24,7 @@ public partial class ProductForm : ComponentBase
     [Inject] private IProductService productService { set; get; }
     [Inject] private NavigationManager navigationManager { set; get; }
     [Inject] private IJSRuntime jsRuntime { set; get; }
+    [Inject] IWareHouseService wareHouseService { get; set; } 
 
     public ProductForm productForm;
 
@@ -32,12 +35,8 @@ public partial class ProductForm : ComponentBase
     private string message = string.Empty;
     private List<int> TVAOptions = new() { 9, 19 };
 
-    private List<WareHouseModel> WareHouse = new()
-{
-    new WareHouseModel { Id =new Guid("CF234288-B792-4FDA-BDFC-4D9AF018CA41"), WareHouseName = "stock campus chetma                               " },
-    new WareHouseModel { Id = new Guid("BF33EB94-40DA-452F-BB30-9525E052CB46"), WareHouseName = "magazin université centrale                       " }
-};
-
+    /*private List<WareHouseModel> wareHouse;*/
+    private List<WareHouse> wareHouses;
     private List<string> UnitMesures = new() { "U", "KG", "M", "L" };
     private bool visibility = false;
     private string succesMessage => formState == FormState.Create ? Localizer["Product.Created.Title"] : Localizer["Product.Edited.Title"];
@@ -45,7 +44,13 @@ public partial class ProductForm : ComponentBase
     protected override async Task OnInitializedAsync()
     {
         myAlert = new MyAlert(jsRuntime);
+        var result = await wareHouseService.GetAllWareHousesByWarhouseType();
+        if (result.IsSuccess)
+        {
+            wareHouses = result.Value;
+        }
     }
+
 
     public async Task SubmitProduct()
     {

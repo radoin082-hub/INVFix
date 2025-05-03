@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.SqlServer.Types;
 
 namespace INVUIs.Products.ProductsModel
 {

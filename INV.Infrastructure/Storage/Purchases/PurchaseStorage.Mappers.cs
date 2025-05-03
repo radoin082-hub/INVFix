@@ -4,6 +4,7 @@ using INV.Domain.Entities.Products;
 using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Suppliers;
 using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer.Types;
 
 namespace INV.Infrastructure.Storage.Purchases
 {

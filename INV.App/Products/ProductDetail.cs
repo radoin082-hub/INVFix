@@ -1,4 +1,5 @@
 ﻿using INV.App.Receipts;
+using Microsoft.SqlServer.Types;
 
 namespace INV.App.Products
 {

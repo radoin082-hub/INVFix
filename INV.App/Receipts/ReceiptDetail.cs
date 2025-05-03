@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using INV.App.Purchases;
 using INV.Domain.Entities.Purchases;
 using INV.Domain.Entities.Receipts;
+using INV.Domain.Entities.WareHouses;
 
 namespace INV.App.Receipts
 {
@@ -25,5 +26,6 @@ namespace INV.App.Receipts
         
         public PurchaseOrderInfo PurchaseOrder { get; set; } = new ();
         public List<ReceiptProductInfo> ReceiptProducts { get; set; }
+     
     }
 }

@@ -20,7 +20,18 @@ public class OrgService(IOrgStorage orgStorage):IOrgService
             return Error.Exception(e);
         }
     }
-
+    public async ValueTask<Result> UpdateNodeParent(SqlHierarchyId draggedNodeId, SqlHierarchyId targetNodeId)
+    {
+        try
+        {
+            await orgStorage.UpdateNodeParent(draggedNodeId, targetNodeId);
+            return Result.Success();
+        }
+        catch (Exception e)
+        {
+            return Error.Exception(e);
+        }
+    }
     public async ValueTask<Result> AddOrg(Node node, SqlHierarchyId? parentId = null)
     {
         try

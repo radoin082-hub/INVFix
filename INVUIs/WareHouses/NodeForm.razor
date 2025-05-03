@@ -1,0 +1,52 @@
+﻿@using INV.Domain.Entities.WareHouses
+@using INVUIs.WareHouses.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+@if (Visible)
+{
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <EditForm Model="Model" OnValidSubmit="CreateNode">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+
+                <h4>@Title</h4>
+
+                <label>Node Name</label>
+                <InputText @bind-Value="Model.Name" class="form-control"/>
+
+                <label class="mt-2">Node Type</label>
+                <InputSelect @bind-Value="Model.WareHouseType" class="form-control">
+                    @foreach (var type in Enum.GetValues(typeof(WareHouseType)))
+                    {
+                        <option value="@type">@type</option>
+                    }
+                </InputSelect>
+
+                <label class="mt-2">Description</label>
+                <InputText @bind-Value="Model.Description" class="form-control"/>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-success">OK</button>
+                    <button type="button" class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool Visible { get; set; }
+    [Parameter] public WareHouseModel Model { get; set; }
+    [Parameter] public EventCallback OnCancel { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public string Title { get; set; } = "Add New Node";
+
+    private async Task CreateNode()
+    {
+        if (OnValidSubmit.HasDelegate)
+        {
+            await OnValidSubmit.InvokeAsync();
+        }
+    }
+}

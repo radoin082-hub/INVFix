@@ -12,7 +12,7 @@ using Microsoft.JSInterop;
 
 namespace INV.Web.Components.Pages.Purchases
 {
-    public partial class NewPurchasePage
+    public partial class NewPurchasePage :ComponentBase
     {
         [Inject] public IPurchaseOrderService purchaseOrderService { get; set; }
         [Inject] public NavigationManager navigationManager { set; get; }

@@ -17,12 +17,12 @@
                     </div>
                    
                     <div class="info-box">
-                    <p class="detail-label">@Localizer["Supplier.Name"]</p>
-                    <p class="detail-value">@ReceiptInfo.supplierName</p>
+                        <p class="detail-label">@Localizer["Supplier.Name"]</p>
+                        <p class="detail-value">@ReceiptInfo.supplierName</p>
                     </div> 
 
                     <div class="info-box">
-                    <p class="detail-label">@Localizer["Status"]</p>
+                        <p class="detail-label">@Localizer["Status"]</p>
                         <ReceptionStatusComponent Text="true" Icon="true" ReceptionStatus="@ReceiptInfo.Status" />
                     </div>
 
@@ -78,52 +78,25 @@
     }
 
     <NavigationLock OnBeforeInternalNavigation="beforeNavigation" />
-    @*  @if (ReceiptInfo.ReceiptProducts != null)
-    { *@
-    @* <div class="footer-form mb-2 mt-2"  style="display: flex; flex-direction: row-reverse;">
-            @if (ReceiptInfo.Status == ReceiptStatus.validated) { }
-            else if (ReceiptInfo.Status == ReceiptStatus.editing)
-            {
-                @if (statusInput)
-                {
-
-                    <button type="submit" class="btn-custom btn-submit" @onclick="Validate">Valider</button>
-                    <button type="button" class="btn-custom btn-cancel" @onclick="StartEditing">Modifier</button>
-
-
-                }
-                else
-                {
-                    <button type="button" class="btn-custom btn-submit" @onclick="SaveChanges">Enregistrer</button>
-                    <button type="button" class="btn-custom btn-cancel" @onclick="CancelEditing">Annuler</button>
-
-                }
-            } 
-
-
-
-        </div>*@
-
-
+  
     <div class="Container-list">
-        <RadzenDataGrid Data="@products" AllowSorting="true" AllowFiltering="true" Style="width: 100%;">
+        <RadzenDataGrid Data="@products" AllowSorting="true" AllowFiltering="false" Style="width: 100%;">
             <Columns>
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="@Localizer["Designation"]" />
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="@Localizer["Quantity"]" />
-                <RadzenDataGridColumn Title=@Localizer["Rest"] Visible="@restVisibility">
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Designation)" Title="@Localizer["Designation"]" Width="40%" />
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Quantity)" Title="@Localizer["Quantity"]" Width="14%"/>
+                <RadzenDataGridColumn Title=@Localizer["Rest"] Visible="@restVisibility" Width="10%">
                     <Template Context="product">
                         @(product.Received)
                     </Template>
                 </RadzenDataGridColumn>
-                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Received)" Title=@Localizer["Received"]>
+                @*<RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Received)" Title=@Localizer["Received"] Width="10%">
                     <Template Context="product">
-                        <InputNumber @bind-Value="product.NEwReceived" disabled="@statusInput"/>
+                        <InputNumber @bind-Value="product.NEwReceived" disabled="@statusInput" />
                     </Template>
-                </RadzenDataGridColumn>
-                <RadzenDataGridColumn Title="@Localizer["Warehouse"]">
+                </RadzenDataGridColumn>*@
+                <RadzenDataGridColumn Property="@nameof(ReceiptProductModel.Received)" Title="Location Storage">
                     <Template Context="product">
-                        <RadzenDropDown @bind-Value="product.WareHouseId" Data="@WareHouse" TextProperty="WareHouseName" ValueProperty="Id" Disabled="@statusInput" Style="width: 100%;"
-                                       />
+                        <button disabled="@statusInput" @onclick="()=>showLocal(product)" style="border:none; background-color:transparent; font-size:1rem;"><i class="bi bi-plus-lg"></i></button>
                     </Template>
                 </RadzenDataGridColumn>
             </Columns>
@@ -132,7 +105,10 @@
         </RadzenDataGrid>
     </div>
 </EditForm>
-
+<ReceptionStorageLocation @ref="receptionStorageLocation"
+                          ReceiptProductModels="product"
+                          WareHouses="WareHouses"
+                          OnLocationsSaved="locationsSaved" />
 <style>
 
 

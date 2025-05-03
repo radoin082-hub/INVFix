@@ -1,0 +1,113 @@
+﻿@using INV.App.WareHouses
+@using INV.Domain.Entities.WareHouses
+@using INVUIs.Shared.MyAlert
+@using Microsoft.JSInterop
+@using Microsoft.SqlServer.Types
+@if (WareHouses is not null)
+{
+    @foreach (var node in WareHouses)
+    {
+        <div class="tree-node"
+             @ondragstart="(e) => OnDragStart(e, node)"
+             @ondragover:preventDefault
+             @ondragover="OnDragOver"
+             @ondrop:preventDefault
+             @ondrop="(e) => OnDrop(e, node)"
+             draggable="true">
+            <div class="node-left">
+                <button class="btn-icon expand-btn"
+                        @onclick="() => ToggleExpand.InvokeAsync(node)">
+                    <i class="@(node.IsExpanded ? "bi bi-chevron-down" : "bi bi-chevron-right")"></i>
+                </button>
+                <i class="@(node.WareHouseType == WareHouseType.Site ? "bi bi-diagram-2" : "bi bi-house")"></i>
+                <span class="node-name">@node.Name</span>
+                <span class="node-type">(@node.WareHouseType.ToString())</span>
+            </div>
+            <div class="node-right">
+                <button class="btn-icon" @onclick="() => EditNode(node)" title="Edit">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn-icon" @onclick="() => DeleteNode(node)" title="Delete">
+                    <i class="bi bi-trash"></i>
+                </button>
+                @if (node.WareHouseType == WareHouseType.Site)
+                {
+                    <button class="btn-icon"
+                            title="Add child"
+                            @onclick="() => AddChild.InvokeAsync(node)">
+                        <i class="bi bi-plus"></i>
+                    </button>
+                }
+            </div>
+        </div>
+
+        @if (node.IsExpanded && node.Children?.Any() == true)
+        {
+            <div class="tree-children"
+                 @ondragstart="(e) => OnDragStart(e, node)"
+                 @ondragover:preventDefault
+                 @ondragover="OnDragOver"
+                 @ondrop:preventDefault
+                 @ondrop="(e) => OnDrop(e, node)"
+                 draggable="true">
+                <WareHouseTree WareHouses="node.Children"
+                               AddChild="AddChild"
+                               ToggleExpand="ToggleExpand"
+                               OnNodeDropped="OnNodeDropped"/>
+            </div>
+        }
+    }
+}
+
+@code {
+    [Parameter] public List<WareHouse> WareHouses { get; set; }
+    [Parameter] public EventCallback<WareHouse> AddChild { get; set; }
+    [Parameter] public EventCallback<WareHouse> ToggleExpand { get; set; }
+    [Parameter] public EventCallback<(WareHouse draggedNode, WareHouse targetNode)> OnNodeDropped { get; set; }
+    [Inject] private IWareHouseService wareHouseService { get; set; }
+    [Inject] private IJSRuntime jsRuntime { get; set; }
+    private WareHouse draggedNode;
+    private MyAlert myAlert;
+
+    protected override async Task OnInitializedAsync()
+    {
+        myAlert = new MyAlert(jsRuntime);
+    }
+
+    private void OnDragStart(DragEventArgs e, WareHouse node)
+    {
+        draggedNode = node;
+    }
+
+    private void OnDragOver(DragEventArgs e)
+    {
+    }
+
+    private async Task OnDrop(DragEventArgs e, WareHouse targetNode)
+    {
+        if (draggedNode != null && draggedNode != targetNode)
+        {
+            await OnNodeDropped.InvokeAsync((draggedNode, targetNode));
+            draggedNode = null;
+        }
+    }
+
+    private async Task DeleteNode(WareHouse node)
+    {
+        var result = await wareHouseService.DeleteWarehouse(node.Path);
+        if (result.IsFailure)
+            await myAlert.ShowToast("Error","Node a have childer", MyAlertType.error);
+        
+        else if (result.IsSuccess)
+            await myAlert.ShowToast("Succses", "Delete Node Succsusfully", MyAlertType.success);
+    }
+
+    private async Task EditNode(WareHouse node)
+    {
+        /*if (node.Id==SqlHierarchyId.Null)
+        {
+            await wareHouseService.DeleteWarehouse(node.Id);
+        }*/
+    }
+
+}

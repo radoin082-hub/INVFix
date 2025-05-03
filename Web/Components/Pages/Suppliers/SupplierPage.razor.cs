@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace INV.Web.Components.Pages.Suppliers
 {
-    public partial class SupplierPage
+    public partial class SupplierPage :ComponentBase
     {
         [Parameter] public Guid id { get; set; }
         [Inject] public IAppSupplierService serviceSupplier { set; get; }
