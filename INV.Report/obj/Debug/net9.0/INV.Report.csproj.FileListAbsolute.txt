@@ -688,3 +688,17 @@ C:\Users\radoi\RiderProjects\INV\INV.Report\obj\Debug\net9.0\refint\INV.Report.d
 C:\Users\radoi\RiderProjects\INV\INV.Report\obj\Debug\net9.0\INV.Report.pdb
 C:\Users\radoi\RiderProjects\INV\INV.Report\obj\Debug\net9.0\INV.Report.genruntimeconfig.cache
 C:\Users\radoi\RiderProjects\INV\INV.Report\obj\Debug\net9.0\ref\INV.Report.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\Microsoft.SqlServer.Types.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\pt-BR\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\runtimes\win-x64\native\SqlServerSpatial160.dll
+C:\Users\radoi\RiderProjects\INV\INV.Report\bin\Debug\net9.0\runtimes\win-x86\native\SqlServerSpatial160.dll

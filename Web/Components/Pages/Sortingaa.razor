@@ -1,0 +1,32 @@
+﻿@*@page "/TT"
+@rendermode InteractiveServer
+<SortableList T="string" Items="items" OnUpdate="@SortList" Context="item">
+    <SortableItemTemplate>
+        <div>
+            <p>@item</p>
+        </div>
+    </SortableItemTemplate>
+</SortableList>
+
+@code {
+    private List<string> items = new List<string> { "Item 1", "Item 2", "Item 3" };
+
+    private void SortList((int oldIndex, int newIndex) indices)
+    {
+        var (oldIndex, newIndex) = indices;
+
+        var itemToMove = items[oldIndex];
+        items.RemoveAt(oldIndex);
+
+        if (newIndex < items.Count)
+        {
+            items.Insert(newIndex, itemToMove);
+        }
+        else
+        {
+            items.Add(itemToMove);
+        }
+
+        StateHasChanged();
+    }
+}*@

@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {}
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj",
         "projectName": "INV.Shared",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -72,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zg51/mgV2shTPphKhmWIVS89xIfxTA/cJSeDHqHwwN0=",
+  "Hash": "nr9zx3PWmvfgOtDuzgFB30QGzHCa68na1/9OGeQmN7Y=",
   "Source": "UIsResources",
   "BasePath": "_content/UIsResources",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "UIsResources\\wwwroot",
       "Source": "UIsResources",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\",
       "BasePath": "_content/UIsResources",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
       "SourceId": "UIsResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "exampleJsInterop#[.{fingerprint=6pqz8bsss0}]?.js.gz",
       "AssetKind": "All",
@@ -28,20 +28,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\exampleJsInterop.js",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\exampleJsInterop.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "vrr7rs2wfg",
-      "Integrity": "W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=",
+      "Fingerprint": "xjolhk8n0c",
+      "Integrity": "jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\exampleJsInterop.js"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\exampleJsInterop.js"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
       "SourceId": "UIsResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "UIsResources#[.{fingerprint=2nmm3xurzz}]?.styles.css.gz",
       "AssetKind": "All",
@@ -49,20 +49,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "v7t6b41bta",
-      "Integrity": "ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=",
+      "Fingerprint": "94s68csln6",
+      "Integrity": "2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
       "SourceId": "UIsResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "UIsResources#[.{fingerprint=2nmm3xurzz}]!.bundle.scp.css.gz",
       "AssetKind": "All",
@@ -70,20 +70,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "v7t6b41bta",
-      "Integrity": "ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=",
+      "Fingerprint": "94s68csln6",
+      "Integrity": "2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
       "SourceId": "UIsResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "UIsResources#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -98,13 +98,13 @@
       "Integrity": "4jzge28LmPXjUT3ldTUNv1O0QNL52lj5fmfHCI9crfk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
       "SourceId": "UIsResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "UIsResources#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -119,13 +119,13 @@
       "Integrity": "4jzge28LmPXjUT3ldTUNv1O0QNL52lj5fmfHCI9crfk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\background.png",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\background.png",
       "SourceId": "UIsResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "background#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\background.png"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\exampleJsInterop.js",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\exampleJsInterop.js",
       "SourceId": "UIsResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\",
       "BasePath": "_content/UIsResources",
       "RelativePath": "exampleJsInterop#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -167,7 +167,7 @@
   "Endpoints": [
     {
       "Route": "background.png",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\background.png",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\background.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -188,7 +188,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -204,7 +204,7 @@
     },
     {
       "Route": "background.x2rx4ajns0.png",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\background.png",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\background.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -225,7 +225,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -249,12 +249,12 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005208333333"
+          "Quality": "0.005263157895"
         }
       ],
       "ResponseHeaders": [
@@ -264,15 +264,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -312,7 +312,7 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\exampleJsInterop.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\exampleJsInterop.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -333,7 +333,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -357,7 +357,7 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -366,7 +366,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "Content-Type",
@@ -374,11 +374,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -404,18 +404,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA="
+          "Value": "sha256-jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ="
         }
       ]
     },
     {
       "Route": "exampleJsInterop.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005208333333"
+          "Quality": "0.005263157895"
         }
       ],
       "ResponseHeaders": [
@@ -425,15 +425,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -465,7 +465,7 @@
     },
     {
       "Route": "exampleJsInterop.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\wwwroot\\exampleJsInterop.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\wwwroot\\exampleJsInterop.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -486,7 +486,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -502,7 +502,7 @@
     },
     {
       "Route": "exampleJsInterop.js.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\anddiyawb5-6pqz8bsss0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -511,7 +511,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "Content-Type",
@@ -519,11 +519,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:49:57 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -541,13 +541,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA="
+          "Value": "sha256-jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ="
         }
       ]
     },
     {
       "Route": "UIsResources.2nmm3xurzz.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -566,11 +566,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -610,7 +610,7 @@
     },
     {
       "Route": "UIsResources.2nmm3xurzz.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -631,7 +631,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -655,7 +655,7 @@
     },
     {
       "Route": "UIsResources.2nmm3xurzz.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -672,11 +672,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -702,13 +702,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY="
+          "Value": "sha256-2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8="
         }
       ]
     },
     {
       "Route": "UIsResources.2nmm3xurzz.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -727,11 +727,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -771,7 +771,7 @@
     },
     {
       "Route": "UIsResources.2nmm3xurzz.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -792,7 +792,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -816,7 +816,7 @@
     },
     {
       "Route": "UIsResources.2nmm3xurzz.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -833,11 +833,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -863,13 +863,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY="
+          "Value": "sha256-2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8="
         }
       ]
     },
     {
       "Route": "UIsResources.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -888,11 +888,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -924,7 +924,7 @@
     },
     {
       "Route": "UIsResources.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\UIsResources.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -945,7 +945,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -961,7 +961,7 @@
     },
     {
       "Route": "UIsResources.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\ttuth1d040-2nmm3xurzz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -978,11 +978,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1000,13 +1000,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY="
+          "Value": "sha256-2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8="
         }
       ]
     },
     {
       "Route": "UIsResources.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1025,11 +1025,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1061,7 +1061,7 @@
     },
     {
       "Route": "UIsResources.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\UIsResources.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1082,7 +1082,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1098,7 +1098,7 @@
     },
     {
       "Route": "UIsResources.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\Debug\\net9.0\\compressed\\q2o5u6yuog-2nmm3xurzz.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1115,11 +1115,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY=\""
+          "Value": "\"2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 20:54:20 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1137,7 +1137,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ayQqR7gW/4I/nnWl1ntMDnoejCkKF5rSUiCpE0tbvPY="
+          "Value": "sha256-2YtxOU7+WjADIxihBKgFnmCzWUkHB5aKXMEmEEoMxB8="
         }
       ]
     }

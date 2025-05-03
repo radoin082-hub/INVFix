@@ -151,6 +151,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
+            },
             "PuppeteerSharp": {
               "target": "Package",
               "version": "[20.1.0, )"
@@ -249,6 +253,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"
@@ -272,10 +280,6 @@
             "System.Collections": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[9.0.1, )"
             },
             "System.Linq.Async": {
               "target": "Package",
@@ -372,10 +376,6 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.13.0, )"
@@ -390,7 +390,7 @@
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.4, )"
             },
             "xunit": {
               "target": "Package",

@@ -179,3 +179,4 @@ C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.dll
 C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\refint\INV.Domain.dll
 C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\INV.Domain.pdb
 C:\Users\bouce\source\repos\INVNew\INV.Domain\obj\Debug\net9.0\ref\INV.Domain.dll
+C:\Users\radoi\RiderProjects\INV\INV.Domain\obj\Debug\net9.0\INV.Domain.csproj.AssemblyReference.cache

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m8VNUziZ4UVwarErhOeRczQ3tJX0wzmlbHpS1DlEcRw=",
+  "Hash": "WWfIbfAFNR7BKGG+aipdgQ/buZh6RGZa/yzaUya3/s4=",
   "Source": "WebResources",
   "BasePath": "_content/WebResources",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebResources\\wwwroot",
       "Source": "WebResources",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\",
       "BasePath": "_content/WebResources",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
       "SourceId": "WebResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "WebResources#[.{fingerprint=nae92wytqw}]!.bundle.scp.css.gz",
       "AssetKind": "All",
@@ -28,20 +28,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "6kco2jzma3",
-      "Integrity": "aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=",
+      "Fingerprint": "qnog9iv95z",
+      "Integrity": "Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
       "SourceId": "WebResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "exampleJsInterop#[.{fingerprint=6pqz8bsss0}]?.js.gz",
       "AssetKind": "All",
@@ -49,20 +49,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\exampleJsInterop.js",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\exampleJsInterop.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "vrr7rs2wfg",
-      "Integrity": "W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=",
+      "Fingerprint": "xjolhk8n0c",
+      "Integrity": "jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\exampleJsInterop.js"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\exampleJsInterop.js"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
       "SourceId": "WebResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "WebResources#[.{fingerprint=nae92wytqw}]?.styles.css.gz",
       "AssetKind": "All",
@@ -70,20 +70,20 @@
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
+      "RelatedAsset": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "6kco2jzma3",
-      "Integrity": "aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=",
+      "Fingerprint": "qnog9iv95z",
+      "Integrity": "Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
       "SourceId": "WebResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "WebResources#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -98,13 +98,13 @@
       "Integrity": "n9KlLp9eNGcKELO8FMh0+ZNxadN+golH3qrr3JpjYHs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
       "SourceId": "WebResources",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "WebResources#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -119,13 +119,13 @@
       "Integrity": "n9KlLp9eNGcKELO8FMh0+ZNxadN+golH3qrr3JpjYHs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\background.png",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\background.png",
       "SourceId": "WebResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "background#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\background.png"
     },
     {
-      "Identity": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\exampleJsInterop.js",
+      "Identity": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\exampleJsInterop.js",
       "SourceId": "WebResources",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\",
       "BasePath": "_content/WebResources",
       "RelativePath": "exampleJsInterop#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -167,7 +167,7 @@
   "Endpoints": [
     {
       "Route": "background.png",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\background.png",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\background.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -188,7 +188,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -204,7 +204,7 @@
     },
     {
       "Route": "background.x2rx4ajns0.png",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\background.png",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\background.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -225,7 +225,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -249,12 +249,12 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005208333333"
+          "Quality": "0.005263157895"
         }
       ],
       "ResponseHeaders": [
@@ -264,15 +264,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -312,7 +312,7 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\exampleJsInterop.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\exampleJsInterop.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -333,7 +333,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -357,7 +357,7 @@
     },
     {
       "Route": "exampleJsInterop.6pqz8bsss0.js.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -366,7 +366,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "Content-Type",
@@ -374,11 +374,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -404,18 +404,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA="
+          "Value": "sha256-jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ="
         }
       ]
     },
     {
       "Route": "exampleJsInterop.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005208333333"
+          "Quality": "0.005263157895"
         }
       ],
       "ResponseHeaders": [
@@ -425,15 +425,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -465,7 +465,7 @@
     },
     {
       "Route": "exampleJsInterop.js",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\wwwroot\\exampleJsInterop.js",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\wwwroot\\exampleJsInterop.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -486,7 +486,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -502,7 +502,7 @@
     },
     {
       "Route": "exampleJsInterop.js.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\fm1x0fr4df-6pqz8bsss0.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -511,7 +511,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "191"
+          "Value": "189"
         },
         {
           "Name": "Content-Type",
@@ -519,11 +519,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA=\""
+          "Value": "\"jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:22:01 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -541,13 +541,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-W5OYF2QMLswqQgt4f7ObfRYIFziQJY1EpIyGrVpg/uA="
+          "Value": "sha256-jTBIIjClUy4dLr1F1GGFnkUyxu8d94Yg0DDwfj94MPQ="
         }
       ]
     },
     {
       "Route": "WebResources.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -566,11 +566,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -602,7 +602,7 @@
     },
     {
       "Route": "WebResources.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -623,7 +623,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -639,7 +639,7 @@
     },
     {
       "Route": "WebResources.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -656,11 +656,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -678,13 +678,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo="
+          "Value": "sha256-Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA="
         }
       ]
     },
     {
       "Route": "WebResources.nae92wytqw.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -703,11 +703,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -747,7 +747,7 @@
     },
     {
       "Route": "WebResources.nae92wytqw.bundle.scp.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\WebResources.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -768,7 +768,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -792,7 +792,7 @@
     },
     {
       "Route": "WebResources.nae92wytqw.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\dd3zonykmo-nae92wytqw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -809,11 +809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -839,13 +839,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo="
+          "Value": "sha256-Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA="
         }
       ]
     },
     {
       "Route": "WebResources.nae92wytqw.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -864,11 +864,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -908,7 +908,7 @@
     },
     {
       "Route": "WebResources.nae92wytqw.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -929,7 +929,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -953,7 +953,7 @@
     },
     {
       "Route": "WebResources.nae92wytqw.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -970,11 +970,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1000,13 +1000,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo="
+          "Value": "sha256-Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA="
         }
       ]
     },
     {
       "Route": "WebResources.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -1025,11 +1025,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1061,7 +1061,7 @@
     },
     {
       "Route": "WebResources.styles.css",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\scopedcss\\bundle\\WebResources.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1082,7 +1082,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1098,7 +1098,7 @@
     },
     {
       "Route": "WebResources.styles.css.gz",
-      "AssetFile": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
+      "AssetFile": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\Debug\\net9.0\\compressed\\x7vq5jhr31-nae92wytqw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1115,11 +1115,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo=\""
+          "Value": "\"Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 05 Apr 2025 16:24:25 GMT"
+          "Value": "Sun, 20 Apr 2025 12:34:49 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1137,7 +1137,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aowSBnnlaoX8zEaNtbNMzvAcAjFohPclCkUuNuicmGo="
+          "Value": "sha256-Kr4Z/Qm30UiZTEAFbcDKXCKhZrb9DahM2KrSwyomdGA="
         }
       ]
     }

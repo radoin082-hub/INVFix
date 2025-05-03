@@ -1,16 +1,24 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
-      "PackagePath": "staticwebassets\\INVUIs.q30tjr51j6.bundle.scp.css"
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\INVUIs.bundle.scp.css",
+      "PackagePath": "staticwebassets\\INVUIs.68ckpay0kz.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\wwwroot\\background.png",
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\wwwroot\\DowonloadFile.js",
+      "PackagePath": "staticwebassets\\DowonloadFile.js"
+    },
+    {
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\wwwroot\\background.png",
       "PackagePath": "staticwebassets\\background.png"
     },
     {
-      "Id": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\wwwroot\\exampleJsInterop.js",
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\wwwroot\\exampleJsInterop.js",
       "PackagePath": "staticwebassets\\exampleJsInterop.js"
+    },
+    {
+      "Id": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\wwwroot\\icons8-empty-box-96.png",
+      "PackagePath": "staticwebassets\\icons8-empty-box-96.png"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.INVUIs.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

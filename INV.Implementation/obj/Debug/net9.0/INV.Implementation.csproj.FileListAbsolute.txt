@@ -4,8 +4,6 @@ C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Impleme
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.App.dll
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Domain.dll
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Infrastructure.dll
-C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.App.pdb
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Domain.pdb
 C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Infrastructure.pdb
@@ -316,3 +314,9 @@ C:\Users\bouce\source\repos\INVNew\INV.Implementation\obj\Debug\net9.0\refint\IN
 C:\Users\bouce\source\repos\INVNew\INV.Implementation\obj\Debug\net9.0\INV.Implementation.pdb
 C:\Users\bouce\source\repos\INVNew\INV.Implementation\obj\Debug\net9.0\INV.Implementation.genruntimeconfig.cache
 C:\Users\bouce\source\repos\INVNew\INV.Implementation\obj\Debug\net9.0\ref\INV.Implementation.dll
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\testhost.exe
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\testhost.dll
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Infrastructure.deps.json
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Infrastructure.runtimeconfig.json
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\bin\Debug\net9.0\INV.Implementation.runtimeconfig.json
+C:\Users\radoi\RiderProjects\INV\INV.Implementation\obj\Debug\net9.0\INV.Implementation.genruntimeconfig.cache

@@ -404,3 +404,17 @@ main[b-ljz8einsnp] {
     .graph-1:hover[b-wy6kkinp7s], .graph-2:hover[b-wy6kkinp7s] {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
+/* _content/INV.Web/Components/Pages/SortableList.razor.rz.scp.css */
+/* 
+  you need the ::deep identifier if you are using scoped styles like this
+  because scoped styles are only applied to markup in the component, not
+  to the markup inside the render fragment.
+*/
+
+[b-d91pllj5p1] .sortable-ghost {
+    visibility: hidden;
+}
+
+[b-d91pllj5p1] .sortable-fallback {
+    opacity: 1 !important
+}

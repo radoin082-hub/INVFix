@@ -1,40 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\INV.Web.csproj": {}
+    "C:\\Users\\radoi\\RiderProjects\\INV\\Web\\INV.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj",
         "projectName": "INV.App",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
               }
             }
           }
@@ -48,8 +41,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -100,33 +92,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj",
         "projectName": "INV.Domain",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -144,8 +129,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -166,6 +150,10 @@
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
             },
             "PuppeteerSharp": {
               "target": "Package",
@@ -192,47 +180,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj",
         "projectName": "INV.Implementation",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj"
               }
             }
           }
@@ -246,8 +227,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -273,6 +253,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.2, )"
@@ -296,10 +280,6 @@
             "System.Collections": {
               "target": "Package",
               "version": "[4.3.0, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[9.0.1, )"
             },
             "System.Linq.Async": {
               "target": "Package",
@@ -326,44 +306,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj",
         "projectName": "INV.Infrastructure",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
               }
             }
           }
@@ -377,8 +350,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -404,10 +376,6 @@
               "target": "Package",
               "version": "[6.0.1, )"
             },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.13.0, )"
@@ -422,7 +390,7 @@
             },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.4, )"
             },
             "xunit": {
               "target": "Package",
@@ -445,33 +413,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj",
         "projectName": "INV.Shared",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -489,8 +450,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -517,56 +477,49 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\INVUIs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\INVUIs.csproj",
         "projectName": "INVUIs",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\obj\\",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\INVUIs.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj"
               },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\UIsResources.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\UIsResources.csproj"
               }
             }
           }
@@ -580,8 +533,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -590,6 +542,10 @@
             "Microsoft.AspNetCore.Components.Web": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
             },
             "Radzen.Blazor": {
               "target": "Package",
@@ -612,203 +568,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj": {
+    "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj",
-        "projectName": "UIsResources",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\UIsResources.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\UIsResources\\obj\\",
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj",
+        "projectName": "ORG.App",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Components.Web": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\WebResources.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\WebResources.csproj",
-        "projectName": "WebResources",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\WebResources.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Components.Web": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\INV.Web.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\INV.Web.csproj",
-        "projectName": "INV.Web",
-        "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\INV.Web.csproj",
-        "packagesPath": "C:\\Users\\bouce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\Web\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\bouce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.App\\INV.App.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Domain\\INV.Domain.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Implementation\\INV.Implementation.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Infrastructure\\INV.Infrastructure.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INV.Shared\\INV.Shared.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\INVUIs\\INVUIs.csproj"
-              },
-              "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\WebResources.csproj": {
-                "projectPath": "C:\\Users\\bouce\\source\\repos\\INVNew\\WebResources\\WebResources.csproj"
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj"
               }
             }
           }
@@ -822,17 +609,527 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj",
+        "projectName": "ORG.Domain",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Blazor.Bootstrap": {
+            "Microsoft.SqlServer.Types": {
               "target": "Package",
-              "version": "[3.3.1, )"
+              "version": "[160.1000.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\ORG.Implementation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\ORG.Implementation.csproj",
+        "projectName": "ORG.Implementation",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\ORG.Implementation.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\ORG.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\ORG.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\ORG.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\ORG.Infrastructure.csproj",
+        "projectName": "ORG.Infrastructure",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\ORG.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\OrgUis.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\OrgUis.csproj",
+        "projectName": "OrgUis",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\OrgUis.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\UIsResources.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\UIsResources.csproj",
+        "projectName": "UIsResources",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\UIsResources.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\UIsResources\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\WebResources.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\WebResources.csproj",
+        "projectName": "WebResources",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\WebResources.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\radoi\\RiderProjects\\INV\\Web\\INV.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\radoi\\RiderProjects\\INV\\Web\\INV.Web.csproj",
+        "projectName": "INV.Web",
+        "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\Web\\INV.Web.csproj",
+        "packagesPath": "C:\\Users\\radoi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radoi\\RiderProjects\\INV\\Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\radoi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.App\\INV.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Domain\\INV.Domain.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Implementation\\INV.Implementation.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Infrastructure\\INV.Infrastructure.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INV.Shared\\INV.Shared.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\INVUIs.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\INVUIs\\INVUIs.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.App\\ORG.App.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Domain\\ORG.Domain.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\ORG.Implementation.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\ORG.Implementation\\ORG.Implementation.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\OrgUis.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\OrgUis\\OrgUis.csproj"
+              },
+              "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\WebResources.csproj": {
+                "projectPath": "C:\\Users\\radoi\\RiderProjects\\INV\\WebResources\\WebResources.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
             "Blazorise.Bootstrap5": {
               "target": "Package",
               "version": "[1.6.2, )"
@@ -857,9 +1154,17 @@
               "target": "Package",
               "version": "[2.7.0, )"
             },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.4, )"
             },
             "NumberToWordsArabic": {
               "target": "Package",
@@ -876,10 +1181,6 @@
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[6.2.7, )"
-            },
-            "System.Configuration.ConfigurationManager": {
-              "target": "Package",
-              "version": "[9.0.1, )"
             }
           },
           "imports": [
@@ -901,7 +1202,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

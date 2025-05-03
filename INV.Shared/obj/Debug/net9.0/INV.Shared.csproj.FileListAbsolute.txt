@@ -89,3 +89,16 @@ C:\Users\bouce\source\repos\INVNew\INV.Shared\obj\Debug\net9.0\INV.Shared.dll
 C:\Users\bouce\source\repos\INVNew\INV.Shared\obj\Debug\net9.0\refint\INV.Shared.dll
 C:\Users\bouce\source\repos\INVNew\INV.Shared\obj\Debug\net9.0\INV.Shared.pdb
 C:\Users\bouce\source\repos\INVNew\INV.Shared\obj\Debug\net9.0\ref\INV.Shared.dll
+C:\Users\radoi\RiderProjects\INV\INV.Shared\bin\Debug\net9.0\INV.Shared.deps.json
+C:\Users\radoi\RiderProjects\INV\INV.Shared\bin\Debug\net9.0\INV.Shared.dll
+C:\Users\radoi\RiderProjects\INV\INV.Shared\bin\Debug\net9.0\INV.Shared.pdb
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.csproj.AssemblyReference.cache
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.AssemblyInfoInputs.cache
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.AssemblyInfo.cs
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.csproj.CoreCompileInputs.cache
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.sourcelink.json
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.dll
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\refint\INV.Shared.dll
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\INV.Shared.pdb
+C:\Users\radoi\RiderProjects\INV\INV.Shared\obj\Debug\net9.0\ref\INV.Shared.dll

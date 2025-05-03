@@ -1,0 +1,789 @@
+﻿USE [INV]
+GO
+/****** Object:  Schema [product]    Script Date: 4/20/2025 13:30:20 ******/
+CREATE SCHEMA [product]
+GO
+/****** Object:  Schema [purchase]    Script Date: 4/20/2025 13:30:20 ******/
+CREATE SCHEMA [purchase]
+GO
+/****** Object:  Schema [reception]    Script Date: 4/20/2025 13:30:20 ******/
+CREATE SCHEMA [reception]
+GO
+/****** Object:  UserDefinedTableType [dbo].[ProductsList]    Script Date: 4/20/2025 13:30:20 ******/
+CREATE TYPE [dbo].[ProductsList] AS TABLE(
+	[ProductId] [uniqueidentifier] NULL,
+	[Quantity] [int] NULL
+)
+GO
+/****** Object:  Table [purchase].[ORDERS]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [purchase].[ORDERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Number] [varchar](20) NOT NULL,
+	[SupplierId] [uniqueidentifier] NOT NULL,
+	[Date] [date] NOT NULL,
+	[BudgetChapter] [int] NOT NULL,
+	[BudgetArticle] [int] NOT NULL,
+	[BudgetType] [int] NOT NULL,
+	[ServiceType] [int] NOT NULL,
+	[TotalHT] [decimal](10, 2) NULL,
+	[TotalVA] [decimal](10, 2) NULL,
+	[TotalTC] [decimal](10, 2) NULL,
+	[CompletionDelay] [int] NOT NULL,
+	[VisaNumber] [varchar](50) NULL,
+	[VisaDate] [date] NULL,
+	[Status] [int] NOT NULL,
+	[Observation] [varchar](max) NULL,
+ CONSTRAINT [PK_PurchaseOrder_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SUPPLIERS]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SUPPLIERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[CompanyName] [varchar](50) NOT NULL,
+	[ManagerName] [varchar](50) NULL,
+	[Address] [varchar](50) NULL,
+	[Phone] [varchar](50) NULL,
+	[Email] [varchar](50) NULL,
+	[RC] [varchar](50) NULL,
+	[NIS] [varchar](15) NULL,
+	[ART] [varchar](11) NULL,
+	[NIF] [varchar](20) NULL,
+	[RIB] [varchar](20) NULL,
+	[BankAgency] [varchar](50) NULL,
+	[Status] [int] NOT NULL,
+ CONSTRAINT [PK_Supplire_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__Supplier__321537CC81309D23] UNIQUE NONCLUSTERED 
+(
+	[RC] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__Supplier__C7DEC3C3CE648E29] UNIQUE NONCLUSTERED 
+(
+	[NIS] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ__Supplier__CAFF41358E35A2C9] UNIQUE NONCLUSTERED 
+(
+	[RIB] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Article]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Article](
+	[CodeArticle] [int] NOT NULL,
+	[CodeChapter] [int] NOT NULL,
+	[Name] [nchar](3000) NULL,
+ CONSTRAINT [PK_Article] PRIMARY KEY CLUSTERED 
+(
+	[CodeArticle] ASC,
+	[CodeChapter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedFunction [purchase].[GetList]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE FUNCTION [purchase].[GetList] 
+()
+RETURNS TABLE 
+AS
+RETURN 
+(
+    SELECT
+        p.[Id], 
+        p.[Number], 
+        p.[Date], 
+        a.[Name] AS [BudgetArticle], 
+        p.BudgetType, 
+        p.ServiceType,
+        p.[SupplierId], 
+        s.CompanyName AS CompanyName, 
+        p.TotalTC, 
+        p.[Status]
+    FROM [purchase].[ORDERS] p
+    LEFT JOIN SUPPLIERS s ON p.SupplierId = s.Id
+    LEFT JOIN Article a on
+         p.BudgetChapter = a.CodeChapter
+		 and p.BudgetArticle = a.CodeArticle 
+);
+
+GO
+/****** Object:  Table [reception].[HEADERS]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [reception].[HEADERS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[PurchaseId] [uniqueidentifier] NOT NULL,
+	[Date] [date] NULL,
+	[DeliveryNumber] [varchar](50) NULL,
+	[DeliveryDate] [date] NULL,
+	[Status] [int] NOT NULL,
+	[Number] [varchar](50) NULL,
+ CONSTRAINT [PK_HEADERS] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  UserDefinedFunction [reception].[GetList]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE FUNCTION [reception].[GetList] 
+(	
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT R.Id, R.Date, R.PurchaseId, R.Number, O.Date AS PurchaseDate, O.Number AS PurchaseNumber, ISNULL(R.DeliveryNumber, '') AS DeliveryNumber, R.DeliveryDate, O.SupplierId, S.CompanyName AS SupplierName, R.Status, 
+                  O.BudgetArticle
+FROM     reception.HEADERS AS R INNER JOIN
+                  purchase.ORDERS AS O ON R.PurchaseId = O.Id INNER JOIN
+                  dbo.SUPPLIERS AS S ON O.SupplierId = S.Id
+)
+GO
+/****** Object:  UserDefinedFunction [purchase].[GetListBySupplier]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION [purchase].[GetListBySupplier]
+(	
+	@aSupplierId uniqueidentifier
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT
+       p.[Id],p.[Number],p.[Date] , a.[Name] as [BudgetArticle],p.BudgetType,p.ServiceType,
+	   p.[SupplierId],s.CompanyName As CompanyName,p.TotalTC,p.[Status]
+		FROM
+        [purchase].[ORDERS] p 
+		left Join SUPPLIERS s ON p.SupplierId=s.Id 
+		left Join [dbo].[Article] a ON p.BudgetArticle = a.CodeArticle
+		where p.SupplierId = @aSupplierId 
+		
+		
+		
+)
+
+GO
+/****** Object:  Table [dbo].[Chapter]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Chapter](
+	[CodeChapter] [int] NOT NULL,
+	[Name] [nchar](3000) NOT NULL,
+ CONSTRAINT [PK_Chapter] PRIMARY KEY CLUSTERED 
+(
+	[CodeChapter] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FILES]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FILES](
+	[FileId] [uniqueidentifier] NOT NULL,
+	[data] [varbinary](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PRODUCTS]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PRODUCTS](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Designation] [varchar](50) NOT NULL,
+	[UnitMeasure] [varchar](50) NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[TVA] [int] NOT NULL,
+	[DefaultWareHouseId] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[WareHouse]    Script Date: 4/20/2025 13:30:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[WareHouse](
+	[Id] [uniqueidentifier] NOT NULL,
+	[Name] [nchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+/****** Object:  Table [purchase].[PRODUCTS]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [purchase].[PRODUCTS](
+	[PurchaseId] [uniqueidentifier] NOT NULL,
+	[ProductId] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[UnitPrice] [decimal](18, 2) NOT NULL,
+	[Received] [int] NOT NULL,
+ CONSTRAINT [PK_PRODUCTS] PRIMARY KEY CLUSTERED 
+(
+	[PurchaseId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [reception].[PRODUCTS]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [reception].[PRODUCTS](
+	[ReceptionId] [uniqueidentifier] NOT NULL,
+	[ProductId] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[WareHouseId] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_PRODUCTS_1] PRIMARY KEY CLUSTERED 
+(
+	[ReceptionId] ASC,
+	[ProductId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[SUPPLIERS] ADD  CONSTRAINT [DF_Supplier_Status]  DEFAULT ((1)) FOR [Status]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalHT]  DEFAULT ((0)) FOR [TotalHT]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalVA]  DEFAULT ((0)) FOR [TotalVA]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_TotalTTC]  DEFAULT ((0)) FOR [TotalTC]
+GO
+ALTER TABLE [purchase].[ORDERS] ADD  CONSTRAINT [DF_ORDERS_Status]  DEFAULT ((0)) FOR [Status]
+GO
+ALTER TABLE [purchase].[PRODUCTS] ADD  CONSTRAINT [DF_PRODUCTS_Received]  DEFAULT ((0)) FOR [Received]
+GO
+ALTER TABLE [reception].[HEADERS] ADD  CONSTRAINT [DF_HEADERS_Status]  DEFAULT ((0)) FOR [Status]
+GO
+ALTER TABLE [dbo].[Article]  WITH CHECK ADD  CONSTRAINT [FK_Article_Chapter] FOREIGN KEY([CodeChapter])
+REFERENCES [dbo].[Chapter] ([CodeChapter])
+GO
+ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [FK_Article_Chapter]
+GO
+ALTER TABLE [purchase].[ORDERS]  WITH CHECK ADD  CONSTRAINT [FK_PurchaseOrder_Supplire] FOREIGN KEY([SupplierId])
+REFERENCES [dbo].[SUPPLIERS] ([Id])
+GO
+ALTER TABLE [purchase].[ORDERS] CHECK CONSTRAINT [FK_PurchaseOrder_Supplire]
+GO
+ALTER TABLE [purchase].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_OrderDetail_OrderDetail] FOREIGN KEY([PurchaseId])
+REFERENCES [purchase].[ORDERS] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [purchase].[PRODUCTS] CHECK CONSTRAINT [FK_OrderDetail_OrderDetail]
+GO
+ALTER TABLE [purchase].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_PRODUCTS] FOREIGN KEY([ProductId])
+REFERENCES [dbo].[PRODUCTS] ([Id])
+GO
+ALTER TABLE [purchase].[PRODUCTS] CHECK CONSTRAINT [FK_PRODUCTS_PRODUCTS]
+GO
+ALTER TABLE [reception].[PRODUCTS]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCTS_HEADERS] FOREIGN KEY([ReceptionId])
+REFERENCES [reception].[HEADERS] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE [reception].[PRODUCTS] CHECK CONSTRAINT [FK_PRODUCTS_HEADERS]
+GO
+/****** Object:  StoredProcedure [dbo].[GetProductById]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetProductById]
+    @aProductId uniqueidentifier
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+   
+    SELECT
+        p.Id,
+        p.Designation,
+        p.UnitMeasure,
+        p.Quantity,
+        p.TVA,
+        p.DefaultWareHouseID,
+        w.Name AS WareHouse
+    FROM [INV].[dbo].[PRODUCTS] AS p
+    FULL OUTER JOIN [INV].[dbo].[WareHouse] AS w 
+        ON w.Id = p.DefaultWareHouseId
+    WHERE p.Id = @aProductId;
+
+   
+    SELECT 
+        rh.*,
+        s.CompanyName
+    FROM [INV].[reception].[HEADERS] AS rh
+    INNER JOIN [INV].[reception].[PRODUCTS] AS rp 
+        ON rp.ProductId = @aProductId
+    INNER JOIN [INV].[purchase].[PRODUCTS] AS pp 
+        ON pp.ProductId = rp.ProductId AND pp.PurchaseId = rh.PurchaseId
+    INNER JOIN [INV].[purchase].[ORDERS] AS po 
+        ON po.Id = pp.PurchaseId
+    INNER JOIN [INV].[dbo].[SUPPLIERS] AS s 
+        ON s.Id = po.SupplierId
+    WHERE rh.Status = 1;
+END;
+
+GO
+/****** Object:  StoredProcedure [dbo].[GetPurchaseDetailsById]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetPurchaseDetailsById]
+    @aPurchaseId uniqueIdentifier
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    
+    SELECT 
+        pr.Id, 
+        pr.Number, 
+        pr.SupplierId, 
+        pr.[Date], 
+        pr.BudgetChapter, 
+        pr.BudgetArticle, 
+        pr.BudgetType, 
+        pr.ServiceType, 
+        pr.TotalHT, 
+        pr.TotalVA AS TotalTVA, 
+        pr.TotalTC AS TotalTTC, 
+        pr.CompletionDelay, 
+        pr.Id AS SupplierId,
+        s.CompanyName,
+        s.ManagerName,
+        s.[Address],
+        s.Phone,
+        s.Email,
+        s.RC,
+        s.NIS,
+        s.ART,
+        s.NIF,
+        s.RIB,
+        s.BankAgency,
+        s.[Status]
+    FROM purchase.ORDERS pr
+    INNER JOIN dbo.SUPPLIERS s ON pr.SupplierId = s.Id
+    WHERE pr.Id = @aPurchaseId;
+
+   
+    SELECT 
+      
+        p.ProductId,
+        pr.Designation,
+        pr.UnitMeasure,
+        p.Quantity,
+        p.UnitPrice,
+        p.Received,
+        pr.TVA,
+        pr.DefaultWareHouseId
+    FROM purchase.PRODUCTS p
+    INNER JOIN dbo.PRODUCTS pr ON p.ProductId = pr.Id
+    WHERE p.PurchaseId = @aPurchaseId;
+END;
+
+GO
+/****** Object:  StoredProcedure [dbo].[GetReceptionDetails]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[GetReceptionDetails]
+    @aReceptionId uniqueidentifier
+AS
+BEGIN
+
+ -- Récupérer l'en-tête de la réception
+    SELECT 
+        h.Id,
+        h.PurchaseId,
+        h.Date,
+        h.DeliveryNumber,
+        h.DeliveryDate,
+        h.Status
+    FROM [INV].[reception].[HEADERS] h
+    WHERE h.Id = @aReceptionId;
+
+    -- Récupérer les produits de la réception
+    SELECT 
+        p.ReceptionId,
+        p.ProductId,
+		 pr.Designation,
+        pr.UnitMeasure,
+        ppr.Quantity,
+		ppr.Received
+     
+    FROM [INV].[reception].[PRODUCTS] p
+	  INNER JOIN dbo.PRODUCTS pr ON p.ProductId = pr.Id
+    INNER JOIN [INV].[purchase].[PRODUCTS] ppr ON p.ProductId = ppr.ProductId
+    INNER JOIN [INV].[reception].[HEADERS] h ON h.Id = p.ReceptionId AND h.PurchaseId = ppr.PurchaseId
+  
+    WHERE p.ReceptionId = @aReceptionId;
+
+   
+
+    -- Récupérer la commande d'achat liée à la réception
+    SELECT 
+        o.Id,
+        o.Number,
+		s.CompanyName AS SupplierName,
+        o.SupplierId,
+        o.Date,
+        o.BudgetArticle,
+        o.BudgetType,
+        o.ServiceType,
+        o.TotalHT,
+        o.TotalVA,
+        o.TotalTC,
+        o.CompletionDelay,
+        o.VisaNumber,
+        o.VisaDate,
+        o.Status,
+		s.ManagerName,
+		s.Address,
+		s.Phone,
+		s.Email
+		
+	
+    FROM [INV].[purchase].[ORDERS] o
+	INNER JOIN dbo.SUPPLIERS AS s ON o.SupplierId = s.Id
+    WHERE o.Id = (SELECT PurchaseId FROM [INV].[reception].[HEADERS] WHERE Id = @aReceptionId);
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetSupplierDetails]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[GetSupplierDetails]
+	@aSupplierId uniqueidentifier
+as begin
+	if not exists (select * from SUPPLIERS where Id = @aSupplierId)
+		return 1
+
+	select * from SUPPLIERS where Id = @aSupplierId
+	select * from purchase.ORDERS where SupplierId = @aSupplierId
+	return 0
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SelectPurchaseOrderByNumber]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SelectPurchaseOrderByNumber]
+    @PurchaseOrderNumber INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT 
+        po.Number AS PurchaseOrderNumber,
+        po.Date AS OrderDate,
+        po.State AS OrderState,
+        po.TypeBudget,
+        po.TypeService,
+		po.Chapter,
+		po.Article,
+		po.CompletionDelay,
+        po.THT,
+        po.TVA,
+        po.TTC,
+        po.CompletionDelay
+    FROM [INV].[dbo].[PurchaseOrder] po
+    WHERE po.Number = @PurchaseOrderNumber;
+
+    SELECT 
+        s.SupplierName,
+        s.CompanyName,
+        s.AccountName,
+        s.Address,
+        s.Phone,
+        s.Email,
+        s.RC,
+		s.ART,
+        s.NIS,
+        s.NIF,
+        s.RIB,
+        s.BankAgency
+    FROM [INV].[dbo].[Supplier] s
+    JOIN [INV].[dbo].[PurchaseOrder] po ON po.IDSupplier = s.ID
+    WHERE po.Number = @PurchaseOrderNumber;
+
+    SELECT 
+        od.Quantity,
+        od.UnitPrice,
+        od.TVA AS OrderDetailTVA,
+        p.Designation,
+        p.UnitMeasure,
+        p.DefaultTVARate
+    FROM [INV].[dbo].[OrderDetail] od
+    JOIN [INV].[dbo].[Product] p ON od.IDProducts = p.ID
+    JOIN [INV].[dbo].[PurchaseOrder] po ON od.IDPurchaseOrder = po.ID
+    WHERE po.Number = @PurchaseOrderNumber;
+END;
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[SelectPurchasesForReceiptCreation]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SelectPurchasesForReceiptCreation]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT  
+        p.Id,
+        p.SupplierId,
+        p.Number,
+        p.Status,
+        s.CompanyName AS SupplierName,
+        CONVERT(date, p.Date) AS Date
+    FROM purchase.ORDERS AS p
+    INNER JOIN dbo.SUPPLIERS AS s ON p.SupplierId = s.Id
+    WHERE p.Status = 1
+    AND (
+        SELECT SUM(pp.Quantity - pp.Received) 
+        FROM purchase.PRODUCTS AS pp 
+        WHERE pp.PurchaseId = p.Id
+    ) > 0;
+END
+GO
+/****** Object:  StoredProcedure [reception].[CreateFromPurchase]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [reception].[CreateFromPurchase]
+    @aPurchaseId uniqueIdentifier
+as begin
+    if not exists (select * from purchase.ORDERS where Id = @aPurchaseId)
+        return 1001  -- not found
+
+    declare @toDeliver int
+    declare @receptionId uniqueidentifier
+    select @toDeliver = sum(Quantity - Received) from purchase.PRODUCTS where PurchaseId = @aPurchaseId
+    if @toDeliver = 0
+        return 1002 -- all received
+        if not exists(select * from purchase.PRODUCTS where PurchaseId=@aPurchaseId) 
+        return 1003;
+
+    set @receptionId  = newid()
+
+    declare @purchaseNumber varchar(20),
+    @supplierId uniqueidentifier,
+    @supplierName varchar(200)
+
+    select @purchaseNumber = Number, @supplierId = SupplierId from purchase.ORDERS where Id = @aPurchaseId
+
+    select @supplierName = CompanyName from SUPPLIERS where Id = @supplierId
+
+    select @receptionId as Id,null as Number, @aPurchaseId as PurchaseId, @purchaseNumber as purchaseNumber, 
+        @supplierId as SupplierId, @supplierName as SupplierName, getdate() as Date, 
+        null as DeliveryNumber, null as DeliveryDate, 0 as Status
+
+
+
+
+
+                SELECT 
+        @receptionId as ReceptionId,
+        pp.ProductId,
+        pp.Quantity,
+        p.Designation,
+        pp.Quantity-pp.Received as Received,
+        p.DefaultWareHouseId as WareHouseId,
+        pp.Quantity-pp.Received as Rest
+
+
+    FROM [INV].purchase.[PRODUCTS] pp
+    Inner Join [INV].[dbo].[PRODUCTS] as p on p.Id=pp.ProductId
+         where pp.PurchaseId = @aPurchaseId 
+                and pp.Quantity > pp.Received
+
+end
+GO
+/****** Object:  StoredProcedure [reception].[GetById]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [reception].[GetById]
+    @aReceptionId uniqueidentifier
+AS
+BEGIN
+    declare 
+        @purchaseId uniqueIdentifier,
+        @purchaseNum varchar(50),
+        @supplierId uniqueidentifier,
+        @supplierName varchar(200)
+
+    if not exists (select * from reception.HEADERS where Id = @aReceptionId)
+        return 1001
+
+    select @purchaseId = purchaseId from reception.HEADERS where Id = @aReceptionId
+
+    select @purchaseNum = Number
+    from purchase.ORDERS where Id = @purchaseId
+
+    select @supplierId = SupplierId
+    from purchase.ORDERS where Id = @purchaseId
+
+    select @supplierName = CompanyName
+    from SUPPLIERS where Id = @supplierId
+
+    SELECT 
+        h.Id,
+        h.Number,
+        h.PurchaseId,
+        h.Date,
+        @purchaseNum as PurchaseNumber,
+        @supplierId as supplierId,
+        @supplierName as supplierName,
+        h.DeliveryNumber,
+        h.DeliveryDate,
+        h.Status
+    FROM [INV].[reception].[HEADERS] h
+    WHERE h.Id = @aReceptionId;
+
+    -- Récupérer les produits de la réception
+    SELECT 
+        rp.ReceptionId,
+        rp.ProductId,
+        pp.Quantity,
+        p.Designation,
+        rp.Quantity as Received,
+        p.DefaultWareHouseId as WareHouseId,
+        pp.Quantity-pp.Received as Rest
+
+    FROM [INV].[reception].[PRODUCTS] rp
+    Inner Join [INV].[dbo].[PRODUCTS] as p on p.Id=rp.ProductId
+    Inner Join [INV].purchase.[PRODUCTS] as pp on pp.ProductId=rp.ProductId
+
+    WHERE rp.ReceptionId = @aReceptionId;
+
+
+
+
+END;
+GO
+/****** Object:  StoredProcedure [reception].[SelectPurchasesForReceiptCreation]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [reception].[SelectPurchasesForReceiptCreation]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT  
+        p.Id,
+        p.SupplierId,
+        p.Number,
+        p.Status,
+        s.CompanyName AS CompanyName,
+        CONVERT(date, p.Date) AS Date
+    FROM purchase.ORDERS AS p
+    INNER JOIN dbo.SUPPLIERS AS s ON p.SupplierId = s.Id
+    WHERE p.Status = 1
+    AND (
+        SELECT SUM(pp.Quantity - pp.Received) 
+        FROM purchase.PRODUCTS AS pp 
+        WHERE pp.PurchaseId = p.Id
+    ) > 0;
+END
+GO
+/****** Object:  StoredProcedure [reception].[Validate]    Script Date: 4/20/2025 13:30:21 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [reception].[Validate]
+    @aReceiptId UNIQUEIDENTIFIER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    if    (select Status from reception.HEADERS where Id = @aReceiptId) = 1
+        return 2001
+
+    if not exists (
+        select *
+        from reception.PRODUCTS as RP 
+        inner join purchase.PRODUCTS as PP 
+            ON RP.ProductId = PP.ProductId
+        where RP.Quantity <= (PP.Quantity-PP.Received)
+        )
+        return 2002
+
+    BEGIN TRAN;
+
+        UPDATE reception.HEADERS
+        SET Status = 1
+        WHERE Id = @aReceiptId;
+
+        DELETE FROM reception.PRODUCTS
+        WHERE ReceptionId = @aReceiptId AND Quantity = 0;
+
+        update purchase.PRODUCTS
+            Set Received = Received + RP.Quantity
+            from reception.PRODUCTS as RP 
+            where RP.ReceptionId = @aReceiptId 
+            and RP.ProductId = purchase.PRODUCTS.ProductId
+
+    COMMIT TRAN;
+END
+GO
