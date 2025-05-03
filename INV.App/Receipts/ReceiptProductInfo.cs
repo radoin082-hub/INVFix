@@ -1,4 +1,7 @@
-﻿namespace INV.App.Receipts;
+﻿using INV.Domain.Entities.WareHouses;
+using Microsoft.SqlServer.Types;
+
+namespace INV.App.Receipts;
 
 public class ReceiptProductInfo
 {
@@ -12,4 +15,5 @@ public class ReceiptProductInfo
     public Guid DefaultWareHouseId { get; set; }
     public string PurchaseNumber { get; set; }
     
+    public List<ReceiptProductDetails> ReceiptProductDetails { get; set; } = new();
 }

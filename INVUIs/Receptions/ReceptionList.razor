@@ -19,7 +19,7 @@
 else
 {
    <div class="Container-list">
-    <RadzenDataGrid Data="@FilteredReceptions.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
+    <RadzenDataGrid Responsive="true" Data="@FilteredReceptions.OrderByDescending(p => p.Date)" AllowSorting="true" AllowFiltering="true"
                     Style="width: 100%;" RowSelect="@((ReceiptInfo Receptions) => navigatepage(Receptions.Id))"
                     PageSize="8" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true">
         <Columns>
@@ -46,7 +46,7 @@ else
 
             <RadzenDataGridColumn Property="@nameof(ReceiptInfo.Status)" Title=@Localizer["Status"] Width="150px" Filterable="false">
                 <Template Context="reception">
-                    <ReceptionStatusComponent Text="true" Icon="true" ReceptionStatus="@reception.Status" />
+                    <ReceptionStatusComponent Text="false" Icon="true" ReceptionStatus="@reception.Status" />
                 </Template>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn  Title=Download Width="110px" Filterable="false" >

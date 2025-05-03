@@ -10,6 +10,7 @@ using INV.App.Suppliers;
 using INV.Domain.Entities.Budget;
 using INV.Domain.Entities.Receipts;
 using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer.Types;
 
 namespace INV.Infrastructure.Storage.Receipts
 {
@@ -33,13 +34,21 @@ namespace INV.Infrastructure.Storage.Receipts
             return new ReceiptInfo
             {
                 Id = reader.GetGuid(reader.GetOrdinal("Id")),
-                Number = reader.IsDBNull(reader.GetOrdinal("Number")) ? null : reader.GetString(reader.GetOrdinal("Number")),
+                Number = reader.IsDBNull(reader.GetOrdinal("Number"))
+                    ? null
+                    : reader.GetString(reader.GetOrdinal("Number")),
                 PurchaseId = reader.GetGuid(reader.GetOrdinal("PurchaseId")),
                 purchaseNumber = reader.GetString(reader.GetOrdinal("PurchaseNumber")),
                 PurchaseDate = DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("PurchaseDate"))),
-                Date = reader.IsDBNull("Date") ? default : DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("Date"))),
-                DeliveryNumber = reader.IsDBNull("DeliveryNumber") ? string.Empty : reader.GetString(reader.GetOrdinal("DeliveryNumber")),
-                DeliveryDate = reader.IsDBNull("DeliveryDate") ? default : DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("DeliveryDate"))),
+                Date = reader.IsDBNull("Date")
+                    ? default
+                    : DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("Date"))),
+                DeliveryNumber = reader.IsDBNull("DeliveryNumber")
+                    ? string.Empty
+                    : reader.GetString(reader.GetOrdinal("DeliveryNumber")),
+                DeliveryDate = reader.IsDBNull("DeliveryDate")
+                    ? default
+                    : DateOnly.FromDateTime(reader.GetDateTime(reader.GetOrdinal("DeliveryDate"))),
                 supplierId = reader.GetGuid(reader.GetOrdinal("SupplierId")),
                 supplierName = reader.GetString(reader.GetOrdinal("SupplierName")),
                 Status = (ReceiptStatus)reader.GetInt32(reader.GetOrdinal("Status"))
@@ -79,7 +88,9 @@ namespace INV.Infrastructure.Storage.Receipts
                 supplierId = (Guid)row["supplierId"],
                 supplierName = row.IsNull("supplierName") ? null : (string)row["supplierName"],
                 DeliveryNumber = row.IsNull("DeliveryNumber") ? null : (string)row["DeliveryNumber"],
-                DeliveryDate = row.IsNull("DeliveryDate") ? (DateOnly?)null : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
+                DeliveryDate = row.IsNull("DeliveryDate")
+                    ? (DateOnly?)null
+                    : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
                 Status = (ReceiptStatus)row["Status"]
             };
         }
@@ -96,7 +107,9 @@ namespace INV.Infrastructure.Storage.Receipts
                 supplierId = (Guid)row["supplierId"],
                 supplierName = row.IsNull("supplierName") ? null : (string)row["supplierName"],
                 DeliveryNumber = row.IsNull("DeliveryNumber") ? null : (string)row["DeliveryNumber"],
-                DeliveryDate = row.IsNull("DeliveryDate") ? (DateOnly?)null : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
+                DeliveryDate = row.IsNull("DeliveryDate")
+                    ? (DateOnly?)null
+                    : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
                 Status = (ReceiptStatus)row["Status"]
             };
         }
@@ -113,6 +126,7 @@ namespace INV.Infrastructure.Storage.Receipts
                 Status = (ReceiptStatus)reader.GetInt32(reader.GetOrdinal("ReceptionStatus"))
             };
         }
+
         private ReceiptProductInfo GetReceiptProductInfoFromDataRow(DataRow row)
         {
             return new ReceiptProductInfo
@@ -123,9 +137,12 @@ namespace INV.Infrastructure.Storage.Receipts
                 Designation = row.IsNull("Designation") ? string.Empty : row.Field<string>("Designation"),
                 //UnitPrice = row.IsNull("UnitPrice") ? 0m : row.Field<decimal?>("UnitPrice") ?? 0m,
                 Received = row.IsNull("Received") ? 0 : row.Field<int>("Received"),
-                DefaultWareHouseId = row.IsNull("WareHouseId") ? Guid.Empty : row.Field<Guid>("WareHouseId")
+                DefaultWareHouseId = row.IsNull("WareHouseId")
+                    ? Guid.Empty
+                    : row.Field<Guid>("WareHouseId"),
             };
         }
+
         private static ReceiptDetail getReceptionDetailReader(SqlDataReader reader)
         {
             return new ReceiptDetail
@@ -140,6 +157,7 @@ namespace INV.Infrastructure.Storage.Receipts
                 ReceiptProducts = new List<ReceiptProductInfo>()
             };
         }
+
         private static ReceiptProductInfo getReceiptProductInfoReader(SqlDataReader reader)
         {
             return new ReceiptProductInfo()
@@ -152,6 +170,7 @@ namespace INV.Infrastructure.Storage.Receipts
                 Received = (int)reader["Received"],
             };
         }
+
         private static PurchaseOrderInfo getPurchaseOrderReader(SqlDataReader reader)
         {
             return new PurchaseOrderInfo

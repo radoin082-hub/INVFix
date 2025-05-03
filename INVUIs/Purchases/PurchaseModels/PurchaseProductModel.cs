@@ -34,5 +34,6 @@ namespace INVUIs.Purchases.PurchaseModels
             Quantity = product.Quantity,
             UnitPrice = product.UnitPrice,
             TVA = product.TVA*/
+        public int Received { get; set; }
     }
 }

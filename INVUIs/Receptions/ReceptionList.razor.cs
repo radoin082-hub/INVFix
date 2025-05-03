@@ -14,7 +14,7 @@ namespace INVUIs.Receptions
     public partial class ReceptionList
     {
         [Parameter] public EventCallback<ReceptionModel> OnCommand { get; set; }
-        [Parameter] public List<ReceiptInfo> Receptions { get; set; }
+        [Parameter] public List<ReceiptInfo> Receptions { get; set; }       
         [Parameter] public RenderFragment Pills { get; set; }
         [Parameter] public bool ShowPurchase { get; set; } = true;
         [Parameter] public bool ShowSupplier { get; set; } = true;

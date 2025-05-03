@@ -1,0 +1,182 @@
+﻿@page "/Warhouse"
+@using INV.Domain.Entities.WareHouses
+@using ORG.App.Orgs
+@using ORG.Domain.Entities.Node
+@using OrgUis.Models
+
+@rendermode InteractiveServer
+
+<PageHeader Title="Warhouses"/>
+
+<button class="btn-create-root mb-3" @onclick="AddRoot">
+    + Create Root
+</button>
+
+<DataLoader T="WareHouse" LoadItems="loadWareHouses" OnItemsLoaded="@(data => { tree = BuildTree(data); StateHasChanged(); })">
+    <ChildContent>
+        <div class="tree-wrapper">
+            <WareHouseTree
+                WareHouses="tree"
+                AddChild="AddChild"
+                ToggleExpand="DropDownNode"
+                OnNodeDropped="NodeDropped" />
+        </div>
+    </ChildContent>
+</DataLoader>
+
+
+<NodeForm
+    Visible="visible" 
+    Model="wareHouseModel" 
+    OnCancel="CancelAddNode" 
+    OnValidSubmit="AddNode" 
+    Title="Add New Node" />
+
+<script>
+    function preventDefault(event) {
+        event.preventDefault();
+    }
+</script>
+<style>
+    .tree-wrapper {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        overflow-x: auto;
+    }
+
+    .tree-node {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        margin-bottom: 8px;
+        background: #f9f9f9;
+        position: relative;
+    }
+
+    .tree-node:hover {
+        background: #eef5ff;
+        box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
+    }
+
+    .tree-node::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -14px;
+        width: 2px;
+        height: 100%;
+        background: #e0e0e0;
+    }
+
+    .tree-node:first-child::before {
+        display: none;
+    }
+
+    .node-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-icon {
+        background: none;
+        border: none;
+        color: #6c757d;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    .btn-icon:hover {
+        color: #0d6efd;
+    }
+
+    .node-name {
+        font-weight: 600;
+        font-size: 16px;
+        color: #333333;
+    }
+
+    .node-type {
+        font-size: 13px;
+        color: #888888;
+        margin-left: 6px;
+    }
+
+    .node-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .tree-children {
+        margin-left: 32px;
+        padding-left: 20px;
+        margin-top: 8px;
+    }
+    
+    .popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050;
+    }
+
+    .popup-content {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 32px;
+        width: 400px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h4 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .popup-content label {
+        font-weight: 500;
+        margin-top: 12px;
+        margin-bottom: 4px;
+    }
+
+    .form-buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    .loading-container {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+   
+    @keyframes fadeIn {
+        from {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+
+</style>

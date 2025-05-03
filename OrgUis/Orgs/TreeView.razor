@@ -1,20 +1,28 @@
-﻿@using ORG.Domain.Entities.Node
+﻿@using Microsoft.JSInterop
+@using ORG.Domain.Entities.Node
 
 @if (Nodes is not null)
 {
     @foreach (var node in Nodes)
     {
-        <div class="tree-node">
+        <div class="tree-node"
+             @ondragstart="(e) => OnDragStart(e, node)"
+             @ondragover:preventDefault
+             @ondragover="OnDragOver"
+             @ondrop:preventDefault
+             @ondrop="(e) => OnDrop(e, node)"
+             draggable="true">
             <div class="node-left">
                 <button class="btn-icon expand-btn"
                         @onclick="() => ToggleExpand.InvokeAsync(node)">
-                    <i class="@(node.IsExpanded ? "bi bi-chevron-down" : "bi bi-chevron-right")" ></i>
+                    <i class="@(node.IsExpanded ? "bi bi-chevron-down" : "bi bi-chevron-right")"></i>
                 </button>
                 <i class="bi bi-folder"></i>
                 <span class="node-name">@node.Name</span>
             </div>
             <div class="node-right">
                 <span class="node-type">(@node.Type.ToString())</span>
+                
                 <button class="btn-icon"
                         title="Add child"
                         @onclick="() => AddChild.InvokeAsync(node)">
@@ -25,10 +33,17 @@
 
         @if (node.IsExpanded && node.Children?.Any() == true)
         {
-            <div class="tree-children">
+            <div class="tree-children"
+                 @ondragstart="(e) => OnDragStart(e, node)"
+                 @ondragover:preventDefault
+                 @ondragover="OnDragOver"
+                 @ondrop:preventDefault
+                 @ondrop="(e) => OnDrop(e, node)"
+                 draggable="true">
                 <TreeView Nodes="node.Children"
-                           AddChild="AddChild"
-                           ToggleExpand="ToggleExpand" />
+                         AddChild="AddChild"
+                         ToggleExpand="ToggleExpand"
+                         OnNodeDropped="OnNodeDropped"/>
             </div>
         }
     }
@@ -38,4 +53,25 @@
     [Parameter] public List<Node> Nodes { get; set; }
     [Parameter] public EventCallback<Node> AddChild { get; set; }
     [Parameter] public EventCallback<Node> ToggleExpand { get; set; }
+    [Parameter] public EventCallback<(Node draggedNode, Node targetNode)> OnNodeDropped { get; set; }
+
+    private Node draggedNode;
+
+    private void OnDragStart(DragEventArgs e, Node node)
+    {
+        draggedNode = node;
+    }
+
+    private void OnDragOver(DragEventArgs e)
+    {
+    }
+
+    private async Task OnDrop(DragEventArgs e, Node targetNode)
+    {
+        if (draggedNode != null && draggedNode != targetNode)
+        {
+            await OnNodeDropped.InvokeAsync((draggedNode, targetNode));
+            draggedNode = null;
+        }
+    }
 }

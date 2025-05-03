@@ -7,4 +7,5 @@ public interface IOrgStorage
 {
     Task<List<Node>> SelectAllOrgs();
     Task InsertOrg(Node node, SqlHierarchyId? parentId = null);
+    Task UpdateNodeParent(SqlHierarchyId draggedNodeId, SqlHierarchyId targetNodeId);
 }

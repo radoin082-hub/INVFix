@@ -1,4 +1,6 @@
-﻿namespace INV.Domain.Entities.Products
+﻿using Microsoft.SqlServer.Types;
+
+namespace INV.Domain.Entities.Products
 {
     public class Product
     {

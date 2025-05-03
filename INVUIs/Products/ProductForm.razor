@@ -39,8 +39,8 @@
                     <RadzenRow Style="margin-bottom: 0.1rem;">
                         <RadzenColumn Size="12">
                             <RadzenLabel Text=@Localizer["Warehouse"] />
-                            <RadzenDropDown Name="WareHouse" @bind-Value="productModel.WareHouseId" Data="@WareHouse"
-                                            TextProperty="WareHouseName" ValueProperty="Id" Style="width: 100%;" />
+                            <RadzenDropDown Name="WareHouse" @bind-Value="productModel.WareHouseId" Data="@wareHouses"
+                                            TextProperty="Name" ValueProperty="Id" Style="width: 100%;" />
                         </RadzenColumn>
                     </RadzenRow>
 

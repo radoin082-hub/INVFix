@@ -15,9 +15,9 @@ namespace INV.App.Receipts
 
         ValueTask<Result<List<Receipt>>> GetReceiptsByPurchaseId(Guid purchaseId);
 
-        ValueTask<Result> CreateReceipt(Receipt receipt);
+        ValueTask<Result> CreateReceipt(ReceiptInfo receipt);
 
-        ValueTask<Result> UpdateReceipt(Receipt receipt);
+        ValueTask<Result> UpdateReceipt(ReceiptInfo receipt);
 
         ValueTask<Result> RemoveReceipt(Guid id);
 

@@ -1,0 +1,34 @@
+﻿@using ORG.App.Orgs
+@using ORG.Domain.Entities.Node
+<TreeView Nodes="tree"
+          AddChild="AddChild"
+          ToggleExpand="DropDownNode"
+          OnNodeDropped="HandleNodeDropped" />
+
+@code {
+    private List<Node> tree;
+    private async Task AddChild(Node parentNode)
+    {
+      //  await ShowPopup(parentNode);
+    }
+
+    [Inject] private IOrgService orgService { set; get; }
+
+    private void DropDownNode(Node node)
+    {
+        node.IsExpanded = !node.IsExpanded;
+    }
+    private async Task HandleNodeDropped((Node draggedNode, Node targetNode) args)
+    {
+        var (draggedNode, targetNode) = args;
+
+        draggedNode.ParentId = targetNode.Id;
+
+        await orgService.UpdateNodeParent(draggedNode.Id, targetNode.Id);
+
+       }
+
+
+
+
+}

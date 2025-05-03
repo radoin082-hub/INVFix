@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace INV.Web.Components.Pages.Products;
 
-public partial class ProductsListPage
+public partial class ProductsListPage :ComponentBase
 {
     [Inject] public IProductService productService { get; set; }
     private List<ProductInfo> products = new List<ProductInfo>();

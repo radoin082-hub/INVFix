@@ -3,6 +3,7 @@ using INV.Shared;
 using Microsoft.AspNetCore.Components;
 using System.Linq;
 using Microsoft.JSInterop;
+using Radzen.Blazor;
 
 namespace INVUIs.Purchases
 {
@@ -13,6 +14,12 @@ namespace INVUIs.Purchases
         [Parameter] public bool ShowSupplier { get; set; } = true;
         [Inject] public IJSRuntime jsRuntime { set; get; }
         [Inject] public HttpClient httpClient { set; get; }
+        /*public RadzenDataGrid<PurchaseOrderInfo> grid=new RadzenDataGrid<PurchaseOrderInfo>();
+
+        protected override async Task OnInitializedAsync()
+        {
+             grid.Responsive = true;
+        }*/
 
         public async Task navigatepage(Guid id) => Navigation.NavigateTo($"{PageRoutes.Purchases}/{id}");
 

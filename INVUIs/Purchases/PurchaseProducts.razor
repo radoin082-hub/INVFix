@@ -1,7 +1,4 @@
-﻿@using INV.Domain.Entities.Purchases
-@using INVUIs.Products.ProductsModel
-@using INVUIs.Purchases.PurchaseModels
-@rendermode InteractiveServer
+﻿@rendermode InteractiveServer
 @inject IStringLocalizer<Resources> Localizer
 
 <CascadingValue Value="products">
@@ -23,6 +20,7 @@
                 </FooterTemplate>
             </RadzenDataGridColumn>
             <RadzenDataGridColumn Property="Quantity" Title=@Localizer["Quantity"] Width="10%" />
+            <RadzenDataGridColumn Property="Received" Title=@Localizer["Received"] Width="10%" />
             <RadzenDataGridColumn Property="UnitPrice" Title=@Localizer["UnitPrice"] Width="10%" />
             <RadzenDataGridColumn Property="TVA" Title=@Localizer["TVA"] Width="9%">
                 <Template Context="product">

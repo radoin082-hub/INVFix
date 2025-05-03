@@ -1,0 +1,53 @@
+﻿@typeparam T
+
+@if (Items == null)
+{
+    <div class="loading-container">
+        <RadzenProgressBarCircular
+            Value="100"
+            ShowValue="false"
+            Mode="ProgressBarMode.Indeterminate" />
+    </div>
+}
+else if (Items.Count == 0)
+{
+    <div class="loading-container" style="text-align: center; margin-top: 50px;">
+        @*
+        <img src="https://img.icons8.com/pastel-glyph/64/inbox--v2.png" style="width: 120px; margin-bottom: 10px;"  alt=""/>
+        *@
+        <p>Data is not available</p>
+    </div>
+}
+else
+{
+    @ChildContent
+}
+
+@code {
+    [Parameter] public Func<Task<List<T>>>? LoadItems { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+    [Parameter] public EventCallback<List<T>> OnItemsLoaded { get; set; }
+
+    private List<T>? Items { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (LoadItems != null)
+        {
+            var result = await LoadItems.Invoke();
+            
+            if (result.Count == 0)
+            {
+                await Task.Delay(2000);
+                Items = new List<T>();
+            }
+            else
+            {
+                Items = result;
+            }
+
+            await OnItemsLoaded.InvokeAsync(Items);
+            StateHasChanged();
+        }
+    }
+}

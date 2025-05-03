@@ -5,7 +5,7 @@
 
 @rendermode InteractiveServer
 
-<PageHeader Title="Org"/>
+<PageHeader Title="Orgs" />
 
 <button class="btn-create-root mb-3" @onclick="AddRoot">
   + Create Root 
@@ -26,7 +26,8 @@ else
         <TreeView
             Nodes="tree"
             AddChild="AddChild"
-            ToggleExpand="DropDownNode" />
+            ToggleExpand="DropDownNode"
+            OnNodeDropped="NodeDropped" />
     </div>
 }
 
@@ -64,6 +65,11 @@ else
 }
 
 
+<script>
+    function preventDefault(event) {
+        event.preventDefault();
+    }
+</script>
 <style>
    
     .tree-title {

@@ -3,6 +3,7 @@ using INV.App.Products;
 using INV.App.Receipts;
 using INV.Domain.Entities.Receipts;
 using Microsoft.Data.SqlClient;
+using Microsoft.SqlServer.Types;
 
 namespace INV.Infrastructure.Storage.Products
 {
@@ -29,7 +30,8 @@ namespace INV.Infrastructure.Storage.Products
                 UnitMeasure = (string)reader["UnitMeasure"],
                 Quantity = (int)reader["Quantity"],
                 TVA = (int)reader["TVA"],
-                WareHouse = reader["WarehouseName"] != DBNull.Value ? (string)reader["WarehouseName"] : null
+                WareHouse = reader["WarehouseName"] != DBNull.Value ? (string)reader["WarehouseName"] : null,
+                DefaultWareHouseId =(Guid)reader["DefaultWareHouseId"], 
             };
         }
 
@@ -64,7 +66,9 @@ namespace INV.Infrastructure.Storage.Products
                         PurchaseId = (Guid)row["PurchaseId"],
                         Date = row.IsNull("Date") ? default : DateOnly.FromDateTime((DateTime)row["Date"]),
                         DeliveryNumber = row.IsNull("DeliveryNumber") ? string.Empty : row["DeliveryNumber"].ToString(),
-                        DeliveryDate = row.IsNull("DeliveryDate") ? default : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
+                        DeliveryDate = row.IsNull("DeliveryDate")
+                            ? default
+                            : DateOnly.FromDateTime((DateTime)row["DeliveryDate"]),
                         Status = (ReceiptStatus)row["Status"],
                         supplierName = (string)row["CompanyName"],
                         Quantity = Convert.ToInt32(row["Quantity"]),

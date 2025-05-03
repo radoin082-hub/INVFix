@@ -62,7 +62,8 @@ public class OrgStorage(IConfiguration configuration) : IOrgStorage
             newId = parentId.Value.GetDescendant(lastChild, SqlHierarchyId.Null);
         }
 
-        var insert = new SqlCommand("INSERT INTO ORG (Id, Name, Description, Type) VALUES (@aId, @aName, @aDesc, @aType)",
+        var insert = new SqlCommand(
+            "INSERT INTO ORG (Id, Name, Description, Type) VALUES (@aId, @aName, @aDesc, @aType)",
             conn);
         insert.Parameters.Add(new SqlParameter("@aId", SqlDbType.Udt)
         {
@@ -74,5 +75,40 @@ public class OrgStorage(IConfiguration configuration) : IOrgStorage
         insert.Parameters.AddWithValue("@aType", node.Type);
 
         await insert.ExecuteNonQueryAsync();
+    }
+
+    public async Task UpdateNodeParent(SqlHierarchyId draggedNodeId, SqlHierarchyId targetNodeId)
+    {
+        using var conn = new SqlConnection(connectionString);
+        await conn.OpenAsync();
+
+
+        var getMax = new SqlCommand("SELECT MAX(Id) FROM ORG WHERE Id.GetAncestor(1) = @targetId", conn);
+        getMax.Parameters.Add(new SqlParameter("@targetId", SqlDbType.Udt)
+        {
+            UdtTypeName = "HierarchyId",
+            Value = targetNodeId
+        });
+
+        var lastChild = await getMax.ExecuteScalarAsync();
+        var lastChildId = lastChild != DBNull.Value ? (SqlHierarchyId)lastChild : SqlHierarchyId.Null;
+
+
+        var newPosition = targetNodeId.GetDescendant(lastChildId, SqlHierarchyId.Null);
+
+
+        var update = new SqlCommand("UPDATE ORG SET Id = @anewId WHERE Id = @acurrentId", conn);
+        update.Parameters.Add(new SqlParameter("@acurrentId", SqlDbType.Udt)
+        {
+            UdtTypeName = "HierarchyId",
+            Value = draggedNodeId
+        });
+        update.Parameters.Add(new SqlParameter("@anewId", SqlDbType.Udt)
+        {
+            UdtTypeName = "HierarchyId",
+            Value = newPosition
+        });
+
+        await update.ExecuteNonQueryAsync();
     }
 }

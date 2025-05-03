@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace INV.Web.Components.Pages.Products;
 
-public partial class ProductDetailPage
+public partial class ProductDetailPage :ComponentBase
 {
     [Parameter] public Guid ProductId { get; set; }
     public ProductForm ProductForm;

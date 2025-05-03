@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace INV.Web.Components.Pages.Receipts;
 
-public partial class ReceiptPage
+public partial class ReceiptPage :ComponentBase
 {
     [Inject] public IReceiptService receiptService { set; get; }
     [Parameter] public Guid Id { get; set; } = Guid.Empty;

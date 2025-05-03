@@ -239,7 +239,7 @@ WHERE O.SupplierId = @aSupplierId;";
 
             cmd.Parameters.AddWithValue("@aReceptionId", receiptProduct.ReceptionId);
             cmd.Parameters.AddWithValue("@aProductId", receiptProduct.ProductId);
-            cmd.Parameters.AddWithValue("@aQuantity", receiptProduct.Quantity);
+            cmd.Parameters.AddWithValue("@aQuantity", receiptProduct.Quantity); 
             cmd.Parameters.AddWithValue("@aWareHouseId", receiptProduct.WareHouseId);
             return await cmd.ExecuteNonQueryAsync();
         }

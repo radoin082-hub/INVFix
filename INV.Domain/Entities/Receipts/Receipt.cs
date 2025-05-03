@@ -10,4 +10,6 @@ public class Receipt
     public DateOnly DeliveryDate { get; set; }
     public ReceiptStatus Status { get; set; }
     public List<ReceiptProduct> Products { get; set; } = new();
+   
+    
 }

@@ -20,7 +20,6 @@ namespace INV.Implementation.Service.Receipts
                 }
                 catch (Exception ex)
                 {
-                    scope.Dispose();
                     return Error.Exception(ex);
                 }
             }
@@ -32,7 +31,7 @@ namespace INV.Implementation.Service.Receipts
             {
                 try
                 {
-                    string result = await receiptStorage.ValidateReceipt(receiptId);
+                    await receiptStorage.ValidateReceipt(receiptId);
                     scope.Complete();
                     return Result.Success();
                 }
@@ -83,16 +82,26 @@ namespace INV.Implementation.Service.Receipts
             }
         }
 
-        public async ValueTask<Result> CreateReceipt(Receipt receipt)
+        public async ValueTask<Result> CreateReceipt(ReceiptInfo receipt)
         {
             using (TransactionScope scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 try
                 {
-                    await receiptStorage.InsertReceipt(receipt);
+                    /*await receiptStorage.InsertReceipt(receipt);
                     foreach (var product in receipt.Products)
                     {
                         await receiptStorage.InsertReceiptProduct(product);
+                    }*/
+                    var entity = MapToReceipt(receipt);
+                    await receiptStorage.InsertReceipt(entity);
+                    foreach (var product in receipt.ReceiptProducts)
+                    {
+                        foreach (var item in product.ReceiptProductDetails)
+                        {
+                            var mappedProduct = MapToReceiptProduct(item);
+                            await receiptStorage.InsertReceiptProduct(mappedProduct);
+                        }
                     }
 
                     scope.Complete();
@@ -105,16 +114,18 @@ namespace INV.Implementation.Service.Receipts
             }
         }
 
-        public async ValueTask<Result> UpdateReceipt(Receipt receipt)
+        public async ValueTask<Result> UpdateReceipt(ReceiptInfo receipt)
         {
-            using (TransactionScope scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            using (TransactionScope scope = new(TransactionScopeAsyncFlowOption.Enabled))
             {
                 try
                 {
-                    await receiptStorage.UpdateReceipt(receipt);
-                    foreach (var product in receipt.Products)
+                    var entity = MapToReceipt(receipt);
+                    await receiptStorage.UpdateReceipt(entity);
+                    foreach (var product in receipt.ReceiptProducts)
                     {
-                        await receiptStorage.UpdateReceiptProduct(product);
+                        /*var mappedProduct = MapToReceiptProduct(product);
+                        await receiptStorage.UpdateReceiptProduct(mappedProduct);*/
                     }
 
                     scope.Complete();
@@ -267,8 +278,9 @@ namespace INV.Implementation.Service.Receipts
 
         public async ValueTask<long> UpdateReceptionNumber(Guid purchaseOrderId, long newNumber)
         {
-            return await receiptStorage.SetReceptionNumber(purchaseOrderId,newNumber);
+            return await receiptStorage.SetReceptionNumber(purchaseOrderId, newNumber);
         }
+
         public async ValueTask<Result<List<ReceiptDetail>>> GetReceiptDetail(Guid purchaseId)
         {
             try
@@ -280,6 +292,37 @@ namespace INV.Implementation.Service.Receipts
             {
                 return Error.Exception(e);
             }
+        }
+
+        private Receipt MapToReceipt(ReceiptInfo info)
+        {
+            return new Receipt
+            {
+                Id = info.Id,
+                PurchaseId = info.PurchaseId,
+                Date = info.Date ?? default,
+                DeliveryNumber = info.DeliveryNumber,
+                Number = info.Number,
+                DeliveryDate = info.DeliveryDate ?? default,
+                Status = info.Status,
+                Products = info.ReceiptProducts.Select(p => new ReceiptProduct
+                {
+                    ReceptionId = p.ReceptionId,
+                    ProductId = p.ProductId,
+                    Quantity = p.Quantity,
+                }).ToList()
+            };
+        }
+
+        private ReceiptProduct MapToReceiptProduct(ReceiptProductDetails info)
+        {
+            return new ReceiptProduct()
+            {
+                ReceptionId = info.ReceiptProductId,
+                ProductId = info.ProductId,
+                Quantity = info.Quantity,
+                WareHouseId = info.WarhouseId
+            };
         }
     }
 }

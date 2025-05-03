@@ -44,12 +44,13 @@ public partial class PurchaseProducts : ComponentBase
         {
             return true;
         }
-        return false;
+        return true;
     }
 
     protected override async Task OnInitializedAsync()
     {
         myAlert = new MyAlert(jsRuntime);
+        
     }
 
     protected override void OnParametersSet()

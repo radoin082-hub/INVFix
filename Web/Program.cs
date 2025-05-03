@@ -5,6 +5,7 @@ using INV.App.Purchases;
 using INV.App.Receipts;
 using INV.App.Suppliers;
 using INV.App.WareHouses;
+using INV.Implementation.Hubs.WareHouses;
 using INV.Implementation.Service.Budgets;
 using INV.Implementation.Service.Products;
 using INV.Implementation.Service.Purchses;
@@ -16,7 +17,7 @@ using INV.Infrastructure.Storage.Products;
 using INV.Infrastructure.Storage.Purchases;
 using INV.Infrastructure.Storage.Receipts;
 using INV.Infrastructure.Storage.SupplierStorages;
-using INV.Infrastructure.Storage.WareHousesStorages;
+using INV.Infrastructure.Storage.WareHouses;
 using INV.Web.Components;
 using INV.Web.Services.Suppliers;
 using Microsoft.AspNetCore.Components.Routing;
@@ -24,6 +25,7 @@ using ORG.App.Orgs;
 using ORG.Implementation.Service.Orgs;
 using ORG.Infrastructure.Storage.Orgs;
 using Radzen;
+using WareHouseStorage = INV.Infrastructure.Storage.WareHouses.WareHouseStorage;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
@@ -52,6 +54,7 @@ builder.Services.AddScoped<NavigationLock>();
 builder.Services.AddLocalization();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 string[] supportedCultures = ["en", "fr", "ar"];
@@ -70,10 +73,15 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseRouting();
 app.UseHttpsRedirection();
 app.MapControllers();
 
 app.UseAntiforgery();
 app.MapStaticAssets();
-app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<WareHouseHub>("/warehouseHub");
+    endpoints.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+});
 app.Run();

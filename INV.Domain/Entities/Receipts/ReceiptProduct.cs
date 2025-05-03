@@ -1,4 +1,7 @@
-﻿namespace INV.Domain.Entities.Receipts;
+﻿using INV.Domain.Entities.WareHouses;
+using Microsoft.SqlServer.Types;
+
+namespace INV.Domain.Entities.Receipts;
 
 public class ReceiptProduct
 {
@@ -6,4 +9,5 @@ public class ReceiptProduct
     public Guid ProductId { get; set; }
     public int Quantity { get; set; }
     public Guid WareHouseId { get; set; }
+  
 }

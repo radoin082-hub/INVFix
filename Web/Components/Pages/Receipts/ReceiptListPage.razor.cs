@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace INV.Web.Components.Pages.Receipts;
 
-public partial class ReceiptListPage
+public partial class ReceiptListPage :ComponentBase
 {
     [Inject] public IPurchaseOrderService purchaseService { get; set; }
     [Inject] public IReceiptService ReceiptService { get; set; }
@@ -26,6 +26,7 @@ public partial class ReceiptListPage
         if (resultToReceipt.IsSuccess)
         {
             receipts = resultToReceipt.Value;
+            receipts= receipts.OrderByDescending(x => x.Number).ToList();
         }
     }
 

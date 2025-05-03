@@ -1,0 +1,43 @@
+﻿@using INV.App.Receipts
+@using INV.App.WareHouses
+@using INV.Domain.Entities.WareHouses
+@using INVUIs.Receptions.Models
+@using INVUIs.Shared.MyAlert
+@using Microsoft.SqlServer.Types
+
+
+@if (Visible)
+{
+    <MyModal Titel="a">
+        <Pills>
+            @foreach (var item in storageLocations)
+            {
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center" Gap="0.5rem" class="rz-p-sm-12">
+                    <RadzenLabel Text="Warehouse" Component="DropDownVirtualization"/>
+                    <RadzenDropDown AllowClear="true"
+                                    @bind-Value="item.WarhouseId"
+                                    AllowVirtualization="true"
+                                    Name="DropDownVirtualization"
+                                    AllowFiltering="true"
+                                    Data="@GetAvailableWarehouses(item)"
+                                    TextProperty="@nameof(WareHouse.Name)"
+                                    ValueProperty="@nameof(WareHouse.Id)"
+                                    Style="width: 100%; max-width: 400px;"
+                                    Change="@(args => OnWarehouseChanged(item, args))"/>
+                    <RadzenLabel Text="Quantity" Component="DropDownVirtualization"/>
+                    <input type="number" style="width:100px;" @bind="item.Quantity"/>
+                    <RadzenButton Text="+" Click="AddNewItem"/>
+                    @if (storageLocations.IndexOf(item) > 0)
+                    {
+                        <RadzenButton Text="x" Click="() => DeleteItem(item)"/>
+                    }
+                </RadzenStack>
+            }
+
+            <div class="footer-form mt-4">
+                <button type="button" class="btn-custom btn-cancel" @onclick="Hide">Cancel</button>
+                <button type="button" class="btn-custom btn-submit" @onclick="SaveLocations">Save</button>
+            </div>
+        </Pills>
+    </MyModal>
+}
